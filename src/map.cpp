@@ -1,20 +1,27 @@
 #include "map.h"
 
-void CMap::readMap ( std::string mapDir )
+void CMap::readMap ( std::string & mapDir )
 {
   std::ifstream ifs ( mapDir, std::ios::in );
-  int h, w;
   char c;
-  
-  std::cin>>h>>w;
-  m_Height = h;
-  m_Width = w;
-  
-  std::vector<std::vector<char>> map;
+  // Reading height and width of map that are given in format 'hh ww\n' on the first line.
+  // Max width and max height = 99;
+  ifs . get ( c );
+  m_Height += ( ( ( int ) c ) - 48 ) * 10;
+  ifs . get ( c );
+  m_Height += ( ( ( int ) c ) - 48 );
+  ifs . get ( c );
+  ifs . get ( c );
+  m_Width += ( ( ( int ) c ) - 48 ) * 10;
+  ifs . get ( c );
+  m_Width += ( ( ( int ) c ) - 48 );
+  ifs . get ( c );
 
-  for ( int i = 0; i < h; ++i )
+  std::vector<std::vector<char>> map( m_Height, std::vector<char>( m_Width ) );
+
+  for ( int i = 0; i < m_Height; ++i )
   {
-    for ( int j = 0; i < w; ++j )
+    for ( int j = 0; j < m_Width; ++j )
     {
       ifs . get( c );
       map [i][j] = c;
@@ -23,5 +30,4 @@ void CMap::readMap ( std::string mapDir )
   }
 
   ifs . close();
-  
 }

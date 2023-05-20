@@ -8,13 +8,15 @@
 class CMap
 {
   public:
-    CMap( std::string mapDir )
+      CMap( std::string mapDir )
+    : m_Height ( 0 ),
+      m_Width ( 0 )
     {
       readMap ( mapDir );
     }
 
   private:
-    void readMap ( std::string mapDir );
+    void readMap ( std::string & mapDir );
     int m_Height;
     int m_Width;
 };
