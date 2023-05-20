@@ -1,8 +1,8 @@
 CXX=g++
 LD=g++
 CXXFLAGS=-std=c++17 -Wall -pedantic 
-LIBS=
-OBJS=src/main.o src/map.o src/mapelement.o src/loop.o
+LIBS=-lncurses
+OBJS=src/main.o src/map.o src/mapelement.o src/loop.o src/menu.o src/game.o
 
 all: antwars
 
@@ -15,4 +15,5 @@ antwars: $(OBJS)
 clean:
 	rm -f src/*.o 
 
-run: ./antwars
+run: 
+	./antwars

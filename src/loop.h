@@ -2,6 +2,9 @@
 #define LOOP_H
 #include <iostream>
 #include <string>
+#include "menu.h"
+#include "game.h"
+#include "screen.h"
 
 enum EStatus
 {
@@ -31,7 +34,10 @@ class CLoop
     std::string m_Saves;
     std::string m_Talents;
     EStatus m_Status;
+    CMenu m_Menu;
+    CGame m_Game;
+    CScreen m_Screen;
 
 };
 
-#endif
+#endif // LOOP_H
