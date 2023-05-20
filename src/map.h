@@ -4,6 +4,9 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <list>
+
+#include "mapelement.h"
 
 class CMap
 {
@@ -17,8 +20,11 @@ class CMap
 
   private:
     void readMap ( std::string & mapDir );
+    void print ( void );
     int m_Height;
     int m_Width;
+    std::list< CMapElem * > m_ElementList;
+
 };
 
 

@@ -31,3 +31,8 @@ void CMap::readMap ( std::string & mapDir )
 
   ifs . close();
 }
+
+void CMap::print ( void )
+{
+  
+}
