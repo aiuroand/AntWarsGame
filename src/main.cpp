@@ -5,14 +5,15 @@
 
 int main ( void )
 {
-  std::ifstream ifs ( "conf.txt", std::ios::in );
-  std::string maps, saves, talents;
+  std::ifstream ifs ( "conf.conf", std::ios::in );
+  std::string maps, saves, talents, rules;
 
   std::getline ( ifs, maps );
   std::getline ( ifs, saves );
   std::getline ( ifs, talents );
+  std::getline ( ifs, rules );
   
-  CLoop l ( maps, saves, talents );
+  CLoop l ( maps, saves, talents, rules );
 
   return EXIT_SUCCESS;
 }

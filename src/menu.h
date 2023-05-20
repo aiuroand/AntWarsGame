@@ -5,21 +5,33 @@
 #include <string>
 #include <vector>
 #include "screen.h"
+#include "ncurses.h"
+#include "status.h"
 
 class CMenu
 {
   public:
-      CMenu ( void )
-     : m_Elements ( { "New Game", "Saved Games", "Rules", "Exit" } )
+      CMenu ( CScreen * screen,
+              EStatus & status,
+              std::string maps,
+              std::string saves )
+     : m_Screen ( screen ),
+       m_Status ( status ),
+       m_Maps ( maps ), 
+       m_Saves ( saves ), 
+       m_Elements ( { "New Game", "Saved Games", "Rules", "Exit" } ),
+       m_Highlight ( 0 )
     {
       
     }
     void loop ( void );
   private:
-    CScreen m_Screen;
+    CScreen * m_Screen;
+    EStatus & m_Status;
     std::string m_Maps;
     std::string m_Saves;
     const std::vector < std::string > m_Elements;
+    int m_Highlight;
 };
 
 

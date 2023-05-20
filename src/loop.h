@@ -5,25 +5,23 @@
 #include "menu.h"
 #include "game.h"
 #include "screen.h"
-
-enum EStatus
-{
-  e_Menu,
-  e_Play,
-  e_Rules,
-  e_Exit
-};
+#include "status.h"
+#include "rules.h"
 
 class CLoop
 {
   public:
       CLoop ( std::string maps,
               std::string saves,
-              std::string talents )
+              std::string talents,
+              std::string rules )
      : m_Maps ( maps ),
        m_Saves ( saves ),
        m_Talents ( talents ),
-       m_Status ( e_Menu )
+       m_Screen ( new CScreen() ),
+       m_Status ( e_Menu ),
+       m_Menu ( m_Screen, m_Status, m_Maps, m_Saves ),
+       m_Rules ( m_Screen, m_Status, rules )
     {
       loop();
     }
@@ -33,10 +31,11 @@ class CLoop
     std::string m_Maps;
     std::string m_Saves;
     std::string m_Talents;
+    CScreen * m_Screen;
     EStatus m_Status;
     CMenu m_Menu;
     CGame m_Game;
-    CScreen m_Screen;
+    CRules m_Rules;
 
 };
 
