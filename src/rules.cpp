@@ -5,7 +5,7 @@ void CRules::loop ( void )
   m_Screen -> screenClear();
   m_Screen -> screenRefresh();
   m_Screen -> screenBox();
-  box( m_Screen -> m_Window, 0, 0 );
+  
   int cnt = 1;
   std::ifstream ifs ( m_Dir, std::ios::in );
 

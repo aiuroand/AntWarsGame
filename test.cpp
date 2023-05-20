@@ -7,57 +7,58 @@
 int main()
 {
   initscr();
-  keypad(stdscr, TRUE);
-//   noecho();
-  cbreak();
-  start_color();
-  nodelay(stdscr, TRUE);
+  endwin();
+//   keypad(stdscr, TRUE);
+// //   noecho();
+//   cbreak();
+//   start_color();
+//   nodelay(stdscr, TRUE);
 
-  box ( stdscr, 0, 0 );
-  int i = 1;
-  int x,y;
-  char c;
+//   box ( stdscr, 0, 0 );
+//   int i = 1;
+//   int x,y;
+//   char c;
 
-  while ( i++ )
-  {
-	std::this_thread::sleep_for(std::chrono::seconds(1));
-	getbegyx( stdscr, y,x );
-	mvprintw( y + 1, x + 1 ,"%d", i );
-    refresh();
+//   while ( i++ )
+//   {
+// 	std::this_thread::sleep_for(std::chrono::seconds(1));
+// 	getbegyx( stdscr, y,x );
+// 	mvprintw( y + 1, x + 1 ,"%d", i );
+//     refresh();
 
-	if ( ( c = getch() ) != ERR )
-	{
-	  switch ( c )
-	  {
-	    case ( '1' ):
-		{
-		  WINDOW * win = newwin ( 10, 10, 2, 5 );
-		  box( win, 0, 0 );
-          mvwprintw( win, 1, 1 ,"Attack" );
-		  wrefresh( win );
-		//   endwin_sp(win);
-		  break;
+// 	if ( ( c = getch() ) != ERR )
+// 	{
+// 	  switch ( c )
+// 	  {
+// 	    case ( '1' ):
+// 		{
+// 		  WINDOW * win = newwin ( 10, 10, 2, 5 );
+// 		  box( win, 0, 0 );
+//           mvwprintw( win, 1, 1 ,"Attack" );
+// 		  wrefresh( win );
+// 		//   endwin_sp(win);
+// 		  break;
 
-		};
-		case ( '2' ):
-		{
-		  WINDOW * win = newwin ( 10, 10, 2, 5 );
-		  box( win, 0, 0 );
-          mvwprintw( win, 1, 1 ,"Talents" );
-		  wrefresh( win );
-		  wstandend(win);
-		  break;
-		}
-	  }
-	}
-	else
-	{
-	  clear();
-	  box ( stdscr, 0, 0 );
+// 		};
+// 		case ( '2' ):
+// 		{
+// 		  WINDOW * win = newwin ( 10, 10, 2, 5 );
+// 		  box( win, 0, 0 );
+//           mvwprintw( win, 1, 1 ,"Talents" );
+// 		  wrefresh( win );
+// 		  wstandend(win);
+// 		  break;
+// 		}
+// 	  }
+// 	}
+// 	else
+// 	{
+// 	  clear();
+// 	  box ( stdscr, 0, 0 );
 	
-	}
+// 	}
 
-  }
+//   }
 // int xPar, yPar;
 
 	// WINDOW * win = newwin ( 10, 30, 0, 0 );
@@ -113,5 +114,5 @@ int main()
 	// clear();
 
 	// getch();
-	endwin();
+	// endwin();
 }
