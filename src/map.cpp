@@ -34,5 +34,9 @@ void CMap::readMap ( std::string & mapDir )
 
 void CMap::print ( void )
 {
-  
+  m_Screen -> screenClear();
+  m_Screen -> screenRefresh();
+  m_Screen -> screenBox();
+  mvwprintw( m_Screen -> m_Window, 10, 10, "There will be my game" );
+  m_Screen -> screenRefresh();
 }

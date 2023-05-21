@@ -2,6 +2,7 @@
 #define LOOP_H
 #include <iostream>
 #include <string>
+#include <cstring>
 #include "menu.h"
 #include "game.h"
 #include "screen.h"
@@ -21,6 +22,7 @@ class CLoop
        m_Screen ( new CScreen() ),
        m_Status ( e_Menu ),
        m_Menu ( m_Screen, m_Status, m_Maps, m_Saves ),
+       m_Game ( nullptr ),
        m_Rules ( m_Screen, m_Status, rules )
     {
       loop();
@@ -34,9 +36,8 @@ class CLoop
     CScreen * m_Screen;
     EStatus m_Status;
     CMenu m_Menu;
-    CGame m_Game;
+    CGame * m_Game;
     CRules m_Rules;
-
 };
 
 #endif // LOOP_H

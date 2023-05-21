@@ -7,23 +7,26 @@
 #include <list>
 
 #include "mapelement.h"
+#include "screen.h"
 
 class CMap
 {
   public:
-      CMap( std::string mapDir )
+      CMap( std::string mapDir,
+            CScreen * scr )
     : m_Height ( 0 ),
-      m_Width ( 0 )
+      m_Width ( 0 ),
+      m_Screen ( scr )
     {
       readMap ( mapDir );
     }
-
+    void print ( void );
   private:
     void readMap ( std::string & mapDir );
-    void print ( void );
     int m_Height;
     int m_Width;
     std::list< CMapElem * > m_ElementList;
+    CScreen * m_Screen;
 
 };
 

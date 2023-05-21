@@ -3,8 +3,8 @@
 
 enum EStatus
 {
+  e_NewGame,
   e_Menu,
-  e_Play,
   e_Rules,
   e_Exit
 };

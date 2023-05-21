@@ -29,16 +29,56 @@ void CMenu::loop ( )
         if ( (size_t) m_Highlight == m_Elements . size() )
           m_Highlight = 0;
         break;
+      case 10:  // Enter pressed ( I dont understand why KEY_ENTER does not work )
+        if ( m_Highlight == 0 )
+          chooseNewMap();
+        else if ( m_Highlight == 2 )
+          m_Status = e_Rules;
+        else if ( m_Highlight == 3 )
+          m_Status = e_Exit;
+        return;
       default:
         break;
     }
-    if ( choise == 10 ) // Enter pressed
+  }
+}
+
+void CMenu::chooseNewMap( void )
+{
+  int choise = 0;
+  m_Screen -> screenClear();
+  m_Screen -> screenRefresh();
+  m_Screen -> screenBox();
+
+  while ( 1 )
+  {
+    int i = 0;
+    for ( const auto & it : std::filesystem::directory_iterator( m_Maps ) )
+    { 
+      if ( i == m_HighlightMaps )
+        wattron ( m_Screen -> m_Window , A_REVERSE );
+      mvwprintw ( m_Screen -> m_Window, i+5, 5, ( it . path() . c_str() + m_Maps . size() + 1 ) );
+      wattroff ( m_Screen -> m_Window, A_REVERSE );
+      i++;
+    }
+    choise = wgetch ( m_Screen -> m_Window );
+    switch ( choise )
     {
-      if ( m_Highlight == 2 )
-        m_Status = e_Rules;
-      else if ( m_Highlight == 3 )
-        m_Status = e_Exit;
-      break;
+      case KEY_UP:
+        m_HighlightMaps --;
+        if ( m_HighlightMaps == -1 )
+          m_HighlightMaps = i;
+        break;
+      case KEY_DOWN:
+        m_HighlightMaps++;
+        if ( m_HighlightMaps == i + 1 )
+          m_HighlightMaps = 0;
+        break;
+      case 10:  // Enter pressed ( I dont understand why KEY_ENTER does not work )
+        m_Status = e_NewGame;
+        return;
+      default:
+        break;
     }
   }
 }

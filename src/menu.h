@@ -2,6 +2,8 @@
 #define MENU_H
 
 #include <iostream>
+#include <filesystem>
+#include <list>
 #include <string>
 #include <vector>
 #include "screen.h"
@@ -15,7 +17,8 @@ class CMenu
               EStatus & status,
               std::string maps,
               std::string saves )
-     : m_Screen ( screen ),
+     : m_HighlightMaps ( 0 ),
+       m_Screen ( screen ),
        m_Status ( status ),
        m_Maps ( maps ), 
        m_Saves ( saves ), 
@@ -25,6 +28,10 @@ class CMenu
       
     }
     void loop ( void );
+    void chooseNewMap ( void );
+    
+    int m_HighlightMaps;
+  
   private:
     CScreen * m_Screen;
     EStatus & m_Status;
