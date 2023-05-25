@@ -1,17 +1,19 @@
+#ifndef VOID_H
+#define VOID_H
 #include "mapelement.h"
+#include "coords.h"
+#include "screen.h"
 
 class CVoid : public CMapElem
 {
   public:
-      CVoid( char owner,
-             CCoords coord )
-     : CMapElem( owner,
-                 coord ) {};
-    void print ( void ) override
+      CVoid ( CCoords coord )
+     : CMapElem ( 'n', coord )
+    {}
+    void print ( CScreen * scr ) override
     {
-
+      scr -> screenPrint ( m_Coords, " " );
     }
+};
 
-  protected:
-
-}
+#endif // VOID_H

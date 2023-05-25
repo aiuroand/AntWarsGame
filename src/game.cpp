@@ -2,8 +2,5 @@
 
 void CGame::loop ( void )
 {
-  while ( 1 )
-  {
-    m_Map . print();
-  }
+  m_Map . print();
 }

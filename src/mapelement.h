@@ -1,12 +1,7 @@
 #ifndef MAP_ELEM
 #define MAP_ELEM
-
-class CCoords
-{
-  public:
-    int m_X;
-    int m_Y;
-};
+#include "coords.h"
+#include "screen.h"
 
 class CMapElem
 {
@@ -16,9 +11,9 @@ class CMapElem
      : m_Owner ( owner ),
        m_Coords ( coord )
     {};
-      ~CMapElem( void )
+    virtual ~CMapElem( void )
     {};
-    virtual void print ( void ) = 0;
+    virtual void print ( CScreen * scr ) = 0;
 
   protected: 
     char m_Owner;

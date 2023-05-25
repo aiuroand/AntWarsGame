@@ -1,6 +1,8 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 #include <ncurses.h>
+#include <iostream>
+#include "coords.h"
 
 class CScreen
 {
@@ -34,6 +36,11 @@ class CScreen
   void screenBox ( void )
   {
     box ( m_Window, 0, 0 );
+  }
+  void screenPrint ( CCoords coord, std::string str )
+  {
+    // wmove ( m_Window, coord . m_X, coord . m_Y );
+    mvwprintw( m_Window, coord . m_X, coord . m_Y, "%s", str . c_str() );
   }
   WINDOW * m_Window;
 };

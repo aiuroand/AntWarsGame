@@ -28,15 +28,28 @@ void CMap::readMap ( std::string & mapDir )
     }
     ifs . get( c );
   }
-
   ifs . close();
+
+  for ( int i = 0; i < m_Height; ++i )
+    for ( int j = 0; j < m_Width; ++j )
+      switch ( map[i][j] )
+      {
+        case '#':
+          m_ElementList . push_back ( new CWall( CCoords ( i, j ) ) );
+          break;
+        case ' ':
+          m_ElementList . push_back ( new CVoid( CCoords ( i, j ) ) );
+          break;
+        default:
+          break;
+      }
 }
 
 void CMap::print ( void )
 {
   m_Screen -> screenClear();
   m_Screen -> screenRefresh();
-  m_Screen -> screenBox();
-  mvwprintw( m_Screen -> m_Window, 10, 10, "There will be my game" );
+  for ( const auto & it : m_ElementList )
+    it -> print ( m_Screen );
   m_Screen -> screenRefresh();
 }

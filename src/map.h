@@ -8,6 +8,9 @@
 
 #include "mapelement.h"
 #include "screen.h"
+#include "coords.h"
+#include "wall.h"
+#include "void.h"
 
 class CMap
 {
