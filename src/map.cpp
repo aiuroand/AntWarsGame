@@ -17,14 +17,15 @@ void CMap::readMap ( std::string & mapDir )
   m_Width += ( ( ( int ) c ) - 48 );
   ifs . get ( c );
 
-  std::vector<std::vector<char>> map( m_Height, std::vector<char>( m_Width ) );
+  std::vector<std::vector< std::pair <char, bool> > > map( m_Height, std::vector< std::pair <char, bool> >( m_Width ) );
 
   for ( int i = 0; i < m_Height; ++i )
   {
     for ( int j = 0; j < m_Width; ++j )
     {
       ifs . get( c );
-      map [i][j] = c;
+      map [i][j] . first = c;
+      map [i][j] . second = false;
     }
     ifs . get( c );
   }
@@ -32,19 +33,32 @@ void CMap::readMap ( std::string & mapDir )
 
   for ( int i = 0; i < m_Height; ++i )
     for ( int j = 0; j < m_Width; ++j )
-      switch ( map[i][j] )
-      {
-        case '#':
-          m_ElementList . push_back ( new CWall( CCoords ( i, j ) ) );
-          break;
-        case ' ':
-          m_ElementList . push_back ( new CVoid( CCoords ( i, j ) ) );
-          break;
-        default:
-          break;
-      }
-}
+      if ( !map[i][j] . second )
+        switch ( map[i][j] . first )
+        {
+          case '#':
+            m_ElementList . push_back ( new CWall( CCoords ( j, i ) ) );
+            map[i][j] . second = true;
+            break;
+          case ' ':
+            m_ElementList . push_back ( new CVoid( CCoords ( j, i ) ) );
+            map[i][j] . second = true;
+            break;
+          case '*':
+            for ( int k = 0; k < 6; k++ )
+              for ( int k1 = 0; k1 < 3; k1++ )
+              map[i + k1][j + k] . second = true;
+            m_ElementList . push_back ( new CAntHill( CCoords ( j, i ),
+                                                      map[i+1][j+1] . first,
+                                                      map[i+1][j+2] . first,
+                                                      (int)(map[i+1][j+3] . first - 48) * 10 + (int)(map[i+1][j+4] . first - 48) ) );
 
+            break;
+          default:
+            break;
+        }
+}  
+  
 void CMap::print ( void )
 {
   m_Screen -> screenClear();

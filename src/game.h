@@ -13,6 +13,7 @@ class CGame
   {}
     
     void loop ( void );
+    void readInput ( void );
   private:
     CMap m_Map;
     CScreen * m_Screen;

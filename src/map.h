@@ -11,6 +11,7 @@
 #include "coords.h"
 #include "wall.h"
 #include "void.h"
+#include "anthill.h"
 
 class CMap
 {

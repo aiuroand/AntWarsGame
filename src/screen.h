@@ -16,7 +16,10 @@ class CScreen
     nodelay ( m_Window, true );
     curs_set( 0 );
     noecho();
-    box ( m_Window, 0, 0 );
+    box ( m_Window, 0, 0 ); 
+    start_color();
+    init_pair ( 1, COLOR_BLACK, COLOR_GREEN );   
+    init_pair ( 2, COLOR_BLACK, COLOR_WHITE );   
   }
     ~CScreen ( void )
   {
@@ -39,8 +42,11 @@ class CScreen
   }
   void screenPrint ( CCoords coord, std::string str )
   {
-    // wmove ( m_Window, coord . m_X, coord . m_Y );
-    mvwprintw( m_Window, coord . m_X, coord . m_Y, "%s", str . c_str() );
+    mvwprintw( m_Window, coord . m_Y, coord . m_X, "%s", str . c_str() );
+  }
+  void screenPrint ( CCoords coord, char c )
+  {
+    mvwprintw( m_Window, coord . m_Y, coord . m_X, "%c", c );
   }
   WINDOW * m_Window;
 };
