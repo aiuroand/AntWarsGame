@@ -14,7 +14,8 @@ std::pair < int, int > CHuman::makeMove ( CMap & map )
   while ( 1 )
   {
     CCoords mouseCoords = readMouse();
-    if ( ( second = map . getAntHill ( mouseCoords ) ) != -1 )
+    if ( ( second = map . getAntHill ( mouseCoords ) ) != -1
+        && second != first )
       break;
   }
 

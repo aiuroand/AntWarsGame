@@ -87,9 +87,67 @@ void CMap::add ( int id, int amount )
       it -> add ( amount );
 }
 
+int CMap::getAntsOfId ( int id )
+{
+  for ( const auto & it : m_AntHill )
+    if (  it -> getId() == id )
+      return it -> getAnts();
+}
+
+int CMap::setAntsOfId ( int id, int amount )
+{
+  for ( const auto & it : m_AntHill )
+    if (  it -> getId() == id )
+      return it -> setAnts( amount );
+}
+
+int CMap::getAttackOfId ( int id )
+{
+  for ( const auto & it : m_AntHill )
+    if (  it -> getId() == id )
+      return it -> getAttack();
+}
+
 char CMap::getColorOfId ( int id )
 {
   for ( const auto & it : m_AntHill )
     if (  it -> getId() == id )
       return it -> getColor();
+}
+
+void CMap::setColorOfId ( int id, char color )
+{
+  for ( const auto & it : m_AntHill )
+    if (  it -> getId() == id )
+      return it -> setColor( color );
+}
+
+void CMap::createAnts ( void )
+{
+  for ( const auto & it : m_AntHill )
+    it -> createAnts();
+}
+
+void CMap::attack ( const int from, const int to )
+{
+  int f = getAttackOfId ( from );
+  add ( from, -f);
+  if ( getColorOfId ( to ) == getColorOfId ( from ) )
+    add ( to, f );
+  else 
+    add ( to, -f );
+  if ( getAntsOfId ( to ) < 0 )
+  {
+    setColorOfId( to, getColorOfId ( from ) );
+    setAntsOfId( to, getAntsOfId( to ) * (-1) );
+  }
+}
+
+char CMap::checkWinner ( void )
+{
+  char c = m_AntHill . front() -> getColor();
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() != c )
+      return 'n';
+  return c; 
 }

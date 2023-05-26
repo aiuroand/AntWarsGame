@@ -29,6 +29,13 @@ class CMap
     void print ( void );
     void add ( int id, int amount );
     char getColorOfId ( int id );
+    void setColorOfId ( int id, char color );
+    int getAntsOfId ( int id );
+    int setAntsOfId ( int id, int amount );
+    int getAttackOfId ( int id );
+    void createAnts ( void );
+    void attack ( const int from, const int to );
+    char checkWinner ( void );
 
     std::list < char > m_Players;
 

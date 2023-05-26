@@ -26,6 +26,7 @@ void CLoop::loop ( void )
       std::string newStr( str );
       m_Game = new CGame ( m_Maps + "/" + newStr, m_Screen );
       m_Game -> loop();
+      m_Status = e_Menu;
     }
     else if ( m_Status == e_Rules )
     {

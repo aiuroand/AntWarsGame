@@ -4,6 +4,8 @@
 #include "screen.h"
 #include "player.h"
 #include "human.h"
+#include <chrono>
+#include <thread>
 // #include "anthill.h"
 
 class CGame

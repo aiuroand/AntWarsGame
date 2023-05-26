@@ -18,10 +18,18 @@ void CGame::loop ( void )
 
     for ( const auto & it : orders )
     { 
-      m_Map . add ( it . first, -1 );
-      m_Map . add ( it . second, 1 );
+      m_Map . attack( it . first, it . second );
     }
-
-    m_Map . print(); 
+    m_Map . createAnts();
+    m_Map . print();
+    char c;
+    if ( ( c = m_Map . checkWinner() ) != 'n' )
+    {
+      mvwprintw ( m_Screen -> m_Window, 10, 10, "%c won", c );
+      wrefresh( m_Screen -> m_Window );
+            std::this_thread::sleep_for( std::chrono::seconds( 5 ) );
+      break;
+    }
+    
   }
 }
