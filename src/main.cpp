@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "loop.h"
-
+  
 
 int main ( void )
 {

@@ -8,13 +8,15 @@ std::pair < int, int > CHuman::makeMove ( CMap & map )
     if ( ( first = map . getAntHill ( mouseCoords ) ) != -1 )
       break;
   }
+  mvwprintw( m_Screen -> m_Window, 1, 42, "%d", first );
+  wrefresh ( m_Screen -> m_Window );
   while ( 1 )
   {
     CCoords mouseCoords = readMouse();
     if ( ( second = map . getAntHill ( mouseCoords ) ) != -1 )
       break;
   }
-  mvwprintw( m_Screen -> m_Window, 1, 42, "%d", first );
+
   mvwprintw( m_Screen -> m_Window, 1, 44, "%d", second );
   wrefresh ( m_Screen -> m_Window );
   return std::make_pair( first, second );

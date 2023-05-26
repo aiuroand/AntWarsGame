@@ -48,11 +48,6 @@ void CMap::readMap ( std::string & mapDir )
             for ( int k = 0; k < 6; k++ )
               for ( int k1 = 0; k1 < 3; k1++ )
                 map[i + k1][j + k] . second = true;
-            m_ElementList . push_back ( new CAntHill( CCoords ( j, i ),
-                                          map[i+1][j+1] . first,
-                                          map[i+1][j+2] . first,
-                                          (int)(map[i+1][j+3] . first - 48) * 10 + (int)(map[i+1][j+4] . first - 48),
-                                          map[i+1][j] . first - 48 ) );
             m_AntHill . push_back ( new CAntHill( CCoords ( j, i ),
                                           map[i+1][j+1] . first,
                                           map[i+1][j+2] . first,
@@ -71,6 +66,8 @@ void CMap::print ( void )
   m_Screen -> screenClear();
   m_Screen -> screenRefresh();
   for ( const auto & it : m_ElementList )
+    it -> print ( m_Screen );
+  for ( const auto & it : m_AntHill )
     it -> print ( m_Screen );
   m_Screen -> screenRefresh();
 }

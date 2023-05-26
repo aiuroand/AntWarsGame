@@ -30,6 +30,14 @@ class CAntHill: public CMapElem
   {
     return m_Id;
   }
+  int getAnts ( void ) const 
+  {
+    return m_Ants;
+  }
+  void add ( int amount )
+  {
+    m_Ants += amount;
+  }
   private:
     int m_Ants;
     char m_Color; 
