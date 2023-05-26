@@ -54,9 +54,9 @@ void CMap::readMap ( std::string & mapDir )
                                           (int)(map[i+1][j+3] . first - 48) * 10 + (int)(map[i+1][j+4] . first - 48),
                                           map[i+1][j] . first - 48 ) );
             if ( map[i+1][j+1] . first == 'P' ) 
-              m_Players . push_back ( map[i+1][j+2] . first );
-            else if ( map[i+1][j+1] . first == 'B' ) 
-              m_Players . push_back ( map[i+1][j+2] . first );
+              m_Players . insert ( map[i+1][j+2] . first );
+            else if ( map[i+1][j+1] . first == 'B' )
+              m_Players . insert ( map[i+1][j+2] . first );
             break;
           default:
             break;
@@ -133,21 +133,6 @@ void CMap::createAnts ( void )
     it -> createAnts();
 }
 
-void CMap::attack ( const int from, const int to )
-{
-  int f = getAttackOfId ( from );
-  add ( from, -f );
-  if ( getColorOfId ( to ) == getColorOfId ( from ) )
-    add ( to, f );
-  else 
-    add ( to, -f );
-  if ( getAntsOfId ( to ) < 0 )
-  {
-    setColorOfId( to, getColorOfId ( from ) );
-    setAntsOfId( to, getAntsOfId( to ) * (-1) );
-  }
-}
-
 char CMap::checkWinner ( void )
 {
   char c = m_AntHill . front() -> getColor();
@@ -181,4 +166,30 @@ int CMap::getWeakest ( char c )
       id = it -> getId();
     }
   return id;
+}
+
+void CMap::attack ( const int from, const int to )
+{
+  // std::vector < CCoords > path = getPath( from, to );
+  int f = getAttackOfId ( from );
+  add ( from, -f );
+
+  if ( getColorOfId ( to ) == getColorOfId ( from ) )
+    add ( to, f );
+  else
+  {
+    add ( to, -f );
+    if ( getAttackOfId ( to ) == 0 )
+      setColorOfId ( to, 'w' );
+  }
+  if ( getAntsOfId ( to ) < 0 )
+  {
+    setColorOfId( to, getColorOfId ( from ) );
+    setAntsOfId( to, getAntsOfId( to ) * (-1) );
+  }
+}
+
+std::vector < CCoords > CMap::getPath( int from, int to )
+{
+
 }

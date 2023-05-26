@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <set>
 
 #include "mapelement.h"
 #include "screen.h"
@@ -31,15 +32,16 @@ class CMap
     char getColorOfId ( int id );
     void setColorOfId ( int id, char color );
     int getAntsOfId ( int id );
-    void setAntsOfId ( int id, int amount );
     int getAttackOfId ( int id );
+    void setAntsOfId ( int id, int amount );
     void createAnts ( void );
     void attack ( const int from, const int to );
     char checkWinner ( void );
     int getStrongest ( char c );
     int getWeakest ( char c );
+    std::vector < CCoords > getPath ( int from, int to );
 
-    std::list < char > m_Players;
+    std::set < char > m_Players;
 
   private:
     void readMap ( std::string & mapDir );
@@ -49,7 +51,4 @@ class CMap
     std::list< CAntHill * > m_AntHill;
     CScreen * m_Screen;
 };
-
-
-
 #endif //MAP_H

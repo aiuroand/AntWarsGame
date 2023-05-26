@@ -1,8 +1,9 @@
 #include "bot.h"
+
 std::pair < int, int > CBot::makeMove ( CMap & map )
 {
   int first = map . getStrongest( m_Color );
-  
+
   mvwprintw( m_Screen -> m_Window, 2, 42, "%d", first );
   wrefresh ( m_Screen -> m_Window );
 

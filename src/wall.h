@@ -15,8 +15,6 @@ class CWall : public CMapElem
    {
      scr -> screenPrint ( m_Coords, "#" );
    }
-  private:
-
 };
 
 #endif // WALL_H

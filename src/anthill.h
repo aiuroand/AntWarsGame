@@ -61,6 +61,12 @@ class CAntHill: public CMapElem
       m_Ants += amount;
     else 
       m_Ants = m_Max;
+    // if ( amount > 0
+    //   && m_Ants == 0 )
+    // {
+    //   m_Color = 'w';
+    //   m_Owner = 'n';
+    // }
   }
   void createAnts ( void )
   {
