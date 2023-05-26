@@ -5,7 +5,7 @@
 
 int main ( void )
 {
-  std::ifstream ifs ( "conf.conf", std::ios::in );
+  std::ifstream ifs ( "examples/conf.conf", std::ios::in );
   std::string maps, saves, talents, rules;
 
   std::getline ( ifs, maps );
