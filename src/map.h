@@ -13,6 +13,7 @@
 #include "void.h"
 #include "anthill.h"
 
+
 class CMap
 {
   public:
@@ -21,17 +22,20 @@ class CMap
     : m_Height ( 0 ),
       m_Width ( 0 ),
       m_Screen ( scr )
-    {
+    {    
       readMap ( mapDir );
     }
+    int getAntHill ( CCoords coords );
     void print ( void );
+
+    std::list < char > m_Players;
   private:
     void readMap ( std::string & mapDir );
     int m_Height;
     int m_Width;
     std::list< CMapElem * > m_ElementList;
+    std::list< CAntHill * > m_AntHill;
     CScreen * m_Screen;
-
 };
 
 

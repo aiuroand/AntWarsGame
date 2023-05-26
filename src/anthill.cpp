@@ -6,6 +6,7 @@ int CAntHill::getColor( void )
     return 1;
   else if ( m_Color == 'w' )
     return 2;
+  return -1;
 }
 
 void CAntHill::print ( CScreen * scr )

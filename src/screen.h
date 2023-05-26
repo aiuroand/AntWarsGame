@@ -16,6 +16,7 @@ class CScreen
     nodelay ( m_Window, true );
     curs_set( 0 );
     noecho();
+    mousemask (ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL );
     box ( m_Window, 0, 0 ); 
     start_color();
     init_pair ( 1, COLOR_BLACK, COLOR_GREEN );   

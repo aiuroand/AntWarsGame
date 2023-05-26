@@ -1,12 +1,21 @@
+#ifndef PLAYER_H
+#define PLAYER_H
 
+#include "map.h"
 
 class CPlayer
 {
   public:
-    CPlayer (){};
-    MakeMove (){} = 0; 
- 
+    CPlayer ( char color )
+    : m_Color ( color )
+    {};
+    virtual std::pair < int, int > makeMove ( CMap & map ) = 0; 
+    char getColor ( void ) const 
+    {
+      return m_Color;
+    }
   protected:
-    int m_Id;
-    int m_Color;
+    char m_Color;
 };
+
+#endif // PLAYER_H

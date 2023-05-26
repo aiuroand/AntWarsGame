@@ -2,6 +2,9 @@
 #define GAME_H
 #include "map.h"
 #include "screen.h"
+#include "player.h"
+#include "human.h"
+// #include "anthill.h"
 
 class CGame
 {
@@ -12,11 +15,11 @@ class CGame
      m_Screen ( scr )
   {}
     
-    void loop ( void );
-    void readInput ( void );
+    void loop ( void ); 
   private:
     CMap m_Map;
     CScreen * m_Screen;
+    std::list < CPlayer * > m_Players;
 
 };
 
