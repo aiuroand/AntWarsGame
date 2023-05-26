@@ -4,6 +4,7 @@
 #include "screen.h"
 #include "player.h"
 #include "human.h"
+#include "bot.h"
 #include <chrono>
 #include <thread>
 // #include "anthill.h"

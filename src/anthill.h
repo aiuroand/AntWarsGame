@@ -51,7 +51,7 @@ class CAntHill: public CMapElem
   {
     m_Color = c;
   }
-  int setAnts ( int amount )
+  void setAnts ( int amount )
   {
     m_Ants = amount;
   }

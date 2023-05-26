@@ -1,4 +1,5 @@
-// #include <iostream>
+#ifndef HUMAN_H
+#define HUMAN_H
 #include "player.h"
 #include "coords.h"
 #include "ncurses.h"
@@ -18,3 +19,4 @@ class CHuman : public CPlayer
   private:
     CScreen * m_Screen;
 };
+#endif // HUMAN_H

@@ -8,7 +8,9 @@ void CAntHill::print ( CScreen * scr )
     c = 1;
   else if ( m_Color == 'w' )
     c = 2;
-
+  else if ( m_Color == 'r' )
+    c = 3;
+    
   wattron( scr -> m_Window, COLOR_PAIR ( c ) );
   mvwprintw( scr -> m_Window, m_Coords . m_Y, m_Coords . m_X, "%s", "******" );
   mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X, "%c", '*' );

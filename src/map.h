@@ -31,15 +31,17 @@ class CMap
     char getColorOfId ( int id );
     void setColorOfId ( int id, char color );
     int getAntsOfId ( int id );
-    int setAntsOfId ( int id, int amount );
+    void setAntsOfId ( int id, int amount );
     int getAttackOfId ( int id );
     void createAnts ( void );
     void attack ( const int from, const int to );
     char checkWinner ( void );
+    int getStrongest ( char c );
+    int getWeakest ( char c );
 
     std::list < char > m_Players;
 
-  // private:
+  private:
     void readMap ( std::string & mapDir );
     int m_Height;
     int m_Width;

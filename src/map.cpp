@@ -55,6 +55,8 @@ void CMap::readMap ( std::string & mapDir )
                                           map[i+1][j] . first - 48 ) );
             if ( map[i+1][j+1] . first == 'P' ) 
               m_Players . push_back ( map[i+1][j+2] . first );
+            else if ( map[i+1][j+1] . first == 'B' ) 
+              m_Players . push_back ( map[i+1][j+2] . first );
             break;
           default:
             break;
@@ -92,13 +94,14 @@ int CMap::getAntsOfId ( int id )
   for ( const auto & it : m_AntHill )
     if (  it -> getId() == id )
       return it -> getAnts();
+  return -1;
 }
 
-int CMap::setAntsOfId ( int id, int amount )
+void CMap::setAntsOfId ( int id, int amount )
 {
   for ( const auto & it : m_AntHill )
     if (  it -> getId() == id )
-      return it -> setAnts( amount );
+      it -> setAnts( amount );
 }
 
 int CMap::getAttackOfId ( int id )
@@ -106,6 +109,7 @@ int CMap::getAttackOfId ( int id )
   for ( const auto & it : m_AntHill )
     if (  it -> getId() == id )
       return it -> getAttack();
+  return -1;
 }
 
 char CMap::getColorOfId ( int id )
@@ -113,6 +117,7 @@ char CMap::getColorOfId ( int id )
   for ( const auto & it : m_AntHill )
     if (  it -> getId() == id )
       return it -> getColor();
+  return 'n';
 }
 
 void CMap::setColorOfId ( int id, char color )
@@ -131,7 +136,7 @@ void CMap::createAnts ( void )
 void CMap::attack ( const int from, const int to )
 {
   int f = getAttackOfId ( from );
-  add ( from, -f);
+  add ( from, -f );
   if ( getColorOfId ( to ) == getColorOfId ( from ) )
     add ( to, f );
   else 
@@ -150,4 +155,30 @@ char CMap::checkWinner ( void )
     if ( it -> getColor() != c )
       return 'n';
   return c; 
+}
+
+int CMap::getStrongest ( char c )
+{
+  int max = -1, id = -1;
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() == c
+      && it -> getAnts() > max )
+    {
+      max = it -> getAnts();
+      id = it -> getId();
+    }
+  return id;
+}
+
+int CMap::getWeakest ( char c )
+{
+  int max = 1000, id = -1;
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() != c
+      && it -> getAnts() < max )
+    {
+      max = it -> getAnts();
+      id = it -> getId();
+    }
+  return id;
 }
