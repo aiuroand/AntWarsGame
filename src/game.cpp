@@ -2,6 +2,7 @@
 
 void CGame::loop ( void )
 {
+  m_Map . print();
   while ( 1 )
   {
     getch();
