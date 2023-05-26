@@ -1,5 +1,6 @@
 #ifndef ANTHILL_H
 #define ANTHILL_H
+#define ANTS_MAX 10
 #include "mapelement.h"
 #include "screen.h"
 #include "coords.h"
@@ -18,7 +19,6 @@ class CAntHill: public CMapElem
        m_Id ( id )
     {}
   void print ( CScreen * scr ) override;
-  int getColor( void );
   bool isInside ( CCoords coord ) const
   {
     return coord . m_X >= m_Coords . m_X 
@@ -34,9 +34,14 @@ class CAntHill: public CMapElem
   {
     return m_Ants;
   }
+  char getColor( void ) const
+  {
+    return m_Color;
+  }
   void add ( int amount )
   {
-    m_Ants += amount;
+    // if ( m_Ants + amount < ANTS_MAX )
+      m_Ants += amount;
   }
   private:
     int m_Ants;

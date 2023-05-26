@@ -5,7 +5,8 @@ std::pair < int, int > CHuman::makeMove ( CMap & map )
   while ( 1 )
   {
     CCoords mouseCoords = readMouse();
-    if ( ( first = map . getAntHill ( mouseCoords ) ) != -1 )
+    if ( ( first = map . getAntHill ( mouseCoords ) ) != -1
+       && map . getColorOfId ( first ) == 'g' )
       break;
   }
   mvwprintw( m_Screen -> m_Window, 1, 42, "%d", first );

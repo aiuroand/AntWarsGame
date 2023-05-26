@@ -7,6 +7,8 @@ void CGame::loop ( void )
   for ( const auto & it : m_Map . m_Players )
     if ( it == 'g' ) 
       m_Players . push_back ( new CHuman ( it, m_Screen ) );
+    // else if ( it == 'r' )
+      // m_Players . push_back ( new CBot ( it, m_Screen ) );
   while ( 1 )
   {
     std::list < std::pair < int, int > > orders;
@@ -19,6 +21,7 @@ void CGame::loop ( void )
       m_Map . add ( it . first, -1 );
       m_Map . add ( it . second, 1 );
     }
+
     m_Map . print(); 
   }
 }

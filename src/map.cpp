@@ -79,3 +79,17 @@ int CMap::getAntHill ( CCoords coord )
       return it -> getId();
   return -1;
 }
+
+void CMap::add ( int id, int amount )
+{
+  for ( const auto & it : m_AntHill )
+    if ( it -> getId() == id )
+      it -> add ( amount );
+}
+
+char CMap::getColorOfId ( int id )
+{
+  for ( const auto & it : m_AntHill )
+    if (  it -> getId() == id )
+      return it -> getColor();
+}

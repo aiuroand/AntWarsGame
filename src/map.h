@@ -27,14 +27,11 @@ class CMap
     }
     int getAntHill ( CCoords coords );
     void print ( void );
-    void add ( int id, int amount )
-    {
-      for ( const auto & it : m_AntHill )
-        if ( it -> getId() == id )
-          it -> add ( amount );
-    }
+    void add ( int id, int amount );
+    char getColorOfId ( int id );
 
     std::list < char > m_Players;
+
   // private:
     void readMap ( std::string & mapDir );
     int m_Height;
