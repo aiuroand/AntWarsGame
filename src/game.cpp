@@ -24,9 +24,9 @@ void CGame::loop ( void )
       for ( const auto & it : m_Players )
         it -> selectTalent ( m_Map, m_Tier2 );
         
-    if ( m_Round == m_Tier3Time )
-      for ( const auto & it : m_Players )
-        it -> selectTalent ( m_Map, m_Tier3 );
+    // if ( m_Round == m_Tier3Time )
+    //   for ( const auto & it : m_Players )
+    //     it -> selectTalent ( m_Map, m_Tier3 );
     
     for ( const auto & it : m_Players )
       it -> activateTalents ( it -> getColor(), m_Map );
