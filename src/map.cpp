@@ -45,25 +45,28 @@ void CMap::readMap ( std::string & mapDir )
             map[i][j] . second = true;
             break;
           case '*':
-            for ( int k = 0; k < 6; k++ )
+            for ( int k = 0; k < 5; k++ )
               for ( int k1 = 0; k1 < 3; k1++ )
                 map[i + k1][j + k] . second = true;
             m_AntHill . push_back ( new CAntHill( CCoords ( j, i ),
-                                          map[i+1][j+2] . first,
-                                          (int)(map[i+1][j+3] . first - 48) * 10 + (int)(map[i+1][j+4] . first - 48),
+                                          map[i+1][j+1] . first,
+                                          (int)(map[i+1][j+2] . first - 48) * 10 + (int)(map[i+1][j+3] . first - 48),
                                           map[i+1][j] . first - 48 ) );
-            if ( map[i+1][j+2] . first == 'g' )
-              m_Players . insert ( map[i+1][j+2] . first );
-            else if ( map[i+1][j+2] . first != 'g' )
-              m_Players . insert ( map[i+1][j+2] . first );
+            if ( map[i+1][j+1] . first == 'g' )
+              m_Players . insert ( map[i+1][j+1] . first );
+            else if ( map[i+1][j+1] . first != 'g' )
+              m_Players . insert ( map[i+1][j+1] . first );
             break;
           default:
             break;
         }
+
   for ( const auto & it : m_AntHill )
     for ( const auto & it1 : m_AntHill )
       if ( it != it1 )
         createRoad( it -> getId(), it1 -> getId(), map );
+  
+
   
 }  
   
@@ -139,6 +142,14 @@ void CMap::setColorOfId ( int id, char color )
       return it -> setColor( color );
 }
 
+CAntHill * CMap::getAntHillOfId ( int id )
+{
+  for ( const auto & it : m_AntHill )
+    if (  it -> getId() == id )
+      return it;
+  return nullptr;
+}
+
 void CMap::createAnts ( void )
 {
   for ( const auto & it : m_AntHill )
@@ -181,31 +192,167 @@ int CMap::getWeakest ( char c )
   return id;
 }
 
-void CMap::attack ( const int from, const int to )
+void CMap::clearRoads ( void )
 {
-  for ( const auto & it : m_Roads )
-    if (  ( ( it . m_First == from && it . m_Second == to )
-         || ( it . m_First == to && it . m_Second == from ) )) 
-    it . print( m_Screen );
-    wrefresh ( m_Screen -> m_Window );
-  std::this_thread::sleep_for( std::chrono::seconds( 2 ) );
-  
-  int f = getAttackOfId ( from );
-  add ( from, -f );
+  for ( auto & it : m_Roads )
+    it . clearRoad();
+} 
 
-  if ( getColorOfId ( to ) == getColorOfId ( from ) )
-    add ( to, f );
-  else
-  {
-    add ( to, -f );
-    if ( getAttackOfId ( to ) == 0 )
-      setColorOfId ( to, 'w' );
+void CMap::fillRoad ( const int from, const int to )
+{
+  for ( auto & it : m_Roads )
+    if ( it . m_First == from && it . m_Second == to )
+    {
+      it . m_VecAnts[ it . m_VecAnts . size() - 1 ] . first = getAttackOfId( from ); 
+      it . m_VecAnts[ it . m_VecAnts . size() - 1 ] . second = getColorOfId( from );
+      it . m_FirstUsed = true;
+      add ( from, - getAttackOfId( from ) );
+      print();
+    }
+    else if ( it . m_First == to && it . m_Second == from )
+    {
+      it . m_VecAnts[ 0 ] . first = getAttackOfId( from );
+      it . m_VecAnts[ 0 ] . second = getColorOfId( from );
+      it . m_SecondUsed = true;
+      add ( from, - getAttackOfId( from ) );
+      print();
+    }
+}
+
+void CMap::attack ( void )
+{
+  for ( auto & main_it : m_Roads )
+  {  
+    if ( !main_it . m_FirstUsed && !main_it . m_SecondUsed )
+      continue;    
+    for ( size_t i = 0; i < main_it . m_VecAnts . size() - 1; ++i )
+    {
+      if ( main_it . m_FirstUsed )
+      {
+        if ( main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . first != 0 )
+        {
+          if ( main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . first == main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . first )
+          {
+            main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . first = 0;
+            main_it . m_FirstUsed = false;
+            main_it . m_SecondUsed = false;
+            break;
+          }
+          else if ( main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . first > main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . first )
+          {
+            main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . first -= main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . first;
+            main_it . m_FirstUsed = false;
+            main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . first = 0;
+            main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . second = 'n';
+          }
+          else if ( main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . first < main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . first )
+          {
+            main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . first = main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . first - main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . first;
+            main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . second = main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . second;
+            main_it . m_SecondUsed = false;
+            main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . first = 0;
+            main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . second = 'n';
+          }
+        }
+        else 
+        {
+          main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . first  = main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . first;
+          main_it . m_VecAnts[ main_it . m_VecAnts . size() - 2 - i ] . second = main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . second;
+          main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . first = 0;
+          main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 - i ] . second = 'n';
+          if ( i == main_it . m_VecAnts . size() - 2 )
+          {
+            if ( getColorOfId ( main_it . m_First ) == getColorOfId ( main_it . m_Second ) )
+              add ( main_it . m_Second, main_it . m_VecAnts[ 0 ] . first  );
+            else
+            {
+              add ( main_it . m_Second, -main_it . m_VecAnts[ 0 ] . first  );
+              if ( getAttackOfId ( main_it . m_Second ) == 0 )
+                setColorOfId ( main_it . m_Second, 'w' );
+            }
+            if ( getAntsOfId ( main_it . m_Second ) < 0 )
+            {
+              setColorOfId( main_it . m_Second, getColorOfId ( main_it . m_First ) );
+              setAntsOfId( main_it . m_Second, getAntsOfId( main_it . m_Second ) * (-1) );
+            }
+          }
+        }
+      }
+      if ( main_it . m_SecondUsed )
+      {
+        if ( main_it . m_VecAnts[ i + 1 ] . first != 0 )
+        {
+          if ( main_it . m_VecAnts[ i + 1 ] . first == main_it . m_VecAnts[ i ] . first )
+          {
+            main_it . m_VecAnts[ i + 1 ] . first = 0;
+            main_it . m_VecAnts[ i ] . first = 0;
+            main_it . m_VecAnts[ i ] . second = 'n';
+            main_it . m_FirstUsed = false;
+            main_it . m_SecondUsed = false;
+            break;
+          }
+          else if ( main_it . m_VecAnts[ i + 1 ] . first > main_it . m_VecAnts[ i ] . first )
+          {
+            main_it . m_VecAnts[ i + 1 ] . first -= main_it . m_VecAnts[ i ] . first;
+            main_it . m_SecondUsed = false;
+            main_it . m_VecAnts[ i ] . first = 0;
+            main_it . m_VecAnts[ i ] . second = 'n';
+          }
+          else if ( main_it . m_VecAnts[ i + 1 ] . first < main_it . m_VecAnts[ i ] . first )
+          {
+            main_it . m_VecAnts[ i + 1 ] . first = main_it . m_VecAnts[ i ] . first - main_it . m_VecAnts[ i + 1 ] . first;
+            main_it . m_VecAnts[ i + 1 ] . second = main_it . m_VecAnts[ i ] . second;
+            main_it . m_FirstUsed = false;
+            main_it . m_VecAnts[ i ] . first = 0;
+            main_it . m_VecAnts[ i ] . second = 'n';
+          }
+        }
+        else
+        {
+          main_it . m_VecAnts[ i + 1 ] . first  = main_it . m_VecAnts[ i ] . first;
+          main_it . m_VecAnts[ i + 1 ] . second = main_it . m_VecAnts[ i ] . second;
+          main_it . m_VecAnts[ i ] . first = 0;
+          main_it . m_VecAnts[ i ] . second = 'n';
+          if ( i == main_it . m_VecAnts . size() - 2 )
+          {
+            if ( getColorOfId ( main_it . m_First ) == getColorOfId ( main_it . m_Second ) )
+              add ( main_it . m_First, main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . first  );
+            else
+            {
+              add ( main_it . m_First, -main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . first  );
+              if ( getAttackOfId ( main_it . m_First ) == 0 )
+                setColorOfId ( main_it . m_First, 'w' );
+            }
+            if ( getAntsOfId ( main_it . m_First ) < 0 )
+            {
+              setColorOfId( main_it . m_First, getColorOfId ( main_it . m_Second ) );
+              setAntsOfId( main_it . m_First, getAntsOfId( main_it . m_First ) * (-1) );
+            }
+          }
+        }
+      }
+      main_it . print( m_Screen );
+      wrefresh ( m_Screen -> m_Window );
+      std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );
+    }
+    print();
   }
-  if ( getAntsOfId ( to ) < 0 )
-  {
-    setColorOfId( to, getColorOfId ( from ) );
-    setAntsOfId( to, getAntsOfId( to ) * (-1) );
-  }
+  // int f = getAttackOfId ( from );
+  // add ( from, -f );
+
+  // if ( getColorOfId ( to ) == getColorOfId ( from ) )
+  //   add ( to, f );
+  // else
+  // {
+  //   add ( to, -f );
+  //   if ( getAttackOfId ( to ) == 0 )
+  //     setColorOfId ( to, 'w' );
+  // }
+  // if ( getAntsOfId ( to ) < 0 )
+  // {
+  //   setColorOfId( to, getColorOfId ( from ) );
+  //   setAntsOfId( to, getAntsOfId( to ) * (-1) );
+  // }
 }
 
 int CMap::countHills ( char c )
@@ -221,17 +368,19 @@ void CMap::createRoad( int from,
                        int to, 
                        std::vector<std::vector< std::pair <char, bool> > > & map )
 {
+  mvwprintw ( m_Screen -> m_Window, 1, 1, "%d %d", from, to );
+  wrefresh( m_Screen -> m_Window );
   for ( const auto & it : m_Roads )
     if ( ( it . m_First == from && it . m_Second == to )
       || ( it . m_First == to && it . m_Second == from ) )
-        return;
+        return; 
   std::map < CCoords, CCoords > way;
   std::queue < CCoords > q;
   CRoad road ( from, to );
   CCoords firstCoords = getCoordsOfId ( from );
   CCoords secondCoords = getCoordsOfId ( to );
-
-  q . push ( firstCoords );
+  CAntHill * firstAh = getAntHillOfId ( from );
+  CAntHill * secondAh = getAntHillOfId ( to );
 
   for ( int i = 0; i < m_Height; ++i )
     for ( int j = 0; j < m_Width; ++j )
@@ -240,8 +389,19 @@ void CMap::createRoad( int from,
       else
         map[i][j] . second = true;
 
-  map[ firstCoords . m_Y ][ firstCoords . m_X ] . second = false;
-  map[ secondCoords . m_Y ][ secondCoords . m_X ] . second = false;
+  for ( int i = 0; i < 3; i++ )
+    for ( int j = 0; j < 5; j++ )
+    {  
+      map[ firstCoords . m_Y + i ][ firstCoords . m_X + j ] . second = false;
+      map[ secondCoords . m_Y + i ][ secondCoords . m_X + j ] . second = false;
+    }
+    
+  firstCoords . m_X += 2;
+  firstCoords . m_Y += 1;
+  secondCoords . m_X += 2;
+  secondCoords . m_Y += 1;
+
+  q . push ( firstCoords );
 
   while ( !q . empty() )
   {
@@ -277,15 +437,17 @@ void CMap::createRoad( int from,
   road . m_Exists = q . empty() ? false : true;
   
   CCoords newCoords = secondCoords;
+  int i = 0;
   if ( road . m_Exists == true )
     while ( newCoords != firstCoords )
     {
       std::pair < CCoords, CCoords > c = (* way . find ( newCoords ) );
       newCoords = c . second;
-      if ( c . first != secondCoords )
+      if ( !firstAh -> isInside ( c . first )
+        && !secondAh -> isInside ( c . first ) )
         road . m_Vec . push_back ( c . first );
     }
-
+  for ( size_t i = 0; i < road . m_Vec . size(); ++i )
+    road . m_VecAnts . push_back ( std::make_pair ( 0, 'n' ) );
   m_Roads . push_back ( road );
-
 }

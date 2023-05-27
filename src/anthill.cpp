@@ -12,14 +12,14 @@ void CAntHill::print ( CScreen * scr )
     c = 3;
     
   wattron( scr -> m_Window, COLOR_PAIR ( c ) );
-  mvwprintw( scr -> m_Window, m_Coords . m_Y, m_Coords . m_X, "%s", "******" );
+  mvwprintw( scr -> m_Window, m_Coords . m_Y, m_Coords . m_X, "%s", "*****" );
   mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X, "%c", '*' );
   wattroff( scr -> m_Window, COLOR_PAIR ( c ) );
-  mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X + 1, "%s", "T+" );
-  mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X + 3, "%d", m_Ants / 10 );
-  mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X + 4, "%d", m_Ants % 10 );
+  mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X + 1, "%s", "+" );
+  mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X + 2, "%d", m_Ants / 10 );
+  mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X + 3, "%d", m_Ants % 10 );
   wattron( scr -> m_Window, COLOR_PAIR ( c ) );
-  mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X + 5, "%c", '*' );
-  mvwprintw( scr -> m_Window, m_Coords . m_Y + 2, m_Coords . m_X, "%s", "******" );
+  mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X + 4, "%c", '*' );
+  mvwprintw( scr -> m_Window, m_Coords . m_Y + 2, m_Coords . m_X, "%s", "*****" );
   wattroff( scr -> m_Window, COLOR_PAIR ( c ) );
 }

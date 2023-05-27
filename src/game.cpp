@@ -16,9 +16,13 @@ void CGame::loop ( void )
   
     for ( const auto & it : m_Players )
       orders . push_back ( it -> makeMove( m_Map ) );
-
+ 
+    m_Map . clearRoads();  
+    
     for ( const auto & it : orders )
-      m_Map . attack( it . first, it . second );
+      m_Map . fillRoad ( it . first, it . second );
+
+    m_Map . attack();
 
     m_Map . createAnts();
     m_Map . print();

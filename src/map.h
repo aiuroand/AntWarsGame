@@ -38,9 +38,12 @@ class CMap
     void setColorOfId ( int id, char color );
     int getAntsOfId ( int id );
     int getAttackOfId ( int id );
+    CAntHill * getAntHillOfId ( int id );
     void setAntsOfId ( int id, int amount );
     void createAnts ( void );
-    void attack ( const int from, const int to );
+    void fillRoad ( const int from, const int to );
+    void clearRoads ( void );
+    void attack ( void );
     char checkWinner ( void );
     int getStrongest ( char c );
     int getWeakest ( char c );

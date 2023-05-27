@@ -26,7 +26,7 @@ class CAntHill: public CMapElem
   {
     return coord . m_X >= m_Coords . m_X 
         && coord . m_Y >= m_Coords . m_Y
-        && coord . m_X <= m_Coords . m_X + 5
+        && coord . m_X <= m_Coords . m_X + 4
         && coord . m_Y <= m_Coords . m_Y + 2;
   }
   int getId ( void ) const 
