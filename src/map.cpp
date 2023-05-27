@@ -60,6 +60,11 @@ void CMap::readMap ( std::string & mapDir )
           default:
             break;
         }
+  for ( const auto & it : m_AntHill )
+    for ( const auto & it1 : m_AntHill )
+      if ( it != it1 )
+        createRoad( it -> getId(), it1 -> getId(), map );
+  
 }  
   
 void CMap::print ( void )
@@ -119,6 +124,14 @@ char CMap::getColorOfId ( int id )
   return 'n';
 }
 
+CCoords CMap::getCoordsOfId ( int id )
+{
+  for ( const auto & it : m_AntHill )
+    if (  it -> getId() == id )
+      return it -> getCoords();
+  return CCoords ( -1, -1 );
+}
+
 void CMap::setColorOfId ( int id, char color )
 {
   for ( const auto & it : m_AntHill )
@@ -170,7 +183,13 @@ int CMap::getWeakest ( char c )
 
 void CMap::attack ( const int from, const int to )
 {
-  // std::vector < CCoords > path = getPath( from, to );
+  for ( const auto & it : m_Roads )
+    if (  ( ( it . m_First == from && it . m_Second == to )
+         || ( it . m_First == to && it . m_Second == from ) )) 
+    it . print( m_Screen );
+    wrefresh ( m_Screen -> m_Window );
+  std::this_thread::sleep_for( std::chrono::seconds( 2 ) );
+  
   int f = getAttackOfId ( from );
   add ( from, -f );
 
@@ -196,4 +215,77 @@ int CMap::countHills ( char c )
     if ( it -> getColor() == c )
       i++;
   return i;
+}
+
+void CMap::createRoad( int from,
+                       int to, 
+                       std::vector<std::vector< std::pair <char, bool> > > & map )
+{
+  for ( const auto & it : m_Roads )
+    if ( ( it . m_First == from && it . m_Second == to )
+      || ( it . m_First == to && it . m_Second == from ) )
+        return;
+  std::map < CCoords, CCoords > way;
+  std::queue < CCoords > q;
+  CRoad road ( from, to );
+  CCoords firstCoords = getCoordsOfId ( from );
+  CCoords secondCoords = getCoordsOfId ( to );
+
+  q . push ( firstCoords );
+
+  for ( int i = 0; i < m_Height; ++i )
+    for ( int j = 0; j < m_Width; ++j )
+      if ( map[i][j] . first == ' ' )
+        map[i][j] . second = false;
+      else
+        map[i][j] . second = true;
+
+  map[ firstCoords . m_Y ][ firstCoords . m_X ] . second = false;
+  map[ secondCoords . m_Y ][ secondCoords . m_X ] . second = false;
+
+  while ( !q . empty() )
+  {
+    CCoords newCoords = q . front ();
+    q . pop();
+    map[ newCoords . m_Y ][ newCoords . m_X ] . second = true;
+
+    if ( newCoords == secondCoords )
+      break;
+
+    if ( map[ newCoords . m_Y - 1 ][ newCoords . m_X ] . second == false )
+    {
+      q . push ( CCoords( newCoords . m_X, newCoords . m_Y - 1 ) );
+      way . insert ( std::make_pair ( CCoords( newCoords . m_X, newCoords . m_Y - 1 ), newCoords ) );
+    }
+    if ( map[ newCoords . m_Y + 1 ][ newCoords . m_X ] . second == false )
+    {
+      q . push ( CCoords( newCoords . m_X, newCoords . m_Y + 1 ) );
+      way . insert ( std::make_pair ( CCoords( newCoords . m_X, newCoords . m_Y + 1 ), newCoords ) );
+    }
+    if ( map[ newCoords . m_Y ][ newCoords . m_X + 1 ] . second == false )
+    {
+      q . push ( CCoords( newCoords . m_X + 1, newCoords . m_Y ) );
+      way . insert ( std::make_pair ( CCoords( newCoords . m_X + 1, newCoords . m_Y ), newCoords ) );
+    }
+    if ( map[ newCoords . m_Y ][ newCoords . m_X - 1 ] . second == false )
+    {
+      q . push ( CCoords( newCoords . m_X - 1, newCoords . m_Y ) );
+      way . insert ( std::make_pair ( CCoords( newCoords . m_X - 1, newCoords . m_Y ), newCoords ) );
+    }
+  }
+
+  road . m_Exists = q . empty() ? false : true;
+  
+  CCoords newCoords = secondCoords;
+  if ( road . m_Exists == true )
+    while ( newCoords != firstCoords )
+    {
+      std::pair < CCoords, CCoords > c = (* way . find ( newCoords ) );
+      newCoords = c . second;
+      if ( c . first != secondCoords )
+        road . m_Vec . push_back ( c . first );
+    }
+
+  m_Roads . push_back ( road );
+
 }

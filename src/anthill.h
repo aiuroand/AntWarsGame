@@ -41,6 +41,10 @@ class CAntHill: public CMapElem
   {
     return m_Color;
   }
+  CCoords getCoords ( void ) const
+  {
+    return m_Coords;
+  }
   int getAttack( void ) const
   {
     return m_Attack <= m_Ants ? m_Attack : m_Ants;

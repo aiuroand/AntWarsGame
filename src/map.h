@@ -6,6 +6,10 @@
 #include <vector>
 #include <list>
 #include <set>
+#include <map>
+#include <queue>
+#include <chrono>
+#include <thread>
 
 #include "mapelement.h"
 #include "screen.h"
@@ -13,6 +17,7 @@
 #include "wall.h"
 #include "void.h"
 #include "anthill.h"
+#include "road.h"
 
 
 class CMap
@@ -40,6 +45,8 @@ class CMap
     int getStrongest ( char c );
     int getWeakest ( char c );
     int countHills ( char c );
+    void createRoad( int from, int to, std::vector<std::vector< std::pair <char, bool> > > & map );
+    CCoords getCoordsOfId ( int id );
 
     std::set < char > m_Players;
 
@@ -49,6 +56,7 @@ class CMap
     int m_Width;
     std::list< CMapElem * > m_ElementList;
     std::list< CAntHill * > m_AntHill;
+    std::list< CRoad > m_Roads;
     CScreen * m_Screen;
 };
 #endif //MAP_H

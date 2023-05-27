@@ -11,6 +11,6 @@ std::pair < int, int > CBot::makeMove ( CMap & map )
 
   mvwprintw( m_Screen -> m_Window, 2, 44, "%d", second );
   wrefresh ( m_Screen -> m_Window );
-
+    
   return std::make_pair( first, second );
 }
