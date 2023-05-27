@@ -1,0 +1,3 @@
+Combat Spirit
+Increases amount of ants per attack by 2.
+2   

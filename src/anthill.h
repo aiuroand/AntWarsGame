@@ -24,6 +24,7 @@ class CAntHill: public CMapElem
        m_Ants ( ants ),
        m_Id ( id ),
        m_Attack ( ANTS_ATTACK ),
+       m_Armor ( 0 ),
        m_Max ( ANTS_MAX )
     {}
   void print ( CScreen * scr ) override;
@@ -54,6 +55,10 @@ class CAntHill: public CMapElem
   {
     return m_Attack <= m_Ants ? m_Attack : m_Ants;
   }
+  int getArmor ( void ) const
+  {
+    return m_Armor;
+  }
   void setColor( char c )
   {
     m_Color = c;
@@ -62,18 +67,18 @@ class CAntHill: public CMapElem
   {
     m_Ants = amount;
   }
+  void setAttack ( int amount )
+  {
+    m_Attack = amount;
+  }
   void add ( int amount )
   {
     if ( m_Ants + amount < m_Max ) 
       m_Ants += amount;
     else 
       m_Ants = m_Max;
-    // if ( amount > 0
-    //   && m_Ants == 0 )
-    // {
-    //   m_Color = 'w';
-    //   m_Owner = 'n';
-    // }
+    if ( m_Ants < 0 )
+      m_Ants += m_Armor;
   }
   void createAnts ( void )
   {
@@ -85,6 +90,7 @@ class CAntHill: public CMapElem
     int m_Ants;
     int m_Id;
     int m_Attack;
+    int m_Armor;
     int m_Max;
 };
 #endif // ANTHILL_H

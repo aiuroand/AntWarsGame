@@ -24,7 +24,7 @@ void CLoop::loop ( void )
         i++;
       }
       std::string newStr( str );
-      m_Game = new CGame ( m_Maps + "/" + newStr, m_Screen );
+      m_Game = new CGame ( 1, m_Maps + "/" + newStr, m_Saves, m_Talents, m_Screen );
       m_Game -> loop();
       m_Status = e_Menu;
     }

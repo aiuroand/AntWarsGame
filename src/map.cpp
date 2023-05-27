@@ -119,6 +119,15 @@ int CMap::getAttackOfId ( int id )
   return -1;
 }
 
+int CMap::getArmorOfId ( int id )
+{
+  for ( const auto & it : m_AntHill )
+    if (  it -> getId() == id )
+      return it -> getArmor();
+  return -1;
+}
+
+
 char CMap::getColorOfId ( int id )
 {
   for ( const auto & it : m_AntHill )
@@ -268,11 +277,11 @@ void CMap::attack ( void )
           if ( i == main_it . m_VecAnts . size() - 2 )
           {
             if ( getColorOfId ( main_it . m_First ) == getColorOfId ( main_it . m_Second ) )
-              add ( main_it . m_Second, main_it . m_VecAnts[ 0 ] . first  );
+              add ( main_it . m_Second, main_it . m_VecAnts[ 0 ] . first );
             else
             {
               add ( main_it . m_Second, -main_it . m_VecAnts[ 0 ] . first  );
-              if ( getAttackOfId ( main_it . m_Second ) == 0 )
+              if ( getAntsOfId ( main_it . m_Second ) == 0 )
                 setColorOfId ( main_it . m_Second, 'w' );
             }
             if ( getAntsOfId ( main_it . m_Second ) < 0 )
@@ -325,7 +334,7 @@ void CMap::attack ( void )
             else
             {
               add ( main_it . m_First, -main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . first  );
-              if ( getAttackOfId ( main_it . m_First ) == 0 )
+              if ( getAntsOfId ( main_it . m_First ) == 0 )
                 setColorOfId ( main_it . m_First, 'w' );
             }
             if ( getAntsOfId ( main_it . m_First ) < 0 )
@@ -448,4 +457,13 @@ void CMap::createRoad( int from,
   for ( size_t i = 0; i < road . m_Vec . size(); ++i )
     road . m_VecAnts . push_back ( std::make_pair ( 0, 'n' ) );
   m_Roads . push_back ( road );
+}
+
+void CMap::addAntsAttackToColor ( char c, int amount )
+{
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() == c )
+      it -> setAttack ( amount );
+  
+
 }

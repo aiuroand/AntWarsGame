@@ -15,6 +15,12 @@ class CBot: public CPlayer
       m_Screen ( screen )
     {};
     std::pair < int, int > makeMove ( CMap & map ) override;
+    void selectTalent (  CMap & map, std::list < CTalent * > & t ) override;
+    void activateTalents ( char c, CMap & map ) override
+    {
+      for ( const auto & it : m_Talents )
+        it -> activate( c, map );
+    }
   private:
     CScreen * m_Screen;
 };

@@ -38,6 +38,7 @@ class CMap
     void setColorOfId ( int id, char color );
     int getAntsOfId ( int id );
     int getAttackOfId ( int id );
+    int getArmorOfId ( int id );
     CAntHill * getAntHillOfId ( int id );
     void setAntsOfId ( int id, int amount );
     void createAnts ( void );
@@ -48,6 +49,15 @@ class CMap
     int getStrongest ( char c );
     int getWeakest ( char c );
     int countHills ( char c );
+    void addAntsAttackToColor ( char c, int amount );
+    int getHeight( void ) const
+    {
+      return m_Height;
+    }
+    int getWidth( void ) const
+    {
+      return m_Width;
+    }
     void createRoad( int from, int to, std::vector<std::vector< std::pair <char, bool> > > & map );
     CCoords getCoordsOfId ( int id );
 

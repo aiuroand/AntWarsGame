@@ -14,3 +14,8 @@ std::pair < int, int > CBot::makeMove ( CMap & map )
     
   return std::make_pair( first, second );
 }
+
+void CBot::selectTalent (  CMap & map, std::list < CTalent * > & t )
+{
+
+}
