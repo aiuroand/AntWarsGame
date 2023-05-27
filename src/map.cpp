@@ -49,13 +49,12 @@ void CMap::readMap ( std::string & mapDir )
               for ( int k1 = 0; k1 < 3; k1++ )
                 map[i + k1][j + k] . second = true;
             m_AntHill . push_back ( new CAntHill( CCoords ( j, i ),
-                                          map[i+1][j+1] . first,
                                           map[i+1][j+2] . first,
                                           (int)(map[i+1][j+3] . first - 48) * 10 + (int)(map[i+1][j+4] . first - 48),
                                           map[i+1][j] . first - 48 ) );
-            if ( map[i+1][j+1] . first == 'P' ) 
+            if ( map[i+1][j+2] . first == 'g' )
               m_Players . insert ( map[i+1][j+2] . first );
-            else if ( map[i+1][j+1] . first == 'B' )
+            else if ( map[i+1][j+2] . first != 'g' )
               m_Players . insert ( map[i+1][j+2] . first );
             break;
           default:
@@ -130,7 +129,8 @@ void CMap::setColorOfId ( int id, char color )
 void CMap::createAnts ( void )
 {
   for ( const auto & it : m_AntHill )
-    it -> createAnts();
+    if ( it -> getColor() != 'w' )
+      it -> createAnts();
 }
 
 char CMap::checkWinner ( void )
@@ -189,7 +189,11 @@ void CMap::attack ( const int from, const int to )
   }
 }
 
-std::vector < CCoords > CMap::getPath( int from, int to )
+int CMap::countHills ( char c )
 {
-
+  int i = 0;
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() == c )
+      i++;
+  return i;
 }

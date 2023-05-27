@@ -39,7 +39,7 @@ class CMap
     char checkWinner ( void );
     int getStrongest ( char c );
     int getWeakest ( char c );
-    std::vector < CCoords > getPath ( int from, int to );
+    int countHills ( char c );
 
     std::set < char > m_Players;
 

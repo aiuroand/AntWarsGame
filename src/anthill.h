@@ -12,13 +12,11 @@ class CAntHill: public CMapElem
 {
   public:
       CAntHill ( CCoords coord,
-                 int owner,
                  char color,
                  int ants,
                  int id )
-     : CMapElem ( owner, coord ),
+     : CMapElem ( color, coord ),
        m_Ants ( ants ),
-       m_Color ( color ),
        m_Id ( id ),
        m_Attack ( ANTS_ATTACK ),
        m_Max ( ANTS_MAX )
@@ -76,7 +74,6 @@ class CAntHill: public CMapElem
   }
   private:
     int m_Ants;
-    char m_Color; 
     int m_Id;
     int m_Attack;
     int m_Max;

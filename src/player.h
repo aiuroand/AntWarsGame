@@ -9,6 +9,7 @@ class CPlayer
     CPlayer ( char color )
     : m_Color ( color )
     {};
+    virtual ~CPlayer( void ) = default;
     virtual std::pair < int, int > makeMove ( CMap & map ) = 0; 
     char getColor ( void ) const 
     {

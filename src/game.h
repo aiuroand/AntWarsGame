@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 #include "map.h"
+#include <set>
 #include "screen.h"
 #include "player.h"
 #include "human.h"
@@ -19,6 +20,7 @@ class CGame
   {}
     
     void loop ( void ); 
+    void removeDead( void );
   private:
     CMap m_Map;
     CScreen * m_Screen;
