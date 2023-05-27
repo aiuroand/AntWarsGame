@@ -225,6 +225,11 @@ void CMap::attack ( void )
   {  
     if ( !main_it . m_FirstUsed && !main_it . m_SecondUsed )
       continue;    
+    if ( main_it . m_SecondUsed && main_it . m_VecAnts[ 0 ] . second != getColorOfId ( main_it . m_Second ) )
+      continue;    
+    if ( main_it . m_FirstUsed && main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . second != getColorOfId ( main_it . m_First ) )
+      continue;    
+
     for ( size_t i = 0; i < main_it . m_VecAnts . size() - 1; ++i )
     {
       if ( main_it . m_FirstUsed )

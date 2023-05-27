@@ -23,7 +23,6 @@ void CGame::loop ( void )
       m_Map . fillRoad ( it . first, it . second );
 
     m_Map . attack();
-
     m_Map . createAnts();
     m_Map . print();
     removeDead();
