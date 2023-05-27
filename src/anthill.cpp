@@ -1,15 +1,21 @@
 #include "anthill.h"
 
+#define GREEN 1
+#define WHITE 2
+#define RED 3
+#define MAGENTA 4
 
 void CAntHill::print ( CScreen * scr )
 {
   int c;
   if ( m_Color == 'g' )
-    c = 1;
+    c = GREEN;
   else if ( m_Color == 'w' )
-    c = 2;
+    c = WHITE;
   else if ( m_Color == 'r' )
-    c = 3;
+    c = RED;
+  else if ( m_Color == 'm' )
+    c = MAGENTA;
     
   wattron( scr -> m_Window, COLOR_PAIR ( c ) );
   mvwprintw( scr -> m_Window, m_Coords . m_Y, m_Coords . m_X, "%s", "*****" );

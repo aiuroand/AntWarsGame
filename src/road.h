@@ -1,10 +1,16 @@
 #ifndef ROAD_H
 #define ROAD_H
 
+#define GREEN 1
+#define WHITE 2
+#define RED 3
+#define MAGENTA 4
+
 #include "mapelement.h"
 #include "screen.h"
 #include <vector>
 #include "coords.h"
+
 
 class CRoad
 {
@@ -26,9 +32,11 @@ class CRoad
         {
           int c;
           if (      m_VecAnts[i] . second == 'g' )
-            c = 1;
+            c = GREEN;
           else if ( m_VecAnts[i] . second == 'r' )
-            c = 3;
+            c = RED;
+          else if ( m_VecAnts[i] . second == 'm' )
+            c = MAGENTA;
 
           wattron ( scr -> m_Window, COLOR_PAIR ( c ) );
           mvwprintw ( scr -> m_Window, m_Vec[i] . m_Y, m_Vec[i] . m_X, "%d", m_VecAnts[i] . first );

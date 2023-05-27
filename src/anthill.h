@@ -4,6 +4,11 @@
 #define ANTS_MOVE 1
 #define ANTS_ATTACK 3
 
+#define GREEN 1
+#define WHITE 2
+#define RED 3
+#define YELLOW 4
+
 #include "mapelement.h"
 #include "screen.h"
 #include "coords.h"

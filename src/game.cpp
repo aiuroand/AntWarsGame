@@ -7,8 +7,9 @@ void CGame::loop ( void )
   for ( const auto & it : m_Map . m_Players )
     if ( it == 'g' ) 
       m_Players . push_back( new CHuman ( it, m_Screen ) );
-    else if ( it == 'r' )
+    else if ( it != 'g' && it != 'w' )
       m_Players . push_back ( new CBot ( it, m_Screen ) );
+      
 
   while ( 1 )
   {
@@ -23,9 +24,11 @@ void CGame::loop ( void )
       m_Map . fillRoad ( it . first, it . second );
 
     m_Map . attack();
+
     m_Map . createAnts();
     m_Map . print();
     removeDead();
+    
     std::this_thread::sleep_for( std::chrono::seconds( 1 ) );
     char c;
     if ( ( c = m_Map . checkWinner() ) != 'n' )
