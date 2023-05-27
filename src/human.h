@@ -17,11 +17,6 @@ class CHuman : public CPlayer
     std::pair < int, int > makeMove ( CMap & map ) override;
     CCoords readMouse ( void );
     void selectTalent ( CMap & map, std::list < CTalent * > & t ) override;
-    void activateTalents ( char c, CMap & map ) override
-    {
-      for ( const auto & it : m_Talents )
-        it -> activate( c, map );
-    }
   private:
     CScreen * m_Screen;
 };

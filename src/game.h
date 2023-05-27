@@ -10,8 +10,10 @@
 #include "bot.h"
 #include "map.h"
 #include "talent.h"
-#include "tier1.h"
 #include "moreants.h"
+#include "morearmor.h"
+#include "moremove.h"
+#include "moremax.h"
 
 class CGame
 {
@@ -40,6 +42,8 @@ class CGame
     CScreen * m_Screen;
     std::list < CPlayer * > m_Players;
     std::list < CTalent * > m_Tier1;
+    std::list < CTalent * > m_Tier2;
+    std::list < CTalent * > m_Tier3;
     int m_Tier1Time;
     int m_Tier2Time;
     int m_Tier3Time;

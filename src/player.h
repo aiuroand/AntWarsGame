@@ -11,13 +11,18 @@ class CPlayer
     : m_Color ( color )
     {};
     virtual ~CPlayer( void ) = default;
-    virtual std::pair < int, int > makeMove ( CMap & map ) = 0; 
-    virtual void selectTalent (  CMap & map, std::list < CTalent * > & t ) = 0;
-    virtual void activateTalents ( char c, CMap & map ) = 0;
     char getColor ( void ) const 
     {
       return m_Color;
     }
+    void activateTalents ( char c, CMap & map )
+    {
+      for ( const auto & it : m_Talents )
+        it -> activate( c, map );
+    }
+
+    virtual std::pair < int, int > makeMove ( CMap & map ) = 0; 
+    virtual void selectTalent (  CMap & map, std::list < CTalent * > & t ) = 0;
   protected:
     char m_Color;
     std::list < CTalent * > m_Talents;

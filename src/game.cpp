@@ -20,6 +20,14 @@ void CGame::loop ( void )
       for ( const auto & it : m_Players )
         it -> selectTalent ( m_Map, m_Tier1 );
     
+    if ( m_Round == m_Tier2Time )
+      for ( const auto & it : m_Players )
+        it -> selectTalent ( m_Map, m_Tier2 );
+        
+    if ( m_Round == m_Tier3Time )
+      for ( const auto & it : m_Players )
+        it -> selectTalent ( m_Map, m_Tier3 );
+    
     for ( const auto & it : m_Players )
       it -> activateTalents ( it -> getColor(), m_Map );
 
@@ -52,6 +60,7 @@ void CGame::loop ( void )
       std::this_thread::sleep_for( std::chrono::seconds( 5 ) );
       break;
     }
+    m_Map . deactivateAll();
     ++m_Round;
   }
 }
@@ -98,24 +107,41 @@ void CGame::readTalents( void )
   m_Tier3Time = (int) str3[0] - 48;
   ifs . close();
 
-
   ifs . open ( m_Talents + "/moreants.txt", std::ios::in );
   std::getline ( ifs, name );
   std::getline ( ifs, description );
   std::getline ( ifs, str1 );
   i = (int) str1[0] - 48;
-  m_Tier1 . push_back ( new CMoreAnts ( name, description, j ) );
+  m_Tier1 . push_back ( new CMoreAnts ( name, description, i ) );
   ifs . close();
 
-  ifs . open ( m_Talents + "/moreants.txt", std::ios::in );
+  ifs . open ( m_Talents + "/morearmor.txt", std::ios::in );
   std::getline ( ifs, name );
   std::getline ( ifs, description );
   std::getline ( ifs, str1 );
   i = (int) str1[0] - 48;
-  m_Tier1 . push_back ( new CMoreAnts ( name, description, j ) );
+  m_Tier1 . push_back ( new CMoreArmor ( name, description, i ) );
   ifs . close();
-  // amount = (int) amountStr[0] - 48;
-  // mvwprintw ( m_Screen -> m_Window, 1, 1, "%d", amount );
+
+  ifs . open ( m_Talents + "/moremax.txt", std::ios::in );
+  std::getline ( ifs, name );
+  std::getline ( ifs, description );
+  std::getline ( ifs, str1 );
+  i = (int) str1[0] - 48;
+  m_Tier2 . push_back ( new CMoreMax ( name, description, i ) );
+  ifs . close();
+
+  ifs . open ( m_Talents + "/moremove.txt", std::ios::in );
+  std::getline ( ifs, name );
+  std::getline ( ifs, description );
+  std::getline ( ifs, str1 );
+  i = (int) str1[0] - 48;
+  m_Tier2 . push_back ( new CMoreMove ( name, description, i ) );
+  ifs . close();
+
+
+  // int amount = (int) str1[0] - 48;
+  // mvwprintw ( m_Screen -> m_Window, 1, 1, "%d", i );
   // wrefresh ( m_Screen -> m_Window );
   // while ( 1)
   // {

@@ -3,6 +3,7 @@
 #define ANTS_MAX 10
 #define ANTS_MOVE 1
 #define ANTS_ATTACK 3
+#define ANTS_ARMOR 0
 
 #define GREEN 1
 #define WHITE 2
@@ -23,8 +24,9 @@ class CAntHill: public CMapElem
      : CMapElem ( color, coord ),
        m_Ants ( ants ),
        m_Id ( id ),
+       m_Move ( ANTS_MOVE ),
        m_Attack ( ANTS_ATTACK ),
-       m_Armor ( 0 ),
+       m_Armor ( ANTS_ARMOR ),
        m_Max ( ANTS_MAX )
     {}
   void print ( CScreen * scr ) override;
@@ -67,9 +69,21 @@ class CAntHill: public CMapElem
   {
     m_Ants = amount;
   }
-  void setAttack ( int amount )
+  void addAttack ( int amount )
   {
-    m_Attack = amount;
+    m_Attack += amount;
+  }
+  void addArmor ( int amount )
+  {
+    m_Armor += amount;
+  }
+  void addMax ( int amount )
+  {
+    m_Max += amount;
+  }
+  void addMove ( int amount )
+  {
+    m_Move += amount;
   }
   void add ( int amount )
   {
@@ -82,13 +96,21 @@ class CAntHill: public CMapElem
   }
   void createAnts ( void )
   {
-    m_Ants += ANTS_MOVE;
+    m_Ants += m_Move;
     if ( m_Ants > m_Max )
       m_Ants = m_Max;
+  }
+  void clearAntHill( void )
+  {
+    m_Move = ANTS_MOVE;
+    m_Attack = ANTS_ATTACK;
+    m_Armor = ANTS_ARMOR;
+    m_Max = ANTS_MAX;
   }
   private:
     int m_Ants;
     int m_Id;
+    int m_Move;
     int m_Attack;
     int m_Armor;
     int m_Max;

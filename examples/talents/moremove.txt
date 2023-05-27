@@ -1,0 +1,3 @@
+Following the rabbits foodsteps
+Increases amount of ants spawned per 1 move by 3.
+3

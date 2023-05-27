@@ -27,5 +27,6 @@ void CAntHill::print ( CScreen * scr )
   wattron( scr -> m_Window, COLOR_PAIR ( c ) );
   mvwprintw( scr -> m_Window, m_Coords . m_Y + 1, m_Coords . m_X + 4, "%c", '*' );
   mvwprintw( scr -> m_Window, m_Coords . m_Y + 2, m_Coords . m_X, "%s", "*****" );
+  mvwprintw( scr -> m_Window, m_Coords . m_Y + 3, m_Coords . m_X, "%d", m_Move );
   wattroff( scr -> m_Window, COLOR_PAIR ( c ) );
 }

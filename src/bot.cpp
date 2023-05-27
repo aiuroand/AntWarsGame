@@ -15,7 +15,9 @@ std::pair < int, int > CBot::makeMove ( CMap & map )
   return std::make_pair( first, second );
 }
 
-void CBot::selectTalent (  CMap & map, std::list < CTalent * > & t )
+void CBot::selectTalent ( CMap & map, std::list < CTalent * > & t )
 {
-
+  m_Talents . push_back ( rand () % 2 == 1 ? t . front() : t . back() );
+  mvwprintw ( m_Screen -> m_Window, 1, 1, "%zd", m_Talents . size() );
+  wrefresh( m_Screen -> m_Window );
 }

@@ -463,7 +463,32 @@ void CMap::addAntsAttackToColor ( char c, int amount )
 {
   for ( const auto & it : m_AntHill )
     if ( it -> getColor() == c )
-      it -> setAttack ( amount );
-  
+      it -> addAttack ( amount );
+}
 
+void CMap::addArmorToColor ( char c, int amount )
+{
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() == c )
+      it -> addArmor ( amount );
+}
+
+void CMap::addMoveToColor ( char c, int amount )
+{
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() == c )
+      it -> addMove ( amount );
+}
+
+void CMap::addMaxToColor ( char c, int amount )
+{
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() == c )
+      it -> addMax ( amount );
+}
+
+void CMap::deactivateAll ( void )
+{
+  for ( const auto & it : m_AntHill )
+    it -> clearAntHill();
 }

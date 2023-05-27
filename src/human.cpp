@@ -47,7 +47,7 @@ void CHuman::selectTalent ( CMap & map, std::list < CTalent * > & t )
   {
     CCoords mouseCoords = readMouse();
 
-    mvwprintw ( m_Screen -> m_Window, 1, 50, "%d %d", mouseCoords . m_X, mouseCoords . m_Y );
+    // mvwprintw ( m_Screen -> m_Window, 1, 50, "%d %d", mouseCoords . m_X, mouseCoords . m_Y );
 
     if ( mouseCoords . m_Y == 7 && mouseCoords . m_X >= 1 && mouseCoords . m_X <= 6  )
     {

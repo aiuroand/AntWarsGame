@@ -49,7 +49,11 @@ class CMap
     int getStrongest ( char c );
     int getWeakest ( char c );
     int countHills ( char c );
+    void deactivateAll ( void );
     void addAntsAttackToColor ( char c, int amount );
+    void addArmorToColor ( char c, int amount );
+    void addMoveToColor ( char c, int amount );
+    void addMaxToColor ( char c, int amount );
     int getHeight( void ) const
     {
       return m_Height;
