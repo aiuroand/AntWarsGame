@@ -1,0 +1,30 @@
+\doxysection{wall.\+h}
+\hypertarget{wall_8h_source}{}\label{wall_8h_source}\index{/home/aiuroand/PA2/semester/src/wall.h@{/home/aiuroand/PA2/semester/src/wall.h}}
+\mbox{\hyperlink{wall_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WALL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WALL\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mapelement_8h}{mapelement.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coords_8h}{coords.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{screen_8h}{screen.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCWall}{CWall}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCMapElem}{CMapElem}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classCWall_a06dbe9a88d169acbfa9a4787adfd4366}{CWall}}\ (\ \mbox{\hyperlink{classCCoords}{CCoords}}\ coord\ )}
+\DoxyCodeLine{00012\ \ \ \ :\ \mbox{\hyperlink{classCMapElem}{CMapElem}}\ (\ \textcolor{stringliteral}{'n'},\ coord\ )}
+\DoxyCodeLine{00013\ \ \ \ \{\}}
+\DoxyCodeLine{00014\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCWall_aa91873227e35487184f3e879b8e97fc5}{print}}\ (\ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ scr\ )\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{\ \ \ }\{}
+\DoxyCodeLine{00016\ \ \ \ \ \ scr\ -\/>\ screenPrint\ (\ \mbox{\hyperlink{classCMapElem_aab8b425518eb37a1dc0ad46e455c4ee7}{m\_Coords}},\ \textcolor{stringliteral}{"{}\#"{}}\ );}
+\DoxyCodeLine{00017\ \ \ \ \}}
+\DoxyCodeLine{00018\ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classCWall_a4763edaba7cd83018b8bb7e976786b8c}{get}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const\ override\ }}
+\DoxyCodeLine{00019\ \textcolor{keyword}{\ \ \ }\{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\#'};}
+\DoxyCodeLine{00021\ \ \ \ \}}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WALL\_H}}
+
+\end{DoxyCode}

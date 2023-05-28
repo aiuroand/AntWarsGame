@@ -1,0 +1,377 @@
+\doxysection{CMap Class Reference}
+\hypertarget{classCMap}{}\label{classCMap}\index{CMap@{CMap}}
+
+
+{\ttfamily \#include $<$map.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCMap_af0675d2db25a88ba9d2c527432ea99cc}{CMap}} (std\+::string map\+Dir, \mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}scr)
+\item 
+\mbox{\hyperlink{classCMap_ac80e14d0a381ae24685b69a1eaff8bc5}{\texorpdfstring{$\sim$}{\string~}\+CMap}} (void)
+\item 
+int \mbox{\hyperlink{classCMap_a0052b6f5c0714c9bb529c84454e08320}{get\+Ant\+Hill}} (\mbox{\hyperlink{classCCoords}{CCoords}} coords)
+\item 
+void \mbox{\hyperlink{classCMap_a22f07dc5c8850c68e23f8542b6aa9ab3}{print}} (void)
+\item 
+void \mbox{\hyperlink{classCMap_aad00f0842f999591e5289d6fd826d81e}{add}} (int id, int amount)
+\item 
+char \mbox{\hyperlink{classCMap_ae6c3b15edc093c5994a85c5d0589b532}{get\+Color\+Of\+Id}} (int id)
+\item 
+void \mbox{\hyperlink{classCMap_a4f6acb9e5a990ab422a8471d0b95630c}{set\+Color\+Of\+Id}} (int id, char color)
+\item 
+int \mbox{\hyperlink{classCMap_a0f02c5f9808f8762945a3ffb6b712537}{get\+Ants\+Of\+Id}} (int id)
+\item 
+int \mbox{\hyperlink{classCMap_abfd677a61d6872a1908d50eefc111289}{get\+Attack\+Of\+Id}} (int id)
+\item 
+int \mbox{\hyperlink{classCMap_a4339e588b958989baf21f8607251423f}{get\+Armor\+Of\+Id}} (int id)
+\item 
+\mbox{\hyperlink{classCAntHill}{CAnt\+Hill}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCMap_a55f51bab45d0f7491ae214ed5244effc}{get\+Ant\+Hill\+Of\+Id}} (int id)
+\item 
+void \mbox{\hyperlink{classCMap_ae195ea511b4e44cbd9510560b928a5e7}{set\+Ants\+Of\+Id}} (int id, int amount)
+\item 
+void \mbox{\hyperlink{classCMap_a782962dbe188ce1f5fda9c16f6f1a589}{create\+Ants}} (void)
+\item 
+void \mbox{\hyperlink{classCMap_ae8f4a37c142e9a883b0dfbc40f4c2807}{fill\+Road}} (const int from, const int to)
+\item 
+void \mbox{\hyperlink{classCMap_ac1c5a04e787500f2f654d2524763b938}{clear\+Roads}} (void)
+\item 
+void \mbox{\hyperlink{classCMap_a51ca8ce787385d0e9130f3497de2d0d8}{attack}} (void)
+\item 
+char \mbox{\hyperlink{classCMap_a3c1b8b9257c1e85687bc90bc101a1ea3}{check\+Winner}} (void)
+\item 
+int \mbox{\hyperlink{classCMap_a2b19431922cb46a17875332a91bdfd80}{get\+Strongest}} (char c)
+\item 
+int \mbox{\hyperlink{classCMap_af85bf9b5f889d557e5677ac91f196413}{get\+Weakest}} (char c)
+\item 
+int \mbox{\hyperlink{classCMap_ad88fe1ca64f273e6fd5080c9e5b9d125}{count\+Hills}} (char c)
+\item 
+void \mbox{\hyperlink{classCMap_a1d47c3ff0742f93eea0857bebad133af}{deactivate\+All}} (void)
+\item 
+void \mbox{\hyperlink{classCMap_a825b8f79d34a083b6c5053d5a635b1ea}{add\+Ants\+Attack\+To\+Color}} (char c, int amount)
+\item 
+void \mbox{\hyperlink{classCMap_a5c1f794cfbefdf9a40957e4574a9851a}{add\+Armor\+To\+Color}} (char c, int amount)
+\item 
+void \mbox{\hyperlink{classCMap_a1d9334360e8ed62caf0b2c7346a2d4a3}{add\+Move\+To\+Color}} (char c, int amount)
+\item 
+void \mbox{\hyperlink{classCMap_a615ad2d4082700902877e9f03ae78c03}{add\+Max\+To\+Color}} (char c, int amount)
+\item 
+void \mbox{\hyperlink{classCMap_a72596e7e0d9478269dd9f54a3f5d6034}{random\+Max}} (char c)
+\item 
+void \mbox{\hyperlink{classCMap_a1bbc6d8cb17c714521bf0e09889852ca}{random\+Conquer}} (char c)
+\item 
+void \mbox{\hyperlink{classCMap_a13a5db757d8d0acdcca41bdd1c294b95}{save}} (std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ char, bool $>$ $>$ $>$ \&map)
+\item 
+int \mbox{\hyperlink{classCMap_a0c4437757828004237a22707a1d6aa27}{get\+Height}} (void) const
+\item 
+int \mbox{\hyperlink{classCMap_ad8e46bc0a07701b5bfdaf090e11a758d}{get\+Width}} (void) const
+\item 
+int \mbox{\hyperlink{classCMap_aa14280e0c3778150c779f0da8963ade0}{get\+Round}} (void) const
+\item 
+void \mbox{\hyperlink{classCMap_a142aa504536e4d7a80643ca0518bef37}{set\+Round}} (int i)
+\item 
+void \mbox{\hyperlink{classCMap_a9c43be7845111b5c818aeb408d3ff4ee}{create\+Road}} (int from, int to, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ char, bool $>$ $>$ $>$ \&map)
+\item 
+\mbox{\hyperlink{classCCoords}{CCoords}} \mbox{\hyperlink{classCMap_a233760d2bb240ed3620fae49fbbf72a8}{get\+Coords\+Of\+Id}} (int id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::set$<$ std\+::pair$<$ char, unsigned int $>$ $>$ \mbox{\hyperlink{classCMap_af289228cd53c6de009ef86eaae78be4d}{m\+\_\+\+Players}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCMap_ae0cbaa4faeb64321159f57d1f40e0bd0}{read\+Map}} (std\+::string \&map\+Dir)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classCMap_ac7f010b0102ceca812cbf9e1194a30e0}{m\+\_\+\+Height}}
+\item 
+int \mbox{\hyperlink{classCMap_a0419d4b784b945de2bb2ff15ed452b01}{m\+\_\+\+Width}}
+\item 
+int \mbox{\hyperlink{classCMap_a79c96d51cd9e2c6d86af01835efaeb18}{m\+\_\+\+Round}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classCMapElem}{CMap\+Elem}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCMap_ad14baa8baa6a3005d6046de2581a24a2}{m\+\_\+\+Element\+List}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classCAntHill}{CAnt\+Hill}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCMap_a978a8c3ce43b7d63d87252aca13c3644}{m\+\_\+\+Ant\+Hill}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classCRoad}{CRoad}} $>$ \mbox{\hyperlink{classCMap_a9d6234c99d4b4828353401d2d2853927}{m\+\_\+\+Roads}}
+\item 
+\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCMap_aeb11b85b3f26c48ec356670a2dd2ff18}{m\+\_\+\+Screen}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCMap_af0675d2db25a88ba9d2c527432ea99cc}\label{classCMap_af0675d2db25a88ba9d2c527432ea99cc} 
+\index{CMap@{CMap}!CMap@{CMap}}
+\index{CMap@{CMap}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{CMap()}{CMap()}}
+{\footnotesize\ttfamily CMap\+::\+CMap (\begin{DoxyParamCaption}\item[{std\+::string}]{map\+Dir,  }\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{scr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCMap_ac80e14d0a381ae24685b69a1eaff8bc5}\label{classCMap_ac80e14d0a381ae24685b69a1eaff8bc5} 
+\index{CMap@{CMap}!````~CMap@{\texorpdfstring{$\sim$}{\string~}CMap}}
+\index{````~CMap@{\texorpdfstring{$\sim$}{\string~}CMap}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CMap()}{\string~CMap()}}
+{\footnotesize\ttfamily CMap\+::\texorpdfstring{$\sim$}{\string~}\+CMap (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCMap_aad00f0842f999591e5289d6fd826d81e}\label{classCMap_aad00f0842f999591e5289d6fd826d81e} 
+\index{CMap@{CMap}!add@{add}}
+\index{add@{add}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void CMap\+::add (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a825b8f79d34a083b6c5053d5a635b1ea}\label{classCMap_a825b8f79d34a083b6c5053d5a635b1ea} 
+\index{CMap@{CMap}!addAntsAttackToColor@{addAntsAttackToColor}}
+\index{addAntsAttackToColor@{addAntsAttackToColor}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{addAntsAttackToColor()}{addAntsAttackToColor()}}
+{\footnotesize\ttfamily void CMap\+::add\+Ants\+Attack\+To\+Color (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a5c1f794cfbefdf9a40957e4574a9851a}\label{classCMap_a5c1f794cfbefdf9a40957e4574a9851a} 
+\index{CMap@{CMap}!addArmorToColor@{addArmorToColor}}
+\index{addArmorToColor@{addArmorToColor}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{addArmorToColor()}{addArmorToColor()}}
+{\footnotesize\ttfamily void CMap\+::add\+Armor\+To\+Color (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a615ad2d4082700902877e9f03ae78c03}\label{classCMap_a615ad2d4082700902877e9f03ae78c03} 
+\index{CMap@{CMap}!addMaxToColor@{addMaxToColor}}
+\index{addMaxToColor@{addMaxToColor}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{addMaxToColor()}{addMaxToColor()}}
+{\footnotesize\ttfamily void CMap\+::add\+Max\+To\+Color (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a1d9334360e8ed62caf0b2c7346a2d4a3}\label{classCMap_a1d9334360e8ed62caf0b2c7346a2d4a3} 
+\index{CMap@{CMap}!addMoveToColor@{addMoveToColor}}
+\index{addMoveToColor@{addMoveToColor}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{addMoveToColor()}{addMoveToColor()}}
+{\footnotesize\ttfamily void CMap\+::add\+Move\+To\+Color (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a51ca8ce787385d0e9130f3497de2d0d8}\label{classCMap_a51ca8ce787385d0e9130f3497de2d0d8} 
+\index{CMap@{CMap}!attack@{attack}}
+\index{attack@{attack}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily void CMap\+::attack (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a3c1b8b9257c1e85687bc90bc101a1ea3}\label{classCMap_a3c1b8b9257c1e85687bc90bc101a1ea3} 
+\index{CMap@{CMap}!checkWinner@{checkWinner}}
+\index{checkWinner@{checkWinner}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{checkWinner()}{checkWinner()}}
+{\footnotesize\ttfamily char CMap\+::check\+Winner (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_ac1c5a04e787500f2f654d2524763b938}\label{classCMap_ac1c5a04e787500f2f654d2524763b938} 
+\index{CMap@{CMap}!clearRoads@{clearRoads}}
+\index{clearRoads@{clearRoads}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{clearRoads()}{clearRoads()}}
+{\footnotesize\ttfamily void CMap\+::clear\+Roads (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_ad88fe1ca64f273e6fd5080c9e5b9d125}\label{classCMap_ad88fe1ca64f273e6fd5080c9e5b9d125} 
+\index{CMap@{CMap}!countHills@{countHills}}
+\index{countHills@{countHills}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{countHills()}{countHills()}}
+{\footnotesize\ttfamily int CMap\+::count\+Hills (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a782962dbe188ce1f5fda9c16f6f1a589}\label{classCMap_a782962dbe188ce1f5fda9c16f6f1a589} 
+\index{CMap@{CMap}!createAnts@{createAnts}}
+\index{createAnts@{createAnts}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{createAnts()}{createAnts()}}
+{\footnotesize\ttfamily void CMap\+::create\+Ants (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a9c43be7845111b5c818aeb408d3ff4ee}\label{classCMap_a9c43be7845111b5c818aeb408d3ff4ee} 
+\index{CMap@{CMap}!createRoad@{createRoad}}
+\index{createRoad@{createRoad}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{createRoad()}{createRoad()}}
+{\footnotesize\ttfamily void CMap\+::create\+Road (\begin{DoxyParamCaption}\item[{int}]{from,  }\item[{int}]{to,  }\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ char, bool $>$ $>$ $>$ \&}]{map }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a1d47c3ff0742f93eea0857bebad133af}\label{classCMap_a1d47c3ff0742f93eea0857bebad133af} 
+\index{CMap@{CMap}!deactivateAll@{deactivateAll}}
+\index{deactivateAll@{deactivateAll}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{deactivateAll()}{deactivateAll()}}
+{\footnotesize\ttfamily void CMap\+::deactivate\+All (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_ae8f4a37c142e9a883b0dfbc40f4c2807}\label{classCMap_ae8f4a37c142e9a883b0dfbc40f4c2807} 
+\index{CMap@{CMap}!fillRoad@{fillRoad}}
+\index{fillRoad@{fillRoad}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{fillRoad()}{fillRoad()}}
+{\footnotesize\ttfamily void CMap\+::fill\+Road (\begin{DoxyParamCaption}\item[{const int}]{from,  }\item[{const int}]{to }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a0052b6f5c0714c9bb529c84454e08320}\label{classCMap_a0052b6f5c0714c9bb529c84454e08320} 
+\index{CMap@{CMap}!getAntHill@{getAntHill}}
+\index{getAntHill@{getAntHill}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getAntHill()}{getAntHill()}}
+{\footnotesize\ttfamily int CMap\+::get\+Ant\+Hill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCCoords}{CCoords}}}]{coords }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a55f51bab45d0f7491ae214ed5244effc}\label{classCMap_a55f51bab45d0f7491ae214ed5244effc} 
+\index{CMap@{CMap}!getAntHillOfId@{getAntHillOfId}}
+\index{getAntHillOfId@{getAntHillOfId}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getAntHillOfId()}{getAntHillOfId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCAntHill}{CAnt\+Hill}} \texorpdfstring{$\ast$}{*} CMap\+::get\+Ant\+Hill\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a0f02c5f9808f8762945a3ffb6b712537}\label{classCMap_a0f02c5f9808f8762945a3ffb6b712537} 
+\index{CMap@{CMap}!getAntsOfId@{getAntsOfId}}
+\index{getAntsOfId@{getAntsOfId}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getAntsOfId()}{getAntsOfId()}}
+{\footnotesize\ttfamily int CMap\+::get\+Ants\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a4339e588b958989baf21f8607251423f}\label{classCMap_a4339e588b958989baf21f8607251423f} 
+\index{CMap@{CMap}!getArmorOfId@{getArmorOfId}}
+\index{getArmorOfId@{getArmorOfId}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getArmorOfId()}{getArmorOfId()}}
+{\footnotesize\ttfamily int CMap\+::get\+Armor\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_abfd677a61d6872a1908d50eefc111289}\label{classCMap_abfd677a61d6872a1908d50eefc111289} 
+\index{CMap@{CMap}!getAttackOfId@{getAttackOfId}}
+\index{getAttackOfId@{getAttackOfId}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getAttackOfId()}{getAttackOfId()}}
+{\footnotesize\ttfamily int CMap\+::get\+Attack\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_ae6c3b15edc093c5994a85c5d0589b532}\label{classCMap_ae6c3b15edc093c5994a85c5d0589b532} 
+\index{CMap@{CMap}!getColorOfId@{getColorOfId}}
+\index{getColorOfId@{getColorOfId}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getColorOfId()}{getColorOfId()}}
+{\footnotesize\ttfamily char CMap\+::get\+Color\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a233760d2bb240ed3620fae49fbbf72a8}\label{classCMap_a233760d2bb240ed3620fae49fbbf72a8} 
+\index{CMap@{CMap}!getCoordsOfId@{getCoordsOfId}}
+\index{getCoordsOfId@{getCoordsOfId}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getCoordsOfId()}{getCoordsOfId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCCoords}{CCoords}} CMap\+::get\+Coords\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a0c4437757828004237a22707a1d6aa27}\label{classCMap_a0c4437757828004237a22707a1d6aa27} 
+\index{CMap@{CMap}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int CMap\+::get\+Height (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCMap_aa14280e0c3778150c779f0da8963ade0}\label{classCMap_aa14280e0c3778150c779f0da8963ade0} 
+\index{CMap@{CMap}!getRound@{getRound}}
+\index{getRound@{getRound}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getRound()}{getRound()}}
+{\footnotesize\ttfamily int CMap\+::get\+Round (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCMap_a2b19431922cb46a17875332a91bdfd80}\label{classCMap_a2b19431922cb46a17875332a91bdfd80} 
+\index{CMap@{CMap}!getStrongest@{getStrongest}}
+\index{getStrongest@{getStrongest}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getStrongest()}{getStrongest()}}
+{\footnotesize\ttfamily int CMap\+::get\+Strongest (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_af85bf9b5f889d557e5677ac91f196413}\label{classCMap_af85bf9b5f889d557e5677ac91f196413} 
+\index{CMap@{CMap}!getWeakest@{getWeakest}}
+\index{getWeakest@{getWeakest}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getWeakest()}{getWeakest()}}
+{\footnotesize\ttfamily int CMap\+::get\+Weakest (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_ad8e46bc0a07701b5bfdaf090e11a758d}\label{classCMap_ad8e46bc0a07701b5bfdaf090e11a758d} 
+\index{CMap@{CMap}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily int CMap\+::get\+Width (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCMap_a22f07dc5c8850c68e23f8542b6aa9ab3}\label{classCMap_a22f07dc5c8850c68e23f8542b6aa9ab3} 
+\index{CMap@{CMap}!print@{print}}
+\index{print@{print}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void CMap\+::print (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a1bbc6d8cb17c714521bf0e09889852ca}\label{classCMap_a1bbc6d8cb17c714521bf0e09889852ca} 
+\index{CMap@{CMap}!randomConquer@{randomConquer}}
+\index{randomConquer@{randomConquer}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{randomConquer()}{randomConquer()}}
+{\footnotesize\ttfamily void CMap\+::random\+Conquer (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a72596e7e0d9478269dd9f54a3f5d6034}\label{classCMap_a72596e7e0d9478269dd9f54a3f5d6034} 
+\index{CMap@{CMap}!randomMax@{randomMax}}
+\index{randomMax@{randomMax}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{randomMax()}{randomMax()}}
+{\footnotesize\ttfamily void CMap\+::random\+Max (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_ae0cbaa4faeb64321159f57d1f40e0bd0}\label{classCMap_ae0cbaa4faeb64321159f57d1f40e0bd0} 
+\index{CMap@{CMap}!readMap@{readMap}}
+\index{readMap@{readMap}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{readMap()}{readMap()}}
+{\footnotesize\ttfamily void CMap\+::read\+Map (\begin{DoxyParamCaption}\item[{std\+::string \&}]{map\+Dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCMap_a13a5db757d8d0acdcca41bdd1c294b95}\label{classCMap_a13a5db757d8d0acdcca41bdd1c294b95} 
+\index{CMap@{CMap}!save@{save}}
+\index{save@{save}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void CMap\+::save (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ char, bool $>$ $>$ $>$ \&}]{map }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_ae195ea511b4e44cbd9510560b928a5e7}\label{classCMap_ae195ea511b4e44cbd9510560b928a5e7} 
+\index{CMap@{CMap}!setAntsOfId@{setAntsOfId}}
+\index{setAntsOfId@{setAntsOfId}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{setAntsOfId()}{setAntsOfId()}}
+{\footnotesize\ttfamily void CMap\+::set\+Ants\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{amount }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a4f6acb9e5a990ab422a8471d0b95630c}\label{classCMap_a4f6acb9e5a990ab422a8471d0b95630c} 
+\index{CMap@{CMap}!setColorOfId@{setColorOfId}}
+\index{setColorOfId@{setColorOfId}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{setColorOfId()}{setColorOfId()}}
+{\footnotesize\ttfamily void CMap\+::set\+Color\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{classCMap_a142aa504536e4d7a80643ca0518bef37}\label{classCMap_a142aa504536e4d7a80643ca0518bef37} 
+\index{CMap@{CMap}!setRound@{setRound}}
+\index{setRound@{setRound}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{setRound()}{setRound()}}
+{\footnotesize\ttfamily void CMap\+::set\+Round (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCMap_a978a8c3ce43b7d63d87252aca13c3644}\label{classCMap_a978a8c3ce43b7d63d87252aca13c3644} 
+\index{CMap@{CMap}!m\_AntHill@{m\_AntHill}}
+\index{m\_AntHill@{m\_AntHill}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{m\_AntHill}{m\_AntHill}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCAntHill}{CAnt\+Hill}} \texorpdfstring{$\ast$}{*} $>$ CMap\+::m\+\_\+\+Ant\+Hill\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCMap_ad14baa8baa6a3005d6046de2581a24a2}\label{classCMap_ad14baa8baa6a3005d6046de2581a24a2} 
+\index{CMap@{CMap}!m\_ElementList@{m\_ElementList}}
+\index{m\_ElementList@{m\_ElementList}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{m\_ElementList}{m\_ElementList}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCMapElem}{CMap\+Elem}} \texorpdfstring{$\ast$}{*} $>$ CMap\+::m\+\_\+\+Element\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCMap_ac7f010b0102ceca812cbf9e1194a30e0}\label{classCMap_ac7f010b0102ceca812cbf9e1194a30e0} 
+\index{CMap@{CMap}!m\_Height@{m\_Height}}
+\index{m\_Height@{m\_Height}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{m\_Height}{m\_Height}}
+{\footnotesize\ttfamily int CMap\+::m\+\_\+\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCMap_af289228cd53c6de009ef86eaae78be4d}\label{classCMap_af289228cd53c6de009ef86eaae78be4d} 
+\index{CMap@{CMap}!m\_Players@{m\_Players}}
+\index{m\_Players@{m\_Players}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{m\_Players}{m\_Players}}
+{\footnotesize\ttfamily std\+::set$<$ std\+::pair $<$ char, unsigned int $>$ $>$ CMap\+::m\+\_\+\+Players}
+
+\Hypertarget{classCMap_a9d6234c99d4b4828353401d2d2853927}\label{classCMap_a9d6234c99d4b4828353401d2d2853927} 
+\index{CMap@{CMap}!m\_Roads@{m\_Roads}}
+\index{m\_Roads@{m\_Roads}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{m\_Roads}{m\_Roads}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCRoad}{CRoad}} $>$ CMap\+::m\+\_\+\+Roads\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCMap_a79c96d51cd9e2c6d86af01835efaeb18}\label{classCMap_a79c96d51cd9e2c6d86af01835efaeb18} 
+\index{CMap@{CMap}!m\_Round@{m\_Round}}
+\index{m\_Round@{m\_Round}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{m\_Round}{m\_Round}}
+{\footnotesize\ttfamily int CMap\+::m\+\_\+\+Round\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCMap_aeb11b85b3f26c48ec356670a2dd2ff18}\label{classCMap_aeb11b85b3f26c48ec356670a2dd2ff18} 
+\index{CMap@{CMap}!m\_Screen@{m\_Screen}}
+\index{m\_Screen@{m\_Screen}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{m\_Screen}{m\_Screen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCScreen}{CScreen}}\texorpdfstring{$\ast$}{*} CMap\+::m\+\_\+\+Screen\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCMap_a0419d4b784b945de2bb2ff15ed452b01}\label{classCMap_a0419d4b784b945de2bb2ff15ed452b01} 
+\index{CMap@{CMap}!m\_Width@{m\_Width}}
+\index{m\_Width@{m\_Width}!CMap@{CMap}}
+\doxysubsubsection{\texorpdfstring{m\_Width}{m\_Width}}
+{\footnotesize\ttfamily int CMap\+::m\+\_\+\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{map_8h}{map.\+h}}\item 
+/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{map_8cpp}{map.\+cpp}}\end{DoxyCompactItemize}

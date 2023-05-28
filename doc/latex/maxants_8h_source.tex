@@ -1,0 +1,28 @@
+\doxysection{maxants.\+h}
+\hypertarget{maxants_8h_source}{}\label{maxants_8h_source}\index{/home/aiuroand/PA2/semester/src/maxants.h@{/home/aiuroand/PA2/semester/src/maxants.h}}
+\mbox{\hyperlink{maxants_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAXANTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAXANTS\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{talent_8h}{talent.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCMaxAnts}{CMaxAnts}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCTalent}{CTalent}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{classCMaxAnts_a881797890c160db4912023460bf76a26}{CMaxAnts}}\ (\ std::string\ name,}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ description,}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ chance\ )}
+\DoxyCodeLine{00011\ \ \ \ \ :\ \mbox{\hyperlink{classCTalent}{CTalent}}\ (\ name,\ description\ ),}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \mbox{\hyperlink{classCMaxAnts_aee2de194ab287c098b094e1b495961f8}{m\_Chance}}\ (\ chance\ )}
+\DoxyCodeLine{00013\ \ \ \ \ \{\}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMaxAnts_a23a2602feb60d7e8480fd2dc0e0b8e89}{activate}}\ (\ \textcolor{keywordtype}{char}\ c,\ \mbox{\hyperlink{classCMap}{CMap}}\ \&\ map\ )\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ rand()\ \%\ 10\ <=\ \mbox{\hyperlink{classCMaxAnts_aee2de194ab287c098b094e1b495961f8}{m\_Chance}}\ )}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ map\ .\ randomMax\ (\ c\ );}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMaxAnts_aee2de194ab287c098b094e1b495961f8}{m\_Chance}};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAXANTS\_H}}
+
+\end{DoxyCode}

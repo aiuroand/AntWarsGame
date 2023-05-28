@@ -17,17 +17,23 @@
 class CAntHill: public CMapElem
 {
   public:
-      CAntHill ( CCoords coord,
-                 char color,
-                 int ants,
-                 int id )
-     : CMapElem ( color, coord ),
-       m_Ants ( ants ),
-       m_Id ( id ),
-       m_Move ( ANTS_MOVE ),
-       m_Attack ( ANTS_ATTACK ),
-       m_Armor ( ANTS_ARMOR ),
-       m_Max ( ANTS_MAX )
+    /*! Constructor
+     *  @param coords of left top corner of anthill
+     *  @param color color of owner of anthill 
+     *  @param ants amount of ants in anthill when created
+     *  @param id id of anthill
+     */
+    CAntHill ( CCoords coords,
+               char color,
+               int ants,
+               int id )
+    : CMapElem ( color, coords ),
+      m_Ants ( ants ),
+      m_Id ( id ),
+      m_Move ( ANTS_MOVE ),
+      m_Attack ( ANTS_ATTACK ),
+      m_Armor ( ANTS_ARMOR ),
+      m_Max ( ANTS_MAX )
     {}
   void print ( CScreen * scr ) override;
   bool isInside ( CCoords coord ) const

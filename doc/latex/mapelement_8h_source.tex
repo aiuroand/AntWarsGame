@@ -1,0 +1,34 @@
+\doxysection{mapelement.\+h}
+\hypertarget{mapelement_8h_source}{}\label{mapelement_8h_source}\index{/home/aiuroand/PA2/semester/src/mapelement.h@{/home/aiuroand/PA2/semester/src/mapelement.h}}
+\mbox{\hyperlink{mapelement_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAP\_ELEM}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAP\_ELEM}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coords_8h}{coords.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{screen_8h}{screen.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCMapElem}{CMapElem}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{classCMapElem_a7f8218b8236c551a67e963e6bed737e0}{CMapElem}}(\ \textcolor{keywordtype}{char}\ c,}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCCoords}{CCoords}}\ coord\ )}
+\DoxyCodeLine{00011\ \ \ \ \ :\ \mbox{\hyperlink{classCMapElem_a41545b0c790ebbc3aab19d9e7fade5a6}{m\_Color}}\ (\ c\ ),\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \mbox{\hyperlink{classCMapElem_aab8b425518eb37a1dc0ad46e455c4ee7}{m\_Coords}}\ (\ coord\ )}
+\DoxyCodeLine{00013\ \ \ \ \ \{\};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCMapElem_adac685e656a9b1730a050e79314a84a9}{\string~CMapElem}}(\ \textcolor{keywordtype}{void}\ )\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMapElem_aa3ee545d82dfa7e12187777faaceabb7}{print}}\ (\ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ scr\ )\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classCMapElem_a2ddb93098fbc6c995dd9f4179bf281b9}{get}}\ (\ \textcolor{keywordtype}{void}\ )\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classCCoords}{CCoords}}\ \mbox{\hyperlink{classCMapElem_a784bfc7d766b315d4431c47a02ecdf3a}{getCoords}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCMapElem_aab8b425518eb37a1dc0ad46e455c4ee7}{m\_Coords}};}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{protected}:\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classCMapElem_a41545b0c790ebbc3aab19d9e7fade5a6}{m\_Color}};}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classCCoords}{CCoords}}\ \mbox{\hyperlink{classCMapElem_aab8b425518eb37a1dc0ad46e455c4ee7}{m\_Coords}};}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAP\_ELEM}}
+
+\end{DoxyCode}

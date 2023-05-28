@@ -1,0 +1,28 @@
+\doxysection{bot.\+h}
+\hypertarget{bot_8h_source}{}\label{bot_8h_source}\index{/home/aiuroand/PA2/semester/src/bot.h@{/home/aiuroand/PA2/semester/src/bot.h}}
+\mbox{\hyperlink{bot_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BOT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BOT\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{player.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coords_8h}{coords.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}ncurses.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{screen_8h}{screen.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{map_8h}{map.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCBot}{CBot}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCPlayer}{CPlayer}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classCBot_a7e4c8aea37de145d4d7a49db6fd38706}{CBot}}\ (\ \textcolor{keywordtype}{char}\ color,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ screen\ )}
+\DoxyCodeLine{00014\ \ \ \ \ :\ \mbox{\hyperlink{classCPlayer}{CPlayer}}(\ color\ ),}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \mbox{\hyperlink{classCBot_a999b13a677073530ca085c840d0eb791}{m\_Screen}}\ (\ screen\ )}
+\DoxyCodeLine{00016\ \ \ \ \ \{\};}
+\DoxyCodeLine{00017\ \ \ \ \ std::pair\ <\ int,\ int\ >\ \mbox{\hyperlink{classCBot_a8711d56fed9793d8b6eb920f2e8524bd}{makeMove}}\ (\ \mbox{\hyperlink{classCMap}{CMap}}\ \&\ map\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCBot_af3c87719e19e0dc30301d6ea2872b4e1}{selectTalent}}\ (\ \ \mbox{\hyperlink{classCMap}{CMap}}\ \&\ map,\ std::list\ <\ CTalent\ *\ >\ \&\ t\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ \mbox{\hyperlink{classCBot_a999b13a677073530ca085c840d0eb791}{m\_Screen}};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BOT\_H}}
+
+\end{DoxyCode}

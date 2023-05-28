@@ -1,0 +1,179 @@
+\doxysection{CGame Class Reference}
+\hypertarget{classCGame}{}\label{classCGame}\index{CGame@{CGame}}
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCGame_a9e5f698ad792f04caf88e74619e6caa2}{CGame}} (std\+::string name, std\+::string saves, std\+::string talents, \mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}scr)
+\item 
+\mbox{\hyperlink{classCGame_ab531879b501483da3c50568d22bc7817}{\texorpdfstring{$\sim$}{\string~}\+CGame}} (void)
+\item 
+void \mbox{\hyperlink{classCGame_ae58217c1b820c9e95abc5294e43b02a7}{loop}} (void)
+\item 
+void \mbox{\hyperlink{classCGame_ae7e2f2fb92bc660051b8813f5cd4cc81}{read\+Talents}} (void)
+\item 
+void \mbox{\hyperlink{classCGame_a6821a4ed2f977e4fa2b5c2c2a9d3addf}{set\+Players}} (void)
+\item 
+void \mbox{\hyperlink{classCGame_a5d424851d31e75394a4eb6d36faecb41}{remove\+Dead}} (void)
+\item 
+void \mbox{\hyperlink{classCGame_a9c529364158daa80da592a3eab949c37}{print\+Hud}} (void)
+\item 
+void \mbox{\hyperlink{classCGame_a99681f6adffe2935fc4b5d34e9117cdd}{save\+Game}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCMap}{CMap}} \mbox{\hyperlink{classCGame_a314ca8d0bf4c4f629603efea0cdb6f26}{m\+\_\+\+Map}}
+\item 
+std\+::string \mbox{\hyperlink{classCGame_ab3ded591d32510329d87223cbb9a6655}{m\+\_\+\+Saves}}
+\item 
+std\+::string \mbox{\hyperlink{classCGame_ac25c7654fb304968789a3305996ac91d}{m\+\_\+\+Talents}}
+\item 
+\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCGame_abf909dae820335cdcfecec5c2df3365f}{m\+\_\+\+Screen}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classCPlayer}{CPlayer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCGame_ad25e2e5e4573d317ea7a3ecd5ca9d257}{m\+\_\+\+Players}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCGame_a96b2ee91043bab863e5d3bff3157bf50}{m\+\_\+\+Tier1}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCGame_a0f0a9206260db2605d7f9639c16082fe}{m\+\_\+\+Tier2}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCGame_ad7c67b67cab4d479d04f1d00f03ea119}{m\+\_\+\+Tier3}}
+\item 
+int \mbox{\hyperlink{classCGame_a6aa137666e63220b1d7b27d604a88db2}{m\+\_\+\+Tier1\+Time}}
+\item 
+int \mbox{\hyperlink{classCGame_ad1ed2e0c9770780c8e1e668814d94ec2}{m\+\_\+\+Tier2\+Time}}
+\item 
+int \mbox{\hyperlink{classCGame_aa3e5c388867c9a40b5ca7b403d266972}{m\+\_\+\+Tier3\+Time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCGame_a9e5f698ad792f04caf88e74619e6caa2}\label{classCGame_a9e5f698ad792f04caf88e74619e6caa2} 
+\index{CGame@{CGame}!CGame@{CGame}}
+\index{CGame@{CGame}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{CGame()}{CGame()}}
+{\footnotesize\ttfamily CGame\+::\+CGame (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{saves,  }\item[{std\+::string}]{talents,  }\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{scr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCGame_ab531879b501483da3c50568d22bc7817}\label{classCGame_ab531879b501483da3c50568d22bc7817} 
+\index{CGame@{CGame}!````~CGame@{\texorpdfstring{$\sim$}{\string~}CGame}}
+\index{````~CGame@{\texorpdfstring{$\sim$}{\string~}CGame}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CGame()}{\string~CGame()}}
+{\footnotesize\ttfamily CGame\+::\texorpdfstring{$\sim$}{\string~}\+CGame (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCGame_ae58217c1b820c9e95abc5294e43b02a7}\label{classCGame_ae58217c1b820c9e95abc5294e43b02a7} 
+\index{CGame@{CGame}!loop@{loop}}
+\index{loop@{loop}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void CGame\+::loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCGame_a9c529364158daa80da592a3eab949c37}\label{classCGame_a9c529364158daa80da592a3eab949c37} 
+\index{CGame@{CGame}!printHud@{printHud}}
+\index{printHud@{printHud}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{printHud()}{printHud()}}
+{\footnotesize\ttfamily void CGame\+::print\+Hud (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCGame_ae7e2f2fb92bc660051b8813f5cd4cc81}\label{classCGame_ae7e2f2fb92bc660051b8813f5cd4cc81} 
+\index{CGame@{CGame}!readTalents@{readTalents}}
+\index{readTalents@{readTalents}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{readTalents()}{readTalents()}}
+{\footnotesize\ttfamily void CGame\+::read\+Talents (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCGame_a5d424851d31e75394a4eb6d36faecb41}\label{classCGame_a5d424851d31e75394a4eb6d36faecb41} 
+\index{CGame@{CGame}!removeDead@{removeDead}}
+\index{removeDead@{removeDead}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{removeDead()}{removeDead()}}
+{\footnotesize\ttfamily void CGame\+::remove\+Dead (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCGame_a99681f6adffe2935fc4b5d34e9117cdd}\label{classCGame_a99681f6adffe2935fc4b5d34e9117cdd} 
+\index{CGame@{CGame}!saveGame@{saveGame}}
+\index{saveGame@{saveGame}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{saveGame()}{saveGame()}}
+{\footnotesize\ttfamily void CGame\+::save\+Game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classCGame_a6821a4ed2f977e4fa2b5c2c2a9d3addf}\label{classCGame_a6821a4ed2f977e4fa2b5c2c2a9d3addf} 
+\index{CGame@{CGame}!setPlayers@{setPlayers}}
+\index{setPlayers@{setPlayers}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{setPlayers()}{setPlayers()}}
+{\footnotesize\ttfamily void CGame\+::set\+Players (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCGame_a314ca8d0bf4c4f629603efea0cdb6f26}\label{classCGame_a314ca8d0bf4c4f629603efea0cdb6f26} 
+\index{CGame@{CGame}!m\_Map@{m\_Map}}
+\index{m\_Map@{m\_Map}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Map}{m\_Map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCMap}{CMap}} CGame\+::m\+\_\+\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCGame_ad25e2e5e4573d317ea7a3ecd5ca9d257}\label{classCGame_ad25e2e5e4573d317ea7a3ecd5ca9d257} 
+\index{CGame@{CGame}!m\_Players@{m\_Players}}
+\index{m\_Players@{m\_Players}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Players}{m\_Players}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCPlayer}{CPlayer}} \texorpdfstring{$\ast$}{*} $>$ CGame\+::m\+\_\+\+Players\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCGame_ab3ded591d32510329d87223cbb9a6655}\label{classCGame_ab3ded591d32510329d87223cbb9a6655} 
+\index{CGame@{CGame}!m\_Saves@{m\_Saves}}
+\index{m\_Saves@{m\_Saves}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Saves}{m\_Saves}}
+{\footnotesize\ttfamily std\+::string CGame\+::m\+\_\+\+Saves\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCGame_abf909dae820335cdcfecec5c2df3365f}\label{classCGame_abf909dae820335cdcfecec5c2df3365f} 
+\index{CGame@{CGame}!m\_Screen@{m\_Screen}}
+\index{m\_Screen@{m\_Screen}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Screen}{m\_Screen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCScreen}{CScreen}}\texorpdfstring{$\ast$}{*} CGame\+::m\+\_\+\+Screen\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCGame_ac25c7654fb304968789a3305996ac91d}\label{classCGame_ac25c7654fb304968789a3305996ac91d} 
+\index{CGame@{CGame}!m\_Talents@{m\_Talents}}
+\index{m\_Talents@{m\_Talents}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Talents}{m\_Talents}}
+{\footnotesize\ttfamily std\+::string CGame\+::m\+\_\+\+Talents\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCGame_a96b2ee91043bab863e5d3bff3157bf50}\label{classCGame_a96b2ee91043bab863e5d3bff3157bf50} 
+\index{CGame@{CGame}!m\_Tier1@{m\_Tier1}}
+\index{m\_Tier1@{m\_Tier1}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Tier1}{m\_Tier1}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ CGame\+::m\+\_\+\+Tier1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCGame_a6aa137666e63220b1d7b27d604a88db2}\label{classCGame_a6aa137666e63220b1d7b27d604a88db2} 
+\index{CGame@{CGame}!m\_Tier1Time@{m\_Tier1Time}}
+\index{m\_Tier1Time@{m\_Tier1Time}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Tier1Time}{m\_Tier1Time}}
+{\footnotesize\ttfamily int CGame\+::m\+\_\+\+Tier1\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCGame_a0f0a9206260db2605d7f9639c16082fe}\label{classCGame_a0f0a9206260db2605d7f9639c16082fe} 
+\index{CGame@{CGame}!m\_Tier2@{m\_Tier2}}
+\index{m\_Tier2@{m\_Tier2}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Tier2}{m\_Tier2}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ CGame\+::m\+\_\+\+Tier2\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCGame_ad1ed2e0c9770780c8e1e668814d94ec2}\label{classCGame_ad1ed2e0c9770780c8e1e668814d94ec2} 
+\index{CGame@{CGame}!m\_Tier2Time@{m\_Tier2Time}}
+\index{m\_Tier2Time@{m\_Tier2Time}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Tier2Time}{m\_Tier2Time}}
+{\footnotesize\ttfamily int CGame\+::m\+\_\+\+Tier2\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCGame_ad7c67b67cab4d479d04f1d00f03ea119}\label{classCGame_ad7c67b67cab4d479d04f1d00f03ea119} 
+\index{CGame@{CGame}!m\_Tier3@{m\_Tier3}}
+\index{m\_Tier3@{m\_Tier3}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Tier3}{m\_Tier3}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ CGame\+::m\+\_\+\+Tier3\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCGame_aa3e5c388867c9a40b5ca7b403d266972}\label{classCGame_aa3e5c388867c9a40b5ca7b403d266972} 
+\index{CGame@{CGame}!m\_Tier3Time@{m\_Tier3Time}}
+\index{m\_Tier3Time@{m\_Tier3Time}!CGame@{CGame}}
+\doxysubsubsection{\texorpdfstring{m\_Tier3Time}{m\_Tier3Time}}
+{\footnotesize\ttfamily int CGame\+::m\+\_\+\+Tier3\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{game_8h}{game.\+h}}\item 
+/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{game_8cpp}{game.\+cpp}}\end{DoxyCompactItemize}

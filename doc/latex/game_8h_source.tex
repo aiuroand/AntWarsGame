@@ -1,0 +1,73 @@
+\doxysection{game.\+h}
+\hypertarget{game_8h_source}{}\label{game_8h_source}\index{/home/aiuroand/PA2/semester/src/game.h@{/home/aiuroand/PA2/semester/src/game.h}}
+\mbox{\hyperlink{game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAME\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAME\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{screen_8h}{screen.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player_8h}{player.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{human_8h}{human.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bot_8h}{bot.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{map_8h}{map.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{talent_8h}{talent.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{moreants_8h}{moreants.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{morearmor_8h}{morearmor.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{moremove_8h}{moremove.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{moremax_8h}{moremax.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{conqueror_8h}{conqueror.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{maxants_8h}{maxants.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{exceptions_8h}{exceptions.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCGame}{CGame}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classCGame_a9e5f698ad792f04caf88e74619e6caa2}{CGame}}\ (\ std::string\ name,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ saves,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ talents,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ scr\ )}
+\DoxyCodeLine{00030\ \ \ \ \ :\ \mbox{\hyperlink{classCGame_a314ca8d0bf4c4f629603efea0cdb6f26}{m\_Map}}\ (\ name,\ scr\ ),}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \mbox{\hyperlink{classCGame_ab3ded591d32510329d87223cbb9a6655}{m\_Saves}}\ (\ saves\ ),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \mbox{\hyperlink{classCGame_ac25c7654fb304968789a3305996ac91d}{m\_Talents}}\ (\ talents\ ),}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \mbox{\hyperlink{classCGame_abf909dae820335cdcfecec5c2df3365f}{m\_Screen}}\ (\ scr\ )}
+\DoxyCodeLine{00034\ \ \ \ \ \{\}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classCGame_ab531879b501483da3c50568d22bc7817}{\string~CGame}}\ (\ \textcolor{keywordtype}{void}\ )}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ it\ :\ \mbox{\hyperlink{classCGame_ad25e2e5e4573d317ea7a3ecd5ca9d257}{m\_Players}}\ )}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ it\ :\ \mbox{\hyperlink{classCGame_a96b2ee91043bab863e5d3bff3157bf50}{m\_Tier1}}\ )}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ it\ :\ \mbox{\hyperlink{classCGame_a0f0a9206260db2605d7f9639c16082fe}{m\_Tier2}}\ )}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ it\ :\ \mbox{\hyperlink{classCGame_ad7c67b67cab4d479d04f1d00f03ea119}{m\_Tier3}}\ )}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCGame_ae58217c1b820c9e95abc5294e43b02a7}{loop}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCGame_ae7e2f2fb92bc660051b8813f5cd4cc81}{readTalents}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCGame_a6821a4ed2f977e4fa2b5c2c2a9d3addf}{setPlayers}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCGame_a5d424851d31e75394a4eb6d36faecb41}{removeDead}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCGame_a9c529364158daa80da592a3eab949c37}{printHud}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCGame_a99681f6adffe2935fc4b5d34e9117cdd}{saveGame}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classCMap}{CMap}}\ \mbox{\hyperlink{classCGame_a314ca8d0bf4c4f629603efea0cdb6f26}{m\_Map}};}
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \mbox{\hyperlink{classCGame_ab3ded591d32510329d87223cbb9a6655}{m\_Saves}};}
+\DoxyCodeLine{00056\ \ \ \ \ std::string\ \mbox{\hyperlink{classCGame_ac25c7654fb304968789a3305996ac91d}{m\_Talents}};}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ \mbox{\hyperlink{classCGame_abf909dae820335cdcfecec5c2df3365f}{m\_Screen}};}
+\DoxyCodeLine{00058\ \ \ \ \ std::list\ <\ CPlayer\ *\ >\ \mbox{\hyperlink{classCGame_ad25e2e5e4573d317ea7a3ecd5ca9d257}{m\_Players}};}
+\DoxyCodeLine{00059\ \ \ \ \ std::list\ <\ CTalent\ *\ >\ \mbox{\hyperlink{classCGame_a96b2ee91043bab863e5d3bff3157bf50}{m\_Tier1}};}
+\DoxyCodeLine{00060\ \ \ \ \ std::list\ <\ CTalent\ *\ >\ \mbox{\hyperlink{classCGame_a0f0a9206260db2605d7f9639c16082fe}{m\_Tier2}};}
+\DoxyCodeLine{00061\ \ \ \ \ std::list\ <\ CTalent\ *\ >\ \mbox{\hyperlink{classCGame_ad7c67b67cab4d479d04f1d00f03ea119}{m\_Tier3}};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCGame_a6aa137666e63220b1d7b27d604a88db2}{m\_Tier1Time}};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCGame_ad1ed2e0c9770780c8e1e668814d94ec2}{m\_Tier2Time}};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCGame_aa3e5c388867c9a40b5ca7b403d266972}{m\_Tier3Time}};\ \ \ \ \ }
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAME\_H}}
+
+\end{DoxyCode}

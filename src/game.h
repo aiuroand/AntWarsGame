@@ -61,7 +61,7 @@ class CGame
     std::list < CTalent * > m_Tier3;
     int m_Tier1Time;
     int m_Tier2Time;
-    int m_Tier3Time;   
+    int m_Tier3Time;     
 };
 
 #endif // GAME_H

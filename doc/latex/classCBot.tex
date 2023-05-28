@@ -1,0 +1,98 @@
+\doxysection{CBot Class Reference}
+\hypertarget{classCBot}{}\label{classCBot}\index{CBot@{CBot}}
+
+
+{\ttfamily \#include $<$bot.\+h$>$}
+
+Inheritance diagram for CBot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCBot}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCBot_a7e4c8aea37de145d4d7a49db6fd38706}{CBot}} (char color, \mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}screen)
+\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classCBot_a8711d56fed9793d8b6eb920f2e8524bd}{make\+Move}} (\mbox{\hyperlink{classCMap}{CMap}} \&map) override
+\item 
+void \mbox{\hyperlink{classCBot_af3c87719e19e0dc30301d6ea2872b4e1}{select\+Talent}} (\mbox{\hyperlink{classCMap}{CMap}} \&map, std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&t) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCPlayer}{CPlayer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCPlayer_a1fb74608e91e120859ab877c331af861}{CPlayer}} (char color)
+\item 
+virtual \mbox{\hyperlink{classCPlayer_ad618b14e3bda9158afb6b49d10972683}{\texorpdfstring{$\sim$}{\string~}\+CPlayer}} (void)=default
+\item 
+char \mbox{\hyperlink{classCPlayer_a200d8db370484bf5f3c5cdaefc9d94e7}{get\+Color}} (void) const
+\item 
+void \mbox{\hyperlink{classCPlayer_ae0f58378d4fae27fd58cc63a85c4b325}{activate\+Talents}} (char c, \mbox{\hyperlink{classCMap}{CMap}} \&map)
+\item 
+void \mbox{\hyperlink{classCPlayer_a473e64644fa5550aefc965a99b5600ce}{add\+Talent}} (\mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*}t)
+\item 
+size\+\_\+t \mbox{\hyperlink{classCPlayer_aeac7bc6173e33cd47e3aedde6b057f25}{get\+Talents\+Size}} (void) const
+\item 
+int \mbox{\hyperlink{classCPlayer_a29ec7603c540655230b866a17715bf84}{count\+Talents}} (std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&m\+\_\+\+Tier1, std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&m\+\_\+\+Tier2, std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&m\+\_\+\+Tier3) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCBot_a999b13a677073530ca085c840d0eb791}{m\+\_\+\+Screen}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCPlayer}{CPlayer}}}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{classCPlayer_a08daf6729c332958057a68ebcc46f1da}{m\+\_\+\+Color}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCPlayer_aa9ac041fdcec521404c45d2b5b159867}{m\+\_\+\+Talents}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCBot_a7e4c8aea37de145d4d7a49db6fd38706}\label{classCBot_a7e4c8aea37de145d4d7a49db6fd38706} 
+\index{CBot@{CBot}!CBot@{CBot}}
+\index{CBot@{CBot}!CBot@{CBot}}
+\doxysubsubsection{\texorpdfstring{CBot()}{CBot()}}
+{\footnotesize\ttfamily CBot\+::\+CBot (\begin{DoxyParamCaption}\item[{char}]{color,  }\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{screen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCBot_a8711d56fed9793d8b6eb920f2e8524bd}\label{classCBot_a8711d56fed9793d8b6eb920f2e8524bd} 
+\index{CBot@{CBot}!makeMove@{makeMove}}
+\index{makeMove@{makeMove}!CBot@{CBot}}
+\doxysubsubsection{\texorpdfstring{makeMove()}{makeMove()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, int $>$ CBot\+::make\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classCPlayer_a5e7532d0a49a5715cffcbf1ea81e2520}{CPlayer}}.
+
+\Hypertarget{classCBot_af3c87719e19e0dc30301d6ea2872b4e1}\label{classCBot_af3c87719e19e0dc30301d6ea2872b4e1} 
+\index{CBot@{CBot}!selectTalent@{selectTalent}}
+\index{selectTalent@{selectTalent}!CBot@{CBot}}
+\doxysubsubsection{\texorpdfstring{selectTalent()}{selectTalent()}}
+{\footnotesize\ttfamily void CBot\+::select\+Talent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map,  }\item[{std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classCPlayer_ae468a15c714526073947d8b445f7fe10}{CPlayer}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCBot_a999b13a677073530ca085c840d0eb791}\label{classCBot_a999b13a677073530ca085c840d0eb791} 
+\index{CBot@{CBot}!m\_Screen@{m\_Screen}}
+\index{m\_Screen@{m\_Screen}!CBot@{CBot}}
+\doxysubsubsection{\texorpdfstring{m\_Screen}{m\_Screen}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCScreen}{CScreen}}\texorpdfstring{$\ast$}{*} CBot\+::m\+\_\+\+Screen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{bot_8h}{bot.\+h}}\item 
+/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{bot_8cpp}{bot.\+cpp}}\end{DoxyCompactItemize}

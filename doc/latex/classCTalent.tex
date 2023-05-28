@@ -1,0 +1,92 @@
+\doxysection{CTalent Class Reference}
+\hypertarget{classCTalent}{}\label{classCTalent}\index{CTalent@{CTalent}}
+
+
+{\ttfamily \#include $<$talent.\+h$>$}
+
+Inheritance diagram for CTalent\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.985816cm]{classCTalent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCTalent_acc853ac425003fd62d71b3aab51abdb6}{CTalent}} (std\+::string name, std\+::string description)
+\item 
+virtual \mbox{\hyperlink{classCTalent_ac6c3f612043fb02981e414993407ec92}{\texorpdfstring{$\sim$}{\string~}\+CTalent}} (void)=default
+\item 
+std\+::string \mbox{\hyperlink{classCTalent_aa3d71a9f942a22dcb02f141b0b5268ad}{get\+Name}} (void) const
+\item 
+std\+::string \mbox{\hyperlink{classCTalent_a90522ea1a5f906c53601ae268bd5753a}{get\+Description}} (void) const
+\item 
+virtual void \mbox{\hyperlink{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4}{activate}} (char c, \mbox{\hyperlink{classCMap}{CMap}} \&map)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classCTalent_aa9e2ed9e6e2381a799a5594ccb195961}{m\+\_\+\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m\+\_\+\+Description}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCTalent_acc853ac425003fd62d71b3aab51abdb6}\label{classCTalent_acc853ac425003fd62d71b3aab51abdb6} 
+\index{CTalent@{CTalent}!CTalent@{CTalent}}
+\index{CTalent@{CTalent}!CTalent@{CTalent}}
+\doxysubsubsection{\texorpdfstring{CTalent()}{CTalent()}}
+{\footnotesize\ttfamily CTalent\+::\+CTalent (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{description }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCTalent_ac6c3f612043fb02981e414993407ec92}\label{classCTalent_ac6c3f612043fb02981e414993407ec92} 
+\index{CTalent@{CTalent}!````~CTalent@{\texorpdfstring{$\sim$}{\string~}CTalent}}
+\index{````~CTalent@{\texorpdfstring{$\sim$}{\string~}CTalent}!CTalent@{CTalent}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CTalent()}{\string~CTalent()}}
+{\footnotesize\ttfamily virtual CTalent\+::\texorpdfstring{$\sim$}{\string~}\+CTalent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4}\label{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4} 
+\index{CTalent@{CTalent}!activate@{activate}}
+\index{activate@{activate}!CTalent@{CTalent}}
+\doxysubsubsection{\texorpdfstring{activate()}{activate()}}
+{\footnotesize\ttfamily virtual void CTalent\+::activate (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCConqueror_a02715a0f072b49808758da00f4fda3c8}{CConqueror}}, \mbox{\hyperlink{classCMaxAnts_a23a2602feb60d7e8480fd2dc0e0b8e89}{CMax\+Ants}}, \mbox{\hyperlink{classCMoreAnts_a60708767967ee4e711022c7c08bea4c5}{CMore\+Ants}}, \mbox{\hyperlink{classCMoreArmor_a3e2ed1ea93134dece1cc6b73c1c3aefd}{CMore\+Armor}}, \mbox{\hyperlink{classCMoreMax_aa2db93401522b6c5354c4366d33372c2}{CMore\+Max}}, and \mbox{\hyperlink{classCMoreMove_abcc5c9319fb8e05f443bd7254f8d3c32}{CMore\+Move}}.
+
+\Hypertarget{classCTalent_a90522ea1a5f906c53601ae268bd5753a}\label{classCTalent_a90522ea1a5f906c53601ae268bd5753a} 
+\index{CTalent@{CTalent}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!CTalent@{CTalent}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily std\+::string CTalent\+::get\+Description (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCTalent_aa3d71a9f942a22dcb02f141b0b5268ad}\label{classCTalent_aa3d71a9f942a22dcb02f141b0b5268ad} 
+\index{CTalent@{CTalent}!getName@{getName}}
+\index{getName@{getName}!CTalent@{CTalent}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string CTalent\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCTalent_aa257537e11bc85450fa9691637dd8c1f}\label{classCTalent_aa257537e11bc85450fa9691637dd8c1f} 
+\index{CTalent@{CTalent}!m\_Description@{m\_Description}}
+\index{m\_Description@{m\_Description}!CTalent@{CTalent}}
+\doxysubsubsection{\texorpdfstring{m\_Description}{m\_Description}}
+{\footnotesize\ttfamily std\+::string CTalent\+::m\+\_\+\+Description\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classCTalent_aa9e2ed9e6e2381a799a5594ccb195961}\label{classCTalent_aa9e2ed9e6e2381a799a5594ccb195961} 
+\index{CTalent@{CTalent}!m\_Name@{m\_Name}}
+\index{m\_Name@{m\_Name}!CTalent@{CTalent}}
+\doxysubsubsection{\texorpdfstring{m\_Name}{m\_Name}}
+{\footnotesize\ttfamily std\+::string CTalent\+::m\+\_\+\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{talent_8h}{talent.\+h}}\end{DoxyCompactItemize}

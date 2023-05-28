@@ -1,0 +1,105 @@
+\doxysection{map.\+h}
+\hypertarget{map_8h_source}{}\label{map_8h_source}\index{/home/aiuroand/PA2/semester/src/map.h@{/home/aiuroand/PA2/semester/src/map.h}}
+\mbox{\hyperlink{map_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAP\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mapelement_8h}{mapelement.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{screen_8h}{screen.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coords_8h}{coords.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{wall_8h}{wall.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{void_8h}{void.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{anthill_8h}{anthill.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{road_8h}{road.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCMap}{CMap}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \mbox{\hyperlink{classCMap_af0675d2db25a88ba9d2c527432ea99cc}{CMap}}(\ std::string\ mapDir,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ scr\ )}
+\DoxyCodeLine{00028\ \ \ \ \ :\ \mbox{\hyperlink{classCMap_ac7f010b0102ceca812cbf9e1194a30e0}{m\_Height}}\ (\ 0\ ),}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \mbox{\hyperlink{classCMap_a0419d4b784b945de2bb2ff15ed452b01}{m\_Width}}\ (\ 0\ ),}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \mbox{\hyperlink{classCMap_a79c96d51cd9e2c6d86af01835efaeb18}{m\_Round}}\ (\ 1\ ),}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \mbox{\hyperlink{classCMap_aeb11b85b3f26c48ec356670a2dd2ff18}{m\_Screen}}\ (\ scr\ )}
+\DoxyCodeLine{00032\ \ \ \ \ \{\ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \mbox{\hyperlink{classCMap_ae0cbaa4faeb64321159f57d1f40e0bd0}{readMap}}\ (\ mapDir\ );}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classCMap_ac80e14d0a381ae24685b69a1eaff8bc5}{\string~CMap}}\ (\ \textcolor{keywordtype}{void}\ )}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ it\ :\ \mbox{\hyperlink{classCMap_ad14baa8baa6a3005d6046de2581a24a2}{m\_ElementList}}\ )}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\ it\ :\ \mbox{\hyperlink{classCMap_a978a8c3ce43b7d63d87252aca13c3644}{m\_AntHill}}\ )}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ it;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_a0052b6f5c0714c9bb529c84454e08320}{getAntHill}}\ (\ \mbox{\hyperlink{classCCoords}{CCoords}}\ coords\ );}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a22f07dc5c8850c68e23f8542b6aa9ab3}{print}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_aad00f0842f999591e5289d6fd826d81e}{add}}\ (\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}\ amount\ );}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classCMap_ae6c3b15edc093c5994a85c5d0589b532}{getColorOfId}}\ (\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a4f6acb9e5a990ab422a8471d0b95630c}{setColorOfId}}\ (\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{char}\ color\ );}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_a0f02c5f9808f8762945a3ffb6b712537}{getAntsOfId}}\ (\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_abfd677a61d6872a1908d50eefc111289}{getAttackOfId}}\ (\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_a4339e588b958989baf21f8607251423f}{getArmorOfId}}\ (\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classCAntHill}{CAntHill}}\ *\ \mbox{\hyperlink{classCMap_a55f51bab45d0f7491ae214ed5244effc}{getAntHillOfId}}\ (\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_ae195ea511b4e44cbd9510560b928a5e7}{setAntsOfId}}\ (\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}\ amount\ );}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a782962dbe188ce1f5fda9c16f6f1a589}{createAnts}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_ae8f4a37c142e9a883b0dfbc40f4c2807}{fillRoad}}\ (\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ from,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ to\ );}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_ac1c5a04e787500f2f654d2524763b938}{clearRoads}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a51ca8ce787385d0e9130f3497de2d0d8}{attack}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classCMap_a3c1b8b9257c1e85687bc90bc101a1ea3}{checkWinner}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_a2b19431922cb46a17875332a91bdfd80}{getStrongest}}\ (\ \textcolor{keywordtype}{char}\ c\ );}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_af85bf9b5f889d557e5677ac91f196413}{getWeakest}}\ (\ \textcolor{keywordtype}{char}\ c\ );}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_ad88fe1ca64f273e6fd5080c9e5b9d125}{countHills}}\ (\ \textcolor{keywordtype}{char}\ c\ );}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a1d47c3ff0742f93eea0857bebad133af}{deactivateAll}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a825b8f79d34a083b6c5053d5a635b1ea}{addAntsAttackToColor}}\ (\ \textcolor{keywordtype}{char}\ c,\ \textcolor{keywordtype}{int}\ amount\ );}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a5c1f794cfbefdf9a40957e4574a9851a}{addArmorToColor}}\ (\ \textcolor{keywordtype}{char}\ c,\ \textcolor{keywordtype}{int}\ amount\ );}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a1d9334360e8ed62caf0b2c7346a2d4a3}{addMoveToColor}}\ (\ \textcolor{keywordtype}{char}\ c,\ \textcolor{keywordtype}{int}\ amount\ );}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a615ad2d4082700902877e9f03ae78c03}{addMaxToColor}}\ (\ \textcolor{keywordtype}{char}\ c,\ \textcolor{keywordtype}{int}\ amount\ );}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a72596e7e0d9478269dd9f54a3f5d6034}{randomMax}}\ (\ \textcolor{keywordtype}{char}\ c\ );}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a1bbc6d8cb17c714521bf0e09889852ca}{randomConquer}}\ (\ \textcolor{keywordtype}{char}\ c\ );}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a13a5db757d8d0acdcca41bdd1c294b95}{save}}\ (std::vector<std::vector<\ std::pair\ <char,\ bool>\ >\ >\ \&\ map\ );}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_a0c4437757828004237a22707a1d6aa27}{getHeight}}(\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00069\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCMap_ac7f010b0102ceca812cbf9e1194a30e0}{m\_Height}};}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_ad8e46bc0a07701b5bfdaf090e11a758d}{getWidth}}(\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCMap_a0419d4b784b945de2bb2ff15ed452b01}{m\_Width}};}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_aa14280e0c3778150c779f0da8963ade0}{getRound}}(\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCMap_a79c96d51cd9e2c6d86af01835efaeb18}{m\_Round}};}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a142aa504536e4d7a80643ca0518bef37}{setRound}}(\ \textcolor{keywordtype}{int}\ i\ )}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \mbox{\hyperlink{classCMap_a79c96d51cd9e2c6d86af01835efaeb18}{m\_Round}}\ =\ i;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_a9c43be7845111b5c818aeb408d3ff4ee}{createRoad}}(\ \textcolor{keywordtype}{int}\ from,\ \textcolor{keywordtype}{int}\ to,\ std::vector<std::vector<\ std::pair\ <char,\ bool>\ >\ >\ \&\ map\ );}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{classCCoords}{CCoords}}\ \mbox{\hyperlink{classCMap_a233760d2bb240ed3620fae49fbbf72a8}{getCoordsOfId}}\ (\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ std::set\ <\ std::pair\ <\ char,\ unsigned\ int\ >\ >\ \mbox{\hyperlink{classCMap_af289228cd53c6de009ef86eaae78be4d}{m\_Players}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCMap_ae0cbaa4faeb64321159f57d1f40e0bd0}{readMap}}\ (\ std::string\ \&\ mapDir\ );}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_ac7f010b0102ceca812cbf9e1194a30e0}{m\_Height}};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_a0419d4b784b945de2bb2ff15ed452b01}{m\_Width}};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCMap_a79c96d51cd9e2c6d86af01835efaeb18}{m\_Round}};}
+\DoxyCodeLine{00094\ \ \ \ \ std::list<\ CMapElem\ *\ >\ \mbox{\hyperlink{classCMap_ad14baa8baa6a3005d6046de2581a24a2}{m\_ElementList}};}
+\DoxyCodeLine{00095\ \ \ \ \ std::list<\ CAntHill\ *\ >\ \mbox{\hyperlink{classCMap_a978a8c3ce43b7d63d87252aca13c3644}{m\_AntHill}};}
+\DoxyCodeLine{00096\ \ \ \ \ std::list<\ CRoad\ >\ \mbox{\hyperlink{classCMap_a9d6234c99d4b4828353401d2d2853927}{m\_Roads}};}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ \mbox{\hyperlink{classCMap_aeb11b85b3f26c48ec356670a2dd2ff18}{m\_Screen}};}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MAP\_H}}
+
+\end{DoxyCode}

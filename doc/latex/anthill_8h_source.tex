@@ -1,0 +1,124 @@
+\doxysection{anthill.\+h}
+\hypertarget{anthill_8h_source}{}\label{anthill_8h_source}\index{/home/aiuroand/PA2/semester/src/anthill.h@{/home/aiuroand/PA2/semester/src/anthill.h}}
+\mbox{\hyperlink{anthill_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ANTHILL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ANTHILL\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ ANTS\_MAX\ 10}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ ANTS\_MOVE\ 1}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ ANTS\_ATTACK\ 3}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ ANTS\_ARMOR\ 0}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ GREEN\ 1}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ WHITE\ 2}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ RED\ 3}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ YELLOW\ 4}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mapelement_8h}{mapelement.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{screen_8h}{screen.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coords_8h}{coords.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCAntHill}{CAntHill}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCMapElem}{CMapElem}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classCAntHill_a5adb37b901e68a8a407652f0884f62b8}{CAntHill}}\ (\ \mbox{\hyperlink{classCCoords}{CCoords}}\ coords,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ color,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ants,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ )}
+\DoxyCodeLine{00030\ \ \ \ \ :\ \mbox{\hyperlink{classCMapElem}{CMapElem}}\ (\ color,\ coords\ ),}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ (\ ants\ ),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \mbox{\hyperlink{classCAntHill_a0940ccd9cdceeef744d4f65021e74130}{m\_Id}}\ (\ id\ ),}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \mbox{\hyperlink{classCAntHill_a1172ca9e2efa5179c9a485a6121c1d63}{m\_Move}}\ (\ \mbox{\hyperlink{anthill_8h_a233b378c3c7a5a4b3655579f7cbe800d}{ANTS\_MOVE}}\ ),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \mbox{\hyperlink{classCAntHill_aa2c13b33eda6ece4647bcc5d666a197d}{m\_Attack}}\ (\ \mbox{\hyperlink{anthill_8h_a82744e02d8c8a9b5c2b8c3532a474b72}{ANTS\_ATTACK}}\ ),}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \mbox{\hyperlink{classCAntHill_a5f5781064224d2d4bf702284f5c7517e}{m\_Armor}}\ (\ \mbox{\hyperlink{anthill_8h_ab4e32436006b404a286424b829678a79}{ANTS\_ARMOR}}\ ),}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \mbox{\hyperlink{classCAntHill_a4f1963eb635de88de959848f4dffac57}{m\_Max}}\ (\ \mbox{\hyperlink{anthill_8h_a7c5d301686b8e127fa63c9d779e26e90}{ANTS\_MAX}}\ )}
+\DoxyCodeLine{00037\ \ \ \ \ \{\}}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAntHill_ace65fbc89b87daafdbcb85fb9b8af35a}{print}}\ (\ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ scr\ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCAntHill_ab62b0ca1c2edac17989158228db525e1}{isInside}}\ (\ \mbox{\hyperlink{classCCoords}{CCoords}}\ coord\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ coord\ .\ m\_X\ >=\ \mbox{\hyperlink{classCMapElem_aab8b425518eb37a1dc0ad46e455c4ee7}{m\_Coords}}\ .\ m\_X\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \&\&\ coord\ .\ m\_Y\ >=\ \mbox{\hyperlink{classCMapElem_aab8b425518eb37a1dc0ad46e455c4ee7}{m\_Coords}}\ .\ m\_Y}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \&\&\ coord\ .\ m\_X\ <=\ \mbox{\hyperlink{classCMapElem_aab8b425518eb37a1dc0ad46e455c4ee7}{m\_Coords}}\ .\ m\_X\ +\ 4}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \&\&\ coord\ .\ m\_Y\ <=\ \mbox{\hyperlink{classCMapElem_aab8b425518eb37a1dc0ad46e455c4ee7}{m\_Coords}}\ .\ m\_Y\ +\ 2;}
+\DoxyCodeLine{00045\ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classCAntHill_acf369fbc2e328ae67f4e04e40af07bab}{get}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const\ \ override}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'*'};}
+\DoxyCodeLine{00049\ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCAntHill_acc745ee38288fa4e20b73dffa94e02a0}{getId}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00051\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCAntHill_a0940ccd9cdceeef744d4f65021e74130}{m\_Id}};}
+\DoxyCodeLine{00053\ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCAntHill_aa7ab9041bf3b5c86adfb5a714d567f0a}{getAnts}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00055\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}};}
+\DoxyCodeLine{00057\ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classCAntHill_a60b92c4fbf71d25fe76c56524bce9f6a}{getColor}}(\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00059\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCMapElem_a41545b0c790ebbc3aab19d9e7fade5a6}{m\_Color}};}
+\DoxyCodeLine{00061\ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCAntHill_ad8af17e4e24038903ea77f48da94bebe}{getAttack}}(\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00063\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCAntHill_aa2c13b33eda6ece4647bcc5d666a197d}{m\_Attack}}\ <=\ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ ?\ \mbox{\hyperlink{classCAntHill_aa2c13b33eda6ece4647bcc5d666a197d}{m\_Attack}}\ :\ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}};}
+\DoxyCodeLine{00065\ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCAntHill_a85f2725556fed34b80aa47d122eb168c}{getArmor}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCAntHill_a5f5781064224d2d4bf702284f5c7517e}{m\_Armor}};}
+\DoxyCodeLine{00069\ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAntHill_a9507af8cc4d575d5d1d06dc028d48236}{setColor}}(\ \textcolor{keywordtype}{char}\ c\ )}
+\DoxyCodeLine{00071\ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classCMapElem_a41545b0c790ebbc3aab19d9e7fade5a6}{m\_Color}}\ =\ c;}
+\DoxyCodeLine{00073\ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAntHill_abaeeffb0f3a5874575412ef62a04aed6}{setAnts}}\ (\ \textcolor{keywordtype}{int}\ amount\ )}
+\DoxyCodeLine{00075\ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ =\ amount;}
+\DoxyCodeLine{00077\ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAntHill_aab4c2d9cfbdfe91fe3191c5bb1f8001f}{addAttack}}\ (\ \textcolor{keywordtype}{int}\ amount\ )}
+\DoxyCodeLine{00079\ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{classCAntHill_aa2c13b33eda6ece4647bcc5d666a197d}{m\_Attack}}\ +=\ amount;}
+\DoxyCodeLine{00081\ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAntHill_a762b3044d5fe555736489e90d248bb4c}{addArmor}}\ (\ \textcolor{keywordtype}{int}\ amount\ )}
+\DoxyCodeLine{00083\ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classCAntHill_a5f5781064224d2d4bf702284f5c7517e}{m\_Armor}}\ +=\ amount;}
+\DoxyCodeLine{00085\ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAntHill_a9ea0b4ee86add7d6ccc94b9f8460cda3}{addMax}}\ (\ \textcolor{keywordtype}{int}\ amount\ )}
+\DoxyCodeLine{00087\ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classCAntHill_a4f1963eb635de88de959848f4dffac57}{m\_Max}}\ +=\ amount;}
+\DoxyCodeLine{00089\ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAntHill_a9e4296afe574c8d7eec737c7cdcacc10}{addMove}}\ (\ \textcolor{keywordtype}{int}\ amount\ )}
+\DoxyCodeLine{00091\ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classCAntHill_a1172ca9e2efa5179c9a485a6121c1d63}{m\_Move}}\ +=\ amount;}
+\DoxyCodeLine{00093\ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAntHill_af049f8205c9f042432073063a26a6624}{add}}\ (\ \textcolor{keywordtype}{int}\ amount\ )}
+\DoxyCodeLine{00095\ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ +\ amount\ <\ \mbox{\hyperlink{classCAntHill_a4f1963eb635de88de959848f4dffac57}{m\_Max}}\ )\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ +=\ amount;}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ =\ \mbox{\hyperlink{classCAntHill_a4f1963eb635de88de959848f4dffac57}{m\_Max}};}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ <\ 0\ )}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ +=\ \mbox{\hyperlink{classCAntHill_a5f5781064224d2d4bf702284f5c7517e}{m\_Armor}};}
+\DoxyCodeLine{00102\ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAntHill_ab985c5524c2f23cff753a93fecb66991}{createAnts}}\ (\ \textcolor{keywordtype}{void}\ )}
+\DoxyCodeLine{00104\ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ +=\ \mbox{\hyperlink{classCAntHill_a1172ca9e2efa5179c9a485a6121c1d63}{m\_Move}};}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ >\ \mbox{\hyperlink{classCAntHill_a4f1963eb635de88de959848f4dffac57}{m\_Max}}\ )}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}}\ =\ \mbox{\hyperlink{classCAntHill_a4f1963eb635de88de959848f4dffac57}{m\_Max}};}
+\DoxyCodeLine{00108\ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAntHill_a846b33c5f40947254ede4df3ef276393}{clearAntHill}}(\ \textcolor{keywordtype}{void}\ )}
+\DoxyCodeLine{00110\ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{classCAntHill_a1172ca9e2efa5179c9a485a6121c1d63}{m\_Move}}\ =\ \mbox{\hyperlink{anthill_8h_a233b378c3c7a5a4b3655579f7cbe800d}{ANTS\_MOVE}};}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classCAntHill_aa2c13b33eda6ece4647bcc5d666a197d}{m\_Attack}}\ =\ \mbox{\hyperlink{anthill_8h_a82744e02d8c8a9b5c2b8c3532a474b72}{ANTS\_ATTACK}};}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{classCAntHill_a5f5781064224d2d4bf702284f5c7517e}{m\_Armor}}\ =\ \mbox{\hyperlink{anthill_8h_ab4e32436006b404a286424b829678a79}{ANTS\_ARMOR}};}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classCAntHill_a4f1963eb635de88de959848f4dffac57}{m\_Max}}\ =\ \mbox{\hyperlink{anthill_8h_a7c5d301686b8e127fa63c9d779e26e90}{ANTS\_MAX}};}
+\DoxyCodeLine{00115\ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\_Ants}};}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCAntHill_a0940ccd9cdceeef744d4f65021e74130}{m\_Id}};}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCAntHill_a1172ca9e2efa5179c9a485a6121c1d63}{m\_Move}};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCAntHill_aa2c13b33eda6ece4647bcc5d666a197d}{m\_Attack}};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCAntHill_a5f5781064224d2d4bf702284f5c7517e}{m\_Armor}};}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCAntHill_a4f1963eb635de88de959848f4dffac57}{m\_Max}};}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ANTHILL\_H}}
+
+\end{DoxyCode}

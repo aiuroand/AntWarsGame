@@ -1,0 +1,128 @@
+\doxysection{CPlayer Class Reference}
+\hypertarget{classCPlayer}{}\label{classCPlayer}\index{CPlayer@{CPlayer}}
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+Inheritance diagram for CPlayer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCPlayer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCPlayer_a1fb74608e91e120859ab877c331af861}{CPlayer}} (char color)
+\item 
+virtual \mbox{\hyperlink{classCPlayer_ad618b14e3bda9158afb6b49d10972683}{\texorpdfstring{$\sim$}{\string~}\+CPlayer}} (void)=default
+\item 
+char \mbox{\hyperlink{classCPlayer_a200d8db370484bf5f3c5cdaefc9d94e7}{get\+Color}} (void) const
+\item 
+void \mbox{\hyperlink{classCPlayer_ae0f58378d4fae27fd58cc63a85c4b325}{activate\+Talents}} (char c, \mbox{\hyperlink{classCMap}{CMap}} \&map)
+\item 
+void \mbox{\hyperlink{classCPlayer_a473e64644fa5550aefc965a99b5600ce}{add\+Talent}} (\mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*}t)
+\item 
+size\+\_\+t \mbox{\hyperlink{classCPlayer_aeac7bc6173e33cd47e3aedde6b057f25}{get\+Talents\+Size}} (void) const
+\item 
+int \mbox{\hyperlink{classCPlayer_a29ec7603c540655230b866a17715bf84}{count\+Talents}} (std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&m\+\_\+\+Tier1, std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&m\+\_\+\+Tier2, std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&m\+\_\+\+Tier3) const
+\item 
+virtual std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classCPlayer_a5e7532d0a49a5715cffcbf1ea81e2520}{make\+Move}} (\mbox{\hyperlink{classCMap}{CMap}} \&map)=0
+\item 
+virtual void \mbox{\hyperlink{classCPlayer_ae468a15c714526073947d8b445f7fe10}{select\+Talent}} (\mbox{\hyperlink{classCMap}{CMap}} \&map, std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&t)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{classCPlayer_a08daf6729c332958057a68ebcc46f1da}{m\+\_\+\+Color}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCPlayer_aa9ac041fdcec521404c45d2b5b159867}{m\+\_\+\+Talents}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCPlayer_a1fb74608e91e120859ab877c331af861}\label{classCPlayer_a1fb74608e91e120859ab877c331af861} 
+\index{CPlayer@{CPlayer}!CPlayer@{CPlayer}}
+\index{CPlayer@{CPlayer}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{CPlayer()}{CPlayer()}}
+{\footnotesize\ttfamily CPlayer\+::\+CPlayer (\begin{DoxyParamCaption}\item[{char}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCPlayer_ad618b14e3bda9158afb6b49d10972683}\label{classCPlayer_ad618b14e3bda9158afb6b49d10972683} 
+\index{CPlayer@{CPlayer}!````~CPlayer@{\texorpdfstring{$\sim$}{\string~}CPlayer}}
+\index{````~CPlayer@{\texorpdfstring{$\sim$}{\string~}CPlayer}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CPlayer()}{\string~CPlayer()}}
+{\footnotesize\ttfamily virtual CPlayer\+::\texorpdfstring{$\sim$}{\string~}\+CPlayer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCPlayer_ae0f58378d4fae27fd58cc63a85c4b325}\label{classCPlayer_ae0f58378d4fae27fd58cc63a85c4b325} 
+\index{CPlayer@{CPlayer}!activateTalents@{activateTalents}}
+\index{activateTalents@{activateTalents}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{activateTalents()}{activateTalents()}}
+{\footnotesize\ttfamily void CPlayer\+::activate\+Talents (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCPlayer_a473e64644fa5550aefc965a99b5600ce}\label{classCPlayer_a473e64644fa5550aefc965a99b5600ce} 
+\index{CPlayer@{CPlayer}!addTalent@{addTalent}}
+\index{addTalent@{addTalent}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{addTalent()}{addTalent()}}
+{\footnotesize\ttfamily void CPlayer\+::add\+Talent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCPlayer_a29ec7603c540655230b866a17715bf84}\label{classCPlayer_a29ec7603c540655230b866a17715bf84} 
+\index{CPlayer@{CPlayer}!countTalents@{countTalents}}
+\index{countTalents@{countTalents}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{countTalents()}{countTalents()}}
+{\footnotesize\ttfamily int CPlayer\+::count\+Talents (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&}]{m\+\_\+\+Tier1,  }\item[{std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&}]{m\+\_\+\+Tier2,  }\item[{std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&}]{m\+\_\+\+Tier3 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCPlayer_a200d8db370484bf5f3c5cdaefc9d94e7}\label{classCPlayer_a200d8db370484bf5f3c5cdaefc9d94e7} 
+\index{CPlayer@{CPlayer}!getColor@{getColor}}
+\index{getColor@{getColor}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily char CPlayer\+::get\+Color (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCPlayer_aeac7bc6173e33cd47e3aedde6b057f25}\label{classCPlayer_aeac7bc6173e33cd47e3aedde6b057f25} 
+\index{CPlayer@{CPlayer}!getTalentsSize@{getTalentsSize}}
+\index{getTalentsSize@{getTalentsSize}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{getTalentsSize()}{getTalentsSize()}}
+{\footnotesize\ttfamily size\+\_\+t CPlayer\+::get\+Talents\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCPlayer_a5e7532d0a49a5715cffcbf1ea81e2520}\label{classCPlayer_a5e7532d0a49a5715cffcbf1ea81e2520} 
+\index{CPlayer@{CPlayer}!makeMove@{makeMove}}
+\index{makeMove@{makeMove}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{makeMove()}{makeMove()}}
+{\footnotesize\ttfamily virtual std\+::pair$<$ int, int $>$ CPlayer\+::make\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCBot_a8711d56fed9793d8b6eb920f2e8524bd}{CBot}}, and \mbox{\hyperlink{classCHuman_a5119c70410357491ae576a8156c07a5a}{CHuman}}.
+
+\Hypertarget{classCPlayer_ae468a15c714526073947d8b445f7fe10}\label{classCPlayer_ae468a15c714526073947d8b445f7fe10} 
+\index{CPlayer@{CPlayer}!selectTalent@{selectTalent}}
+\index{selectTalent@{selectTalent}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{selectTalent()}{selectTalent()}}
+{\footnotesize\ttfamily virtual void CPlayer\+::select\+Talent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map,  }\item[{std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCBot_af3c87719e19e0dc30301d6ea2872b4e1}{CBot}}, and \mbox{\hyperlink{classCHuman_a1db61a489c331ece3e35af98fa219c6d}{CHuman}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCPlayer_a08daf6729c332958057a68ebcc46f1da}\label{classCPlayer_a08daf6729c332958057a68ebcc46f1da} 
+\index{CPlayer@{CPlayer}!m\_Color@{m\_Color}}
+\index{m\_Color@{m\_Color}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{m\_Color}{m\_Color}}
+{\footnotesize\ttfamily char CPlayer\+::m\+\_\+\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classCPlayer_aa9ac041fdcec521404c45d2b5b159867}\label{classCPlayer_aa9ac041fdcec521404c45d2b5b159867} 
+\index{CPlayer@{CPlayer}!m\_Talents@{m\_Talents}}
+\index{m\_Talents@{m\_Talents}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{m\_Talents}{m\_Talents}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ CPlayer\+::m\+\_\+\+Talents\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{player_8h}{player.\+h}}\end{DoxyCompactItemize}

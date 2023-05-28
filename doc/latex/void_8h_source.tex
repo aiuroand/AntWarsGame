@@ -1,0 +1,29 @@
+\doxysection{void.\+h}
+\hypertarget{void_8h_source}{}\label{void_8h_source}\index{/home/aiuroand/PA2/semester/src/void.h@{/home/aiuroand/PA2/semester/src/void.h}}
+\mbox{\hyperlink{void_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VOID\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VOID\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mapelement_8h}{mapelement.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{coords_8h}{coords.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{screen_8h}{screen.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCVoid}{CVoid}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCMapElem}{CMapElem}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \mbox{\hyperlink{classCVoid_a159d9efc234fac09d6bac89f0e35779e}{CVoid}}\ (\ \mbox{\hyperlink{classCCoords}{CCoords}}\ coord\ )}
+\DoxyCodeLine{00011\ \ \ \ \ \ :\ \mbox{\hyperlink{classCMapElem}{CMapElem}}\ (\ \textcolor{stringliteral}{'n'},\ coord\ )}
+\DoxyCodeLine{00012\ \ \ \ \ \{\}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCVoid_a5a0a848a225ba6f4a5c9d7e7b4eb7a47}{print}}\ (\ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ scr\ )\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ scr\ -\/>\ screenPrint\ (\ \mbox{\hyperlink{classCMapElem_aab8b425518eb37a1dc0ad46e455c4ee7}{m\_Coords}},\ \textcolor{stringliteral}{"{}\ "{}}\ );}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classCVoid_a19e1af4bd51219d93c54f86140743c26}{get}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const\ override\ }}
+\DoxyCodeLine{00018\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VOID\_H}}
+
+\end{DoxyCode}
