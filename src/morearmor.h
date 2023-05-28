@@ -19,10 +19,6 @@ class CMoreArmor : public CTalent
       m_Amount ( amount )
     {}
 
-    /*! Default destructor 
-     */
-    ~CMoreArmor ( void ) = default;
-
     /*! Activates talent's bonus.
      *  Increases armor value for all anthills of given color by m_Amount.
      *  @param c   - color of player, whose anthills should be buffed.

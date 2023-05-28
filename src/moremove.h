@@ -18,10 +18,6 @@ class CMoreMove : public CTalent
     : CTalent ( name, description ),
       m_Amount ( amount )
     {}
-
-    /*! Default destructor 
-     */
-    ~CMoreMove ( void ) = default;
     
     /*! Activates talent's bonus.
      *  Increases spawnrate ( m_Move ) value for all anthills of given color by m_Amount.

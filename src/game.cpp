@@ -75,7 +75,7 @@ void CGame::loop ( void )
     {
       mvwprintw ( m_Screen -> m_Window, 10, 10, "%c won", c );
       wrefresh( m_Screen -> m_Window );
-      std::this_thread::sleep_for( std::chrono::seconds( 5 ) );
+      // std::this_thread::sleep_for( std::chrono::seconds( 5 ) );
       break;
     }
     m_Map . deactivateAll();
@@ -114,7 +114,7 @@ void CGame::printHud ( void )
   mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 2, 0, "+" );
   for ( i = 1; i < m_Map . getWidth(); i++ )
     mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 2, i, "-" );
-  mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 2, i - 1, "+" );
+  mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () , i - 1, "+" );
 
   mvwprintw ( m_Screen -> m_Window, 0, m_Map . getWidth() + 1,  "+--------------------+" );
   mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 1,  "|      Round " );

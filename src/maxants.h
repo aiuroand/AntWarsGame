@@ -18,10 +18,6 @@ class CMaxAnts: public CTalent
     : CTalent ( name, description ),
       m_Chance ( chance )
     {}
-
-    /*! Default destructor 
-     */
-    ~CMaxAnts ( void ) = default;
         
     /*! Activates talent's bonus.
      *  With m_Chance / 10 chance maximizes amount of ants in random anthill of talent owner.

@@ -19,10 +19,6 @@ class CMoreMax : public CTalent
       m_Amount ( amount )
     {}
 
-    /*! Default destructor 
-     */
-    ~CMoreMax ( void ) = default;
-
     /*! Activates talent's bonus.
      *  Increases upper boundary value ( m_Max ) for all anthills of given color by m_Amount.
      *  @param c   - color of player, whose anthills should be buffed.

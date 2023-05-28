@@ -20,10 +20,6 @@ class CConqueror: public CTalent
       m_Chance ( chance )
     {}
 
-    /*! Default destructor 
-     */
-    ~CConqueror ( void ) = default;
-    
     /*! Activates talent's bonus.
      *  With m_Chance / 10 chance conquers random neutral ant on the map.
      *  @param c   - color of player, whose should recieve neutral anthill.

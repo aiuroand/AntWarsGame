@@ -77,7 +77,6 @@ void CLoop::loop ( void )
         wrefresh ( m_Screen -> m_Window );
         std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
       }
-
       //Cleaning after leaving the game
       delete m_Game;
       m_Game = nullptr;

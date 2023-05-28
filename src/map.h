@@ -43,11 +43,12 @@ class CMap
      */
     ~CMap ( void )
     {
-      for ( const auto & it : m_ElementList )
-        delete it;
-      for ( const auto & it : m_AntHill )
-        delete it;
+      // for ( const auto & it : m_ElementList )
+      //   delete it;
+      // for ( const auto & it : m_AntHill )
+      //   delete it;
     }
+
     /*! Getting id of anthill that is standing on the coords
      *  @param coords - coords to check
      *  @return id of anthill, -1 if wan not found

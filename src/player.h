@@ -20,10 +20,7 @@ class CPlayer
      *  @param color - represent color
      */
     virtual ~CPlayer( void )
-    {
-      for ( const auto & it : m_Talents )
-        delete it;
-    }
+    {}
 
     /*! Gets color of current player
      *  @return players color

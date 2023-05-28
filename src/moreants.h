@@ -19,10 +19,6 @@ class CMoreAnts : public CTalent
       m_Amount ( amount )
     {}
 
-    /*! Default destructor 
-     */
-    ~CMoreAnts ( void ) = default;
-
     /*! Activates talent's bonus.
      *  Increases 'ants per attack' value for all anthills of given color by m_Amount.
      *  @param c   - color of player, whose anthills should be buffed.
