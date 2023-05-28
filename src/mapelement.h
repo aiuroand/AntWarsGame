@@ -13,6 +13,12 @@ class CMapElem
     {};
     virtual ~CMapElem( void ) = default;
     virtual void print ( CScreen * scr ) = 0;
+    virtual char get ( void ) const = 0;
+    CCoords getCoords ( void ) const
+    {
+      return m_Coords;
+    }
+
 
   protected: 
     char m_Color;

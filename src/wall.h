@@ -15,6 +15,10 @@ class CWall : public CMapElem
    {
      scr -> screenPrint ( m_Coords, "#" );
    }
+   char get ( void ) const override 
+   {
+     return '#';
+   }
 };
 
 #endif // WALL_H

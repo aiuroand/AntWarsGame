@@ -33,6 +33,28 @@ void CLoop::loop ( void )
       m_Game = nullptr;
       m_Status = e_Menu;
     }
+    else if ( m_Status == e_ContinueGame )
+    {
+      char str[100];
+      int i = 0;
+      for ( const auto & it : std::filesystem::directory_iterator ( m_Saves ) )
+      {
+        if ( i == m_Menu . m_HighlightMaps )
+        {
+          memcpy ( str,
+                   it . path() . c_str() + m_Maps . size() + 1,
+                   strlen ( it . path() . c_str() + m_Maps . size() + 1 ) + 1 );
+          break;
+        }
+        i++;
+      }
+      std::string newStr( str );
+      m_Game = new CGame ( m_Saves + "/" + newStr, m_Saves, m_Talents, m_Screen );
+      m_Game -> loop();
+      delete m_Game;
+      m_Game = nullptr;
+      m_Status = e_Menu;
+    }
     else if ( m_Status == e_Rules )
     {
       m_Rules . loop();

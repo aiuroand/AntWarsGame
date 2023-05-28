@@ -18,6 +18,7 @@ class CMenu
               std::string maps,
               std::string saves )
      : m_HighlightMaps ( 0 ),
+       m_HighlightSaves ( 0 ),
        m_Screen ( screen ),
        m_Status ( status ),
        m_Maps ( maps ), 
@@ -29,9 +30,10 @@ class CMenu
     }
     void loop ( void );
     void chooseNewMap ( void );
+    void continueMap ( void );
     
     int m_HighlightMaps;
-  
+    int m_HighlightSaves;
   private:
     CScreen * m_Screen;
     EStatus & m_Status;

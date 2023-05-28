@@ -14,6 +14,10 @@ class CVoid : public CMapElem
     {
       scr -> screenPrint ( m_Coords, " " );
     }
+    char get ( void ) const override 
+    {
+      return ' ';
+    }
 };
 
 #endif // VOID_H

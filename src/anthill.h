@@ -37,6 +37,10 @@ class CAntHill: public CMapElem
         && coord . m_X <= m_Coords . m_X + 4
         && coord . m_Y <= m_Coords . m_Y + 2;
   }
+  char get ( void ) const  override
+  {
+    return '*';
+  }
   int getId ( void ) const 
   {
     return m_Id;
@@ -48,10 +52,6 @@ class CAntHill: public CMapElem
   char getColor( void ) const
   {
     return m_Color;
-  }
-  CCoords getCoords ( void ) const
-  {
-    return m_Coords;
   }
   int getAttack( void ) const
   {

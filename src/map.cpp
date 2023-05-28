@@ -10,16 +10,25 @@ void CMap::readMap ( std::string & mapDir )
   m_Height += ( ( ( int ) c ) - 48 ) * 10;
   ifs . get ( c );
   m_Height += ( ( ( int ) c ) - 48 );
+
   ifs . get ( c );
+
   ifs . get ( c );
   m_Width += ( ( ( int ) c ) - 48 ) * 10;
   ifs . get ( c );
   m_Width += ( ( ( int ) c ) - 48 );
+
   ifs . get ( c );
+
   ifs . get ( c );
   m_Round += ( ( ( int ) c ) - 48 ) * 10;
   ifs . get ( c );
   m_Round += ( ( ( int ) c ) - 48 );
+
+  // mvwprintw ( m_Screen -> m_Window, 1, 1, "%d",m_Round);
+  // wrefresh ( m_Screen -> m_Window );
+  // while ( 1 ){}
+
   ifs . get ( c );
 
   std::vector<std::vector< std::pair <char, bool> > > map( m_Height, std::vector< std::pair <char, bool> >( m_Width ) );
@@ -74,8 +83,6 @@ void CMap::readMap ( std::string & mapDir )
     for ( const auto & it1 : m_AntHill )
       if ( it != it1 )
         createRoad( it -> getId(), it1 -> getId(), map );
-  
-
   
 }  
   
@@ -220,21 +227,9 @@ void CMap::fillRoad ( const int from, const int to )
 {
   for ( auto & it : m_Roads )
     if ( it . m_First == from && it . m_Second == to )
-    {
-      it . m_VecAnts[ it . m_VecAnts . size() - 1 ] . first = getAttackOfId( from ); 
-      it . m_VecAnts[ it . m_VecAnts . size() - 1 ] . second = getColorOfId( from );
       it . m_FirstUsed = true;
-      add ( from, - getAttackOfId( from ) );
-      print();
-    }
     else if ( it . m_First == to && it . m_Second == from )
-    {
-      it . m_VecAnts[ 0 ] . first = getAttackOfId( from );
-      it . m_VecAnts[ 0 ] . second = getColorOfId( from );
       it . m_SecondUsed = true;
-      add ( from, - getAttackOfId( from ) );
-      print();
-    }
 }
 
 void CMap::attack ( void )
@@ -243,10 +238,26 @@ void CMap::attack ( void )
   {  
     if ( !main_it . m_FirstUsed && !main_it . m_SecondUsed )
       continue;    
-    if ( main_it . m_SecondUsed && main_it . m_VecAnts[ 0 ] . second != getColorOfId ( main_it . m_Second ) )
-      continue;    
-    if ( main_it . m_FirstUsed && main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . second != getColorOfId ( main_it . m_First ) )
-      continue;    
+    // if ( main_it . m_SecondUsed && main_it . m_VecAnts[ 0 ] . second != getColorOfId ( main_it . m_Second ) )
+    //   continue;    
+    // if ( main_it . m_FirstUsed && main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . second != getColorOfId ( main_it . m_First ) )
+    //   continue;    
+
+    if ( main_it . m_FirstUsed )
+    {
+      main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . first = getAttackOfId( main_it . m_First ); 
+      main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . second = getColorOfId( main_it . m_First );
+      add ( main_it . m_First, - getAttackOfId( main_it . m_First ) );
+      print();
+    } 
+
+    if ( main_it . m_SecondUsed )
+    {
+      main_it . m_VecAnts[ 0 ] . first = getAttackOfId( main_it . m_Second );
+      main_it . m_VecAnts[ 0 ] . second = getColorOfId( main_it . m_Second );
+      add ( main_it . m_Second, - getAttackOfId( main_it . m_Second ) );
+      print();
+    }
 
     for ( size_t i = 0; i < main_it . m_VecAnts . size() - 1; ++i )
     {
@@ -496,8 +507,75 @@ void CMap::addMaxToColor ( char c, int amount )
       it -> addMax ( amount );
 }
 
+void CMap::randomMax ( char c )
+{
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() == c )
+    {
+      it -> add ( 1000 );
+      break;
+    }
+}
+
+void CMap::randomConquer ( char c )
+{
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() == 'w' )
+    {   
+      it -> setColor ( c );
+      break;
+    }
+}
+
+
 void CMap::deactivateAll ( void )
 {
   for ( const auto & it : m_AntHill )
     it -> clearAntHill();
+}
+
+void CMap::save (std::vector<std::vector< std::pair <char, bool> > > & map )
+{
+  for ( int i = 0; i < m_Height; ++i )
+    for ( int j = 0; j < m_Width; ++j )
+      map[i][j] . second = false;
+  for ( const auto & it : m_ElementList )
+  { 
+    CCoords coords = it -> getCoords();
+    map [ coords . m_Y ][ coords . m_X ] . first = it -> get();
+    map [ coords . m_Y ][ coords . m_X ] . second = true;
+  }
+  for ( const auto & it : m_AntHill )
+  { 
+    int talents;
+    for ( const auto & it1 : m_Players )
+      if ( it1 . first == it -> getColor() )
+        talents = it1 . second;
+    CCoords coords = it -> getCoords();
+    for ( int i = 0; i < 5; ++i )
+    {
+       map [ coords . m_Y ][ coords . m_X + i ] . first = it -> get();
+       map [ coords . m_Y ][ coords . m_X + i ] . second = true;
+    }
+    map [ coords . m_Y + 1 ][ coords . m_X ] . first = it -> getId() + 48;
+    map [ coords . m_Y + 1 ][ coords . m_X ] . second = true;
+    map [ coords . m_Y + 1 ][ coords . m_X + 1 ] . first = it -> getColor();
+    map [ coords . m_Y + 1 ][ coords . m_X + 1 ] . second = true;
+    map [ coords . m_Y + 1 ][ coords . m_X + 2 ] . first = it -> getAnts() / 10 + 48;
+    map [ coords . m_Y + 1 ][ coords . m_X + 2 ] . second = true;
+    map [ coords . m_Y + 1 ][ coords . m_X + 3 ] . first = it -> getAnts() % 10 + 48;
+    map [ coords . m_Y + 1 ][ coords . m_X + 3 ] . second = true;
+    map [ coords . m_Y + 1 ][ coords . m_X + 4 ] . first = it -> get();
+    map [ coords . m_Y + 1 ][ coords . m_X + 4 ] . second = true;
+    map [ coords . m_Y + 2 ][ coords . m_X + 0 ] . first = it -> get();
+    map [ coords . m_Y + 2 ][ coords . m_X + 0 ] . second = true;
+    map [ coords . m_Y + 2 ][ coords . m_X + 1 ] . first = talents / 100 + 48;
+    map [ coords . m_Y + 2 ][ coords . m_X + 1 ] . second = true;
+    map [ coords . m_Y + 2 ][ coords . m_X + 2 ] . first = talents / 10 + 48;
+    map [ coords . m_Y + 2 ][ coords . m_X + 2 ] . second = true;
+    map [ coords . m_Y + 2 ][ coords . m_X + 3 ] . first = talents % 10 + 48;
+    map [ coords . m_Y + 2 ][ coords . m_X + 3 ] . second = true;
+    map [ coords . m_Y + 2 ][ coords . m_X + 4 ] . first = it -> get();
+    map [ coords . m_Y + 2 ][ coords . m_X + 4 ] . second = true;
+  }
 }

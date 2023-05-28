@@ -1,0 +1,3 @@
+KANT the Conqueror
+Every move you have 50% chance to conquer random neutral anthill.
+5

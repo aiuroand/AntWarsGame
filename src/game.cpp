@@ -12,23 +12,28 @@ void CGame::loop ( void )
   {
     try 
     {
-      if ( m_Map . getRound() == m_Tier1Time )
+      if ( m_Map . getRound() == m_Tier1Time && m_Players . front() -> getTalentsSize() == 0 )
         for ( const auto & it : m_Players )
           it -> selectTalent ( m_Map, m_Tier1 );
       
-      if ( m_Map . getRound() == m_Tier2Time )
+      if ( m_Map . getRound() == m_Tier2Time && m_Players . front() -> getTalentsSize() == 1  )
         for ( const auto & it : m_Players )
           it -> selectTalent ( m_Map, m_Tier2 );
+
+      if ( m_Map . getRound() == m_Tier3Time && m_Players . front() -> getTalentsSize() == 2  )
+        for ( const auto & it : m_Players )
+          it -> selectTalent ( m_Map, m_Tier3 );
     }
     catch ( CLeave & x )
     {
       return;
-    }    
-    // if ( m_Map . getRound() == m_Tier3Time )
-    //   for ( const auto & it : m_Players )
-    //     it -> selectTalent ( m_Map, m_Tier3 );
+    }
+    catch ( CSave & x )
+    {
+      saveGame();
+      return;
+    }
     
-
     for ( const auto & it : m_Players )
       it -> activateTalents ( it -> getColor(), m_Map );
 
@@ -46,6 +51,12 @@ void CGame::loop ( void )
     {
       return;
     }
+    catch ( CSave & x )
+    {
+      saveGame();
+      return;
+    }
+    
     m_Map . clearRoads();  
     
     for ( const auto & it : orders )
@@ -106,7 +117,7 @@ void CGame::readTalents( void )
 {
   std::ifstream ifs;
   std::string name, description, str1, str2, str3;
-  int i, j, k;
+  int i;
 
   ifs . open ( m_Talents + "/time.txt", std::ios::in );
   std::getline ( ifs, str1 );
@@ -149,14 +160,21 @@ void CGame::readTalents( void )
   m_Tier2 . push_back ( new CMoreMove ( name, description, i ) );
   ifs . close();
 
+  ifs . open ( m_Talents + "/conqueror.txt", std::ios::in );
+  std::getline ( ifs, name );
+  std::getline ( ifs, description );
+  std::getline ( ifs, str1 );
+  i = (int) str1[0] - 48;
+  m_Tier3 . push_back ( new CConqueror ( name, description, i ) );
+  ifs . close();
 
-  // int amount = (int) str1[0] - 48;
-  // mvwprintw ( m_Screen -> m_Window, 1, 1, "%d", i );
-  // wrefresh ( m_Screen -> m_Window );
-  // while ( 1)
-  // {
-  //   /* code */
-  // }
+  ifs . open ( m_Talents + "/max.txt", std::ios::in );
+  std::getline ( ifs, name );
+  std::getline ( ifs, description );
+  std::getline ( ifs, str1 );
+  i = (int) str1[0] - 48;
+  m_Tier3 . push_back ( new CMaxAnts ( name, description, i ) );
+  ifs . close();
 
 }
 
@@ -197,4 +215,50 @@ void CGame::setPlayers ( void )
           m_Players . back() -> addTalent ( m_Tier3 . back() );
       } 
     }
+}
+
+void CGame::saveGame ( void )
+{
+  //https://stackoverflow.com/questions/16357999/current-date-and-time-as-string
+  std::ostringstream oss;
+  auto t = std::time(nullptr);
+  auto tm = *std::localtime(&t);
+  oss << std::put_time(&tm, "%d-%m-%Y %H-%M-%S");
+  auto str = oss.str();
+  
+  std::ofstream ofs;
+  ofs . open ( m_Saves + "/" + str , std::ios::out );
+  ofs . put ( m_Map . getHeight() / 10 + 48 );
+  ofs . put ( m_Map . getHeight() % 10 + 48 );
+  ofs . put ( ' ' );
+  ofs . put ( m_Map . getWidth() / 10 + 48 );
+  ofs . put ( m_Map . getWidth() % 10 + 48 );
+  ofs . put ( ' ' );
+  ofs . put ( ( m_Map . getRound() - 1 ) / 10 + 48 );
+  ofs . put ( ( m_Map . getRound() - 1 ) % 10 + 48 );
+  ofs . put ( '\n' );
+
+  for ( auto & it : m_Map . m_Players )
+  {
+    for ( const auto & it1 : m_Players )
+    {
+      if ( it . first == it1 -> getColor() )
+      {
+        char color = it . first;
+        m_Map . m_Players . erase ( std::make_pair ( it . first, it . second ) );
+        m_Map . m_Players . insert ( std::make_pair ( color, it1 -> countTalents( m_Tier1, m_Tier2, m_Tier3 ) ) );
+      }
+    }
+  }
+  std::vector<std::vector< std::pair <char, bool> > > map( m_Map . getHeight(), std::vector< std::pair <char, bool> >( m_Map . getWidth() ) );
+  m_Map . save( map );
+
+  for ( int i = 0; i < m_Map . getHeight(); ++i )
+  { 
+    for ( int j = 0; j < m_Map . getWidth(); ++j )
+    {
+      ofs . put ( map[i][j] . first );
+    }
+    ofs . put ( '\n' );
+  }
 }

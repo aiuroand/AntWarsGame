@@ -3,6 +3,8 @@
 
 #include <set>
 #include <chrono>
+#include <iomanip>
+#include <ctime>
 #include <thread>
 #include "screen.h"
 #include "player.h"
@@ -14,6 +16,8 @@
 #include "morearmor.h"
 #include "moremove.h"
 #include "moremax.h"
+#include "conqueror.h"
+#include "maxants.h"
 #include "exceptions.h"
 
 class CGame
@@ -45,6 +49,7 @@ class CGame
     void setPlayers ( void );
     void removeDead( void );
     void printHud( void );
+    void saveGame ( void );
   private:
     CMap m_Map;
     std::string m_Saves;
@@ -56,8 +61,7 @@ class CGame
     std::list < CTalent * > m_Tier3;
     int m_Tier1Time;
     int m_Tier2Time;
-    int m_Tier3Time;
-   
+    int m_Tier3Time;   
 };
 
 #endif // GAME_H

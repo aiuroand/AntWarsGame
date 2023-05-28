@@ -4,6 +4,7 @@
 enum EStatus
 {
   e_NewGame,
+  e_ContinueGame,
   e_Menu,
   e_Rules,
   e_Exit

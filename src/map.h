@@ -62,6 +62,9 @@ class CMap
     void addArmorToColor ( char c, int amount );
     void addMoveToColor ( char c, int amount );
     void addMaxToColor ( char c, int amount );
+    void randomMax ( char c );
+    void randomConquer ( char c );
+    void save (std::vector<std::vector< std::pair <char, bool> > > & map );
     int getHeight( void ) const
     {
       return m_Height;
@@ -74,7 +77,7 @@ class CMap
     {
       return m_Round;
     }
-    int setRound( int i )
+    void setRound( int i )
     {
       m_Round = i;
     }

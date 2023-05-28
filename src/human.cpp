@@ -77,8 +77,13 @@ CCoords CHuman::readMouse( void )
                                     || event . bstate == BUTTON1_TRIPLE_CLICKED
                                     || event . bstate == BUTTON1_PRESSED ) )
           return CCoords ( event . x, event . y );
+        break;
       case 'q':
         throw CLeave{};
+        break;
+      case 's':
+        throw CSave{};
+        break;
       default:
         continue;
     }

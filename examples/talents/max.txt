@@ -1,0 +1,3 @@
+Following the rabbits foodsteps II
+Every move your random anthill can get max amount of ants by 30% chance.
+3
