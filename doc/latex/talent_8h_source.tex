@@ -1,35 +1,42 @@
 \doxysection{talent.\+h}
-\hypertarget{talent_8h_source}{}\label{talent_8h_source}\index{/home/aiuroand/PA2/aiuroand/src/talent.h@{/home/aiuroand/PA2/aiuroand/src/talent.h}}
+\hypertarget{talent_8h_source}{}\label{talent_8h_source}\index{src/talent.h@{src/talent.h}}
 \mbox{\hyperlink{talent_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TALENT\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TALENT\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{map_8h}{map.h}}"{}}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCTalent}{CTalent}}}
-\DoxyCodeLine{00007\ \{}
-\DoxyCodeLine{00008\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{classCTalent_acc853ac425003fd62d71b3aab51abdb6}{CTalent}}\ (\ std::string\ name,}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ description\ )}
-\DoxyCodeLine{00011\ \ \ \ \ :\ \mbox{\hyperlink{classCTalent_aa9e2ed9e6e2381a799a5594ccb195961}{m\_Name}}\ (\ name\ ),}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m\_Description}}\ (\ description\ )}
-\DoxyCodeLine{00013\ \ \ \ \ \{\}}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCTalent_ac6c3f612043fb02981e414993407ec92}{\string~CTalent}}\ (\ \textcolor{keywordtype}{void}\ )\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00015\ \ \ \ \ std::string\ \mbox{\hyperlink{classCTalent_aa3d71a9f942a22dcb02f141b0b5268ad}{getName}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00016\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCTalent_aa9e2ed9e6e2381a799a5594ccb195961}{m\_Name}};}
-\DoxyCodeLine{00018\ \ \ \ \ \}}
-\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{classCTalent_a90522ea1a5f906c53601ae268bd5753a}{getDescription}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00020\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m\_Description}};}
-\DoxyCodeLine{00022\ \ \ \ \ \}}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4}{activate}}(\ \textcolor{keywordtype}{char}\ c,\ \mbox{\hyperlink{classCMap}{CMap}}\ \&\ map\ )\ =\ 0;}
-\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{classCTalent_aa9e2ed9e6e2381a799a5594ccb195961}{m\_Name}};}
-\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m\_Description}};}
-\DoxyCodeLine{00027\ \};}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TALENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{map_8h}{map.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCTalent}{CTalent}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classCTalent_acc853ac425003fd62d71b3aab51abdb6}{CTalent}}\ (\ std::string\ name,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ description\ )}
+\DoxyCodeLine{00018\ \ \ \ \ :\ \mbox{\hyperlink{classCTalent_aa9e2ed9e6e2381a799a5594ccb195961}{m\_Name}}\ (\ name\ ),}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m\_Description}}\ (\ description\ )}
+\DoxyCodeLine{00020\ \ \ \ \ \{\}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCTalent_ac6c3f612043fb02981e414993407ec92}{\string~CTalent}}\ (\ \textcolor{keywordtype}{void}\ )\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classCTalent_aa3d71a9f942a22dcb02f141b0b5268ad}{getName}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCTalent_aa9e2ed9e6e2381a799a5594ccb195961}{m\_Name}};}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classCTalent_a90522ea1a5f906c53601ae268bd5753a}{getDescription}}\ (\ \textcolor{keywordtype}{void}\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m\_Description}};}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4}{activate}}(\ \textcolor{keywordtype}{char}\ c,\ \mbox{\hyperlink{classCMap}{CMap}}\ \&\ map\ )\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00049\ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ std::string\ \mbox{\hyperlink{classCTalent_aa9e2ed9e6e2381a799a5594ccb195961}{m\_Name}};}
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m\_Description}};}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TALENT\_H}}
 
 \end{DoxyCode}

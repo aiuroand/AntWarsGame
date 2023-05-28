@@ -19,9 +19,9 @@ void \mbox{\hyperlink{classCMenu_a3bf73594fdb9ab59778ca5400181c278}{continue\+Ma
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{classCMenu_a9e47aaf0bfb4a1e1717edc1fae65b144}{m\+\_\+\+Highlight\+Maps}}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents current cursor position in \"{}\+New Game\"{} menu. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCMenu_adbd192977cdb883782319242cdd7dfec}{m\+\_\+\+Highlight\+Saves}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Represents current cursor position in \"{}\+Saved Games\"{} menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,9 +34,9 @@ std\+::string \mbox{\hyperlink{classCMenu_a33c69616922b728c58ce0e00069850f9}{m\+
 std\+::string \mbox{\hyperlink{classCMenu_a3918db25dd6288c891d2656ae8edbb5f}{m\+\_\+\+Saves}}
 \item 
 const std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classCMenu_adcc6234630382aaeedd40209bd6f0a71}{m\+\_\+\+Elements}}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents menu elements. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCMenu_adc0f53f7b62f9e9814c733a9ad1e8a0f}{m\+\_\+\+Highlight}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Represents current cursor position in Main menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -46,6 +46,17 @@ int \mbox{\hyperlink{classCMenu_adc0f53f7b62f9e9814c733a9ad1e8a0f}{m\+\_\+\+High
 \doxysubsubsection{\texorpdfstring{CMenu()}{CMenu()}}
 {\footnotesize\ttfamily CMenu\+::\+CMenu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{screen,  }\item[{\mbox{\hyperlink{status_8h_a922429339fd6d14354fd7962155d8193}{EStatus}} \&}]{status,  }\item[{std\+::string}]{maps,  }\item[{std\+::string}]{saves }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Constructor. 
+\begin{DoxyParams}{Parameters}
+{\em screen} & -\/ main game screen. \\
+\hline
+{\em status} & -\/ current game status. \\
+\hline
+{\em maps} & -\/ directory with maps. \\
+\hline
+{\em saves} & -\/ directory with saved maps. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -55,19 +66,29 @@ int \mbox{\hyperlink{classCMenu_adc0f53f7b62f9e9814c733a9ad1e8a0f}{m\+\_\+\+High
 \doxysubsubsection{\texorpdfstring{chooseNewMap()}{chooseNewMap()}}
 {\footnotesize\ttfamily void CMenu\+::choose\+New\+Map (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+Maps menu loop that is used to choose game map. 
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classCFileReadingError}{CFile\+Reading\+Error}} & if there was a problem during file or directory reading. \\
+\hline
+\end{DoxyExceptions}
 \Hypertarget{classCMenu_a3bf73594fdb9ab59778ca5400181c278}\label{classCMenu_a3bf73594fdb9ab59778ca5400181c278} 
 \index{CMenu@{CMenu}!continueMap@{continueMap}}
 \index{continueMap@{continueMap}!CMenu@{CMenu}}
 \doxysubsubsection{\texorpdfstring{continueMap()}{continueMap()}}
 {\footnotesize\ttfamily void CMenu\+::continue\+Map (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+Saves menu loop that is used to choose saved game map. 
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classCFileReadingError}{CFile\+Reading\+Error}} & if there was a problem during file or directory reading. \\
+\hline
+\end{DoxyExceptions}
 \Hypertarget{classCMenu_a84af3cbf7c20eff9354191ab34eaabfd}\label{classCMenu_a84af3cbf7c20eff9354191ab34eaabfd} 
 \index{CMenu@{CMenu}!loop@{loop}}
 \index{loop@{loop}!CMenu@{CMenu}}
 \doxysubsubsection{\texorpdfstring{loop()}{loop()}}
 {\footnotesize\ttfamily void CMenu\+::loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-
+Main menu loop that is used to choose it\textquotesingle{}s elements. 
 
 \doxysubsection{Member Data Documentation}
 \Hypertarget{classCMenu_adcc6234630382aaeedd40209bd6f0a71}\label{classCMenu_adcc6234630382aaeedd40209bd6f0a71} 
@@ -76,11 +97,19 @@ int \mbox{\hyperlink{classCMenu_adc0f53f7b62f9e9814c733a9ad1e8a0f}{m\+\_\+\+High
 \doxysubsubsection{\texorpdfstring{m\_Elements}{m\_Elements}}
 {\footnotesize\ttfamily const std\+::vector$<$ std\+::string $>$ CMenu\+::m\+\_\+\+Elements\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Represents menu elements. 
+
 \Hypertarget{classCMenu_adc0f53f7b62f9e9814c733a9ad1e8a0f}\label{classCMenu_adc0f53f7b62f9e9814c733a9ad1e8a0f} 
 \index{CMenu@{CMenu}!m\_Highlight@{m\_Highlight}}
 \index{m\_Highlight@{m\_Highlight}!CMenu@{CMenu}}
 \doxysubsubsection{\texorpdfstring{m\_Highlight}{m\_Highlight}}
 {\footnotesize\ttfamily int CMenu\+::m\+\_\+\+Highlight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Represents current cursor position in Main menu. 
 
 \Hypertarget{classCMenu_a9e47aaf0bfb4a1e1717edc1fae65b144}\label{classCMenu_a9e47aaf0bfb4a1e1717edc1fae65b144} 
 \index{CMenu@{CMenu}!m\_HighlightMaps@{m\_HighlightMaps}}
@@ -88,11 +117,19 @@ int \mbox{\hyperlink{classCMenu_adc0f53f7b62f9e9814c733a9ad1e8a0f}{m\+\_\+\+High
 \doxysubsubsection{\texorpdfstring{m\_HighlightMaps}{m\_HighlightMaps}}
 {\footnotesize\ttfamily int CMenu\+::m\+\_\+\+Highlight\+Maps}
 
+
+
+Represents current cursor position in \"{}\+New Game\"{} menu. 
+
 \Hypertarget{classCMenu_adbd192977cdb883782319242cdd7dfec}\label{classCMenu_adbd192977cdb883782319242cdd7dfec} 
 \index{CMenu@{CMenu}!m\_HighlightSaves@{m\_HighlightSaves}}
 \index{m\_HighlightSaves@{m\_HighlightSaves}!CMenu@{CMenu}}
 \doxysubsubsection{\texorpdfstring{m\_HighlightSaves}{m\_HighlightSaves}}
 {\footnotesize\ttfamily int CMenu\+::m\+\_\+\+Highlight\+Saves}
+
+
+
+Represents current cursor position in \"{}\+Saved Games\"{} menu. 
 
 \Hypertarget{classCMenu_a33c69616922b728c58ce0e00069850f9}\label{classCMenu_a33c69616922b728c58ce0e00069850f9} 
 \index{CMenu@{CMenu}!m\_Maps@{m\_Maps}}
@@ -122,5 +159,5 @@ int \mbox{\hyperlink{classCMenu_adc0f53f7b62f9e9814c733a9ad1e8a0f}{m\+\_\+\+High
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{menu_8h}{menu.\+h}}\item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{menu_8cpp}{menu.\+cpp}}\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{menu_8h}{menu.\+h}}\item 
+src/\mbox{\hyperlink{menu_8cpp}{menu.\+cpp}}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: /home/aiuroand/PA2/aiuroand/src/bot.h Source File</title>
+<title>AntWars aiuroand: src/bot.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">AntWars aiuroand
    </div>
   </td>
  </tr>
@@ -78,33 +78,38 @@ $(function() {
 <div class="contents">
 <a href="bot_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BOT_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BOT_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="player_8h.html">player.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="coords_8h.html">coords.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;ncurses.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="screen_8h.html">screen.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="map_8h.html">map.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classCBot.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="classCBot.html">CBot</a>: <span class="keyword">public</span> <a class="code hl_class" href="classCPlayer.html">CPlayer</a></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classCBot.html#a7e4c8aea37de145d4d7a49db6fd38706">   12</a></span>    <a class="code hl_function" href="classCBot.html#a7e4c8aea37de145d4d7a49db6fd38706">CBot</a> ( <span class="keywordtype">char</span> color,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>             <a class="code hl_class" href="classCScreen.html">CScreen</a> * screen )</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    : <a class="code hl_class" href="classCPlayer.html">CPlayer</a>( color ),</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>      <a class="code hl_variable" href="classCBot.html#a999b13a677073530ca085c840d0eb791">m_Screen</a> ( screen )</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    std::pair &lt; int, int &gt; <a class="code hl_function" href="classCBot.html#a8711d56fed9793d8b6eb920f2e8524bd">makeMove</a> ( <a class="code hl_class" href="classCMap.html">CMap</a> &amp; map ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCBot.html#af3c87719e19e0dc30301d6ea2872b4e1">selectTalent</a> (  <a class="code hl_class" href="classCMap.html">CMap</a> &amp; map, std::list &lt; CTalent * &gt; &amp; t ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classCBot.html#a999b13a677073530ca085c840d0eb791">   20</a></span>    <a class="code hl_class" href="classCScreen.html">CScreen</a> * <a class="code hl_variable" href="classCBot.html#a999b13a677073530ca085c840d0eb791">m_Screen</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif </span><span class="comment">// BOT_H</span></div>
-<div class="ttc" id="aclassCBot_html"><div class="ttname"><a href="classCBot.html">CBot</a></div><div class="ttdef"><b>Definition</b> bot.h:10</div></div>
-<div class="ttc" id="aclassCBot_html_a7e4c8aea37de145d4d7a49db6fd38706"><div class="ttname"><a href="classCBot.html#a7e4c8aea37de145d4d7a49db6fd38706">CBot::CBot</a></div><div class="ttdeci">CBot(char color, CScreen *screen)</div><div class="ttdef"><b>Definition</b> bot.h:12</div></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="player_8h.html">player.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="coords_8h.html">coords.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;ncurses.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="screen_8h.html">screen.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="map_8h.html">map.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classCBot.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="classCBot.html">CBot</a>: <span class="keyword">public</span> <a class="code hl_class" href="classCPlayer.html">CPlayer</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classCBot.html#a7e4c8aea37de145d4d7a49db6fd38706">   19</a></span>    <a class="code hl_function" href="classCBot.html#a7e4c8aea37de145d4d7a49db6fd38706">CBot</a> ( <span class="keywordtype">char</span> color,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>           <a class="code hl_class" href="classCScreen.html">CScreen</a> * screen )</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    : <a class="code hl_class" href="classCPlayer.html">CPlayer</a>( color ),</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      <a class="code hl_variable" href="classCBot.html#a999b13a677073530ca085c840d0eb791">m_Screen</a> ( screen )</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::pair &lt; int, int &gt; <a class="code hl_function" href="classCBot.html#a8711d56fed9793d8b6eb920f2e8524bd">makeMove</a> ( <a class="code hl_class" href="classCMap.html">CMap</a> &amp; map ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCBot.html#af3c87719e19e0dc30301d6ea2872b4e1">selectTalent</a> (  <a class="code hl_class" href="classCMap.html">CMap</a> &amp; map, std::list &lt; CTalent * &gt; &amp; t ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classCBot.html#a999b13a677073530ca085c840d0eb791">   42</a></span>    <a class="code hl_class" href="classCScreen.html">CScreen</a> * <a class="code hl_variable" href="classCBot.html#a999b13a677073530ca085c840d0eb791">m_Screen</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// BOT_H</span></div>
+<div class="ttc" id="aclassCBot_html"><div class="ttname"><a href="classCBot.html">CBot</a></div><div class="ttdef"><b>Definition</b> bot.h:13</div></div>
+<div class="ttc" id="aclassCBot_html_a7e4c8aea37de145d4d7a49db6fd38706"><div class="ttname"><a href="classCBot.html#a7e4c8aea37de145d4d7a49db6fd38706">CBot::CBot</a></div><div class="ttdeci">CBot(char color, CScreen *screen)</div><div class="ttdef"><b>Definition</b> bot.h:19</div></div>
 <div class="ttc" id="aclassCBot_html_a8711d56fed9793d8b6eb920f2e8524bd"><div class="ttname"><a href="classCBot.html#a8711d56fed9793d8b6eb920f2e8524bd">CBot::makeMove</a></div><div class="ttdeci">std::pair&lt; int, int &gt; makeMove(CMap &amp;map) override</div><div class="ttdef"><b>Definition</b> bot.cpp:3</div></div>
-<div class="ttc" id="aclassCBot_html_a999b13a677073530ca085c840d0eb791"><div class="ttname"><a href="classCBot.html#a999b13a677073530ca085c840d0eb791">CBot::m_Screen</a></div><div class="ttdeci">CScreen * m_Screen</div><div class="ttdef"><b>Definition</b> bot.h:20</div></div>
+<div class="ttc" id="aclassCBot_html_a999b13a677073530ca085c840d0eb791"><div class="ttname"><a href="classCBot.html#a999b13a677073530ca085c840d0eb791">CBot::m_Screen</a></div><div class="ttdeci">CScreen * m_Screen</div><div class="ttdef"><b>Definition</b> bot.h:42</div></div>
 <div class="ttc" id="aclassCBot_html_af3c87719e19e0dc30301d6ea2872b4e1"><div class="ttname"><a href="classCBot.html#af3c87719e19e0dc30301d6ea2872b4e1">CBot::selectTalent</a></div><div class="ttdeci">void selectTalent(CMap &amp;map, std::list&lt; CTalent * &gt; &amp;t) override</div><div class="ttdef"><b>Definition</b> bot.cpp:18</div></div>
 <div class="ttc" id="aclassCMap_html"><div class="ttname"><a href="classCMap.html">CMap</a></div><div class="ttdef"><b>Definition</b> map.h:25</div></div>
-<div class="ttc" id="aclassCPlayer_html"><div class="ttname"><a href="classCPlayer.html">CPlayer</a></div><div class="ttdef"><b>Definition</b> player.h:9</div></div>
+<div class="ttc" id="aclassCPlayer_html"><div class="ttname"><a href="classCPlayer.html">CPlayer</a></div><div class="ttdef"><b>Definition</b> player.h:10</div></div>
 <div class="ttc" id="aclassCScreen_html"><div class="ttname"><a href="classCScreen.html">CScreen</a></div><div class="ttdef"><b>Definition</b> screen.h:8</div></div>
 <div class="ttc" id="acoords_8h_html"><div class="ttname"><a href="coords_8h.html">coords.h</a></div></div>
 <div class="ttc" id="amap_8h_html"><div class="ttname"><a href="map_8h.html">map.h</a></div></div>

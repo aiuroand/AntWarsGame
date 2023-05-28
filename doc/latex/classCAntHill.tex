@@ -15,11 +15,13 @@ Inheritance diagram for CAnt\+Hill\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classCAntHill_a5adb37b901e68a8a407652f0884f62b8}{CAnt\+Hill}} (\mbox{\hyperlink{classCCoords}{CCoords}} coords, char color, int ants, int id)
 \item 
-void \mbox{\hyperlink{classCAntHill_ace65fbc89b87daafdbcb85fb9b8af35a}{print}} (\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}scr) override
+\mbox{\hyperlink{classCAntHill_acdd75b9a3f50f69edd61850511340621}{\texorpdfstring{$\sim$}{\string~}\+CAnt\+Hill}} (void)=default
 \item 
-bool \mbox{\hyperlink{classCAntHill_ab62b0ca1c2edac17989158228db525e1}{is\+Inside}} (\mbox{\hyperlink{classCCoords}{CCoords}} coord) const
+void \mbox{\hyperlink{classCAntHill_a3e504d4d1bd8cc2435f33ea5eedab894}{print}} (\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}scr) const override
 \item 
 char \mbox{\hyperlink{classCAntHill_acf369fbc2e328ae67f4e04e40af07bab}{get}} (void) const override
+\item 
+bool \mbox{\hyperlink{classCAntHill_afb3afc1b38747b0085d30db1845965d5}{is\+Inside}} (\mbox{\hyperlink{classCCoords}{CCoords}} coords) const
 \item 
 int \mbox{\hyperlink{classCAntHill_acc745ee38288fa4e20b73dffa94e02a0}{get\+Id}} (void) const
 \item 
@@ -52,7 +54,7 @@ void \mbox{\hyperlink{classCAntHill_a846b33c5f40947254ede4df3ef276393}{clear\+An
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCMapElem}{CMap\+Elem}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classCMapElem_a7f8218b8236c551a67e963e6bed737e0}{CMap\+Elem}} (char c, \mbox{\hyperlink{classCCoords}{CCoords}} coord)
+\mbox{\hyperlink{classCMapElem_a93eb9715709e44833bef514c4a8fc848}{CMap\+Elem}} (char c, \mbox{\hyperlink{classCCoords}{CCoords}} coords)
 \item 
 virtual \mbox{\hyperlink{classCMapElem_adac685e656a9b1730a050e79314a84a9}{\texorpdfstring{$\sim$}{\string~}\+CMap\+Elem}} (void)=default
 \item 
@@ -62,17 +64,17 @@ virtual \mbox{\hyperlink{classCMapElem_adac685e656a9b1730a050e79314a84a9}{\texor
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{classCAntHill_a233274ca61b87d358d8662b46610b478}{m\+\_\+\+Ants}}
-\item 
+\begin{DoxyCompactList}\small\item\em Number of ants in anthill. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCAntHill_a0940ccd9cdceeef744d4f65021e74130}{m\+\_\+\+Id}}
-\item 
+\begin{DoxyCompactList}\small\item\em Id of anthill. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCAntHill_a1172ca9e2efa5179c9a485a6121c1d63}{m\+\_\+\+Move}}
-\item 
+\begin{DoxyCompactList}\small\item\em Number of ants anthill craetes in 1 move. By default ANTS\+\_\+\+MOVE. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCAntHill_aa2c13b33eda6ece4647bcc5d666a197d}{m\+\_\+\+Attack}}
-\item 
+\begin{DoxyCompactList}\small\item\em Number of ants anthill sends per 1 attack. By default ANTS\+\_\+\+ATTACK. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCAntHill_a5f5781064224d2d4bf702284f5c7517e}{m\+\_\+\+Armor}}
-\item 
+\begin{DoxyCompactList}\small\item\em Number of armor anthill has. By default ANTS\+\_\+\+ARMOR. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCAntHill_a4f1963eb635de88de959848f4dffac57}{m\+\_\+\+Max}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Max ants amount allowed in anthill. By default ANTS\+\_\+\+MAX. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCMapElem}{CMap\+Elem}}}
 \begin{DoxyCompactItemize}
@@ -83,6 +85,9 @@ char \mbox{\hyperlink{classCMapElem_a41545b0c790ebbc3aab19d9e7fade5a6}{m\+\_\+\+
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Child class of \doxylink{classCMapElem}{CMap\+Elem} that represents anthill. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classCAntHill_a5adb37b901e68a8a407652f0884f62b8}\label{classCAntHill_a5adb37b901e68a8a407652f0884f62b8} 
 \index{CAntHill@{CAntHill}!CAntHill@{CAntHill}}
@@ -90,18 +95,24 @@ char \mbox{\hyperlink{classCMapElem_a41545b0c790ebbc3aab19d9e7fade5a6}{m\+\_\+\+
 \doxysubsubsection{\texorpdfstring{CAntHill()}{CAntHill()}}
 {\footnotesize\ttfamily CAnt\+Hill\+::\+CAnt\+Hill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCCoords}{CCoords}}}]{coords,  }\item[{char}]{color,  }\item[{int}]{ants,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Constructor 
+Constructor that firtsly constructs parent class \doxylink{classCMapElem}{CMap\+Elem}. 
 \begin{DoxyParams}{Parameters}
-{\em coords} & of left top corner of anthill \\
+{\em coords} & -\/ coords of left top corner of anthill. \\
 \hline
-{\em color} & color of owner of anthill \\
+{\em color} & -\/ owner\textquotesingle{}s color. \\
 \hline
-{\em ants} & amount of ants in anthill when created \\
+{\em ants} & -\/ amount of ants in anthill when created. \\
 \hline
-{\em id} & id of anthill \\
+{\em id} & -\/ id of anthill. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classCAntHill_acdd75b9a3f50f69edd61850511340621}\label{classCAntHill_acdd75b9a3f50f69edd61850511340621} 
+\index{CAntHill@{CAntHill}!````~CAntHill@{\texorpdfstring{$\sim$}{\string~}CAntHill}}
+\index{````~CAntHill@{\texorpdfstring{$\sim$}{\string~}CAntHill}!CAntHill@{CAntHill}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CAntHill()}{\string~CAntHill()}}
+{\footnotesize\ttfamily CAnt\+Hill\+::\texorpdfstring{$\sim$}{\string~}\+CAnt\+Hill (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
+Destructor 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classCAntHill_af049f8205c9f042432073063a26a6624}\label{classCAntHill_af049f8205c9f042432073063a26a6624} 
@@ -110,48 +121,76 @@ Constructor
 \doxysubsubsection{\texorpdfstring{add()}{add()}}
 {\footnotesize\ttfamily void CAnt\+Hill\+::add (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Increases (decreases if amount \texorpdfstring{$<$}{<} 0 ) amount of ants in current anthill. If after increasing amount of ants \texorpdfstring{$>$}{>} amount of ant allowed\+: amount of ants = amount of ant allowed. If after decreasing amount of ants \texorpdfstring{$<$}{<} 0 armor tries to compensate losses. 
+\begin{DoxyParams}{Parameters}
+{\em amount} & -\/ increase ( decrease ) number. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCAntHill_a762b3044d5fe555736489e90d248bb4c}\label{classCAntHill_a762b3044d5fe555736489e90d248bb4c} 
 \index{CAntHill@{CAntHill}!addArmor@{addArmor}}
 \index{addArmor@{addArmor}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{addArmor()}{addArmor()}}
 {\footnotesize\ttfamily void CAnt\+Hill\+::add\+Armor (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Increases armor value for current anthill. 
+\begin{DoxyParams}{Parameters}
+{\em amount} & -\/ increase number. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCAntHill_aab4c2d9cfbdfe91fe3191c5bb1f8001f}\label{classCAntHill_aab4c2d9cfbdfe91fe3191c5bb1f8001f} 
 \index{CAntHill@{CAntHill}!addAttack@{addAttack}}
 \index{addAttack@{addAttack}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{addAttack()}{addAttack()}}
 {\footnotesize\ttfamily void CAnt\+Hill\+::add\+Attack (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Increases \textquotesingle{}ants per attack\textquotesingle{} value for current anthill. 
+\begin{DoxyParams}{Parameters}
+{\em amount} & -\/ increase number. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCAntHill_a9ea0b4ee86add7d6ccc94b9f8460cda3}\label{classCAntHill_a9ea0b4ee86add7d6ccc94b9f8460cda3} 
 \index{CAntHill@{CAntHill}!addMax@{addMax}}
 \index{addMax@{addMax}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{addMax()}{addMax()}}
 {\footnotesize\ttfamily void CAnt\+Hill\+::add\+Max (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Increases upper boundary for max amount of ants in current anthill. 
+\begin{DoxyParams}{Parameters}
+{\em amount} & -\/ increase number. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCAntHill_a9e4296afe574c8d7eec737c7cdcacc10}\label{classCAntHill_a9e4296afe574c8d7eec737c7cdcacc10} 
 \index{CAntHill@{CAntHill}!addMove@{addMove}}
 \index{addMove@{addMove}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{addMove()}{addMove()}}
 {\footnotesize\ttfamily void CAnt\+Hill\+::add\+Move (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Increases amount of ants per attack in current anthill. 
+\begin{DoxyParams}{Parameters}
+{\em amount} & -\/ increase number. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCAntHill_a846b33c5f40947254ede4df3ef276393}\label{classCAntHill_a846b33c5f40947254ede4df3ef276393} 
 \index{CAntHill@{CAntHill}!clearAntHill@{clearAntHill}}
 \index{clearAntHill@{clearAntHill}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{clearAntHill()}{clearAntHill()}}
 {\footnotesize\ttfamily void CAnt\+Hill\+::clear\+Ant\+Hill (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCAntHill_ab985c5524c2f23cff753a93fecb66991}\label{classCAntHill_ab985c5524c2f23cff753a93fecb66991} 
+Restores anthill\textquotesingle{}s settings to default. Default settings are represented by ANTS\+\_\+\+MOVE, ANTS\+\_\+\+ATTACK, ANTS\+\_\+\+ARMOR and ANTS\+\_\+\+MAX constants. \Hypertarget{classCAntHill_ab985c5524c2f23cff753a93fecb66991}\label{classCAntHill_ab985c5524c2f23cff753a93fecb66991} 
 \index{CAntHill@{CAntHill}!createAnts@{createAnts}}
 \index{createAnts@{createAnts}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{createAnts()}{createAnts()}}
 {\footnotesize\ttfamily void CAnt\+Hill\+::create\+Ants (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCAntHill_acf369fbc2e328ae67f4e04e40af07bab}\label{classCAntHill_acf369fbc2e328ae67f4e04e40af07bab} 
+Creates new ants in current anthill. If after increasing amount of ants \texorpdfstring{$>$}{>} amount of ant allowed\+: amount of ants = amount of ant allowed. \Hypertarget{classCAntHill_acf369fbc2e328ae67f4e04e40af07bab}\label{classCAntHill_acf369fbc2e328ae67f4e04e40af07bab} 
 \index{CAntHill@{CAntHill}!get@{get}}
 \index{get@{get}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
 {\footnotesize\ttfamily char CAnt\+Hill\+::get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+Overrided method that is used to get borders in char format. \begin{DoxyReturn}{Returns}
+char value that represents anthill\textquotesingle{}s borders. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{classCMapElem_a2ddb93098fbc6c995dd9f4179bf281b9}{CMap\+Elem}}.
@@ -162,45 +201,73 @@ Implements \mbox{\hyperlink{classCMapElem_a2ddb93098fbc6c995dd9f4179bf281b9}{CMa
 \doxysubsubsection{\texorpdfstring{getAnts()}{getAnts()}}
 {\footnotesize\ttfamily int CAnt\+Hill\+::get\+Ants (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Gets nubmer of ants in anthill. \begin{DoxyReturn}{Returns}
+number of ants. 
+\end{DoxyReturn}
 \Hypertarget{classCAntHill_a85f2725556fed34b80aa47d122eb168c}\label{classCAntHill_a85f2725556fed34b80aa47d122eb168c} 
 \index{CAntHill@{CAntHill}!getArmor@{getArmor}}
 \index{getArmor@{getArmor}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{getArmor()}{getArmor()}}
 {\footnotesize\ttfamily int CAnt\+Hill\+::get\+Armor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Gets armor value of anthill. \begin{DoxyReturn}{Returns}
+armor value. 
+\end{DoxyReturn}
 \Hypertarget{classCAntHill_ad8af17e4e24038903ea77f48da94bebe}\label{classCAntHill_ad8af17e4e24038903ea77f48da94bebe} 
 \index{CAntHill@{CAntHill}!getAttack@{getAttack}}
 \index{getAttack@{getAttack}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{getAttack()}{getAttack()}}
 {\footnotesize\ttfamily int CAnt\+Hill\+::get\+Attack (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Gets amount of ants avilable for attack. \begin{DoxyReturn}{Returns}
+max ( m\+\_\+\+Attack, m\+\_\+\+Ants ). 
+\end{DoxyReturn}
 \Hypertarget{classCAntHill_a60b92c4fbf71d25fe76c56524bce9f6a}\label{classCAntHill_a60b92c4fbf71d25fe76c56524bce9f6a} 
 \index{CAntHill@{CAntHill}!getColor@{getColor}}
 \index{getColor@{getColor}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
 {\footnotesize\ttfamily char CAnt\+Hill\+::get\+Color (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Gets color of anthill. \begin{DoxyReturn}{Returns}
+color of anthill. 
+\end{DoxyReturn}
 \Hypertarget{classCAntHill_acc745ee38288fa4e20b73dffa94e02a0}\label{classCAntHill_acc745ee38288fa4e20b73dffa94e02a0} 
 \index{CAntHill@{CAntHill}!getId@{getId}}
 \index{getId@{getId}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{getId()}{getId()}}
 {\footnotesize\ttfamily int CAnt\+Hill\+::get\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCAntHill_ab62b0ca1c2edac17989158228db525e1}\label{classCAntHill_ab62b0ca1c2edac17989158228db525e1} 
+Gets anthill\textquotesingle{}s id. \begin{DoxyReturn}{Returns}
+anthill\textquotesingle{}s id. 
+\end{DoxyReturn}
+\Hypertarget{classCAntHill_afb3afc1b38747b0085d30db1845965d5}\label{classCAntHill_afb3afc1b38747b0085d30db1845965d5} 
 \index{CAntHill@{CAntHill}!isInside@{isInside}}
 \index{isInside@{isInside}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{isInside()}{isInside()}}
-{\footnotesize\ttfamily bool CAnt\+Hill\+::is\+Inside (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCCoords}{CCoords}}}]{coord }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily bool CAnt\+Hill\+::is\+Inside (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCCoords}{CCoords}}}]{coords }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCAntHill_ace65fbc89b87daafdbcb85fb9b8af35a}\label{classCAntHill_ace65fbc89b87daafdbcb85fb9b8af35a} 
+Checkes if the coordinates are inside of anthill of not. 
+\begin{DoxyParams}{Parameters}
+{\em coords} & -\/ coordinates to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if inside, false if outside. 
+\end{DoxyReturn}
+\Hypertarget{classCAntHill_a3e504d4d1bd8cc2435f33ea5eedab894}\label{classCAntHill_a3e504d4d1bd8cc2435f33ea5eedab894} 
 \index{CAntHill@{CAntHill}!print@{print}}
 \index{print@{print}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{print()}{print()}}
-{\footnotesize\ttfamily void CAnt\+Hill\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{scr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void CAnt\+Hill\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{scr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Overrided method that is used to draw anthill on the screen. 
+\begin{DoxyParams}{Parameters}
+{\em sct} & -\/ screen, represented by \doxylink{classCScreen}{CScreen} class, where anthill should be drawn on. \\
+\hline
+\end{DoxyParams}
 
 
-
-Implements \mbox{\hyperlink{classCMapElem_aa3ee545d82dfa7e12187777faaceabb7}{CMap\+Elem}}.
+Implements \mbox{\hyperlink{classCMapElem_a727c11b976d0b1fb6dbf0dc17e5fc169}{CMap\+Elem}}.
 
 \Hypertarget{classCAntHill_abaeeffb0f3a5874575412ef62a04aed6}\label{classCAntHill_abaeeffb0f3a5874575412ef62a04aed6} 
 \index{CAntHill@{CAntHill}!setAnts@{setAnts}}
@@ -208,12 +275,22 @@ Implements \mbox{\hyperlink{classCMapElem_aa3ee545d82dfa7e12187777faaceabb7}{CMa
 \doxysubsubsection{\texorpdfstring{setAnts()}{setAnts()}}
 {\footnotesize\ttfamily void CAnt\+Hill\+::set\+Ants (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Changes amount of ants inside of anthill. 
+\begin{DoxyParams}{Parameters}
+{\em amount} & -\/ new amount. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCAntHill_a9507af8cc4d575d5d1d06dc028d48236}\label{classCAntHill_a9507af8cc4d575d5d1d06dc028d48236} 
 \index{CAntHill@{CAntHill}!setColor@{setColor}}
 \index{setColor@{setColor}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
 {\footnotesize\ttfamily void CAnt\+Hill\+::set\+Color (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Changes color of anthill. 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ new color. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}
@@ -223,11 +300,19 @@ Implements \mbox{\hyperlink{classCMapElem_aa3ee545d82dfa7e12187777faaceabb7}{CMa
 \doxysubsubsection{\texorpdfstring{m\_Ants}{m\_Ants}}
 {\footnotesize\ttfamily int CAnt\+Hill\+::m\+\_\+\+Ants\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Number of ants in anthill. 
+
 \Hypertarget{classCAntHill_a5f5781064224d2d4bf702284f5c7517e}\label{classCAntHill_a5f5781064224d2d4bf702284f5c7517e} 
 \index{CAntHill@{CAntHill}!m\_Armor@{m\_Armor}}
 \index{m\_Armor@{m\_Armor}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{m\_Armor}{m\_Armor}}
 {\footnotesize\ttfamily int CAnt\+Hill\+::m\+\_\+\+Armor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of armor anthill has. By default ANTS\+\_\+\+ARMOR. 
 
 \Hypertarget{classCAntHill_aa2c13b33eda6ece4647bcc5d666a197d}\label{classCAntHill_aa2c13b33eda6ece4647bcc5d666a197d} 
 \index{CAntHill@{CAntHill}!m\_Attack@{m\_Attack}}
@@ -235,17 +320,29 @@ Implements \mbox{\hyperlink{classCMapElem_aa3ee545d82dfa7e12187777faaceabb7}{CMa
 \doxysubsubsection{\texorpdfstring{m\_Attack}{m\_Attack}}
 {\footnotesize\ttfamily int CAnt\+Hill\+::m\+\_\+\+Attack\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Number of ants anthill sends per 1 attack. By default ANTS\+\_\+\+ATTACK. 
+
 \Hypertarget{classCAntHill_a0940ccd9cdceeef744d4f65021e74130}\label{classCAntHill_a0940ccd9cdceeef744d4f65021e74130} 
 \index{CAntHill@{CAntHill}!m\_Id@{m\_Id}}
 \index{m\_Id@{m\_Id}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{m\_Id}{m\_Id}}
 {\footnotesize\ttfamily int CAnt\+Hill\+::m\+\_\+\+Id\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Id of anthill. 
+
 \Hypertarget{classCAntHill_a4f1963eb635de88de959848f4dffac57}\label{classCAntHill_a4f1963eb635de88de959848f4dffac57} 
 \index{CAntHill@{CAntHill}!m\_Max@{m\_Max}}
 \index{m\_Max@{m\_Max}!CAntHill@{CAntHill}}
 \doxysubsubsection{\texorpdfstring{m\_Max}{m\_Max}}
 {\footnotesize\ttfamily int CAnt\+Hill\+::m\+\_\+\+Max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Max ants amount allowed in anthill. By default ANTS\+\_\+\+MAX. 
 
 \Hypertarget{classCAntHill_a1172ca9e2efa5179c9a485a6121c1d63}\label{classCAntHill_a1172ca9e2efa5179c9a485a6121c1d63} 
 \index{CAntHill@{CAntHill}!m\_Move@{m\_Move}}
@@ -255,7 +352,11 @@ Implements \mbox{\hyperlink{classCMapElem_aa3ee545d82dfa7e12187777faaceabb7}{CMa
 
 
 
+Number of ants anthill craetes in 1 move. By default ANTS\+\_\+\+MOVE. 
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{anthill_8h}{anthill.\+h}}\item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{anthill_8cpp}{anthill.\+cpp}}\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{anthill_8h}{anthill.\+h}}\item 
+src/\mbox{\hyperlink{anthill_8cpp}{anthill.\+cpp}}\end{DoxyCompactItemize}

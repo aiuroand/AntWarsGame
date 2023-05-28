@@ -37,17 +37,17 @@ std\+::string \mbox{\hyperlink{classCGame_ac25c7654fb304968789a3305996ac91d}{m\+
 std\+::list$<$ \mbox{\hyperlink{classCPlayer}{CPlayer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCGame_ad25e2e5e4573d317ea7a3ecd5ca9d257}{m\+\_\+\+Players}}
 \item 
 std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCGame_a96b2ee91043bab863e5d3bff3157bf50}{m\+\_\+\+Tier1}}
-\item 
+\begin{DoxyCompactList}\small\item\em std\+::list that represent tier 1 talents \end{DoxyCompactList}\item 
 std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCGame_a0f0a9206260db2605d7f9639c16082fe}{m\+\_\+\+Tier2}}
-\item 
+\begin{DoxyCompactList}\small\item\em std\+::list that represent tier 2 talents \end{DoxyCompactList}\item 
 std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classCGame_ad7c67b67cab4d479d04f1d00f03ea119}{m\+\_\+\+Tier3}}
-\item 
+\begin{DoxyCompactList}\small\item\em std\+::list that represent tier 3 talents \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCGame_a6aa137666e63220b1d7b27d604a88db2}{m\+\_\+\+Tier1\+Time}}
-\item 
+\begin{DoxyCompactList}\small\item\em Round when tier 1 talent should be suggested to players. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCGame_ad1ed2e0c9770780c8e1e668814d94ec2}{m\+\_\+\+Tier2\+Time}}
-\item 
+\begin{DoxyCompactList}\small\item\em Round when tier 2 talent should be suggested to players. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCGame_aa3e5c388867c9a40b5ca7b403d266972}{m\+\_\+\+Tier3\+Time}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Round when tier 3 talent should be suggested to players. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -57,13 +57,24 @@ int \mbox{\hyperlink{classCGame_aa3e5c388867c9a40b5ca7b403d266972}{m\+\_\+\+Tier
 \doxysubsubsection{\texorpdfstring{CGame()}{CGame()}}
 {\footnotesize\ttfamily CGame\+::\+CGame (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{saves,  }\item[{std\+::string}]{talents,  }\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{scr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ represents current game\textquotesingle{}s map\textquotesingle{}s filename \\
+\hline
+{\em saves} & -\/ represents directory to save maps \\
+\hline
+{\em talents} & -\/ represents directory that contains talents descriptions \\
+\hline
+{\em scr} & -\/ pointer to output screen \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCGame_ab531879b501483da3c50568d22bc7817}\label{classCGame_ab531879b501483da3c50568d22bc7817} 
 \index{CGame@{CGame}!````~CGame@{\texorpdfstring{$\sim$}{\string~}CGame}}
 \index{````~CGame@{\texorpdfstring{$\sim$}{\string~}CGame}!CGame@{CGame}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CGame()}{\string~CGame()}}
 {\footnotesize\ttfamily CGame\+::\texorpdfstring{$\sim$}{\string~}\+CGame (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-
+Destructor that deallocates allocated resourses 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classCGame_ae58217c1b820c9e95abc5294e43b02a7}\label{classCGame_ae58217c1b820c9e95abc5294e43b02a7} 
@@ -72,37 +83,37 @@ int \mbox{\hyperlink{classCGame_aa3e5c388867c9a40b5ca7b403d266972}{m\+\_\+\+Tier
 \doxysubsubsection{\texorpdfstring{loop()}{loop()}}
 {\footnotesize\ttfamily void CGame\+::loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\Hypertarget{classCGame_a9c529364158daa80da592a3eab949c37}\label{classCGame_a9c529364158daa80da592a3eab949c37} 
+Main loop that runs the game \Hypertarget{classCGame_a9c529364158daa80da592a3eab949c37}\label{classCGame_a9c529364158daa80da592a3eab949c37} 
 \index{CGame@{CGame}!printHud@{printHud}}
 \index{printHud@{printHud}!CGame@{CGame}}
 \doxysubsubsection{\texorpdfstring{printHud()}{printHud()}}
 {\footnotesize\ttfamily void CGame\+::print\+Hud (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\Hypertarget{classCGame_ae7e2f2fb92bc660051b8813f5cd4cc81}\label{classCGame_ae7e2f2fb92bc660051b8813f5cd4cc81} 
+Function that prints out game hud with information about the game to human player \Hypertarget{classCGame_ae7e2f2fb92bc660051b8813f5cd4cc81}\label{classCGame_ae7e2f2fb92bc660051b8813f5cd4cc81} 
 \index{CGame@{CGame}!readTalents@{readTalents}}
 \index{readTalents@{readTalents}!CGame@{CGame}}
 \doxysubsubsection{\texorpdfstring{readTalents()}{readTalents()}}
 {\footnotesize\ttfamily void CGame\+::read\+Talents (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\Hypertarget{classCGame_a5d424851d31e75394a4eb6d36faecb41}\label{classCGame_a5d424851d31e75394a4eb6d36faecb41} 
+Reads talents\textquotesingle{} names, descriptions and bonuses from m\+\_\+\+Talents directory. Also reads information about rounds, when talents should be suggested to players \Hypertarget{classCGame_a5d424851d31e75394a4eb6d36faecb41}\label{classCGame_a5d424851d31e75394a4eb6d36faecb41} 
 \index{CGame@{CGame}!removeDead@{removeDead}}
 \index{removeDead@{removeDead}!CGame@{CGame}}
 \doxysubsubsection{\texorpdfstring{removeDead()}{removeDead()}}
 {\footnotesize\ttfamily void CGame\+::remove\+Dead (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\Hypertarget{classCGame_a99681f6adffe2935fc4b5d34e9117cdd}\label{classCGame_a99681f6adffe2935fc4b5d34e9117cdd} 
+Function that deletes all players that do not own any anthill on the map from m\+\_\+\+Players list \Hypertarget{classCGame_a99681f6adffe2935fc4b5d34e9117cdd}\label{classCGame_a99681f6adffe2935fc4b5d34e9117cdd} 
 \index{CGame@{CGame}!saveGame@{saveGame}}
 \index{saveGame@{saveGame}!CGame@{CGame}}
 \doxysubsubsection{\texorpdfstring{saveGame()}{saveGame()}}
 {\footnotesize\ttfamily void CGame\+::save\+Game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\Hypertarget{classCGame_a6821a4ed2f977e4fa2b5c2c2a9d3addf}\label{classCGame_a6821a4ed2f977e4fa2b5c2c2a9d3addf} 
+Function that is used to save current game\textquotesingle{}s map to m\+\_\+\+Saves folder \Hypertarget{classCGame_a6821a4ed2f977e4fa2b5c2c2a9d3addf}\label{classCGame_a6821a4ed2f977e4fa2b5c2c2a9d3addf} 
 \index{CGame@{CGame}!setPlayers@{setPlayers}}
 \index{setPlayers@{setPlayers}!CGame@{CGame}}
 \doxysubsubsection{\texorpdfstring{setPlayers()}{setPlayers()}}
 {\footnotesize\ttfamily void CGame\+::set\+Players (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-
+Function that uses information from m\+\_\+\+Map to assign talents from saved map to players 
 
 \doxysubsection{Member Data Documentation}
 \Hypertarget{classCGame_a314ca8d0bf4c4f629603efea0cdb6f26}\label{classCGame_a314ca8d0bf4c4f629603efea0cdb6f26} 
@@ -141,11 +152,19 @@ int \mbox{\hyperlink{classCGame_aa3e5c388867c9a40b5ca7b403d266972}{m\+\_\+\+Tier
 \doxysubsubsection{\texorpdfstring{m\_Tier1}{m\_Tier1}}
 {\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ CGame\+::m\+\_\+\+Tier1\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+std\+::list that represent tier 1 talents 
+
 \Hypertarget{classCGame_a6aa137666e63220b1d7b27d604a88db2}\label{classCGame_a6aa137666e63220b1d7b27d604a88db2} 
 \index{CGame@{CGame}!m\_Tier1Time@{m\_Tier1Time}}
 \index{m\_Tier1Time@{m\_Tier1Time}!CGame@{CGame}}
 \doxysubsubsection{\texorpdfstring{m\_Tier1Time}{m\_Tier1Time}}
 {\footnotesize\ttfamily int CGame\+::m\+\_\+\+Tier1\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Round when tier 1 talent should be suggested to players. 
 
 \Hypertarget{classCGame_a0f0a9206260db2605d7f9639c16082fe}\label{classCGame_a0f0a9206260db2605d7f9639c16082fe} 
 \index{CGame@{CGame}!m\_Tier2@{m\_Tier2}}
@@ -153,17 +172,29 @@ int \mbox{\hyperlink{classCGame_aa3e5c388867c9a40b5ca7b403d266972}{m\+\_\+\+Tier
 \doxysubsubsection{\texorpdfstring{m\_Tier2}{m\_Tier2}}
 {\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ CGame\+::m\+\_\+\+Tier2\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+std\+::list that represent tier 2 talents 
+
 \Hypertarget{classCGame_ad1ed2e0c9770780c8e1e668814d94ec2}\label{classCGame_ad1ed2e0c9770780c8e1e668814d94ec2} 
 \index{CGame@{CGame}!m\_Tier2Time@{m\_Tier2Time}}
 \index{m\_Tier2Time@{m\_Tier2Time}!CGame@{CGame}}
 \doxysubsubsection{\texorpdfstring{m\_Tier2Time}{m\_Tier2Time}}
 {\footnotesize\ttfamily int CGame\+::m\+\_\+\+Tier2\+Time\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Round when tier 2 talent should be suggested to players. 
+
 \Hypertarget{classCGame_ad7c67b67cab4d479d04f1d00f03ea119}\label{classCGame_ad7c67b67cab4d479d04f1d00f03ea119} 
 \index{CGame@{CGame}!m\_Tier3@{m\_Tier3}}
 \index{m\_Tier3@{m\_Tier3}!CGame@{CGame}}
 \doxysubsubsection{\texorpdfstring{m\_Tier3}{m\_Tier3}}
 {\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ CGame\+::m\+\_\+\+Tier3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+std\+::list that represent tier 3 talents 
 
 \Hypertarget{classCGame_aa3e5c388867c9a40b5ca7b403d266972}\label{classCGame_aa3e5c388867c9a40b5ca7b403d266972} 
 \index{CGame@{CGame}!m\_Tier3Time@{m\_Tier3Time}}
@@ -173,7 +204,11 @@ int \mbox{\hyperlink{classCGame_aa3e5c388867c9a40b5ca7b403d266972}{m\+\_\+\+Tier
 
 
 
+Round when tier 3 talent should be suggested to players. 
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{game_8h}{game.\+h}}\item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{game_8cpp}{game.\+cpp}}\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{game_8h}{game.\+h}}\item 
+src/\mbox{\hyperlink{game_8cpp}{game.\+cpp}}\end{DoxyCompactItemize}

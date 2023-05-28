@@ -32,6 +32,9 @@ std\+::string \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Abstract parent class that represent talents. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classCTalent_acc853ac425003fd62d71b3aab51abdb6}\label{classCTalent_acc853ac425003fd62d71b3aab51abdb6} 
 \index{CTalent@{CTalent}!CTalent@{CTalent}}
@@ -39,13 +42,20 @@ std\+::string \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m
 \doxysubsubsection{\texorpdfstring{CTalent()}{CTalent()}}
 {\footnotesize\ttfamily CTalent\+::\+CTalent (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{description }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Constructior. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of talent. \\
+\hline
+{\em description} & -\/ description of talent. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCTalent_ac6c3f612043fb02981e414993407ec92}\label{classCTalent_ac6c3f612043fb02981e414993407ec92} 
 \index{CTalent@{CTalent}!````~CTalent@{\texorpdfstring{$\sim$}{\string~}CTalent}}
 \index{````~CTalent@{\texorpdfstring{$\sim$}{\string~}CTalent}!CTalent@{CTalent}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CTalent()}{\string~CTalent()}}
 {\footnotesize\ttfamily virtual CTalent\+::\texorpdfstring{$\sim$}{\string~}\+CTalent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
-
+Virtual destructor. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4}\label{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4} 
@@ -54,6 +64,13 @@ std\+::string \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m
 \doxysubsubsection{\texorpdfstring{activate()}{activate()}}
 {\footnotesize\ttfamily virtual void CTalent\+::activate (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+Abstract method that allowes to use talent\textquotesingle{}s bonus. 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of player, whose anthills should be buffed. \\
+\hline
+{\em map} & -\/ game\textquotesingle{}s map \\
+\hline
+\end{DoxyParams}
 
 
 Implemented in \mbox{\hyperlink{classCConqueror_a02715a0f072b49808758da00f4fda3c8}{CConqueror}}, \mbox{\hyperlink{classCMaxAnts_a23a2602feb60d7e8480fd2dc0e0b8e89}{CMax\+Ants}}, \mbox{\hyperlink{classCMoreAnts_a60708767967ee4e711022c7c08bea4c5}{CMore\+Ants}}, \mbox{\hyperlink{classCMoreArmor_a3e2ed1ea93134dece1cc6b73c1c3aefd}{CMore\+Armor}}, \mbox{\hyperlink{classCMoreMax_aa2db93401522b6c5354c4366d33372c2}{CMore\+Max}}, and \mbox{\hyperlink{classCMoreMove_abcc5c9319fb8e05f443bd7254f8d3c32}{CMore\+Move}}.
@@ -64,12 +81,18 @@ Implemented in \mbox{\hyperlink{classCConqueror_a02715a0f072b49808758da00f4fda3c
 \doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
 {\footnotesize\ttfamily std\+::string CTalent\+::get\+Description (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Gets talent\textquotesingle{}s description. \begin{DoxyReturn}{Returns}
+talent\textquotesingle{}s description. 
+\end{DoxyReturn}
 \Hypertarget{classCTalent_aa3d71a9f942a22dcb02f141b0b5268ad}\label{classCTalent_aa3d71a9f942a22dcb02f141b0b5268ad} 
 \index{CTalent@{CTalent}!getName@{getName}}
 \index{getName@{getName}!CTalent@{CTalent}}
 \doxysubsubsection{\texorpdfstring{getName()}{getName()}}
 {\footnotesize\ttfamily std\+::string CTalent\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Gets talent\textquotesingle{}s name. \begin{DoxyReturn}{Returns}
+talent\textquotesingle{}s name. 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
@@ -89,4 +112,4 @@ Implemented in \mbox{\hyperlink{classCConqueror_a02715a0f072b49808758da00f4fda3c
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{talent_8h}{talent.\+h}}\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{talent_8h}{talent.\+h}}\end{DoxyCompactItemize}

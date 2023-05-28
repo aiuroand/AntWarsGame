@@ -15,14 +15,16 @@ Inheritance diagram for CVoid\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classCVoid_a159d9efc234fac09d6bac89f0e35779e}{CVoid}} (\mbox{\hyperlink{classCCoords}{CCoords}} coord)
 \item 
-void \mbox{\hyperlink{classCVoid_a5a0a848a225ba6f4a5c9d7e7b4eb7a47}{print}} (\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}scr) override
+\mbox{\hyperlink{classCVoid_a0c01fbdd99e15e50278f735327e85a96}{\texorpdfstring{$\sim$}{\string~}\+CVoid}} (void)=default
+\item 
+void \mbox{\hyperlink{classCVoid_aa08411daf2a22d76b3883573caba29d6}{print}} (\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}scr) const override
 \item 
 char \mbox{\hyperlink{classCVoid_a19e1af4bd51219d93c54f86140743c26}{get}} (void) const override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCMapElem}{CMap\+Elem}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classCMapElem_a7f8218b8236c551a67e963e6bed737e0}{CMap\+Elem}} (char c, \mbox{\hyperlink{classCCoords}{CCoords}} coord)
+\mbox{\hyperlink{classCMapElem_a93eb9715709e44833bef514c4a8fc848}{CMap\+Elem}} (char c, \mbox{\hyperlink{classCCoords}{CCoords}} coords)
 \item 
 virtual \mbox{\hyperlink{classCMapElem_adac685e656a9b1730a050e79314a84a9}{\texorpdfstring{$\sim$}{\string~}\+CMap\+Elem}} (void)=default
 \item 
@@ -38,6 +40,9 @@ char \mbox{\hyperlink{classCMapElem_a41545b0c790ebbc3aab19d9e7fade5a6}{m\+\_\+\+
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Child class of \doxylink{classCMapElem}{CMap\+Elem} that represents void. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classCVoid_a159d9efc234fac09d6bac89f0e35779e}\label{classCVoid_a159d9efc234fac09d6bac89f0e35779e} 
 \index{CVoid@{CVoid}!CVoid@{CVoid}}
@@ -45,7 +50,18 @@ char \mbox{\hyperlink{classCMapElem_a41545b0c790ebbc3aab19d9e7fade5a6}{m\+\_\+\+
 \doxysubsubsection{\texorpdfstring{CVoid()}{CVoid()}}
 {\footnotesize\ttfamily CVoid\+::\+CVoid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCCoords}{CCoords}}}]{coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Constructor that firtsly constructs parent class \doxylink{classCMapElem}{CMap\+Elem}. Owner for parent class in \textquotesingle{}n\textquotesingle{} -\/ nobody. 
+\begin{DoxyParams}{Parameters}
+{\em coords} & -\/ coords of the void. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCVoid_a0c01fbdd99e15e50278f735327e85a96}\label{classCVoid_a0c01fbdd99e15e50278f735327e85a96} 
+\index{CVoid@{CVoid}!````~CVoid@{\texorpdfstring{$\sim$}{\string~}CVoid}}
+\index{````~CVoid@{\texorpdfstring{$\sim$}{\string~}CVoid}!CVoid@{CVoid}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CVoid()}{\string~CVoid()}}
+{\footnotesize\ttfamily CVoid\+::\texorpdfstring{$\sim$}{\string~}\+CVoid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
+Destructor 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classCVoid_a19e1af4bd51219d93c54f86140743c26}\label{classCVoid_a19e1af4bd51219d93c54f86140743c26} 
@@ -54,22 +70,30 @@ char \mbox{\hyperlink{classCMapElem_a41545b0c790ebbc3aab19d9e7fade5a6}{m\+\_\+\+
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
 {\footnotesize\ttfamily char CVoid\+::get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+Overrided method that is used to get the object in char format. \begin{DoxyReturn}{Returns}
+char value that represents the object. 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{classCMapElem_a2ddb93098fbc6c995dd9f4179bf281b9}{CMap\+Elem}}.
 
-\Hypertarget{classCVoid_a5a0a848a225ba6f4a5c9d7e7b4eb7a47}\label{classCVoid_a5a0a848a225ba6f4a5c9d7e7b4eb7a47} 
+\Hypertarget{classCVoid_aa08411daf2a22d76b3883573caba29d6}\label{classCVoid_aa08411daf2a22d76b3883573caba29d6} 
 \index{CVoid@{CVoid}!print@{print}}
 \index{print@{print}!CVoid@{CVoid}}
 \doxysubsubsection{\texorpdfstring{print()}{print()}}
-{\footnotesize\ttfamily void CVoid\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{scr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void CVoid\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{scr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Overrided method that is used to print an object on the screen. 
+\begin{DoxyParams}{Parameters}
+{\em sct} & -\/ screen, represented by \doxylink{classCScreen}{CScreen} class, where object should be drawn on. \\
+\hline
+\end{DoxyParams}
 
 
-
-Implements \mbox{\hyperlink{classCMapElem_aa3ee545d82dfa7e12187777faaceabb7}{CMap\+Elem}}.
+Implements \mbox{\hyperlink{classCMapElem_a727c11b976d0b1fb6dbf0dc17e5fc169}{CMap\+Elem}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{void_8h}{void.\+h}}\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{void_8h}{void.\+h}}\end{DoxyCompactItemize}

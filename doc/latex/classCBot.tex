@@ -24,11 +24,11 @@ void \mbox{\hyperlink{classCBot_af3c87719e19e0dc30301d6ea2872b4e1}{select\+Talen
 \item 
 \mbox{\hyperlink{classCPlayer_a1fb74608e91e120859ab877c331af861}{CPlayer}} (char color)
 \item 
-virtual \mbox{\hyperlink{classCPlayer_ad618b14e3bda9158afb6b49d10972683}{\texorpdfstring{$\sim$}{\string~}\+CPlayer}} (void)=default
+virtual \mbox{\hyperlink{classCPlayer_a7e2e2e4d746b92d1156866ef29e50842}{\texorpdfstring{$\sim$}{\string~}\+CPlayer}} (void)
 \item 
 char \mbox{\hyperlink{classCPlayer_a200d8db370484bf5f3c5cdaefc9d94e7}{get\+Color}} (void) const
 \item 
-void \mbox{\hyperlink{classCPlayer_ae0f58378d4fae27fd58cc63a85c4b325}{activate\+Talents}} (char c, \mbox{\hyperlink{classCMap}{CMap}} \&map)
+void \mbox{\hyperlink{classCPlayer_afee1d041e793f7db7979f63948845d23}{activate\+Talents}} (char c, \mbox{\hyperlink{classCMap}{CMap}} \&map) const
 \item 
 void \mbox{\hyperlink{classCPlayer_a473e64644fa5550aefc965a99b5600ce}{add\+Talent}} (\mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*}t)
 \item 
@@ -51,6 +51,9 @@ std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Child class that represents bot player 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classCBot_a7e4c8aea37de145d4d7a49db6fd38706}\label{classCBot_a7e4c8aea37de145d4d7a49db6fd38706} 
 \index{CBot@{CBot}!CBot@{CBot}}
@@ -58,6 +61,13 @@ std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{
 \doxysubsubsection{\texorpdfstring{CBot()}{CBot()}}
 {\footnotesize\ttfamily CBot\+::\+CBot (\begin{DoxyParamCaption}\item[{char}]{color,  }\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{screen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Constructor that firtsly constructs parent class \doxylink{classCPlayer}{CPlayer} 
+\begin{DoxyParams}{Parameters}
+{\em color} & -\/ color of bot player \\
+\hline
+{\em screen} & -\/ main screen to print on \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -67,6 +77,14 @@ std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{
 \doxysubsubsection{\texorpdfstring{makeMove()}{makeMove()}}
 {\footnotesize\ttfamily std\+::pair$<$ int, int $>$ CBot\+::make\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
+Overrided method that is used to collect moves from bot player. Bot selects his strongest anthill ant tries to attack the weakest emenies\textquotesingle{} anthill on the map. 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & current game\textquotesingle{}s map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::pair \texorpdfstring{$<$}{<} int , int \texorpdfstring{$>$}{>} where\+: first number is bot\textquotesingle{}s anthill\textquotesingle{}s id, second is target anthill\textquotesingle{}s id 
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{classCPlayer_a5e7532d0a49a5715cffcbf1ea81e2520}{CPlayer}}.
@@ -77,6 +95,13 @@ Implements \mbox{\hyperlink{classCPlayer_a5e7532d0a49a5715cffcbf1ea81e2520}{CPla
 \doxysubsubsection{\texorpdfstring{selectTalent()}{selectTalent()}}
 {\footnotesize\ttfamily void CBot\+::select\+Talent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map,  }\item[{std\+::list$<$ \mbox{\hyperlink{classCTalent}{CTalent}} \texorpdfstring{$\ast$}{*} $>$ \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
+Overrided method that allows bot player to select talents 
+\begin{DoxyParams}{Parameters}
+{\em map} & -\/ current game\textquotesingle{}s map \\
+\hline
+{\em t} & -\/ std\+::list of pointers to abstract \doxylink{classCTalent}{CTalent} bot should choose talent from \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{classCPlayer_ae468a15c714526073947d8b445f7fe10}{CPlayer}}.
@@ -94,5 +119,5 @@ Implements \mbox{\hyperlink{classCPlayer_ae468a15c714526073947d8b445f7fe10}{CPla
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{bot_8h}{bot.\+h}}\item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{bot_8cpp}{bot.\+cpp}}\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{bot_8h}{bot.\+h}}\item 
+src/\mbox{\hyperlink{bot_8cpp}{bot.\+cpp}}\end{DoxyCompactItemize}

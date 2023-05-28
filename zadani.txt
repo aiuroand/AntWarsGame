@@ -1,7 +1,7 @@
 Ant Wars
 Moje semestrální práce bude implementovat hru Ant-Wars. Po spuštění hry
 se zobrází menu, ve které si užívatel může vybrat jednu z možnosti:
-"Start Game", "Continue Game", "Scoreboard", "Customize", "Rules" and "Exit".
+"Start Game", "Continue Game", "Rules" and "Exit".
 
 1) "Start Game"
 Po stisku tlačétka Start Game se zobrází vyber map, kterou si po vyberu program
@@ -38,22 +38,11 @@ aby hráč mohl pokračovat pozdeji. )
 2) "Continue Game"
 Podobně jako "Start Game", ale místo výběru mapy se načte mapa z poslední hry.
 
-
-?) "Scoreboard"
-TBA. ( Možná bude Scoreboard. )
-
-
-?) "Customize"
-TBA. ( Možná bude Customize, kde užívatel bude vybírat své pismeno (a,o,u,e) nebo barvu)
-
-
-5) "Rules"
+3) "Rules"
 Zde budou popsaná pravidla hry, která budu nahrana z konfiguračního souboru.
 
-
-6) "Exit"
+4) "Exit"
 Program se ukonči.
-
 
 Pro polymorfismus mám několik možností. 
 

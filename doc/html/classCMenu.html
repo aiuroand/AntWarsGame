@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: CMenu Class Reference</title>
+<title>AntWars aiuroand: CMenu Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">AntWars aiuroand
    </div>
   </td>
  </tr>
@@ -94,8 +94,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a9e47aaf0bfb4a1e1717edc1fae65b144"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMenu.html#a9e47aaf0bfb4a1e1717edc1fae65b144">m_HighlightMaps</a></td></tr>
+<tr class="memdesc:a9e47aaf0bfb4a1e1717edc1fae65b144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents current cursor position in "New Game" menu.  <br /></td></tr>
 <tr class="separator:a9e47aaf0bfb4a1e1717edc1fae65b144"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbd192977cdb883782319242cdd7dfec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMenu.html#adbd192977cdb883782319242cdd7dfec">m_HighlightSaves</a></td></tr>
+<tr class="memdesc:adbd192977cdb883782319242cdd7dfec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents current cursor position in "Saved Games" menu.  <br /></td></tr>
 <tr class="separator:adbd192977cdb883782319242cdd7dfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -109,8 +111,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a3918db25dd6288c891d2656ae8edbb5f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMenu.html#a3918db25dd6288c891d2656ae8edbb5f">m_Saves</a></td></tr>
 <tr class="separator:a3918db25dd6288c891d2656ae8edbb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcc6234630382aaeedd40209bd6f0a71"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMenu.html#adcc6234630382aaeedd40209bd6f0a71">m_Elements</a></td></tr>
+<tr class="memdesc:adcc6234630382aaeedd40209bd6f0a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents menu elements.  <br /></td></tr>
 <tr class="separator:adcc6234630382aaeedd40209bd6f0a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc0f53f7b62f9e9814c733a9ad1e8a0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMenu.html#adc0f53f7b62f9e9814c733a9ad1e8a0f">m_Highlight</a></td></tr>
+<tr class="memdesc:adc0f53f7b62f9e9814c733a9ad1e8a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents current cursor position in Main menu.  <br /></td></tr>
 <tr class="separator:adc0f53f7b62f9e9814c733a9ad1e8a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -159,6 +163,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">screen</td><td>- main game screen. </td></tr>
+    <tr><td class="paramname">status</td><td>- current game status. </td></tr>
+    <tr><td class="paramname">maps</td><td>- directory with maps. </td></tr>
+    <tr><td class="paramname">saves</td><td>- directory with saved maps. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -178,6 +191,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Maps menu loop that is used to choose game map. </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCFileReadingError.html">CFileReadingError</a></td><td>if there was a problem during file or directory reading. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -196,6 +215,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Saves menu loop that is used to choose saved game map. </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCFileReadingError.html">CFileReadingError</a></td><td>if there was a problem during file or directory reading. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -214,6 +239,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Main menu loop that is used to choose it's elements. </p>
 
 </div>
 </div>
@@ -238,6 +264,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Represents menu elements. </p>
+
 </div>
 </div>
 <a id="adc0f53f7b62f9e9814c733a9ad1e8a0f" name="adc0f53f7b62f9e9814c733a9ad1e8a0f"></a>
@@ -260,6 +288,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Represents current cursor position in Main menu. </p>
+
 </div>
 </div>
 <a id="a9e47aaf0bfb4a1e1717edc1fae65b144" name="a9e47aaf0bfb4a1e1717edc1fae65b144"></a>
@@ -274,6 +304,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Represents current cursor position in "New Game" menu. </p>
+
 </div>
 </div>
 <a id="adbd192977cdb883782319242cdd7dfec" name="adbd192977cdb883782319242cdd7dfec"></a>
@@ -287,6 +319,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Represents current cursor position in "Saved Games" menu. </p>
 
 </div>
 </div>
@@ -379,8 +413,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/aiuroand/PA2/aiuroand/src/<a class="el" href="menu_8h_source.html">menu.h</a></li>
-<li>/home/aiuroand/PA2/aiuroand/src/<a class="el" href="menu_8cpp.html">menu.cpp</a></li>
+<li>src/<a class="el" href="menu_8h_source.html">menu.h</a></li>
+<li>src/<a class="el" href="menu_8cpp.html">menu.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

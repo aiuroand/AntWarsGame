@@ -43,6 +43,9 @@ std\+::string \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Child class of \doxylink{classCTalent}{CTalent} that represents conqueror talent. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classCConqueror_a0178b952d970523e0be92ba3d1f2c5e2}\label{classCConqueror_a0178b952d970523e0be92ba3d1f2c5e2} 
 \index{CConqueror@{CConqueror}!CConqueror@{CConqueror}}
@@ -50,6 +53,15 @@ std\+::string \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m
 \doxysubsubsection{\texorpdfstring{CConqueror()}{CConqueror()}}
 {\footnotesize\ttfamily CConqueror\+::\+CConqueror (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{description,  }\item[{int}]{chance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Constructor that firtsly constructs parent class \doxylink{classCTalent}{CTalent}. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of the talent. \\
+\hline
+{\em description} & -\/ description of the talent. \\
+\hline
+{\em chance} & -\/ chance to conquer. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -59,6 +71,13 @@ std\+::string \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m
 \doxysubsubsection{\texorpdfstring{activate()}{activate()}}
 {\footnotesize\ttfamily void CConqueror\+::activate (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+Activates talent\textquotesingle{}s bonus. With m\+\_\+\+Chance / 10 chance conquers random neutral ant on the map. 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of player, whose should recieve neutral anthill. \\
+\hline
+{\em map} & -\/ game\textquotesingle{}s map \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4}{CTalent}}.
@@ -76,4 +95,4 @@ Implements \mbox{\hyperlink{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4}{CTal
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{conqueror_8h}{conqueror.\+h}}\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{conqueror_8h}{conqueror.\+h}}\end{DoxyCompactItemize}

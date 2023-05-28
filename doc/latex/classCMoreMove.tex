@@ -43,6 +43,9 @@ std\+::string \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Child class of \doxylink{classCTalent}{CTalent} that represents moremove talent. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classCMoreMove_ad68dd74b623475b27736d7f897440b92}\label{classCMoreMove_ad68dd74b623475b27736d7f897440b92} 
 \index{CMoreMove@{CMoreMove}!CMoreMove@{CMoreMove}}
@@ -50,6 +53,15 @@ std\+::string \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m
 \doxysubsubsection{\texorpdfstring{CMoreMove()}{CMoreMove()}}
 {\footnotesize\ttfamily CMore\+Move\+::\+CMore\+Move (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{description,  }\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Constructor that firtsly constructs parent class \doxylink{classCTalent}{CTalent}. 
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of the talent. \\
+\hline
+{\em description} & -\/ description of the talent. \\
+\hline
+{\em amount} & -\/ amount of ants to add to spawnrate. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -59,6 +71,13 @@ std\+::string \mbox{\hyperlink{classCTalent_aa257537e11bc85450fa9691637dd8c1f}{m
 \doxysubsubsection{\texorpdfstring{activate()}{activate()}}
 {\footnotesize\ttfamily void CMore\+Move\+::activate (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{\mbox{\hyperlink{classCMap}{CMap}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
+Activates talent\textquotesingle{}s bonus. Increases spawnrate ( m\+\_\+\+Move ) value for all anthills of given color by m\+\_\+\+Amount. 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of player, whose anthills should be buffed. \\
+\hline
+{\em map} & -\/ game\textquotesingle{}s map \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4}{CTalent}}.
@@ -76,4 +95,4 @@ Implements \mbox{\hyperlink{classCTalent_a2cfea38d730fd30a1bc21cc63e5c71d4}{CTal
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{moremove_8h}{moremove.\+h}}\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{moremove_8h}{moremove.\+h}}\end{DoxyCompactItemize}

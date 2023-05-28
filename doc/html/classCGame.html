@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: CGame Class Reference</title>
+<title>AntWars aiuroand: CGame Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">AntWars aiuroand
    </div>
   </td>
  </tr>
@@ -111,16 +111,22 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ad25e2e5e4573d317ea7a3ecd5ca9d257"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classCPlayer.html">CPlayer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGame.html#ad25e2e5e4573d317ea7a3ecd5ca9d257">m_Players</a></td></tr>
 <tr class="separator:ad25e2e5e4573d317ea7a3ecd5ca9d257"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96b2ee91043bab863e5d3bff3157bf50"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classCTalent.html">CTalent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGame.html#a96b2ee91043bab863e5d3bff3157bf50">m_Tier1</a></td></tr>
+<tr class="memdesc:a96b2ee91043bab863e5d3bff3157bf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::list that represent tier 1 talents  <br /></td></tr>
 <tr class="separator:a96b2ee91043bab863e5d3bff3157bf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f0a9206260db2605d7f9639c16082fe"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classCTalent.html">CTalent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGame.html#a0f0a9206260db2605d7f9639c16082fe">m_Tier2</a></td></tr>
+<tr class="memdesc:a0f0a9206260db2605d7f9639c16082fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::list that represent tier 2 talents  <br /></td></tr>
 <tr class="separator:a0f0a9206260db2605d7f9639c16082fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7c67b67cab4d479d04f1d00f03ea119"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classCTalent.html">CTalent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGame.html#ad7c67b67cab4d479d04f1d00f03ea119">m_Tier3</a></td></tr>
+<tr class="memdesc:ad7c67b67cab4d479d04f1d00f03ea119"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::list that represent tier 3 talents  <br /></td></tr>
 <tr class="separator:ad7c67b67cab4d479d04f1d00f03ea119"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa137666e63220b1d7b27d604a88db2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGame.html#a6aa137666e63220b1d7b27d604a88db2">m_Tier1Time</a></td></tr>
+<tr class="memdesc:a6aa137666e63220b1d7b27d604a88db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Round when tier 1 talent should be suggested to players.  <br /></td></tr>
 <tr class="separator:a6aa137666e63220b1d7b27d604a88db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1ed2e0c9770780c8e1e668814d94ec2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGame.html#ad1ed2e0c9770780c8e1e668814d94ec2">m_Tier2Time</a></td></tr>
+<tr class="memdesc:ad1ed2e0c9770780c8e1e668814d94ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Round when tier 2 talent should be suggested to players.  <br /></td></tr>
 <tr class="separator:ad1ed2e0c9770780c8e1e668814d94ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3e5c388867c9a40b5ca7b403d266972"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGame.html#aa3e5c388867c9a40b5ca7b403d266972">m_Tier3Time</a></td></tr>
+<tr class="memdesc:aa3e5c388867c9a40b5ca7b403d266972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Round when tier 3 talent should be suggested to players.  <br /></td></tr>
 <tr class="separator:aa3e5c388867c9a40b5ca7b403d266972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -169,6 +175,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>- represents current game's map's filename </td></tr>
+    <tr><td class="paramname">saves</td><td>- represents directory to save maps </td></tr>
+    <tr><td class="paramname">talents</td><td>- represents directory that contains talents descriptions </td></tr>
+    <tr><td class="paramname">scr</td><td>- pointer to output screen </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -195,6 +210,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Destructor that deallocates allocated resourses </p>
 
 </div>
 </div>
@@ -214,6 +230,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Main loop that runs the game </p>
 
 </div>
 </div>
@@ -232,6 +249,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function that prints out game hud with information about the game to human player </p>
 
 </div>
 </div>
@@ -250,6 +268,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Reads talents' names, descriptions and bonuses from m_Talents directory. Also reads information about rounds, when talents should be suggested to players </p>
 
 </div>
 </div>
@@ -268,6 +287,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function that deletes all players that do not own any anthill on the map from m_Players list </p>
 
 </div>
 </div>
@@ -286,6 +306,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function that is used to save current game's map to m_Saves folder </p>
 
 </div>
 </div>
@@ -304,6 +325,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function that uses information from m_Map to assign talents from saved map to players </p>
 
 </div>
 </div>
@@ -438,6 +460,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>std::list that represent tier 1 talents </p>
+
 </div>
 </div>
 <a id="a6aa137666e63220b1d7b27d604a88db2" name="a6aa137666e63220b1d7b27d604a88db2"></a>
@@ -459,6 +483,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Round when tier 1 talent should be suggested to players. </p>
 
 </div>
 </div>
@@ -482,6 +508,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>std::list that represent tier 2 talents </p>
+
 </div>
 </div>
 <a id="ad1ed2e0c9770780c8e1e668814d94ec2" name="ad1ed2e0c9770780c8e1e668814d94ec2"></a>
@@ -503,6 +531,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Round when tier 2 talent should be suggested to players. </p>
 
 </div>
 </div>
@@ -526,6 +556,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>std::list that represent tier 3 talents </p>
+
 </div>
 </div>
 <a id="aa3e5c388867c9a40b5ca7b403d266972" name="aa3e5c388867c9a40b5ca7b403d266972"></a>
@@ -548,11 +580,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Round when tier 3 talent should be suggested to players. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/aiuroand/PA2/aiuroand/src/<a class="el" href="game_8h_source.html">game.h</a></li>
-<li>/home/aiuroand/PA2/aiuroand/src/<a class="el" href="game_8cpp.html">game.cpp</a></li>
+<li>src/<a class="el" href="game_8h_source.html">game.h</a></li>
+<li>src/<a class="el" href="game_8cpp.html">game.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
