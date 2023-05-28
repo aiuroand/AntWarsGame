@@ -105,11 +105,11 @@ void CGame::printHud ( void )
   // mvwprintw ( m_Screen -> m_Window, 5, m_Map . getWidth() + 1, "|    |    |" );
   // mvwprintw ( m_Screen -> m_Window, 6, m_Map . getWidth() + 1, "|   / \\   |" );
   // mvwprintw ( m_Screen -> m_Window, 7, m_Map . getWidth() + 1, "+---------+" );
-  mvwprintw ( m_Screen -> m_Window, 0, m_Map . getWidth() + 1, "+---------+" );
+  mvwprintw ( m_Screen -> m_Window, 0, m_Map . getWidth() + 1, "+--+-------+" );
   mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 1, "| Round " );
   mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 9, "%d", m_Map . getRound() );
-  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 11, "|" );
-  mvwprintw ( m_Screen -> m_Window, 2, m_Map . getWidth() + 1, "+---------+" );
+  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 12, "|" );
+  mvwprintw ( m_Screen -> m_Window, 2, m_Map . getWidth() + 1, "+---+------+" );
   wrefresh ( m_Screen -> m_Window );
 }
 

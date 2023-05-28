@@ -227,9 +227,15 @@ void CMap::fillRoad ( const int from, const int to )
 {
   for ( auto & it : m_Roads )
     if ( it . m_First == from && it . m_Second == to )
+    {
+      it . m_VecAnts[ it . m_VecAnts . size() - 1 ] . second = getColorOfId( from );
       it . m_FirstUsed = true;
+    }
     else if ( it . m_First == to && it . m_Second == from )
+    {
+      it . m_VecAnts[ 0 ] . second = getColorOfId( from );
       it . m_SecondUsed = true;
+    }
 }
 
 void CMap::attack ( void )
@@ -238,15 +244,14 @@ void CMap::attack ( void )
   {  
     if ( !main_it . m_FirstUsed && !main_it . m_SecondUsed )
       continue;    
-    // if ( main_it . m_SecondUsed && main_it . m_VecAnts[ 0 ] . second != getColorOfId ( main_it . m_Second ) )
-    //   continue;    
-    // if ( main_it . m_FirstUsed && main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . second != getColorOfId ( main_it . m_First ) )
-    //   continue;    
+    if ( main_it . m_SecondUsed && main_it . m_VecAnts[ 0 ] . second != getColorOfId ( main_it . m_Second ) )
+      continue;    
+    if ( main_it . m_FirstUsed && main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . second != getColorOfId ( main_it . m_First ) )
+      continue;    
 
     if ( main_it . m_FirstUsed )
     {
       main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . first = getAttackOfId( main_it . m_First ); 
-      main_it . m_VecAnts[ main_it . m_VecAnts . size() - 1 ] . second = getColorOfId( main_it . m_First );
       add ( main_it . m_First, - getAttackOfId( main_it . m_First ) );
       print();
     } 
