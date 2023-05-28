@@ -1,4 +1,5 @@
 #include "human.h"
+//------------------------------------------------------------------------
 std::pair < int, int > CHuman::makeMove ( CMap & map )
 {
   int first, second;
@@ -23,7 +24,7 @@ std::pair < int, int > CHuman::makeMove ( CMap & map )
   wrefresh ( m_Screen -> m_Window );
   return std::make_pair( first, second );
 }
-
+//------------------------------------------------------------------------
 void CHuman::selectTalent ( CMap & map, std::list < CTalent * > & t )
 {
 
@@ -58,9 +59,8 @@ void CHuman::selectTalent ( CMap & map, std::list < CTalent * > & t )
       break;
     }
   }
-
 }
-
+//------------------------------------------------------------------------
 CCoords CHuman::readMouse( void )
 {
   MEVENT event;

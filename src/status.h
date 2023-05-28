@@ -1,6 +1,7 @@
 #ifndef STATUS_H
 #define STATUS_H
 
+//! Enumerator object that represents all alloweed game statuses
 enum EStatus
 {
   e_NewGame,
@@ -9,5 +10,4 @@ enum EStatus
   e_Rules,
   e_Exit
 };
-
 #endif // STATUS_H

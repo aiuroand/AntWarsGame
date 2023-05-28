@@ -6,23 +6,27 @@
 #include <string>
 #include "screen.h"
 #include "ncurses.h"
-#include "status.h"
+#include "exceptions.h"
 
 class CRules
 {
   public:
-      CRules ( CScreen * screen,
-               EStatus & status,
-               std::string dir )
-     : m_Screen ( screen ),
-       m_Status ( status ),
-       m_Dir ( dir )
+    /*! Constructing rules
+     *  @param screen - represents pointer to main program screen
+     *  @param dir    - represents file with game rules
+     */
+    CRules ( CScreen * screen,
+             std::string dir )
+    : m_Screen ( screen ),
+      m_Dir ( dir )
     {}
+
+    /*! Main loop that prints out the rules to the screen
+     */
     void loop ( void );
+
   private:
     CScreen * m_Screen;
-    EStatus & m_Status;
     std::string m_Dir;
 };
-
 #endif // RULES_H

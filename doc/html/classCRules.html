@@ -81,8 +81,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0988a40aa137adab322259ed9b0ebda3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCRules.html#a0988a40aa137adab322259ed9b0ebda3">CRules</a> (<a class="el" href="classCScreen.html">CScreen</a> *screen, <a class="el" href="status_8h.html#a922429339fd6d14354fd7962155d8193">EStatus</a> &amp;status, std::string dir)</td></tr>
-<tr class="separator:a0988a40aa137adab322259ed9b0ebda3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd98029f540451c07f963e7541f39426"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCRules.html#afd98029f540451c07f963e7541f39426">CRules</a> (<a class="el" href="classCScreen.html">CScreen</a> *screen, std::string dir)</td></tr>
+<tr class="separator:afd98029f540451c07f963e7541f39426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7095db111278c17f48aba4265f7b6dc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCRules.html#a7095db111278c17f48aba4265f7b6dc1">loop</a> (void)</td></tr>
 <tr class="separator:a7095db111278c17f48aba4265f7b6dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -90,14 +90,12 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aa482dfd37deddc265e62ff56d1eace06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCScreen.html">CScreen</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCRules.html#aa482dfd37deddc265e62ff56d1eace06">m_Screen</a></td></tr>
 <tr class="separator:aa482dfd37deddc265e62ff56d1eace06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a045c9e0b61566d3b7bca566b6ab1dcbf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="status_8h.html#a922429339fd6d14354fd7962155d8193">EStatus</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCRules.html#a045c9e0b61566d3b7bca566b6ab1dcbf">m_Status</a></td></tr>
-<tr class="separator:a045c9e0b61566d3b7bca566b6ab1dcbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89e549d912c8b88aa8a671b0bf470f9e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCRules.html#a89e549d912c8b88aa8a671b0bf470f9e">m_Dir</a></td></tr>
 <tr class="separator:a89e549d912c8b88aa8a671b0bf470f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0988a40aa137adab322259ed9b0ebda3" name="a0988a40aa137adab322259ed9b0ebda3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0988a40aa137adab322259ed9b0ebda3">&#9670;&#160;</a></span>CRules()</h2>
+<a id="afd98029f540451c07f963e7541f39426" name="afd98029f540451c07f963e7541f39426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd98029f540451c07f963e7541f39426">&#9670;&#160;</a></span>CRules()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -110,12 +108,6 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classCScreen.html">CScreen</a> *&#160;</td>
           <td class="paramname"><em>screen</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="status_8h.html#a922429339fd6d14354fd7962155d8193">EStatus</a> &amp;&#160;</td>
-          <td class="paramname"><em>status</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -135,6 +127,13 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Constructing rules </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">screen</td><td>- represents pointer to main program screen </td></tr>
+    <tr><td class="paramname">dir</td><td>- represents file with game rules </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -154,6 +153,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Main loop that prints out the rules to the screen </p>
 
 </div>
 </div>
@@ -202,31 +202,9 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a045c9e0b61566d3b7bca566b6ab1dcbf" name="a045c9e0b61566d3b7bca566b6ab1dcbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a045c9e0b61566d3b7bca566b6ab1dcbf">&#9670;&#160;</a></span>m_Status</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="status_8h.html#a922429339fd6d14354fd7962155d8193">EStatus</a>&amp; CRules::m_Status</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/aiuroand/PA2/semester/src/<a class="el" href="rules_8h_source.html">rules.h</a></li>
-<li>/home/aiuroand/PA2/semester/src/<a class="el" href="rules_8cpp.html">rules.cpp</a></li>
+<li>/home/aiuroand/PA2/aiuroand/src/<a class="el" href="rules_8h_source.html">rules.h</a></li>
+<li>/home/aiuroand/PA2/aiuroand/src/<a class="el" href="rules_8cpp.html">rules.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

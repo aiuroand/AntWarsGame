@@ -11,23 +11,29 @@
 \item 
 \mbox{\hyperlink{classCMap_ac80e14d0a381ae24685b69a1eaff8bc5}{\texorpdfstring{$\sim$}{\string~}\+CMap}} (void)
 \item 
-int \mbox{\hyperlink{classCMap_a0052b6f5c0714c9bb529c84454e08320}{get\+Ant\+Hill}} (\mbox{\hyperlink{classCCoords}{CCoords}} coords)
+int \mbox{\hyperlink{classCMap_a53d27cb9cf389e8b1e3f37f64512625e}{get\+Ant\+Hill}} (\mbox{\hyperlink{classCCoords}{CCoords}} coords) const
 \item 
-void \mbox{\hyperlink{classCMap_a22f07dc5c8850c68e23f8542b6aa9ab3}{print}} (void)
+int \mbox{\hyperlink{classCMap_a77f46f8dd23c0d00997a495a1cb019b2}{get\+Strongest}} (char c) const
 \item 
-void \mbox{\hyperlink{classCMap_aad00f0842f999591e5289d6fd826d81e}{add}} (int id, int amount)
+int \mbox{\hyperlink{classCMap_ae13f9df139888a10229d467f21dc4c68}{get\+Weakest}} (char c) const
 \item 
-char \mbox{\hyperlink{classCMap_ae6c3b15edc093c5994a85c5d0589b532}{get\+Color\+Of\+Id}} (int id)
+int \mbox{\hyperlink{classCMap_a40d27466e330ebfc5c43cd9dceca6993}{count\+Hills}} (char c) const
+\item 
+int \mbox{\hyperlink{classCMap_a318f8b408caa6479e2cd19519a72c970}{get\+Ants\+Of\+Id}} (int id) const
+\item 
+int \mbox{\hyperlink{classCMap_ad1938d8a740d5d578cf79c9795edd644}{get\+Attack\+Of\+Id}} (int id) const
+\item 
+int \mbox{\hyperlink{classCMap_a87653b298b969d64a7326cbfbcbe3b99}{get\+Armor\+Of\+Id}} (int id) const
+\item 
+char \mbox{\hyperlink{classCMap_aec8c5b74345217b255a1c21e0e71e862}{get\+Color\+Of\+Id}} (int id) const
+\item 
+char \mbox{\hyperlink{classCMap_aceaf83ebd38ac3b267e7e2cfbebf9ec7}{check\+Winner}} (void) const
+\item 
+\mbox{\hyperlink{classCAntHill}{CAnt\+Hill}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCMap_a757475b88afb66e41984408b373f25f3}{get\+Ant\+Hill\+Of\+Id}} (int id) const
+\item 
+\mbox{\hyperlink{classCCoords}{CCoords}} \mbox{\hyperlink{classCMap_a1e2627a41a30ee3cb11a64f8739cc17b}{get\+Coords\+Of\+Id}} (int id) const
 \item 
 void \mbox{\hyperlink{classCMap_a4f6acb9e5a990ab422a8471d0b95630c}{set\+Color\+Of\+Id}} (int id, char color)
-\item 
-int \mbox{\hyperlink{classCMap_a0f02c5f9808f8762945a3ffb6b712537}{get\+Ants\+Of\+Id}} (int id)
-\item 
-int \mbox{\hyperlink{classCMap_abfd677a61d6872a1908d50eefc111289}{get\+Attack\+Of\+Id}} (int id)
-\item 
-int \mbox{\hyperlink{classCMap_a4339e588b958989baf21f8607251423f}{get\+Armor\+Of\+Id}} (int id)
-\item 
-\mbox{\hyperlink{classCAntHill}{CAnt\+Hill}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCMap_a55f51bab45d0f7491ae214ed5244effc}{get\+Ant\+Hill\+Of\+Id}} (int id)
 \item 
 void \mbox{\hyperlink{classCMap_ae195ea511b4e44cbd9510560b928a5e7}{set\+Ants\+Of\+Id}} (int id, int amount)
 \item 
@@ -39,13 +45,9 @@ void \mbox{\hyperlink{classCMap_ac1c5a04e787500f2f654d2524763b938}{clear\+Roads}
 \item 
 void \mbox{\hyperlink{classCMap_a51ca8ce787385d0e9130f3497de2d0d8}{attack}} (void)
 \item 
-char \mbox{\hyperlink{classCMap_a3c1b8b9257c1e85687bc90bc101a1ea3}{check\+Winner}} (void)
+void \mbox{\hyperlink{classCMap_a38c8a64ad5b203f112521f06b3560243}{print}} (void) const
 \item 
-int \mbox{\hyperlink{classCMap_a2b19431922cb46a17875332a91bdfd80}{get\+Strongest}} (char c)
-\item 
-int \mbox{\hyperlink{classCMap_af85bf9b5f889d557e5677ac91f196413}{get\+Weakest}} (char c)
-\item 
-int \mbox{\hyperlink{classCMap_ad88fe1ca64f273e6fd5080c9e5b9d125}{count\+Hills}} (char c)
+void \mbox{\hyperlink{classCMap_aad00f0842f999591e5289d6fd826d81e}{add}} (int id, int amount)
 \item 
 void \mbox{\hyperlink{classCMap_a1d47c3ff0742f93eea0857bebad133af}{deactivate\+All}} (void)
 \item 
@@ -61,8 +63,6 @@ void \mbox{\hyperlink{classCMap_a72596e7e0d9478269dd9f54a3f5d6034}{random\+Max}}
 \item 
 void \mbox{\hyperlink{classCMap_a1bbc6d8cb17c714521bf0e09889852ca}{random\+Conquer}} (char c)
 \item 
-void \mbox{\hyperlink{classCMap_a13a5db757d8d0acdcca41bdd1c294b95}{save}} (std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ char, bool $>$ $>$ $>$ \&map)
-\item 
 int \mbox{\hyperlink{classCMap_a0c4437757828004237a22707a1d6aa27}{get\+Height}} (void) const
 \item 
 int \mbox{\hyperlink{classCMap_ad8e46bc0a07701b5bfdaf090e11a758d}{get\+Width}} (void) const
@@ -73,7 +73,7 @@ void \mbox{\hyperlink{classCMap_a142aa504536e4d7a80643ca0518bef37}{set\+Round}} 
 \item 
 void \mbox{\hyperlink{classCMap_a9c43be7845111b5c818aeb408d3ff4ee}{create\+Road}} (int from, int to, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ char, bool $>$ $>$ $>$ \&map)
 \item 
-\mbox{\hyperlink{classCCoords}{CCoords}} \mbox{\hyperlink{classCMap_a233760d2bb240ed3620fae49fbbf72a8}{get\+Coords\+Of\+Id}} (int id)
+void \mbox{\hyperlink{classCMap_a13a5db757d8d0acdcca41bdd1c294b95}{save}} (std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ char, bool $>$ $>$ $>$ \&map)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -111,13 +111,20 @@ std\+::list$<$ \mbox{\hyperlink{classCRoad}{CRoad}} $>$ \mbox{\hyperlink{classCM
 \doxysubsubsection{\texorpdfstring{CMap()}{CMap()}}
 {\footnotesize\ttfamily CMap\+::\+CMap (\begin{DoxyParamCaption}\item[{std\+::string}]{map\+Dir,  }\item[{\mbox{\hyperlink{classCScreen}{CScreen}} \texorpdfstring{$\ast$}{*}}]{scr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Constructing object taht represents game map 
+\begin{DoxyParams}{Parameters}
+{\em map\+Dir} & -\/ filename of map that should be loaded \\
+\hline
+{\em scr} & -\/ pointer to main screen \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_ac80e14d0a381ae24685b69a1eaff8bc5}\label{classCMap_ac80e14d0a381ae24685b69a1eaff8bc5} 
 \index{CMap@{CMap}!````~CMap@{\texorpdfstring{$\sim$}{\string~}CMap}}
 \index{````~CMap@{\texorpdfstring{$\sim$}{\string~}CMap}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CMap()}{\string~CMap()}}
 {\footnotesize\ttfamily CMap\+::\texorpdfstring{$\sim$}{\string~}\+CMap (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-
+Deleting all allocated resourses 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classCMap_aad00f0842f999591e5289d6fd826d81e}\label{classCMap_aad00f0842f999591e5289d6fd826d81e} 
@@ -126,198 +133,385 @@ std\+::list$<$ \mbox{\hyperlink{classCRoad}{CRoad}} $>$ \mbox{\hyperlink{classCM
 \doxysubsubsection{\texorpdfstring{add()}{add()}}
 {\footnotesize\ttfamily void CMap\+::add (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{amount }\end{DoxyParamCaption})}
 
+Adds ( or removes if amount \texorpdfstring{$<$}{<} 0 ) ants to m\+\_\+\+Ants in a given anthill 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ id of anthill \\
+\hline
+{\em amount} & -\/ amount to be added \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_a825b8f79d34a083b6c5053d5a635b1ea}\label{classCMap_a825b8f79d34a083b6c5053d5a635b1ea} 
 \index{CMap@{CMap}!addAntsAttackToColor@{addAntsAttackToColor}}
 \index{addAntsAttackToColor@{addAntsAttackToColor}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{addAntsAttackToColor()}{addAntsAttackToColor()}}
 {\footnotesize\ttfamily void CMap\+::add\+Ants\+Attack\+To\+Color (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int}]{amount }\end{DoxyParamCaption})}
 
+Adds ( or removes if amount \texorpdfstring{$<$}{<} 0 ) ants per attack value to anthills of given color 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of anthills \\
+\hline
+{\em amount} & -\/ amount to be added \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_a5c1f794cfbefdf9a40957e4574a9851a}\label{classCMap_a5c1f794cfbefdf9a40957e4574a9851a} 
 \index{CMap@{CMap}!addArmorToColor@{addArmorToColor}}
 \index{addArmorToColor@{addArmorToColor}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{addArmorToColor()}{addArmorToColor()}}
 {\footnotesize\ttfamily void CMap\+::add\+Armor\+To\+Color (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int}]{amount }\end{DoxyParamCaption})}
 
+Adds ( or removes if amount \texorpdfstring{$<$}{<} 0 ) armor value to anthills of given color 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of anthills \\
+\hline
+{\em amount} & -\/ amount to be added \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_a615ad2d4082700902877e9f03ae78c03}\label{classCMap_a615ad2d4082700902877e9f03ae78c03} 
 \index{CMap@{CMap}!addMaxToColor@{addMaxToColor}}
 \index{addMaxToColor@{addMaxToColor}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{addMaxToColor()}{addMaxToColor()}}
 {\footnotesize\ttfamily void CMap\+::add\+Max\+To\+Color (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int}]{amount }\end{DoxyParamCaption})}
 
+Adds ( or removes if amount \texorpdfstring{$<$}{<} 0 ) max ants value to anthills of given color 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of anthills \\
+\hline
+{\em amount} & -\/ amount to be added \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_a1d9334360e8ed62caf0b2c7346a2d4a3}\label{classCMap_a1d9334360e8ed62caf0b2c7346a2d4a3} 
 \index{CMap@{CMap}!addMoveToColor@{addMoveToColor}}
 \index{addMoveToColor@{addMoveToColor}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{addMoveToColor()}{addMoveToColor()}}
 {\footnotesize\ttfamily void CMap\+::add\+Move\+To\+Color (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int}]{amount }\end{DoxyParamCaption})}
 
+Adds ( or removes if amount \texorpdfstring{$<$}{<} 0 ) ants per move value to anthills of given color 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of anthills \\
+\hline
+{\em amount} & -\/ amount to be added \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_a51ca8ce787385d0e9130f3497de2d0d8}\label{classCMap_a51ca8ce787385d0e9130f3497de2d0d8} 
 \index{CMap@{CMap}!attack@{attack}}
 \index{attack@{attack}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{attack()}{attack()}}
 {\footnotesize\ttfamily void CMap\+::attack (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\Hypertarget{classCMap_a3c1b8b9257c1e85687bc90bc101a1ea3}\label{classCMap_a3c1b8b9257c1e85687bc90bc101a1ea3} 
+Implemenst logic of attack, animates and calculates them \Hypertarget{classCMap_aceaf83ebd38ac3b267e7e2cfbebf9ec7}\label{classCMap_aceaf83ebd38ac3b267e7e2cfbebf9ec7} 
 \index{CMap@{CMap}!checkWinner@{checkWinner}}
 \index{checkWinner@{checkWinner}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{checkWinner()}{checkWinner()}}
-{\footnotesize\ttfamily char CMap\+::check\+Winner (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char CMap\+::check\+Winner (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
+Checks if there are more than 1 color on the map \begin{DoxyReturn}{Returns}
+color of left player, \textquotesingle{}n\textquotesingle{} if there are more than 1 player, or if there are neutral anhills 
+\end{DoxyReturn}
 \Hypertarget{classCMap_ac1c5a04e787500f2f654d2524763b938}\label{classCMap_ac1c5a04e787500f2f654d2524763b938} 
 \index{CMap@{CMap}!clearRoads@{clearRoads}}
 \index{clearRoads@{clearRoads}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{clearRoads()}{clearRoads()}}
 {\footnotesize\ttfamily void CMap\+::clear\+Roads (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\Hypertarget{classCMap_ad88fe1ca64f273e6fd5080c9e5b9d125}\label{classCMap_ad88fe1ca64f273e6fd5080c9e5b9d125} 
+Resets all roads to defaul settings \Hypertarget{classCMap_a40d27466e330ebfc5c43cd9dceca6993}\label{classCMap_a40d27466e330ebfc5c43cd9dceca6993} 
 \index{CMap@{CMap}!countHills@{countHills}}
 \index{countHills@{countHills}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{countHills()}{countHills()}}
-{\footnotesize\ttfamily int CMap\+::count\+Hills (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int CMap\+::count\+Hills (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption}) const}
 
+Counts amount of anthills of given owner 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of owner \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+amount of anthills of the onwer 
+\end{DoxyReturn}
 \Hypertarget{classCMap_a782962dbe188ce1f5fda9c16f6f1a589}\label{classCMap_a782962dbe188ce1f5fda9c16f6f1a589} 
 \index{CMap@{CMap}!createAnts@{createAnts}}
 \index{createAnts@{createAnts}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{createAnts()}{createAnts()}}
 {\footnotesize\ttfamily void CMap\+::create\+Ants (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\Hypertarget{classCMap_a9c43be7845111b5c818aeb408d3ff4ee}\label{classCMap_a9c43be7845111b5c818aeb408d3ff4ee} 
+If anthill is not neutral increases amount of ants in anthill by constant that is declared in \doxylink{classCAntHill}{CAnt\+Hill} \Hypertarget{classCMap_a9c43be7845111b5c818aeb408d3ff4ee}\label{classCMap_a9c43be7845111b5c818aeb408d3ff4ee} 
 \index{CMap@{CMap}!createRoad@{createRoad}}
 \index{createRoad@{createRoad}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{createRoad()}{createRoad()}}
 {\footnotesize\ttfamily void CMap\+::create\+Road (\begin{DoxyParamCaption}\item[{int}]{from,  }\item[{int}]{to,  }\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ char, bool $>$ $>$ $>$ \&}]{map }\end{DoxyParamCaption})}
 
+Creating a road of coords from 1st anthill to second using BFS 
+\begin{DoxyParams}{Parameters}
+{\em from} & -\/ value to be set \\
+\hline
+{\em to} & -\/ value to be set \\
+\hline
+{\em map} & -\/ 2d map of std\+::pairs, where\+: first is a symbol on this position second is a bool value, that represents if this position was visited or not \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classCRoadDoesNotExist}{CRoad\+Does\+Not\+Exist}} & -\/ if it is impossible to find a road between anthills \\
+\hline
+\end{DoxyExceptions}
 \Hypertarget{classCMap_a1d47c3ff0742f93eea0857bebad133af}\label{classCMap_a1d47c3ff0742f93eea0857bebad133af} 
 \index{CMap@{CMap}!deactivateAll@{deactivateAll}}
 \index{deactivateAll@{deactivateAll}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{deactivateAll()}{deactivateAll()}}
 {\footnotesize\ttfamily void CMap\+::deactivate\+All (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\Hypertarget{classCMap_ae8f4a37c142e9a883b0dfbc40f4c2807}\label{classCMap_ae8f4a37c142e9a883b0dfbc40f4c2807} 
+Resets all anthills to defaul settings \Hypertarget{classCMap_ae8f4a37c142e9a883b0dfbc40f4c2807}\label{classCMap_ae8f4a37c142e9a883b0dfbc40f4c2807} 
 \index{CMap@{CMap}!fillRoad@{fillRoad}}
 \index{fillRoad@{fillRoad}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{fillRoad()}{fillRoad()}}
 {\footnotesize\ttfamily void CMap\+::fill\+Road (\begin{DoxyParamCaption}\item[{const int}]{from,  }\item[{const int}]{to }\end{DoxyParamCaption})}
 
-\Hypertarget{classCMap_a0052b6f5c0714c9bb529c84454e08320}\label{classCMap_a0052b6f5c0714c9bb529c84454e08320} 
+Prepares a road for using in the next attack circle 
+\begin{DoxyParams}{Parameters}
+{\em from} & -\/ id of attacker \\
+\hline
+{\em to} & -\/ id 0f defender \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCMap_a53d27cb9cf389e8b1e3f37f64512625e}\label{classCMap_a53d27cb9cf389e8b1e3f37f64512625e} 
 \index{CMap@{CMap}!getAntHill@{getAntHill}}
 \index{getAntHill@{getAntHill}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getAntHill()}{getAntHill()}}
-{\footnotesize\ttfamily int CMap\+::get\+Ant\+Hill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCCoords}{CCoords}}}]{coords }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int CMap\+::get\+Ant\+Hill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCCoords}{CCoords}}}]{coords }\end{DoxyParamCaption}) const}
 
-\Hypertarget{classCMap_a55f51bab45d0f7491ae214ed5244effc}\label{classCMap_a55f51bab45d0f7491ae214ed5244effc} 
+Getting id of anthill that is standing on the coords 
+\begin{DoxyParams}{Parameters}
+{\em coords} & -\/ coords to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id of anthill, -\/1 if wan not found 
+\end{DoxyReturn}
+\Hypertarget{classCMap_a757475b88afb66e41984408b373f25f3}\label{classCMap_a757475b88afb66e41984408b373f25f3} 
 \index{CMap@{CMap}!getAntHillOfId@{getAntHillOfId}}
 \index{getAntHillOfId@{getAntHillOfId}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getAntHillOfId()}{getAntHillOfId()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCAntHill}{CAnt\+Hill}} \texorpdfstring{$\ast$}{*} CMap\+::get\+Ant\+Hill\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCAntHill}{CAnt\+Hill}} \texorpdfstring{$\ast$}{*} CMap\+::get\+Ant\+Hill\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
 
-\Hypertarget{classCMap_a0f02c5f9808f8762945a3ffb6b712537}\label{classCMap_a0f02c5f9808f8762945a3ffb6b712537} 
+Gets pointer to anthill of given id 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ id of anthill \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to anthill 
+\end{DoxyReturn}
+\Hypertarget{classCMap_a318f8b408caa6479e2cd19519a72c970}\label{classCMap_a318f8b408caa6479e2cd19519a72c970} 
 \index{CMap@{CMap}!getAntsOfId@{getAntsOfId}}
 \index{getAntsOfId@{getAntsOfId}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getAntsOfId()}{getAntsOfId()}}
-{\footnotesize\ttfamily int CMap\+::get\+Ants\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int CMap\+::get\+Ants\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
 
-\Hypertarget{classCMap_a4339e588b958989baf21f8607251423f}\label{classCMap_a4339e588b958989baf21f8607251423f} 
+Gets amount of ants in the anthill 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ id of anthill \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+amount of anthills, -\/1 if such anthill does not exist 
+\end{DoxyReturn}
+\Hypertarget{classCMap_a87653b298b969d64a7326cbfbcbe3b99}\label{classCMap_a87653b298b969d64a7326cbfbcbe3b99} 
 \index{CMap@{CMap}!getArmorOfId@{getArmorOfId}}
 \index{getArmorOfId@{getArmorOfId}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getArmorOfId()}{getArmorOfId()}}
-{\footnotesize\ttfamily int CMap\+::get\+Armor\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int CMap\+::get\+Armor\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
 
-\Hypertarget{classCMap_abfd677a61d6872a1908d50eefc111289}\label{classCMap_abfd677a61d6872a1908d50eefc111289} 
+Gets amount of armor of the anthill 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ id of anthill \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+amount of armor, -\/1 if such anthill does not exist 
+\end{DoxyReturn}
+\Hypertarget{classCMap_ad1938d8a740d5d578cf79c9795edd644}\label{classCMap_ad1938d8a740d5d578cf79c9795edd644} 
 \index{CMap@{CMap}!getAttackOfId@{getAttackOfId}}
 \index{getAttackOfId@{getAttackOfId}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getAttackOfId()}{getAttackOfId()}}
-{\footnotesize\ttfamily int CMap\+::get\+Attack\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int CMap\+::get\+Attack\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
 
-\Hypertarget{classCMap_ae6c3b15edc093c5994a85c5d0589b532}\label{classCMap_ae6c3b15edc093c5994a85c5d0589b532} 
+Gets amount of ants per attack of the anthill 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ id of anthill \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+amount of ants per attack of anthills, -\/1 if such anthill does not exist 
+\end{DoxyReturn}
+\Hypertarget{classCMap_aec8c5b74345217b255a1c21e0e71e862}\label{classCMap_aec8c5b74345217b255a1c21e0e71e862} 
 \index{CMap@{CMap}!getColorOfId@{getColorOfId}}
 \index{getColorOfId@{getColorOfId}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getColorOfId()}{getColorOfId()}}
-{\footnotesize\ttfamily char CMap\+::get\+Color\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char CMap\+::get\+Color\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
 
-\Hypertarget{classCMap_a233760d2bb240ed3620fae49fbbf72a8}\label{classCMap_a233760d2bb240ed3620fae49fbbf72a8} 
+Gets color of the anthill 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ id of anthill \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+color of anthill, \textquotesingle{}n\textquotesingle{} if such anthill does not exist 
+\end{DoxyReturn}
+\Hypertarget{classCMap_a1e2627a41a30ee3cb11a64f8739cc17b}\label{classCMap_a1e2627a41a30ee3cb11a64f8739cc17b} 
 \index{CMap@{CMap}!getCoordsOfId@{getCoordsOfId}}
 \index{getCoordsOfId@{getCoordsOfId}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getCoordsOfId()}{getCoordsOfId()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCCoords}{CCoords}} CMap\+::get\+Coords\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCCoords}{CCoords}} CMap\+::get\+Coords\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const}
 
+Gets coords of anthill of given id 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ id of anthill \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+coords ( left top corner ) of anthill 
+\end{DoxyReturn}
 \Hypertarget{classCMap_a0c4437757828004237a22707a1d6aa27}\label{classCMap_a0c4437757828004237a22707a1d6aa27} 
 \index{CMap@{CMap}!getHeight@{getHeight}}
 \index{getHeight@{getHeight}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
 {\footnotesize\ttfamily int CMap\+::get\+Height (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCMap_aa14280e0c3778150c779f0da8963ade0}\label{classCMap_aa14280e0c3778150c779f0da8963ade0} 
+Gets m\+\_\+\+Height of the map \Hypertarget{classCMap_aa14280e0c3778150c779f0da8963ade0}\label{classCMap_aa14280e0c3778150c779f0da8963ade0} 
 \index{CMap@{CMap}!getRound@{getRound}}
 \index{getRound@{getRound}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getRound()}{getRound()}}
 {\footnotesize\ttfamily int CMap\+::get\+Round (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCMap_a2b19431922cb46a17875332a91bdfd80}\label{classCMap_a2b19431922cb46a17875332a91bdfd80} 
+Gets m\+\_\+\+Round value \Hypertarget{classCMap_a77f46f8dd23c0d00997a495a1cb019b2}\label{classCMap_a77f46f8dd23c0d00997a495a1cb019b2} 
 \index{CMap@{CMap}!getStrongest@{getStrongest}}
 \index{getStrongest@{getStrongest}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getStrongest()}{getStrongest()}}
-{\footnotesize\ttfamily int CMap\+::get\+Strongest (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int CMap\+::get\+Strongest (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption}) const}
 
-\Hypertarget{classCMap_af85bf9b5f889d557e5677ac91f196413}\label{classCMap_af85bf9b5f889d557e5677ac91f196413} 
+Returns id of an anthill of given color that contains maximum amount of ants on the map 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of owner \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id of the strongest anthill that has given color, -\/1 if was not found 
+\end{DoxyReturn}
+\Hypertarget{classCMap_ae13f9df139888a10229d467f21dc4c68}\label{classCMap_ae13f9df139888a10229d467f21dc4c68} 
 \index{CMap@{CMap}!getWeakest@{getWeakest}}
 \index{getWeakest@{getWeakest}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getWeakest()}{getWeakest()}}
-{\footnotesize\ttfamily int CMap\+::get\+Weakest (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int CMap\+::get\+Weakest (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption}) const}
 
+Returns id of an anthill that has not given color and contains minimum amount of ants on the map 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of owner \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id of the weakest anthill that has given color, -\/1 if was not found 
+\end{DoxyReturn}
 \Hypertarget{classCMap_ad8e46bc0a07701b5bfdaf090e11a758d}\label{classCMap_ad8e46bc0a07701b5bfdaf090e11a758d} 
 \index{CMap@{CMap}!getWidth@{getWidth}}
 \index{getWidth@{getWidth}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
 {\footnotesize\ttfamily int CMap\+::get\+Width (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCMap_a22f07dc5c8850c68e23f8542b6aa9ab3}\label{classCMap_a22f07dc5c8850c68e23f8542b6aa9ab3} 
+Gets m\+\_\+\+Width of the map \Hypertarget{classCMap_a38c8a64ad5b203f112521f06b3560243}\label{classCMap_a38c8a64ad5b203f112521f06b3560243} 
 \index{CMap@{CMap}!print@{print}}
 \index{print@{print}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{print()}{print()}}
-{\footnotesize\ttfamily void CMap\+::print (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void CMap\+::print (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
-\Hypertarget{classCMap_a1bbc6d8cb17c714521bf0e09889852ca}\label{classCMap_a1bbc6d8cb17c714521bf0e09889852ca} 
+Prints all CMap\+Element object on m\+\_\+\+Screen \Hypertarget{classCMap_a1bbc6d8cb17c714521bf0e09889852ca}\label{classCMap_a1bbc6d8cb17c714521bf0e09889852ca} 
 \index{CMap@{CMap}!randomConquer@{randomConquer}}
 \index{randomConquer@{randomConquer}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{randomConquer()}{randomConquer()}}
 {\footnotesize\ttfamily void CMap\+::random\+Conquer (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
 
+Changes color of owner of random neutral anthill to given color 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of new owner \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_a72596e7e0d9478269dd9f54a3f5d6034}\label{classCMap_a72596e7e0d9478269dd9f54a3f5d6034} 
 \index{CMap@{CMap}!randomMax@{randomMax}}
 \index{randomMax@{randomMax}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{randomMax()}{randomMax()}}
 {\footnotesize\ttfamily void CMap\+::random\+Max (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
 
+Increases amount of ants in a random anthill of given color to maximum possible amount 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ color of anthills \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_ae0cbaa4faeb64321159f57d1f40e0bd0}\label{classCMap_ae0cbaa4faeb64321159f57d1f40e0bd0} 
 \index{CMap@{CMap}!readMap@{readMap}}
 \index{readMap@{readMap}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{readMap()}{readMap()}}
 {\footnotesize\ttfamily void CMap\+::read\+Map (\begin{DoxyParamCaption}\item[{std\+::string \&}]{map\+Dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+Reading map from file 
+\begin{DoxyParams}{Parameters}
+{\em map\+Dir} & -\/ name of file \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classCFileReadingError}{CFile\+Reading\+Error}} & -\/ if something wrong happend during file reading file \\
+\hline
+{\em \doxylink{classCRoadDoesNotExist}{CRoad\+Does\+Not\+Exist}} & -\/ if it is impossible to find a road between some 2 anthills \\
+\hline
+{\em \doxylink{classCDamagedFile}{CDamaged\+File}} & -\/ if a file is somehow damaged and unreadable \\
+\hline
+\end{DoxyExceptions}
 \Hypertarget{classCMap_a13a5db757d8d0acdcca41bdd1c294b95}\label{classCMap_a13a5db757d8d0acdcca41bdd1c294b95} 
 \index{CMap@{CMap}!save@{save}}
 \index{save@{save}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{save()}{save()}}
 {\footnotesize\ttfamily void CMap\+::save (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ char, bool $>$ $>$ $>$ \&}]{map }\end{DoxyParamCaption})}
 
+Fills 2d array by map\textquotesingle{}s objects to save it further 
+\begin{DoxyParams}{Parameters}
+{\em map} & -\/ 2d map of std\+::pairs where\+: first is a symbol on this position second is a bool value, that represents if this position was visited or not \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_ae195ea511b4e44cbd9510560b928a5e7}\label{classCMap_ae195ea511b4e44cbd9510560b928a5e7} 
 \index{CMap@{CMap}!setAntsOfId@{setAntsOfId}}
 \index{setAntsOfId@{setAntsOfId}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{setAntsOfId()}{setAntsOfId()}}
 {\footnotesize\ttfamily void CMap\+::set\+Ants\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{amount }\end{DoxyParamCaption})}
 
+Changes amount of ants in given anthill 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ id of anthill \\
+\hline
+{\em amount} & -\/ amount to be set \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_a4f6acb9e5a990ab422a8471d0b95630c}\label{classCMap_a4f6acb9e5a990ab422a8471d0b95630c} 
 \index{CMap@{CMap}!setColorOfId@{setColorOfId}}
 \index{setColorOfId@{setColorOfId}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{setColorOfId()}{setColorOfId()}}
 {\footnotesize\ttfamily void CMap\+::set\+Color\+Of\+Id (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char}]{color }\end{DoxyParamCaption})}
 
+Changes color of given anthill 
+\begin{DoxyParams}{Parameters}
+{\em id} & -\/ id of anthill \\
+\hline
+{\em color} & -\/ color that should be set \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCMap_a142aa504536e4d7a80643ca0518bef37}\label{classCMap_a142aa504536e4d7a80643ca0518bef37} 
 \index{CMap@{CMap}!setRound@{setRound}}
 \index{setRound@{setRound}!CMap@{CMap}}
 \doxysubsubsection{\texorpdfstring{setRound()}{setRound()}}
 {\footnotesize\ttfamily void CMap\+::set\+Round (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Sets m\+\_\+\+Round value 
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ value to be set \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}
@@ -373,5 +567,5 @@ std\+::list$<$ \mbox{\hyperlink{classCRoad}{CRoad}} $>$ \mbox{\hyperlink{classCM
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{map_8h}{map.\+h}}\item 
-/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{map_8cpp}{map.\+cpp}}\end{DoxyCompactItemize}
+/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{map_8h}{map.\+h}}\item 
+/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{map_8cpp}{map.\+cpp}}\end{DoxyCompactItemize}

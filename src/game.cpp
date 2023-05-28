@@ -2,12 +2,12 @@
 
 void CGame::loop ( void )
 {
-
   readTalents();
   setPlayers();
 
   m_Map . print();
   printHud();
+
   while ( 1 )
   {
     try 
@@ -82,7 +82,7 @@ void CGame::loop ( void )
     m_Map . setRound ( m_Map . getRound () + 1 ) ;
   }
 }
-
+//------------------------------------------------------------------------
 void CGame::removeDead( void )
 {
   for ( auto it = m_Players . begin(); it != m_Players . end(); )
@@ -94,7 +94,7 @@ void CGame::removeDead( void )
     else
       it++;
 }
-
+//------------------------------------------------------------------------
 void CGame::printHud ( void )
 {
 
@@ -112,7 +112,7 @@ void CGame::printHud ( void )
   mvwprintw ( m_Screen -> m_Window, 2, m_Map . getWidth() + 1, "+---+------+" );
   wrefresh ( m_Screen -> m_Window );
 }
-
+//------------------------------------------------------------------------
 void CGame::readTalents( void )
 {
   std::ifstream ifs;
@@ -175,9 +175,8 @@ void CGame::readTalents( void )
   i = (int) str1[0] - 48;
   m_Tier3 . push_back ( new CMaxAnts ( name, description, i ) );
   ifs . close();
-
 }
-
+//------------------------------------------------------------------------
 void CGame::setPlayers ( void )
 {
     for ( const auto & it : m_Map . m_Players )
@@ -216,7 +215,7 @@ void CGame::setPlayers ( void )
       } 
     }
 }
-
+//------------------------------------------------------------------------
 void CGame::saveGame ( void )
 {
   //https://stackoverflow.com/questions/16357999/current-date-and-time-as-string

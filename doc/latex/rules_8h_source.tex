@@ -1,5 +1,5 @@
 \doxysection{rules.\+h}
-\hypertarget{rules_8h_source}{}\label{rules_8h_source}\index{/home/aiuroand/PA2/semester/src/rules.h@{/home/aiuroand/PA2/semester/src/rules.h}}
+\hypertarget{rules_8h_source}{}\label{rules_8h_source}\index{/home/aiuroand/PA2/aiuroand/src/rules.h@{/home/aiuroand/PA2/aiuroand/src/rules.h}}
 \mbox{\hyperlink{rules_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RULES\_H}}
@@ -10,25 +10,23 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{screen_8h}{screen.h}}"{}}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}ncurses.h"{}}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{status_8h}{status.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{exceptions_8h}{exceptions.h}}"{}}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCRules}{CRules}}}
 \DoxyCodeLine{00012\ \{}
 \DoxyCodeLine{00013\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \mbox{\hyperlink{classCRules_a0988a40aa137adab322259ed9b0ebda3}{CRules}}\ (\ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ screen,}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{status_8h_a922429339fd6d14354fd7962155d8193}{EStatus}}\ \&\ status,}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ dir\ )}
-\DoxyCodeLine{00017\ \ \ \ \ \ :\ \mbox{\hyperlink{classCRules_aa482dfd37deddc265e62ff56d1eace06}{m\_Screen}}\ (\ screen\ ),}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \mbox{\hyperlink{classCRules_a045c9e0b61566d3b7bca566b6ab1dcbf}{m\_Status}}\ (\ status\ ),}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \mbox{\hyperlink{classCRules_a89e549d912c8b88aa8a671b0bf470f9e}{m\_Dir}}\ (\ dir\ )}
-\DoxyCodeLine{00020\ \ \ \ \ \{\}}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCRules_a7095db111278c17f48aba4265f7b6dc1}{loop}}\ (\ \textcolor{keywordtype}{void}\ );}
-\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ \mbox{\hyperlink{classCRules_aa482dfd37deddc265e62ff56d1eace06}{m\_Screen}};}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{status_8h_a922429339fd6d14354fd7962155d8193}{EStatus}}\ \&\ \mbox{\hyperlink{classCRules_a045c9e0b61566d3b7bca566b6ab1dcbf}{m\_Status}};}
-\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{classCRules_a89e549d912c8b88aa8a671b0bf470f9e}{m\_Dir}};}
-\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classCRules_afd98029f540451c07f963e7541f39426}{CRules}}\ (\ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ screen,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ dir\ )}
+\DoxyCodeLine{00020\ \ \ \ \ :\ \mbox{\hyperlink{classCRules_aa482dfd37deddc265e62ff56d1eace06}{m\_Screen}}\ (\ screen\ ),}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \mbox{\hyperlink{classCRules_a89e549d912c8b88aa8a671b0bf470f9e}{m\_Dir}}\ (\ dir\ )}
+\DoxyCodeLine{00022\ \ \ \ \ \{\}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCRules_a7095db111278c17f48aba4265f7b6dc1}{loop}}\ (\ \textcolor{keywordtype}{void}\ );}
 \DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RULES\_H}}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ \mbox{\hyperlink{classCRules_aa482dfd37deddc265e62ff56d1eace06}{m\_Screen}};}
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{classCRules_a89e549d912c8b88aa8a671b0bf470f9e}{m\_Dir}};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RULES\_H}}
 
 \end{DoxyCode}

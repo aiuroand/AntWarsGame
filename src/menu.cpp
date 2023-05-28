@@ -44,7 +44,7 @@ void CMenu::loop ( )
     }
   }
 }
-
+//----------------------------------------------------------------------
 void CMenu::chooseNewMap( void )
 {
   int choise = 0;
@@ -95,7 +95,7 @@ void CMenu::chooseNewMap( void )
     }
   }
 }
-
+//----------------------------------------------------------------------
 void CMenu::continueMap( void )
 {
   int choise = 0;

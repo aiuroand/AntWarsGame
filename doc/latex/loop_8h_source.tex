@@ -1,5 +1,5 @@
 \doxysection{loop.\+h}
-\hypertarget{loop_8h_source}{}\label{loop_8h_source}\index{/home/aiuroand/PA2/semester/src/loop.h@{/home/aiuroand/PA2/semester/src/loop.h}}
+\hypertarget{loop_8h_source}{}\label{loop_8h_source}\index{/home/aiuroand/PA2/aiuroand/src/loop.h@{/home/aiuroand/PA2/aiuroand/src/loop.h}}
 \mbox{\hyperlink{loop_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LOOP\_H}}
@@ -12,41 +12,43 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{screen_8h}{screen.h}}"{}}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{status_8h}{status.h}}"{}}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rules_8h}{rules.h}}"{}}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCLoop}{CLoop}}}
-\DoxyCodeLine{00013\ \{}
-\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classCLoop_ae15b8e21af09b79302b990958630e2cb}{CLoop}}\ (\ std::string\ maps,}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ saves,}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ talents,}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ rules\ )}
-\DoxyCodeLine{00025\ \ \ \ \ :\ \mbox{\hyperlink{classCLoop_a74b731fc89525590d8ca11f101d2fc2b}{m\_Maps}}\ (\ maps\ ),}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a1e2e761bf27ce4a4b9971757f3736a69}{m\_Saves}}\ (\ saves\ ),}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a329bb222023352ba96902689bb3154a4}{m\_Talents}}\ (\ talents\ ),}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a043cd6e29e4f0cebcf51aa0be02f2c8e}{m\_Screen}}\ (\ new\ \mbox{\hyperlink{classCScreen}{CScreen}}()\ ),}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a02eba13e73beb84726babb7d836d915e}{m\_Status}}\ (\ \mbox{\hyperlink{status_8h_a922429339fd6d14354fd7962155d8193a1bfca9c2e825cbe3363f1672809a9f2b}{e\_Menu}}\ ),}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_adff3f392b9e6de1c6845936be5c479ba}{m\_Menu}}\ (\ \mbox{\hyperlink{classCLoop_a043cd6e29e4f0cebcf51aa0be02f2c8e}{m\_Screen}},\ \mbox{\hyperlink{classCLoop_a02eba13e73beb84726babb7d836d915e}{m\_Status}},\ \mbox{\hyperlink{classCLoop_a74b731fc89525590d8ca11f101d2fc2b}{m\_Maps}},\ \mbox{\hyperlink{classCLoop_a1e2e761bf27ce4a4b9971757f3736a69}{m\_Saves}}\ ),}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a65183e62bf9d9e6502bdd7c100ce983d}{m\_Game}}\ (\ nullptr\ ),}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_ab55d6f16a72f7df9444f2617cf5bf8c0}{m\_Rules}}\ (\ \mbox{\hyperlink{classCLoop_a043cd6e29e4f0cebcf51aa0be02f2c8e}{m\_Screen}},\ \mbox{\hyperlink{classCLoop_a02eba13e73beb84726babb7d836d915e}{m\_Status}},\ rules\ )}
-\DoxyCodeLine{00033\ \ \ \ \ \{}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a03c42656a46ba7a057e52156b8b3e65b}{loop}}();\ \textcolor{comment}{//\ Entering\ main\ loop\ immidiately\ after\ constructing}}
-\DoxyCodeLine{00035\ \ \ \ \ \}}
-\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classCLoop_a0550877d92bceab559f0492aa2a6d8ff}{\string~CLoop}}\ (\ \textcolor{keywordtype}{void}\ )}
-\DoxyCodeLine{00039\ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classCLoop_a043cd6e29e4f0cebcf51aa0be02f2c8e}{m\_Screen}};}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCLoop_a03c42656a46ba7a057e52156b8b3e65b}{loop}}\ (\ \textcolor{keywordtype}{void}\ );}
-\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{classCLoop_a74b731fc89525590d8ca11f101d2fc2b}{m\_Maps}};}
-\DoxyCodeLine{00048\ \ \ \ \ std::string\ \mbox{\hyperlink{classCLoop_a1e2e761bf27ce4a4b9971757f3736a69}{m\_Saves}};}
-\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{classCLoop_a329bb222023352ba96902689bb3154a4}{m\_Talents}};}
-\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ \mbox{\hyperlink{classCLoop_a043cd6e29e4f0cebcf51aa0be02f2c8e}{m\_Screen}};}
-\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{status_8h_a922429339fd6d14354fd7962155d8193}{EStatus}}\ \mbox{\hyperlink{classCLoop_a02eba13e73beb84726babb7d836d915e}{m\_Status}};}
-\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classCMenu}{CMenu}}\ \mbox{\hyperlink{classCLoop_adff3f392b9e6de1c6845936be5c479ba}{m\_Menu}};}
-\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classCGame}{CGame}}\ *\ \mbox{\hyperlink{classCLoop_a65183e62bf9d9e6502bdd7c100ce983d}{m\_Game}};}
-\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classCRules}{CRules}}\ \mbox{\hyperlink{classCLoop_ab55d6f16a72f7df9444f2617cf5bf8c0}{m\_Rules}};}
-\DoxyCodeLine{00055\ \};}
-\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOOP\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{exceptions_8h}{exceptions.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCLoop}{CLoop}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classCLoop_ae15b8e21af09b79302b990958630e2cb}{CLoop}}\ (\ std::string\ maps,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ saves,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ talents,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ rules\ )}
+\DoxyCodeLine{00026\ \ \ \ \ :\ \mbox{\hyperlink{classCLoop_a74b731fc89525590d8ca11f101d2fc2b}{m\_Maps}}\ (\ maps\ ),}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a1e2e761bf27ce4a4b9971757f3736a69}{m\_Saves}}\ (\ saves\ ),}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a329bb222023352ba96902689bb3154a4}{m\_Talents}}\ (\ talents\ ),}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a043cd6e29e4f0cebcf51aa0be02f2c8e}{m\_Screen}}\ (\ new\ \mbox{\hyperlink{classCScreen}{CScreen}}()\ ),}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a02eba13e73beb84726babb7d836d915e}{m\_Status}}\ (\ \mbox{\hyperlink{status_8h_a922429339fd6d14354fd7962155d8193a1bfca9c2e825cbe3363f1672809a9f2b}{e\_Menu}}\ ),}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_adff3f392b9e6de1c6845936be5c479ba}{m\_Menu}}\ (\ \mbox{\hyperlink{classCLoop_a043cd6e29e4f0cebcf51aa0be02f2c8e}{m\_Screen}},\ \mbox{\hyperlink{classCLoop_a02eba13e73beb84726babb7d836d915e}{m\_Status}},\ \mbox{\hyperlink{classCLoop_a74b731fc89525590d8ca11f101d2fc2b}{m\_Maps}},\ \mbox{\hyperlink{classCLoop_a1e2e761bf27ce4a4b9971757f3736a69}{m\_Saves}}\ ),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a65183e62bf9d9e6502bdd7c100ce983d}{m\_Game}}\ (\ nullptr\ ),}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_ab55d6f16a72f7df9444f2617cf5bf8c0}{m\_Rules}}\ (\ \mbox{\hyperlink{classCLoop_a043cd6e29e4f0cebcf51aa0be02f2c8e}{m\_Screen}},\ rules\ )}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \mbox{\hyperlink{classCLoop_a03c42656a46ba7a057e52156b8b3e65b}{loop}}();\ \textcolor{comment}{//\ Entering\ main\ loop\ immidiately\ after\ constructing}}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classCLoop_a0550877d92bceab559f0492aa2a6d8ff}{\string~CLoop}}\ (\ \textcolor{keywordtype}{void}\ )}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classCLoop_a043cd6e29e4f0cebcf51aa0be02f2c8e}{m\_Screen}};\ }
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCLoop_a03c42656a46ba7a057e52156b8b3e65b}{loop}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{classCLoop_a74b731fc89525590d8ca11f101d2fc2b}{m\_Maps}};}
+\DoxyCodeLine{00050\ \ \ \ \ std::string\ \mbox{\hyperlink{classCLoop_a1e2e761bf27ce4a4b9971757f3736a69}{m\_Saves}};}
+\DoxyCodeLine{00051\ \ \ \ \ std::string\ \mbox{\hyperlink{classCLoop_a329bb222023352ba96902689bb3154a4}{m\_Talents}};}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classCScreen}{CScreen}}\ *\ \mbox{\hyperlink{classCLoop_a043cd6e29e4f0cebcf51aa0be02f2c8e}{m\_Screen}};\ \textcolor{comment}{//\ Main\ screen}}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{status_8h_a922429339fd6d14354fd7962155d8193}{EStatus}}\ \mbox{\hyperlink{classCLoop_a02eba13e73beb84726babb7d836d915e}{m\_Status}};\ \ \ \textcolor{comment}{//\ Actual\ status\ of\ program}}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classCMenu}{CMenu}}\ \mbox{\hyperlink{classCLoop_adff3f392b9e6de1c6845936be5c479ba}{m\_Menu}};}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classCGame}{CGame}}\ *\ \mbox{\hyperlink{classCLoop_a65183e62bf9d9e6502bdd7c100ce983d}{m\_Game}};}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classCRules}{CRules}}\ \mbox{\hyperlink{classCLoop_ab55d6f16a72f7df9444f2617cf5bf8c0}{m\_Rules}};}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOOP\_H}}
 
 \end{DoxyCode}

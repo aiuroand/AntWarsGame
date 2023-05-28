@@ -21,6 +21,5 @@ int main ( void )
 
   // Entering main loop of all program
   CLoop l ( maps, saves, talents, rules );
-
   return EXIT_SUCCESS;
 }

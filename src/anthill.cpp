@@ -5,7 +5,7 @@
 #define RED 3
 #define MAGENTA 4
 
-void CAntHill::print ( CScreen * scr )
+void CAntHill::print ( CScreen * scr ) const
 {
   int c;
   if ( m_Color == 'g' )

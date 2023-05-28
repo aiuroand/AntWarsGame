@@ -4,7 +4,7 @@ var searchData=
   ['savegame_1',['saveGame',['../classCGame.html#a99681f6adffe2935fc4b5d34e9117cdd',1,'CGame']]],
   ['screenbox_2',['screenBox',['../classCScreen.html#a2c0d030dfb4528ea8426903bf25c6cc8',1,'CScreen']]],
   ['screenclear_3',['screenClear',['../classCScreen.html#a96f9992d6c739e7f7a64ef64af19983f',1,'CScreen']]],
-  ['screenprint_4',['screenPrint',['../classCScreen.html#aed1c724b7a35f90acbee17315f8c462b',1,'CScreen::screenPrint(CCoords coord, std::string str)'],['../classCScreen.html#af819096e1b72de5b7e72a662bda2d573',1,'CScreen::screenPrint(CCoords coord, char c)']]],
+  ['screenprint_4',['screenPrint',['../classCScreen.html#ac3f1468cbc7dcfedfa0638afded08d89',1,'CScreen::screenPrint(const CCoords coords, const std::string &amp;str)'],['../classCScreen.html#a387001ef3da39e1b49ec430cd7e34975',1,'CScreen::screenPrint(const CCoords coords, const char c)']]],
   ['screenrefresh_5',['screenRefresh',['../classCScreen.html#adbe697114bbde4cbafea161bb8d51934',1,'CScreen']]],
   ['selecttalent_6',['selectTalent',['../classCBot.html#af3c87719e19e0dc30301d6ea2872b4e1',1,'CBot::selectTalent()'],['../classCHuman.html#a1db61a489c331ece3e35af98fa219c6d',1,'CHuman::selectTalent()'],['../classCPlayer.html#ae468a15c714526073947d8b445f7fe10',1,'CPlayer::selectTalent()']]],
   ['setants_7',['setAnts',['../classCAntHill.html#abaeeffb0f3a5874575412ef62a04aed6',1,'CAntHill']]],

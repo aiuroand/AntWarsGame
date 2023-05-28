@@ -17,15 +17,15 @@ void \mbox{\hyperlink{classCScreen_a96f9992d6c739e7f7a64ef64af19983f}{screen\+Cl
 \item 
 void \mbox{\hyperlink{classCScreen_a2c0d030dfb4528ea8426903bf25c6cc8}{screen\+Box}} (void)
 \item 
-void \mbox{\hyperlink{classCScreen_aed1c724b7a35f90acbee17315f8c462b}{screen\+Print}} (\mbox{\hyperlink{classCCoords}{CCoords}} coord, std\+::string str)
+void \mbox{\hyperlink{classCScreen_ac3f1468cbc7dcfedfa0638afded08d89}{screen\+Print}} (const \mbox{\hyperlink{classCCoords}{CCoords}} coords, const std\+::string \&str)
 \item 
-void \mbox{\hyperlink{classCScreen_af819096e1b72de5b7e72a662bda2d573}{screen\+Print}} (\mbox{\hyperlink{classCCoords}{CCoords}} coord, char c)
+void \mbox{\hyperlink{classCScreen_a387001ef3da39e1b49ec430cd7e34975}{screen\+Print}} (const \mbox{\hyperlink{classCCoords}{CCoords}} coords, const char c)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 WINDOW \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\+\_\+\+Window}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main window from lncurses. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -35,13 +35,13 @@ WINDOW \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50
 \doxysubsubsection{\texorpdfstring{CScreen()}{CScreen()}}
 {\footnotesize\ttfamily CScreen\+::\+CScreen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCScreen_acacb40300e5275b0827a4ff95b3e2b55}\label{classCScreen_acacb40300e5275b0827a4ff95b3e2b55} 
+Constructing screen and window for the game using lncurses. \Hypertarget{classCScreen_acacb40300e5275b0827a4ff95b3e2b55}\label{classCScreen_acacb40300e5275b0827a4ff95b3e2b55} 
 \index{CScreen@{CScreen}!````~CScreen@{\texorpdfstring{$\sim$}{\string~}CScreen}}
 \index{````~CScreen@{\texorpdfstring{$\sim$}{\string~}CScreen}!CScreen@{CScreen}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CScreen()}{\string~CScreen()}}
 {\footnotesize\ttfamily CScreen\+::\texorpdfstring{$\sim$}{\string~}\+CScreen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-
+Deleting all alocated lncurses objects 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classCScreen_a2c0d030dfb4528ea8426903bf25c6cc8}\label{classCScreen_a2c0d030dfb4528ea8426903bf25c6cc8} 
@@ -50,31 +50,45 @@ WINDOW \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50
 \doxysubsubsection{\texorpdfstring{screenBox()}{screenBox()}}
 {\footnotesize\ttfamily void CScreen\+::screen\+Box (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCScreen_a96f9992d6c739e7f7a64ef64af19983f}\label{classCScreen_a96f9992d6c739e7f7a64ef64af19983f} 
+Printing default borders to m\+\_\+\+Window \Hypertarget{classCScreen_a96f9992d6c739e7f7a64ef64af19983f}\label{classCScreen_a96f9992d6c739e7f7a64ef64af19983f} 
 \index{CScreen@{CScreen}!screenClear@{screenClear}}
 \index{screenClear@{screenClear}!CScreen@{CScreen}}
 \doxysubsubsection{\texorpdfstring{screenClear()}{screenClear()}}
 {\footnotesize\ttfamily void CScreen\+::screen\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCScreen_af819096e1b72de5b7e72a662bda2d573}\label{classCScreen_af819096e1b72de5b7e72a662bda2d573} 
+Removing all objects from m\+\_\+\+Window \Hypertarget{classCScreen_a387001ef3da39e1b49ec430cd7e34975}\label{classCScreen_a387001ef3da39e1b49ec430cd7e34975} 
 \index{CScreen@{CScreen}!screenPrint@{screenPrint}}
 \index{screenPrint@{screenPrint}!CScreen@{CScreen}}
 \doxysubsubsection{\texorpdfstring{screenPrint()}{screenPrint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void CScreen\+::screen\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCCoords}{CCoords}}}]{coord,  }\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void CScreen\+::screen\+Print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCCoords}{CCoords}}}]{coords,  }\item[{const char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classCScreen_aed1c724b7a35f90acbee17315f8c462b}\label{classCScreen_aed1c724b7a35f90acbee17315f8c462b} 
+Printing char objekt to m\+\_\+\+Window 
+\begin{DoxyParams}{Parameters}
+{\em coords} & -\/ coordinates where printed object has to be printed \\
+\hline
+{\em str} & -\/ char to print \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCScreen_ac3f1468cbc7dcfedfa0638afded08d89}\label{classCScreen_ac3f1468cbc7dcfedfa0638afded08d89} 
 \index{CScreen@{CScreen}!screenPrint@{screenPrint}}
 \index{screenPrint@{screenPrint}!CScreen@{CScreen}}
 \doxysubsubsection{\texorpdfstring{screenPrint()}{screenPrint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void CScreen\+::screen\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCCoords}{CCoords}}}]{coord,  }\item[{std\+::string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void CScreen\+::screen\+Print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCCoords}{CCoords}}}]{coords,  }\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Printing std\+::string objekt to m\+\_\+\+Window 
+\begin{DoxyParams}{Parameters}
+{\em coords} & -\/ coordinates where printed object has to start from \\
+\hline
+{\em str} & -\/ string to print \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classCScreen_adbe697114bbde4cbafea161bb8d51934}\label{classCScreen_adbe697114bbde4cbafea161bb8d51934} 
 \index{CScreen@{CScreen}!screenRefresh@{screenRefresh}}
 \index{screenRefresh@{screenRefresh}!CScreen@{CScreen}}
 \doxysubsubsection{\texorpdfstring{screenRefresh()}{screenRefresh()}}
 {\footnotesize\ttfamily void CScreen\+::screen\+Refresh (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-
+Actualizing information about m\+\_\+\+Window 
 
 \doxysubsection{Member Data Documentation}
 \Hypertarget{classCScreen_a0553cd6d20a7b50600b41c2060549753}\label{classCScreen_a0553cd6d20a7b50600b41c2060549753} 
@@ -85,6 +99,10 @@ WINDOW \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50
 
 
 
+Main window from lncurses. 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/aiuroand/\+PA2/semester/src/\mbox{\hyperlink{screen_8h}{screen.\+h}}\end{DoxyCompactItemize}
+/home/aiuroand/\+PA2/aiuroand/src/\mbox{\hyperlink{screen_8h}{screen.\+h}}\end{DoxyCompactItemize}

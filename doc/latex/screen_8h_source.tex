@@ -1,5 +1,5 @@
 \doxysection{screen.\+h}
-\hypertarget{screen_8h_source}{}\label{screen_8h_source}\index{/home/aiuroand/PA2/semester/src/screen.h@{/home/aiuroand/PA2/semester/src/screen.h}}
+\hypertarget{screen_8h_source}{}\label{screen_8h_source}\index{/home/aiuroand/PA2/aiuroand/src/screen.h@{/home/aiuroand/PA2/aiuroand/src/screen.h}}
 \mbox{\hyperlink{screen_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCREEN\_H}}
@@ -12,52 +12,52 @@
 \DoxyCodeLine{00008\ \{}
 \DoxyCodeLine{00009\ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classCScreen_a9c28e80f75d47ae1a86721758386fd8f}{CScreen}}\ (\ \textcolor{keywordtype}{void}\ )}
-\DoxyCodeLine{00012\ \ \ \{}
-\DoxyCodeLine{00013\ \ \ \ \ initscr();}
-\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}}\ =\ newwin\ (\ 30,\ 100,\ 0,\ 0\ );}
-\DoxyCodeLine{00015\ \ \ \ \ keypad\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ \textcolor{keyword}{true}\ );}
-\DoxyCodeLine{00016\ \ \ \ \ nodelay\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ \textcolor{keyword}{true}\ );}
-\DoxyCodeLine{00017\ \ \ \ \ curs\_set(\ 0\ );}
-\DoxyCodeLine{00018\ \ \ \ \ noecho();}
-\DoxyCodeLine{00019\ \ \ \ \ mousemask\ (ALL\_MOUSE\_EVENTS\ |\ REPORT\_MOUSE\_POSITION,\ NULL\ );}
-\DoxyCodeLine{00020\ \ \ \ \ box\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ 0,\ 0\ );\ }
-\DoxyCodeLine{00021\ \ \ \ \ start\_color();}
-\DoxyCodeLine{00022\ \ \ \ \ init\_pair\ (\ 1,\ COLOR\_BLACK,\ COLOR\_GREEN\ );\ \ \ }
-\DoxyCodeLine{00023\ \ \ \ \ init\_pair\ (\ 2,\ COLOR\_BLACK,\ COLOR\_WHITE\ );\ \ \ }
-\DoxyCodeLine{00024\ \ \ \ \ init\_pair\ (\ 3,\ COLOR\_BLACK,\ COLOR\_RED\ );\ \ \ }
-\DoxyCodeLine{00025\ \ \ \ \ init\_pair\ (\ 4,\ COLOR\_WHITE,\ COLOR\_MAGENTA\ );\ \ \ }
-\DoxyCodeLine{00026\ \ \ \}}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classCScreen_acacb40300e5275b0827a4ff95b3e2b55}{\string~CScreen}}\ (\ \textcolor{keywordtype}{void}\ )}
-\DoxyCodeLine{00028\ \ \ \{}
-\DoxyCodeLine{00029\ \ \ \ \ delwin\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}}\ );}
-\DoxyCodeLine{00030\ \ \ \ \ endwin();}
+\DoxyCodeLine{00012\ \ \ WINDOW\ *\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00016\ \ \ \mbox{\hyperlink{classCScreen_a9c28e80f75d47ae1a86721758386fd8f}{CScreen}}\ (\ \textcolor{keywordtype}{void}\ )}
+\DoxyCodeLine{00017\ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ initscr();}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}}\ =\ newwin\ (\ 30,\ 100,\ 0,\ 0\ );\ \textcolor{comment}{//\ new\ WINDOW\ pointer\ object}}
+\DoxyCodeLine{00020\ \ \ \ \ keypad\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ \textcolor{keyword}{true}\ );\ \textcolor{comment}{//\ Allowing\ KEY\_UP\ and\ KEY\_DOWN\ buttons}}
+\DoxyCodeLine{00021\ \ \ \ \ mousemask\ (\ ALL\_MOUSE\_EVENTS\ |\ REPORT\_MOUSE\_POSITION,\ NULL\ );\ \textcolor{comment}{//\ Allowing\ mouse\ events}}
+\DoxyCodeLine{00022\ \ \ \ \ nodelay\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ \textcolor{keyword}{true}\ );}
+\DoxyCodeLine{00023\ \ \ \ \ curs\_set(\ 0\ );\ \textcolor{comment}{//\ Invisible\ cursos}}
+\DoxyCodeLine{00024\ \ \ \ \ noecho();}
+\DoxyCodeLine{00025\ \ \ \ \ box\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ 0,\ 0\ );\ \ \textcolor{comment}{//\ Window\ default\ borders\ }}
+\DoxyCodeLine{00026\ \ \ \ \ start\_color();\ \textcolor{comment}{//\ Allowing\ colors\ using}}
+\DoxyCodeLine{00027\ \ \ \ \ init\_pair\ (\ 1,\ COLOR\_BLACK,\ COLOR\_GREEN\ );\ \ \ \textcolor{comment}{//\ Color\ of\ players\ anthills}}
+\DoxyCodeLine{00028\ \ \ \ \ init\_pair\ (\ 2,\ COLOR\_BLACK,\ COLOR\_WHITE\ );\ \ \ \textcolor{comment}{//\ Color\ of\ neutral\ anthills\ \ }}
+\DoxyCodeLine{00029\ \ \ \ \ init\_pair\ (\ 3,\ COLOR\_BLACK,\ COLOR\_RED\ );\ \ \ \ \ \textcolor{comment}{//\ Color\ ob\ bots\ anthills}}
+\DoxyCodeLine{00030\ \ \ \ \ init\_pair\ (\ 4,\ COLOR\_WHITE,\ COLOR\_MAGENTA\ );\ \textcolor{comment}{//\ Color\ ob\ bots\ anthills\ \ }}
 \DoxyCodeLine{00031\ \ \ \}}
-\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCScreen_adbe697114bbde4cbafea161bb8d51934}{screenRefresh}}\ (\ \textcolor{keywordtype}{void}\ )}
-\DoxyCodeLine{00033\ \ \ \{}
-\DoxyCodeLine{00034\ \ \ \ \ wrefresh\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}}\ );}
-\DoxyCodeLine{00035\ \ \ \ \ refresh();}
-\DoxyCodeLine{00036\ \ \ \}}
-\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCScreen_a96f9992d6c739e7f7a64ef64af19983f}{screenClear}}\ (\ \textcolor{keywordtype}{void}\ )}
-\DoxyCodeLine{00038\ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ wclear(\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}}\ );}
-\DoxyCodeLine{00040\ \ \ \ \ clear();}
-\DoxyCodeLine{00041\ \ \ \}}
-\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCScreen_a2c0d030dfb4528ea8426903bf25c6cc8}{screenBox}}\ (\ \textcolor{keywordtype}{void}\ )}
-\DoxyCodeLine{00043\ \ \ \{}
-\DoxyCodeLine{00044\ \ \ \ \ box\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ 0,\ 0\ );}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{classCScreen_acacb40300e5275b0827a4ff95b3e2b55}{\string~CScreen}}\ (\ \textcolor{keywordtype}{void}\ )}
+\DoxyCodeLine{00035\ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ delwin\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}}\ );}
+\DoxyCodeLine{00037\ \ \ \ \ endwin();}
+\DoxyCodeLine{00038\ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCScreen_adbe697114bbde4cbafea161bb8d51934}{screenRefresh}}\ (\ \textcolor{keywordtype}{void}\ )}
+\DoxyCodeLine{00042\ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ wrefresh\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}}\ );}
+\DoxyCodeLine{00044\ \ \ \ \ refresh();}
 \DoxyCodeLine{00045\ \ \ \}}
-\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCScreen_aed1c724b7a35f90acbee17315f8c462b}{screenPrint}}\ (\ \mbox{\hyperlink{classCCoords}{CCoords}}\ coord,\ std::string\ str\ )}
-\DoxyCodeLine{00047\ \ \ \{}
-\DoxyCodeLine{00048\ \ \ \ \ mvwprintw(\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ coord\ .\ m\_Y,\ coord\ .\ m\_X,\ \textcolor{stringliteral}{"{}\%s"{}},\ str\ .\ c\_str()\ );}
-\DoxyCodeLine{00049\ \ \ \}}
-\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCScreen_af819096e1b72de5b7e72a662bda2d573}{screenPrint}}\ (\ \mbox{\hyperlink{classCCoords}{CCoords}}\ coord,\ \textcolor{keywordtype}{char}\ c\ )}
-\DoxyCodeLine{00051\ \ \ \{}
-\DoxyCodeLine{00052\ \ \ \ \ mvwprintw(\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ coord\ .\ m\_Y,\ coord\ .\ m\_X,\ \textcolor{stringliteral}{"{}\%c"{}},\ c\ );}
-\DoxyCodeLine{00053\ \ \ \}}
-\DoxyCodeLine{00054\ \ \ WINDOW\ *\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}};}
-\DoxyCodeLine{00055\ \};}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCScreen_a96f9992d6c739e7f7a64ef64af19983f}{screenClear}}\ (\ \textcolor{keywordtype}{void}\ )}
+\DoxyCodeLine{00049\ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ wclear(\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}}\ );}
+\DoxyCodeLine{00051\ \ \ \ \ clear();}
+\DoxyCodeLine{00052\ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCScreen_a2c0d030dfb4528ea8426903bf25c6cc8}{screenBox}}\ (\ \textcolor{keywordtype}{void}\ )}
+\DoxyCodeLine{00056\ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ box\ (\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ 0,\ 0\ );}
+\DoxyCodeLine{00058\ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCScreen_ac3f1468cbc7dcfedfa0638afded08d89}{screenPrint}}\ (\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classCCoords}{CCoords}}\ coords,\ \textcolor{keyword}{const}\ std::string\ \&\ str\ )}
+\DoxyCodeLine{00064\ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ mvwprintw(\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ coords\ .\ m\_Y,\ coords\ .\ m\_X,\ \textcolor{stringliteral}{"{}\%s"{}},\ str\ .\ c\_str()\ );}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCScreen_a387001ef3da39e1b49ec430cd7e34975}{screenPrint}}\ (\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classCCoords}{CCoords}}\ coords,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ c\ )}
+\DoxyCodeLine{00072\ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ mvwprintw(\ \mbox{\hyperlink{classCScreen_a0553cd6d20a7b50600b41c2060549753}{m\_Window}},\ coords\ .\ m\_Y,\ coords\ .\ m\_X,\ \textcolor{stringliteral}{"{}\%c"{}},\ c\ );}
+\DoxyCodeLine{00074\ \ \ \}}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCREEN\_H}}
 
 \end{DoxyCode}

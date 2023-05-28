@@ -91,14 +91,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a96f9992d6c739e7f7a64ef64af19983f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c0d030dfb4528ea8426903bf25c6cc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCScreen.html#a2c0d030dfb4528ea8426903bf25c6cc8">screenBox</a> (void)</td></tr>
 <tr class="separator:a2c0d030dfb4528ea8426903bf25c6cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed1c724b7a35f90acbee17315f8c462b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCScreen.html#aed1c724b7a35f90acbee17315f8c462b">screenPrint</a> (<a class="el" href="classCCoords.html">CCoords</a> coord, std::string str)</td></tr>
-<tr class="separator:aed1c724b7a35f90acbee17315f8c462b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af819096e1b72de5b7e72a662bda2d573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCScreen.html#af819096e1b72de5b7e72a662bda2d573">screenPrint</a> (<a class="el" href="classCCoords.html">CCoords</a> coord, char c)</td></tr>
-<tr class="separator:af819096e1b72de5b7e72a662bda2d573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f1468cbc7dcfedfa0638afded08d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCScreen.html#ac3f1468cbc7dcfedfa0638afded08d89">screenPrint</a> (const <a class="el" href="classCCoords.html">CCoords</a> coords, const std::string &amp;str)</td></tr>
+<tr class="separator:ac3f1468cbc7dcfedfa0638afded08d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387001ef3da39e1b49ec430cd7e34975"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCScreen.html#a387001ef3da39e1b49ec430cd7e34975">screenPrint</a> (const <a class="el" href="classCCoords.html">CCoords</a> coords, const char c)</td></tr>
+<tr class="separator:a387001ef3da39e1b49ec430cd7e34975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0553cd6d20a7b50600b41c2060549753"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a></td></tr>
+<tr class="memdesc:a0553cd6d20a7b50600b41c2060549753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main window from lncurses.  <br /></td></tr>
 <tr class="separator:a0553cd6d20a7b50600b41c2060549753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -125,6 +126,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Constructing screen and window for the game using lncurses. </p>
 
 </div>
 </div>
@@ -151,6 +153,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Deleting all alocated lncurses objects </p>
 
 </div>
 </div>
@@ -178,6 +181,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Printing default borders to m_Window </p>
 
 </div>
 </div>
@@ -204,11 +208,12 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Removing all objects from m_Window </p>
 
 </div>
 </div>
-<a id="af819096e1b72de5b7e72a662bda2d573" name="af819096e1b72de5b7e72a662bda2d573"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af819096e1b72de5b7e72a662bda2d573">&#9670;&#160;</a></span>screenPrint() <span class="overload">[1/2]</span></h2>
+<a id="a387001ef3da39e1b49ec430cd7e34975" name="a387001ef3da39e1b49ec430cd7e34975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387001ef3da39e1b49ec430cd7e34975">&#9670;&#160;</a></span>screenPrint() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,13 +224,13 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void CScreen::screenPrint </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classCCoords.html">CCoords</a>&#160;</td>
-          <td class="paramname"><em>coord</em>, </td>
+          <td class="paramtype">const <a class="el" href="classCCoords.html">CCoords</a>&#160;</td>
+          <td class="paramname"><em>coords</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
+          <td class="paramtype">const char&#160;</td>
           <td class="paramname"><em>c</em>&#160;</td>
         </tr>
         <tr>
@@ -240,11 +245,18 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Printing char objekt to m_Window </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coords</td><td>- coordinates where printed object has to be printed </td></tr>
+    <tr><td class="paramname">str</td><td>- char to print </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="aed1c724b7a35f90acbee17315f8c462b" name="aed1c724b7a35f90acbee17315f8c462b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed1c724b7a35f90acbee17315f8c462b">&#9670;&#160;</a></span>screenPrint() <span class="overload">[2/2]</span></h2>
+<a id="ac3f1468cbc7dcfedfa0638afded08d89" name="ac3f1468cbc7dcfedfa0638afded08d89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3f1468cbc7dcfedfa0638afded08d89">&#9670;&#160;</a></span>screenPrint() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,13 +267,13 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void CScreen::screenPrint </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classCCoords.html">CCoords</a>&#160;</td>
-          <td class="paramname"><em>coord</em>, </td>
+          <td class="paramtype">const <a class="el" href="classCCoords.html">CCoords</a>&#160;</td>
+          <td class="paramname"><em>coords</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em>&#160;</td>
         </tr>
         <tr>
@@ -276,6 +288,13 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Printing std::string objekt to m_Window </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coords</td><td>- coordinates where printed object has to start from </td></tr>
+    <tr><td class="paramname">str</td><td>- string to print </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -302,6 +321,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Actualizing information about m_Window </p>
 
 </div>
 </div>
@@ -318,10 +338,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Main window from lncurses. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/aiuroand/PA2/semester/src/<a class="el" href="screen_8h_source.html">screen.h</a></li>
+<li>/home/aiuroand/PA2/aiuroand/src/<a class="el" href="screen_8h_source.html">screen.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

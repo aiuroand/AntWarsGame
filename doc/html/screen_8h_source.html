@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: /home/aiuroand/PA2/semester/src/screen.h Source File</title>
+<title>My Project: /home/aiuroand/PA2/aiuroand/src/screen.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,63 +86,63 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classCScreen.html#a9c28e80f75d47ae1a86721758386fd8f">   11</a></span>    <a class="code hl_function" href="classCScreen.html#a9c28e80f75d47ae1a86721758386fd8f">CScreen</a> ( <span class="keywordtype">void</span> )</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    initscr();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a> = newwin ( 30, 100, 0, 0 );</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    keypad ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, <span class="keyword">true</span> );</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    nodelay ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, <span class="keyword">true</span> );</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    curs_set( 0 );</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    noecho();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    mousemask (ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL );</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    box ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, 0, 0 ); </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    start_color();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    init_pair ( 1, COLOR_BLACK, COLOR_GREEN );   </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    init_pair ( 2, COLOR_BLACK, COLOR_WHITE );   </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    init_pair ( 3, COLOR_BLACK, COLOR_RED );   </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    init_pair ( 4, COLOR_WHITE, COLOR_MAGENTA );   </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classCScreen.html#acacb40300e5275b0827a4ff95b3e2b55">   27</a></span>    <a class="code hl_function" href="classCScreen.html#acacb40300e5275b0827a4ff95b3e2b55">~CScreen</a> ( <span class="keywordtype">void</span> )</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    delwin ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a> );</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    endwin();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">   12</a></span>  WINDOW * <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classCScreen.html#a9c28e80f75d47ae1a86721758386fd8f">   16</a></span>  <a class="code hl_function" href="classCScreen.html#a9c28e80f75d47ae1a86721758386fd8f">CScreen</a> ( <span class="keywordtype">void</span> )</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    initscr();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a> = newwin ( 30, 100, 0, 0 ); <span class="comment">// new WINDOW pointer object</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    keypad ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, <span class="keyword">true</span> ); <span class="comment">// Allowing KEY_UP and KEY_DOWN buttons</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    mousemask ( ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL ); <span class="comment">// Allowing mouse events</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    nodelay ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, <span class="keyword">true</span> );</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    curs_set( 0 ); <span class="comment">// Invisible cursos</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    noecho();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    box ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, 0, 0 );  <span class="comment">// Window default borders </span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    start_color(); <span class="comment">// Allowing colors using</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    init_pair ( 1, COLOR_BLACK, COLOR_GREEN );   <span class="comment">// Color of players anthills</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    init_pair ( 2, COLOR_BLACK, COLOR_WHITE );   <span class="comment">// Color of neutral anthills  </span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    init_pair ( 3, COLOR_BLACK, COLOR_RED );     <span class="comment">// Color ob bots anthills</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    init_pair ( 4, COLOR_WHITE, COLOR_MAGENTA ); <span class="comment">// Color ob bots anthills  </span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classCScreen.html#adbe697114bbde4cbafea161bb8d51934">   32</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classCScreen.html#adbe697114bbde4cbafea161bb8d51934">screenRefresh</a> ( <span class="keywordtype">void</span> )</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    wrefresh ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a> );</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    refresh();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classCScreen.html#a96f9992d6c739e7f7a64ef64af19983f">   37</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classCScreen.html#a96f9992d6c739e7f7a64ef64af19983f">screenClear</a> ( <span class="keywordtype">void</span> )</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    wclear( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a> );</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    clear();</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classCScreen.html#a2c0d030dfb4528ea8426903bf25c6cc8">   42</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classCScreen.html#a2c0d030dfb4528ea8426903bf25c6cc8">screenBox</a> ( <span class="keywordtype">void</span> )</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    box ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, 0, 0 );</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classCScreen.html#acacb40300e5275b0827a4ff95b3e2b55">   34</a></span>  <a class="code hl_function" href="classCScreen.html#acacb40300e5275b0827a4ff95b3e2b55">~CScreen</a> ( <span class="keywordtype">void</span> )</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    delwin ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a> );</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    endwin();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classCScreen.html#adbe697114bbde4cbafea161bb8d51934">   41</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCScreen.html#adbe697114bbde4cbafea161bb8d51934">screenRefresh</a> ( <span class="keywordtype">void</span> )</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    wrefresh ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a> );</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    refresh();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classCScreen.html#aed1c724b7a35f90acbee17315f8c462b">   46</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classCScreen.html#aed1c724b7a35f90acbee17315f8c462b">screenPrint</a> ( <a class="code hl_class" href="classCCoords.html">CCoords</a> coord, std::string str )</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    mvwprintw( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, coord . m_Y, coord . m_X, <span class="stringliteral">&quot;%s&quot;</span>, str . c_str() );</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classCScreen.html#af819096e1b72de5b7e72a662bda2d573">   50</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classCScreen.html#af819096e1b72de5b7e72a662bda2d573">screenPrint</a> ( <a class="code hl_class" href="classCCoords.html">CCoords</a> coord, <span class="keywordtype">char</span> c )</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    mvwprintw( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, coord . m_Y, coord . m_X, <span class="stringliteral">&quot;%c&quot;</span>, c );</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">   54</a></span>  WINDOW * <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassCCoords_html"><div class="ttname"><a href="classCCoords.html">CCoords</a></div><div class="ttdef"><b>Definition</b> coords.h:4</div></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classCScreen.html#a96f9992d6c739e7f7a64ef64af19983f">   48</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCScreen.html#a96f9992d6c739e7f7a64ef64af19983f">screenClear</a> ( <span class="keywordtype">void</span> )</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    wclear( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a> );</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    clear();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classCScreen.html#a2c0d030dfb4528ea8426903bf25c6cc8">   55</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCScreen.html#a2c0d030dfb4528ea8426903bf25c6cc8">screenBox</a> ( <span class="keywordtype">void</span> )</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    box ( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, 0, 0 );</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classCScreen.html#ac3f1468cbc7dcfedfa0638afded08d89">   63</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCScreen.html#ac3f1468cbc7dcfedfa0638afded08d89">screenPrint</a> ( <span class="keyword">const</span> <a class="code hl_class" href="classCCoords.html">CCoords</a> coords, <span class="keyword">const</span> std::string &amp; str )</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    mvwprintw( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, coords . m_Y, coords . m_X, <span class="stringliteral">&quot;%s&quot;</span>, str . c_str() );</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classCScreen.html#a387001ef3da39e1b49ec430cd7e34975">   71</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCScreen.html#a387001ef3da39e1b49ec430cd7e34975">screenPrint</a> ( <span class="keyword">const</span> <a class="code hl_class" href="classCCoords.html">CCoords</a> coords, <span class="keyword">const</span> <span class="keywordtype">char</span> c )</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    mvwprintw( <a class="code hl_variable" href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">m_Window</a>, coords . m_Y, coords . m_X, <span class="stringliteral">&quot;%c&quot;</span>, c );</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif </span><span class="comment">// SCREEN_H</span></div>
+<div class="ttc" id="aclassCCoords_html"><div class="ttname"><a href="classCCoords.html">CCoords</a></div><div class="ttdef"><b>Definition</b> coords.h:7</div></div>
 <div class="ttc" id="aclassCScreen_html"><div class="ttname"><a href="classCScreen.html">CScreen</a></div><div class="ttdef"><b>Definition</b> screen.h:8</div></div>
-<div class="ttc" id="aclassCScreen_html_a0553cd6d20a7b50600b41c2060549753"><div class="ttname"><a href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">CScreen::m_Window</a></div><div class="ttdeci">WINDOW * m_Window</div><div class="ttdef"><b>Definition</b> screen.h:54</div></div>
-<div class="ttc" id="aclassCScreen_html_a2c0d030dfb4528ea8426903bf25c6cc8"><div class="ttname"><a href="classCScreen.html#a2c0d030dfb4528ea8426903bf25c6cc8">CScreen::screenBox</a></div><div class="ttdeci">void screenBox(void)</div><div class="ttdef"><b>Definition</b> screen.h:42</div></div>
-<div class="ttc" id="aclassCScreen_html_a96f9992d6c739e7f7a64ef64af19983f"><div class="ttname"><a href="classCScreen.html#a96f9992d6c739e7f7a64ef64af19983f">CScreen::screenClear</a></div><div class="ttdeci">void screenClear(void)</div><div class="ttdef"><b>Definition</b> screen.h:37</div></div>
-<div class="ttc" id="aclassCScreen_html_a9c28e80f75d47ae1a86721758386fd8f"><div class="ttname"><a href="classCScreen.html#a9c28e80f75d47ae1a86721758386fd8f">CScreen::CScreen</a></div><div class="ttdeci">CScreen(void)</div><div class="ttdef"><b>Definition</b> screen.h:11</div></div>
-<div class="ttc" id="aclassCScreen_html_acacb40300e5275b0827a4ff95b3e2b55"><div class="ttname"><a href="classCScreen.html#acacb40300e5275b0827a4ff95b3e2b55">CScreen::~CScreen</a></div><div class="ttdeci">~CScreen(void)</div><div class="ttdef"><b>Definition</b> screen.h:27</div></div>
-<div class="ttc" id="aclassCScreen_html_adbe697114bbde4cbafea161bb8d51934"><div class="ttname"><a href="classCScreen.html#adbe697114bbde4cbafea161bb8d51934">CScreen::screenRefresh</a></div><div class="ttdeci">void screenRefresh(void)</div><div class="ttdef"><b>Definition</b> screen.h:32</div></div>
-<div class="ttc" id="aclassCScreen_html_aed1c724b7a35f90acbee17315f8c462b"><div class="ttname"><a href="classCScreen.html#aed1c724b7a35f90acbee17315f8c462b">CScreen::screenPrint</a></div><div class="ttdeci">void screenPrint(CCoords coord, std::string str)</div><div class="ttdef"><b>Definition</b> screen.h:46</div></div>
-<div class="ttc" id="aclassCScreen_html_af819096e1b72de5b7e72a662bda2d573"><div class="ttname"><a href="classCScreen.html#af819096e1b72de5b7e72a662bda2d573">CScreen::screenPrint</a></div><div class="ttdeci">void screenPrint(CCoords coord, char c)</div><div class="ttdef"><b>Definition</b> screen.h:50</div></div>
+<div class="ttc" id="aclassCScreen_html_a0553cd6d20a7b50600b41c2060549753"><div class="ttname"><a href="classCScreen.html#a0553cd6d20a7b50600b41c2060549753">CScreen::m_Window</a></div><div class="ttdeci">WINDOW * m_Window</div><div class="ttdoc">Main window from lncurses.</div><div class="ttdef"><b>Definition</b> screen.h:12</div></div>
+<div class="ttc" id="aclassCScreen_html_a2c0d030dfb4528ea8426903bf25c6cc8"><div class="ttname"><a href="classCScreen.html#a2c0d030dfb4528ea8426903bf25c6cc8">CScreen::screenBox</a></div><div class="ttdeci">void screenBox(void)</div><div class="ttdef"><b>Definition</b> screen.h:55</div></div>
+<div class="ttc" id="aclassCScreen_html_a387001ef3da39e1b49ec430cd7e34975"><div class="ttname"><a href="classCScreen.html#a387001ef3da39e1b49ec430cd7e34975">CScreen::screenPrint</a></div><div class="ttdeci">void screenPrint(const CCoords coords, const char c)</div><div class="ttdef"><b>Definition</b> screen.h:71</div></div>
+<div class="ttc" id="aclassCScreen_html_a96f9992d6c739e7f7a64ef64af19983f"><div class="ttname"><a href="classCScreen.html#a96f9992d6c739e7f7a64ef64af19983f">CScreen::screenClear</a></div><div class="ttdeci">void screenClear(void)</div><div class="ttdef"><b>Definition</b> screen.h:48</div></div>
+<div class="ttc" id="aclassCScreen_html_a9c28e80f75d47ae1a86721758386fd8f"><div class="ttname"><a href="classCScreen.html#a9c28e80f75d47ae1a86721758386fd8f">CScreen::CScreen</a></div><div class="ttdeci">CScreen(void)</div><div class="ttdef"><b>Definition</b> screen.h:16</div></div>
+<div class="ttc" id="aclassCScreen_html_ac3f1468cbc7dcfedfa0638afded08d89"><div class="ttname"><a href="classCScreen.html#ac3f1468cbc7dcfedfa0638afded08d89">CScreen::screenPrint</a></div><div class="ttdeci">void screenPrint(const CCoords coords, const std::string &amp;str)</div><div class="ttdef"><b>Definition</b> screen.h:63</div></div>
+<div class="ttc" id="aclassCScreen_html_acacb40300e5275b0827a4ff95b3e2b55"><div class="ttname"><a href="classCScreen.html#acacb40300e5275b0827a4ff95b3e2b55">CScreen::~CScreen</a></div><div class="ttdeci">~CScreen(void)</div><div class="ttdef"><b>Definition</b> screen.h:34</div></div>
+<div class="ttc" id="aclassCScreen_html_adbe697114bbde4cbafea161bb8d51934"><div class="ttname"><a href="classCScreen.html#adbe697114bbde4cbafea161bb8d51934">CScreen::screenRefresh</a></div><div class="ttdeci">void screenRefresh(void)</div><div class="ttdef"><b>Definition</b> screen.h:41</div></div>
 <div class="ttc" id="acoords_8h_html"><div class="ttname"><a href="coords_8h.html">coords.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

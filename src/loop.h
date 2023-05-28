@@ -8,6 +8,7 @@
 #include "screen.h"
 #include "status.h"
 #include "rules.h"
+#include "exceptions.h"
 
 class CLoop
 {
@@ -29,7 +30,7 @@ class CLoop
       m_Status ( e_Menu ),
       m_Menu ( m_Screen, m_Status, m_Maps, m_Saves ),
       m_Game ( nullptr ),
-      m_Rules ( m_Screen, m_Status, rules )
+      m_Rules ( m_Screen, rules )
     {
       loop(); // Entering main loop immidiately after constructing
     }
@@ -37,18 +38,19 @@ class CLoop
      */
     ~CLoop ( void )
     {
-      delete m_Screen;
+      delete m_Screen; 
     }
 
   private:
     /*! Private method that represents main loop of program 
      */
     void loop ( void );
+
     std::string m_Maps;
     std::string m_Saves;
     std::string m_Talents;
-    CScreen * m_Screen;
-    EStatus m_Status;
+    CScreen * m_Screen; // Main screen
+    EStatus m_Status;   // Actual status of program
     CMenu m_Menu;
     CGame * m_Game;
     CRules m_Rules;
