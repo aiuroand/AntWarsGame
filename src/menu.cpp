@@ -54,13 +54,20 @@ void CMenu::chooseNewMap( void )
   while ( 1 )
   {
     int i = 0;
-    for ( const auto & it : std::filesystem::directory_iterator( m_Maps ) )
-    { 
-      if ( i == m_HighlightMaps )
-        wattron ( m_Screen -> m_Window , A_REVERSE );
-      mvwprintw ( m_Screen -> m_Window, i+5, 5, ( it . path() . c_str() + m_Maps . size() + 1 ) );
-      wattroff ( m_Screen -> m_Window, A_REVERSE );
-      i++;
+    try 
+    {
+      for ( const auto & it : std::filesystem::directory_iterator( m_Maps ) )
+      { 
+        if ( i == m_HighlightMaps )
+          wattron ( m_Screen -> m_Window , A_REVERSE );
+        mvwprintw ( m_Screen -> m_Window, i+5, 5, ( it . path() . c_str() + m_Maps . size() + 1 ) );
+        wattroff ( m_Screen -> m_Window, A_REVERSE );
+        i++;
+      }
+    }
+    catch ( ... )
+    {
+      throw CFileReadingError ( m_Maps );
     }
     if ( i == 0 )
       return;
@@ -99,13 +106,20 @@ void CMenu::continueMap( void )
   while ( 1 )
   {
     int i = 0;
-    for ( const auto & it : std::filesystem::directory_iterator( m_Saves ) )
-    { 
-      if ( i == m_HighlightSaves )
-        wattron ( m_Screen -> m_Window , A_REVERSE );
-      mvwprintw ( m_Screen -> m_Window, i+5, 5, ( it . path() . c_str() + m_Saves . size() + 1 ) );
-      wattroff ( m_Screen -> m_Window, A_REVERSE );
-      i++;
+    try
+    {
+      for ( const auto & it : std::filesystem::directory_iterator( m_Saves ) )
+      { 
+        if ( i == m_HighlightSaves )
+          wattron ( m_Screen -> m_Window , A_REVERSE );
+        mvwprintw ( m_Screen -> m_Window, i+5, 5, ( it . path() . c_str() + m_Saves . size() + 1 ) );
+        wattroff ( m_Screen -> m_Window, A_REVERSE );
+        i++;
+      }
+    }
+    catch ( ... )
+    {
+      throw CFileReadingError ( m_Saves );
     }
     if ( i == 0 )
       return;

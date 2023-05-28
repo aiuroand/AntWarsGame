@@ -9,6 +9,7 @@
 #include "screen.h"
 #include "ncurses.h"
 #include "status.h"
+#include "exceptions.h"
 
 class CMenu
 {
