@@ -291,7 +291,7 @@ void CMap::attack ( void )
 //---------------------------------------------------------------------
 void CMap::print ( void ) const
 {
-  m_Screen -> screenClear();
+  // m_Screen -> screenClear();
   m_Screen -> screenRefresh();
   for ( const auto & it : m_ElementList )
     it -> print ( m_Screen );

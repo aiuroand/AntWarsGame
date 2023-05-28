@@ -105,11 +105,28 @@ void CGame::printHud ( void )
   // mvwprintw ( m_Screen -> m_Window, 5, m_Map . getWidth() + 1, "|    |    |" );
   // mvwprintw ( m_Screen -> m_Window, 6, m_Map . getWidth() + 1, "|   / \\   |" );
   // mvwprintw ( m_Screen -> m_Window, 7, m_Map . getWidth() + 1, "+---------+" );
-  mvwprintw ( m_Screen -> m_Window, 0, m_Map . getWidth() + 1, "+--+-------+" );
-  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 1, "| Round " );
-  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 9, "%d", m_Map . getRound() );
-  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 12, "|" );
-  mvwprintw ( m_Screen -> m_Window, 2, m_Map . getWidth() + 1, "+---+------+" );
+  int i;
+  mvwprintw ( m_Screen -> m_Window, m_Map . getHeight (), 0, "+" );
+  for ( i = 1; i < m_Map . getWidth(); i++ )
+    mvwprintw ( m_Screen -> m_Window, m_Map . getHeight (), i, "-" );
+  mvwprintw ( m_Screen -> m_Window, m_Map . getHeight (), i - 1, "+" );
+
+  mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 2, 0, "+" );
+  for ( i = 1; i < m_Map . getWidth(); i++ )
+    mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 2, i, "-" );
+  mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 2, i - 1, "+" );
+
+  mvwprintw ( m_Screen -> m_Window, 0, m_Map . getWidth() + 1,  "+--------------------+" );
+  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 1,  "|      Round " );
+  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 14, "%d", m_Map . getRound() );
+  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 22,                      "|" );
+  mvwprintw ( m_Screen -> m_Window, 2, m_Map . getWidth() + 1,  "+--------------------+" );
+  mvwprintw ( m_Screen -> m_Window, 3, m_Map . getWidth() + 1,  "| Press \'q\' to exit  |" );
+  mvwprintw ( m_Screen -> m_Window, 4, m_Map . getWidth() + 1,  "|                    |" );
+  mvwprintw ( m_Screen -> m_Window, 5, m_Map . getWidth() + 1,  "| Press \'s\' to save  |" );
+  mvwprintw ( m_Screen -> m_Window, 6, m_Map . getWidth() + 1,  "| the game and leave |" );
+  mvwprintw ( m_Screen -> m_Window, 7, m_Map . getWidth() + 1,  "|                    |" );
+  mvwprintw ( m_Screen -> m_Window, 8, m_Map . getWidth() + 1,  "+--------------------+" );
   wrefresh ( m_Screen -> m_Window );
 }
 //------------------------------------------------------------------------
