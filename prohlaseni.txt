@@ -1,0 +1,2 @@
+This program was created by Andrei Aiurov as Semester work for FIT CVUT in 2023.
+I do honestly declare that I made it myself.

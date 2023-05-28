@@ -3,7 +3,7 @@
 
 #include "player.h"
 #include "coords.h"
-#include "ncurses.h"
+#include <ncurses.h>
 #include "screen.h"
 #include "map.h"
 

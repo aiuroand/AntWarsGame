@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AntWars aiuroand: src/conqueror.h Source File</title>
+<title>Ant Wars: src/conqueror.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">AntWars aiuroand
+   <div id="projectname">Ant Wars
    </div>
   </td>
  </tr>
@@ -88,24 +88,23 @@ $(function() {
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                 std::string description,</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                 <span class="keywordtype">int</span> chance )</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    : <a class="code hl_class" href="classCTalent.html">CTalent</a> ( name, description ),</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      <a class="code hl_variable" href="classCConqueror.html#a6a1f2affdbfee42aa5989264dd1161ad">m_Chance</a> ( chance )</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      m_Chance ( chance )</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {}</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classCConqueror.html#a02715a0f072b49808758da00f4fda3c8">   28</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCConqueror.html#a02715a0f072b49808758da00f4fda3c8">activate</a> ( <span class="keywordtype">char</span> c, <a class="code hl_class" href="classCMap.html">CMap</a> &amp; map )<span class="keyword"> override</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <span class="keywordflow">if</span> ( rand() % 10 &lt;= <a class="code hl_variable" href="classCConqueror.html#a6a1f2affdbfee42aa5989264dd1161ad">m_Chance</a> )</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <span class="keywordflow">if</span> ( rand() % 10 &lt;= m_Chance )</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        map . randomConquer ( c );</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classCConqueror.html#a6a1f2affdbfee42aa5989264dd1161ad">   36</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classCConqueror.html#a6a1f2affdbfee42aa5989264dd1161ad">m_Chance</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">int</span> m_Chance;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">// CONQUEROR_H</span></div>
 <div class="ttc" id="aclassCConqueror_html"><div class="ttname"><a href="classCConqueror.html">CConqueror</a></div><div class="ttdef"><b>Definition</b> conqueror.h:9</div></div>
 <div class="ttc" id="aclassCConqueror_html_a0178b952d970523e0be92ba3d1f2c5e2"><div class="ttname"><a href="classCConqueror.html#a0178b952d970523e0be92ba3d1f2c5e2">CConqueror::CConqueror</a></div><div class="ttdeci">CConqueror(std::string name, std::string description, int chance)</div><div class="ttdef"><b>Definition</b> conqueror.h:16</div></div>
 <div class="ttc" id="aclassCConqueror_html_a02715a0f072b49808758da00f4fda3c8"><div class="ttname"><a href="classCConqueror.html#a02715a0f072b49808758da00f4fda3c8">CConqueror::activate</a></div><div class="ttdeci">void activate(char c, CMap &amp;map) override</div><div class="ttdef"><b>Definition</b> conqueror.h:28</div></div>
-<div class="ttc" id="aclassCConqueror_html_a6a1f2affdbfee42aa5989264dd1161ad"><div class="ttname"><a href="classCConqueror.html#a6a1f2affdbfee42aa5989264dd1161ad">CConqueror::m_Chance</a></div><div class="ttdeci">int m_Chance</div><div class="ttdef"><b>Definition</b> conqueror.h:36</div></div>
 <div class="ttc" id="aclassCMap_html"><div class="ttname"><a href="classCMap.html">CMap</a></div><div class="ttdef"><b>Definition</b> map.h:25</div></div>
 <div class="ttc" id="aclassCTalent_html"><div class="ttname"><a href="classCTalent.html">CTalent</a></div><div class="ttdef"><b>Definition</b> talent.h:10</div></div>
 <div class="ttc" id="atalent_8h_html"><div class="ttname"><a href="talent_8h.html">talent.h</a></div></div>

@@ -42,7 +42,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "AntWars aiuroand"
+PROJECT_NAME           = "Ant Wars"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -524,25 +524,25 @@ EXTRACT_ALL            = YES
 # be included in the documentation.
 # The default value is: NO.
 
-EXTRACT_PRIVATE        = YES
+EXTRACT_PRIVATE        = NO
 
 # If the EXTRACT_PRIV_VIRTUAL tag is set to YES, documented private virtual
 # methods of a class will be included in the documentation.
 # The default value is: NO.
 
-EXTRACT_PRIV_VIRTUAL   = YES
+EXTRACT_PRIV_VIRTUAL   = NO
 
 # If the EXTRACT_PACKAGE tag is set to YES, all members with package or internal
 # scope will be included in the documentation.
 # The default value is: NO.
 
-EXTRACT_PACKAGE        = YES
+EXTRACT_PACKAGE        = NO
 
 # If the EXTRACT_STATIC tag is set to YES, all static members of a file will be
 # included in the documentation.
 # The default value is: NO.
 
-EXTRACT_STATIC         = YES
+EXTRACT_STATIC         = NO
 
 # If the EXTRACT_LOCAL_CLASSES tag is set to YES, classes (and structs) defined
 # locally in source files will be included in the documentation. If set to NO,
@@ -558,7 +558,7 @@ EXTRACT_LOCAL_CLASSES  = YES
 # included.
 # The default value is: NO.
 
-EXTRACT_LOCAL_METHODS  = YES
+EXTRACT_LOCAL_METHODS  = NO
 
 # If this flag is set to YES, the members of anonymous namespaces will be
 # extracted and appear in the documentation as a namespace called
@@ -963,7 +963,7 @@ INPUT_ENCODING         = UTF-8
 # form: pattern=encoding (like *.php=ISO-8859-1). See cfg_input_encoding
 # "INPUT_ENCODING" for further information on supported encodings.
 
-INPUT_FILE_ENCODING    =
+INPUT_FILE_ENCODING    = 
 
 # If the value of the INPUT tag contains directories, you can use the
 # FILE_PATTERNS tag to specify one or more wildcard patterns (like *.cpp and
@@ -1917,7 +1917,7 @@ EXTRA_SEARCH_MAPPINGS  =
 # If the GENERATE_LATEX tag is set to YES, doxygen will generate LaTeX output.
 # The default value is: YES.
 
-GENERATE_LATEX         = YES
+GENERATE_LATEX         = NO
 
 # The LATEX_OUTPUT tag is used to specify where the LaTeX docs will be put. If a
 # relative path is entered the value of OUTPUT_DIRECTORY will be put in front of

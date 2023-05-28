@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AntWars aiuroand: src/anthill.h Source File</title>
+<title>Ant Wars: src/anthill.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">AntWars aiuroand
+   <div id="projectname">Ant Wars
    </div>
   </td>
  </tr>
@@ -89,161 +89,156 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="anthill_8h.html#abf681265909adf3d3e8116c93c0ba179">   11</a></span><span class="preprocessor">#define YELLOW 4</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="mapelement_8h.html">mapelement.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="screen_8h.html">screen.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="coords_8h.html">coords.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classCAntHill.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classCAntHill.html">CAntHill</a>: <span class="keyword">public</span> <a class="code hl_class" href="classCMapElem.html">CMapElem</a></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classCAntHill.html#a5adb37b901e68a8a407652f0884f62b8">   28</a></span>    <a class="code hl_function" href="classCAntHill.html#a5adb37b901e68a8a407652f0884f62b8">CAntHill</a> ( <a class="code hl_class" href="classCCoords.html">CCoords</a> coords,</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>               <span class="keywordtype">char</span> color,</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>               <span class="keywordtype">int</span> ants,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>               <span class="keywordtype">int</span> <span class="keywordtype">id</span> )</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    : <a class="code hl_class" href="classCMapElem.html">CMapElem</a> ( color, coords ),</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> ( ants ),</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <a class="code hl_variable" href="classCAntHill.html#a0940ccd9cdceeef744d4f65021e74130">m_Id</a> ( id ),</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <a class="code hl_variable" href="classCAntHill.html#a1172ca9e2efa5179c9a485a6121c1d63">m_Move</a> ( <a class="code hl_define" href="anthill_8h.html#a233b378c3c7a5a4b3655579f7cbe800d">ANTS_MOVE</a> ),</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <a class="code hl_variable" href="classCAntHill.html#aa2c13b33eda6ece4647bcc5d666a197d">m_Attack</a> ( <a class="code hl_define" href="anthill_8h.html#a82744e02d8c8a9b5c2b8c3532a474b72">ANTS_ATTACK</a> ),</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <a class="code hl_variable" href="classCAntHill.html#a5f5781064224d2d4bf702284f5c7517e">m_Armor</a> ( <a class="code hl_define" href="anthill_8h.html#ab4e32436006b404a286424b829678a79">ANTS_ARMOR</a> ),</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <a class="code hl_variable" href="classCAntHill.html#a4f1963eb635de88de959848f4dffac57">m_Max</a> ( <a class="code hl_define" href="anthill_8h.html#a7c5d301686b8e127fa63c9d779e26e90">ANTS_MAX</a> )</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {}</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classCAntHill.html#acdd75b9a3f50f69edd61850511340621">   43</a></span>    <a class="code hl_function" href="classCAntHill.html#acdd75b9a3f50f69edd61850511340621">~CAntHill</a> ( <span class="keywordtype">void</span> ) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a3e504d4d1bd8cc2435f33ea5eedab894">print</a> ( <a class="code hl_class" href="classCScreen.html">CScreen</a> * scr ) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classCAntHill.html#acf369fbc2e328ae67f4e04e40af07bab">   53</a></span>    <span class="keywordtype">char</span> <a class="code hl_function" href="classCAntHill.html#acf369fbc2e328ae67f4e04e40af07bab">get</a> ( <span class="keywordtype">void</span> )<span class="keyword"> const  override</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <span class="keywordflow">return</span> <span class="charliteral">&#39;*&#39;</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classCAntHill.html#afb3afc1b38747b0085d30db1845965d5">   62</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classCAntHill.html#afb3afc1b38747b0085d30db1845965d5">isInside</a> ( <a class="code hl_class" href="classCCoords.html">CCoords</a> coords )<span class="keyword"> const</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <span class="keywordflow">return</span> coords . m_X &gt;= <a class="code hl_variable" href="classCMapElem.html#aab8b425518eb37a1dc0ad46e455c4ee7">m_Coords</a> . m_X </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>          &amp;&amp; coords . m_Y &gt;= <a class="code hl_variable" href="classCMapElem.html#aab8b425518eb37a1dc0ad46e455c4ee7">m_Coords</a> . m_Y</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>          &amp;&amp; coords . m_X &lt;= <a class="code hl_variable" href="classCMapElem.html#aab8b425518eb37a1dc0ad46e455c4ee7">m_Coords</a> . m_X + 4</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>          &amp;&amp; coords . m_Y &lt;= <a class="code hl_variable" href="classCMapElem.html#aab8b425518eb37a1dc0ad46e455c4ee7">m_Coords</a> . m_Y + 2;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classCAntHill.html#acc745ee38288fa4e20b73dffa94e02a0">   73</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classCAntHill.html#acc745ee38288fa4e20b73dffa94e02a0">getId</a> ( <span class="keywordtype">void</span> )<span class="keyword"> const </span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classCAntHill.html#a0940ccd9cdceeef744d4f65021e74130">m_Id</a>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classCAntHill.html#aa7ab9041bf3b5c86adfb5a714d567f0a">   81</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classCAntHill.html#aa7ab9041bf3b5c86adfb5a714d567f0a">getAnts</a> ( <span class="keywordtype">void</span> )<span class="keyword"> const </span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classCAntHill.html#a60b92c4fbf71d25fe76c56524bce9f6a">   89</a></span>    <span class="keyword">inline</span> <span class="keywordtype">char</span> <a class="code hl_function" href="classCAntHill.html#a60b92c4fbf71d25fe76c56524bce9f6a">getColor</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classCMapElem.html#a41545b0c790ebbc3aab19d9e7fade5a6">m_Color</a>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classCAntHill.html#ad8af17e4e24038903ea77f48da94bebe">   97</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classCAntHill.html#ad8af17e4e24038903ea77f48da94bebe">getAttack</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classCAntHill.html#aa2c13b33eda6ece4647bcc5d666a197d">m_Attack</a> &lt;= <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> ? <a class="code hl_variable" href="classCAntHill.html#aa2c13b33eda6ece4647bcc5d666a197d">m_Attack</a> : <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classCAntHill.html#a85f2725556fed34b80aa47d122eb168c">  105</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classCAntHill.html#a85f2725556fed34b80aa47d122eb168c">getArmor</a> ( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classCAntHill.html#a5f5781064224d2d4bf702284f5c7517e">m_Armor</a>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classCAntHill.html#a9507af8cc4d575d5d1d06dc028d48236">  113</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a9507af8cc4d575d5d1d06dc028d48236">setColor</a>( <span class="keywordtype">char</span> c )</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <a class="code hl_variable" href="classCMapElem.html#a41545b0c790ebbc3aab19d9e7fade5a6">m_Color</a> = c;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classCAntHill.html#abaeeffb0f3a5874575412ef62a04aed6">  121</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#abaeeffb0f3a5874575412ef62a04aed6">setAnts</a> ( <span class="keywordtype">int</span> amount )</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    {</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> = amount;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classCAntHill.html#aab4c2d9cfbdfe91fe3191c5bb1f8001f">  129</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#aab4c2d9cfbdfe91fe3191c5bb1f8001f">addAttack</a> ( <span class="keywordtype">int</span> amount )</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    {</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      <a class="code hl_variable" href="classCAntHill.html#aa2c13b33eda6ece4647bcc5d666a197d">m_Attack</a> += amount;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classCAntHill.html#a762b3044d5fe555736489e90d248bb4c">  137</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a762b3044d5fe555736489e90d248bb4c">addArmor</a> ( <span class="keywordtype">int</span> amount )</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    {</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      <a class="code hl_variable" href="classCAntHill.html#a5f5781064224d2d4bf702284f5c7517e">m_Armor</a> += amount;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classCAntHill.html#a9ea0b4ee86add7d6ccc94b9f8460cda3">  145</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a9ea0b4ee86add7d6ccc94b9f8460cda3">addMax</a> ( <span class="keywordtype">int</span> amount )</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      <a class="code hl_variable" href="classCAntHill.html#a4f1963eb635de88de959848f4dffac57">m_Max</a> += amount;</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classCAntHill.html#a9e4296afe574c8d7eec737c7cdcacc10">  153</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a9e4296afe574c8d7eec737c7cdcacc10">addMove</a> ( <span class="keywordtype">int</span> amount )</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      <a class="code hl_variable" href="classCAntHill.html#a1172ca9e2efa5179c9a485a6121c1d63">m_Move</a> += amount;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    }</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="classCAntHill.html#af049f8205c9f042432073063a26a6624">  163</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#af049f8205c9f042432073063a26a6624">add</a> ( <span class="keywordtype">int</span> amount )</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> + amount &lt; <a class="code hl_variable" href="classCAntHill.html#a4f1963eb635de88de959848f4dffac57">m_Max</a> ) </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> += amount;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      <span class="keywordflow">else</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> = <a class="code hl_variable" href="classCAntHill.html#a4f1963eb635de88de959848f4dffac57">m_Max</a>;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> &lt; 0 )</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> += <a class="code hl_variable" href="classCAntHill.html#a5f5781064224d2d4bf702284f5c7517e">m_Armor</a>;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classCAntHill.html#ab985c5524c2f23cff753a93fecb66991">  176</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#ab985c5524c2f23cff753a93fecb66991">createAnts</a> ( <span class="keywordtype">void</span> )</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> += <a class="code hl_variable" href="classCAntHill.html#a1172ca9e2efa5179c9a485a6121c1d63">m_Move</a>;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> &gt; <a class="code hl_variable" href="classCAntHill.html#a4f1963eb635de88de959848f4dffac57">m_Max</a> )</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a> = <a class="code hl_variable" href="classCAntHill.html#a4f1963eb635de88de959848f4dffac57">m_Max</a>;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classCAntHill.html#a846b33c5f40947254ede4df3ef276393">  187</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a846b33c5f40947254ede4df3ef276393">clearAntHill</a>( <span class="keywordtype">void</span> )</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    {</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <a class="code hl_variable" href="classCAntHill.html#a1172ca9e2efa5179c9a485a6121c1d63">m_Move</a> = <a class="code hl_define" href="anthill_8h.html#a233b378c3c7a5a4b3655579f7cbe800d">ANTS_MOVE</a>;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      <a class="code hl_variable" href="classCAntHill.html#aa2c13b33eda6ece4647bcc5d666a197d">m_Attack</a> = <a class="code hl_define" href="anthill_8h.html#a82744e02d8c8a9b5c2b8c3532a474b72">ANTS_ATTACK</a>;</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      <a class="code hl_variable" href="classCAntHill.html#a5f5781064224d2d4bf702284f5c7517e">m_Armor</a> = <a class="code hl_define" href="anthill_8h.html#ab4e32436006b404a286424b829678a79">ANTS_ARMOR</a>;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      <a class="code hl_variable" href="classCAntHill.html#a4f1963eb635de88de959848f4dffac57">m_Max</a> = <a class="code hl_define" href="anthill_8h.html#a7c5d301686b8e127fa63c9d779e26e90">ANTS_MAX</a>;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">  197</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">m_Ants</a>;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classCAntHill.html#a0940ccd9cdceeef744d4f65021e74130">  199</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classCAntHill.html#a0940ccd9cdceeef744d4f65021e74130">m_Id</a>;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classCAntHill.html#a1172ca9e2efa5179c9a485a6121c1d63">  201</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classCAntHill.html#a1172ca9e2efa5179c9a485a6121c1d63">m_Move</a>;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classCAntHill.html#aa2c13b33eda6ece4647bcc5d666a197d">  203</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classCAntHill.html#aa2c13b33eda6ece4647bcc5d666a197d">m_Attack</a>;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="classCAntHill.html#a5f5781064224d2d4bf702284f5c7517e">  205</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classCAntHill.html#a5f5781064224d2d4bf702284f5c7517e">m_Armor</a>;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="classCAntHill.html#a4f1963eb635de88de959848f4dffac57">  207</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classCAntHill.html#a4f1963eb635de88de959848f4dffac57">m_Max</a>;</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>};</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor">#endif </span><span class="comment">// ANTHILL_H</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;ncurses.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="screen_8h.html">screen.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="coords_8h.html">coords.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classCAntHill.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="classCAntHill.html">CAntHill</a>: <span class="keyword">public</span> <a class="code hl_class" href="classCMapElem.html">CMapElem</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classCAntHill.html#a5adb37b901e68a8a407652f0884f62b8">   29</a></span>    <a class="code hl_function" href="classCAntHill.html#a5adb37b901e68a8a407652f0884f62b8">CAntHill</a> ( <a class="code hl_class" href="classCCoords.html">CCoords</a> coords,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>               <span class="keywordtype">char</span> color,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>               <span class="keywordtype">int</span> ants,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>               <span class="keywordtype">int</span> <span class="keywordtype">id</span> )</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    : <a class="code hl_class" href="classCMapElem.html">CMapElem</a> ( color, coords ),</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      m_Ants ( ants ),</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      m_Id ( id ),</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      m_Move ( <a class="code hl_define" href="anthill_8h.html#a233b378c3c7a5a4b3655579f7cbe800d">ANTS_MOVE</a> ),</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      m_Attack ( <a class="code hl_define" href="anthill_8h.html#a82744e02d8c8a9b5c2b8c3532a474b72">ANTS_ATTACK</a> ),</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      m_Armor ( <a class="code hl_define" href="anthill_8h.html#ab4e32436006b404a286424b829678a79">ANTS_ARMOR</a> ),</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      m_Max ( <a class="code hl_define" href="anthill_8h.html#a7c5d301686b8e127fa63c9d779e26e90">ANTS_MAX</a> )</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classCAntHill.html#acdd75b9a3f50f69edd61850511340621">   44</a></span>    <a class="code hl_function" href="classCAntHill.html#acdd75b9a3f50f69edd61850511340621">~CAntHill</a> ( <span class="keywordtype">void</span> ) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a3e504d4d1bd8cc2435f33ea5eedab894">print</a> ( <a class="code hl_class" href="classCScreen.html">CScreen</a> * scr ) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classCAntHill.html#acf369fbc2e328ae67f4e04e40af07bab">   54</a></span>    <span class="keywordtype">char</span> <a class="code hl_function" href="classCAntHill.html#acf369fbc2e328ae67f4e04e40af07bab">get</a> ( <span class="keywordtype">void</span> )<span class="keyword"> const  override</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      <span class="keywordflow">return</span> <span class="charliteral">&#39;*&#39;</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classCAntHill.html#afb3afc1b38747b0085d30db1845965d5">   63</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classCAntHill.html#afb3afc1b38747b0085d30db1845965d5">isInside</a> ( <a class="code hl_class" href="classCCoords.html">CCoords</a> coords )<span class="keyword"> const</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <span class="keywordflow">return</span> coords . m_X &gt;= <a class="code hl_variable" href="classCMapElem.html#aab8b425518eb37a1dc0ad46e455c4ee7">m_Coords</a> . m_X </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>          &amp;&amp; coords . m_Y &gt;= <a class="code hl_variable" href="classCMapElem.html#aab8b425518eb37a1dc0ad46e455c4ee7">m_Coords</a> . m_Y</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>          &amp;&amp; coords . m_X &lt;= <a class="code hl_variable" href="classCMapElem.html#aab8b425518eb37a1dc0ad46e455c4ee7">m_Coords</a> . m_X + 4</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>          &amp;&amp; coords . m_Y &lt;= <a class="code hl_variable" href="classCMapElem.html#aab8b425518eb37a1dc0ad46e455c4ee7">m_Coords</a> . m_Y + 2;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classCAntHill.html#acc745ee38288fa4e20b73dffa94e02a0">   74</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classCAntHill.html#acc745ee38288fa4e20b73dffa94e02a0">getId</a> ( <span class="keywordtype">void</span> )<span class="keyword"> const </span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      <span class="keywordflow">return</span> m_Id;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classCAntHill.html#aa7ab9041bf3b5c86adfb5a714d567f0a">   82</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classCAntHill.html#aa7ab9041bf3b5c86adfb5a714d567f0a">getAnts</a> ( <span class="keywordtype">void</span> )<span class="keyword"> const </span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <span class="keywordflow">return</span> m_Ants;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classCAntHill.html#a60b92c4fbf71d25fe76c56524bce9f6a">   90</a></span>    <span class="keyword">inline</span> <span class="keywordtype">char</span> <a class="code hl_function" href="classCAntHill.html#a60b92c4fbf71d25fe76c56524bce9f6a">getColor</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classCMapElem.html#a41545b0c790ebbc3aab19d9e7fade5a6">m_Color</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classCAntHill.html#ad8af17e4e24038903ea77f48da94bebe">   98</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classCAntHill.html#ad8af17e4e24038903ea77f48da94bebe">getAttack</a>( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keywordflow">return</span> m_Attack &lt;= m_Ants ? m_Attack : m_Ants;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classCAntHill.html#a85f2725556fed34b80aa47d122eb168c">  106</a></span>    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classCAntHill.html#a85f2725556fed34b80aa47d122eb168c">getArmor</a> ( <span class="keywordtype">void</span> )<span class="keyword"> const</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">return</span> m_Armor;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classCAntHill.html#a9507af8cc4d575d5d1d06dc028d48236">  114</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a9507af8cc4d575d5d1d06dc028d48236">setColor</a>( <span class="keywordtype">char</span> c )</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <a class="code hl_variable" href="classCMapElem.html#a41545b0c790ebbc3aab19d9e7fade5a6">m_Color</a> = c;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classCAntHill.html#abaeeffb0f3a5874575412ef62a04aed6">  122</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#abaeeffb0f3a5874575412ef62a04aed6">setAnts</a> ( <span class="keywordtype">int</span> amount )</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      m_Ants = amount;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classCAntHill.html#aab4c2d9cfbdfe91fe3191c5bb1f8001f">  130</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#aab4c2d9cfbdfe91fe3191c5bb1f8001f">addAttack</a> ( <span class="keywordtype">int</span> amount )</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      m_Attack += amount;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classCAntHill.html#a762b3044d5fe555736489e90d248bb4c">  138</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a762b3044d5fe555736489e90d248bb4c">addArmor</a> ( <span class="keywordtype">int</span> amount )</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>      m_Armor += amount;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classCAntHill.html#a9ea0b4ee86add7d6ccc94b9f8460cda3">  146</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a9ea0b4ee86add7d6ccc94b9f8460cda3">addMax</a> ( <span class="keywordtype">int</span> amount )</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      m_Max += amount;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classCAntHill.html#a9e4296afe574c8d7eec737c7cdcacc10">  154</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a9e4296afe574c8d7eec737c7cdcacc10">addMove</a> ( <span class="keywordtype">int</span> amount )</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      m_Move += amount;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classCAntHill.html#af049f8205c9f042432073063a26a6624">  164</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#af049f8205c9f042432073063a26a6624">add</a> ( <span class="keywordtype">int</span> amount )</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      <span class="keywordflow">if</span> ( m_Ants + amount &lt; m_Max ) </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        m_Ants += amount;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      <span class="keywordflow">else</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        m_Ants = m_Max;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      <span class="keywordflow">if</span> ( m_Ants &lt; 0 )</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        m_Ants += m_Armor;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="classCAntHill.html#ab985c5524c2f23cff753a93fecb66991">  177</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#ab985c5524c2f23cff753a93fecb66991">createAnts</a> ( <span class="keywordtype">void</span> )</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      m_Ants += m_Move;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      <span class="keywordflow">if</span> ( m_Ants &gt; m_Max )</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        m_Ants = m_Max;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classCAntHill.html#a846b33c5f40947254ede4df3ef276393">  188</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCAntHill.html#a846b33c5f40947254ede4df3ef276393">clearAntHill</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>      m_Move = <a class="code hl_define" href="anthill_8h.html#a233b378c3c7a5a4b3655579f7cbe800d">ANTS_MOVE</a>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      m_Attack = <a class="code hl_define" href="anthill_8h.html#a82744e02d8c8a9b5c2b8c3532a474b72">ANTS_ATTACK</a>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      m_Armor = <a class="code hl_define" href="anthill_8h.html#ab4e32436006b404a286424b829678a79">ANTS_ARMOR</a>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      m_Max = <a class="code hl_define" href="anthill_8h.html#a7c5d301686b8e127fa63c9d779e26e90">ANTS_MAX</a>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordtype">int</span> m_Ants;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordtype">int</span> m_Id;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordtype">int</span> m_Move;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordtype">int</span> m_Attack;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordtype">int</span> m_Armor;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordtype">int</span> m_Max;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>};</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="preprocessor">#endif </span><span class="comment">// ANTHILL_H</span></div>
 <div class="ttc" id="aanthill_8h_html_a233b378c3c7a5a4b3655579f7cbe800d"><div class="ttname"><a href="anthill_8h.html#a233b378c3c7a5a4b3655579f7cbe800d">ANTS_MOVE</a></div><div class="ttdeci">#define ANTS_MOVE</div><div class="ttdef"><b>Definition</b> anthill.h:4</div></div>
 <div class="ttc" id="aanthill_8h_html_a7c5d301686b8e127fa63c9d779e26e90"><div class="ttname"><a href="anthill_8h.html#a7c5d301686b8e127fa63c9d779e26e90">ANTS_MAX</a></div><div class="ttdeci">#define ANTS_MAX</div><div class="ttdef"><b>Definition</b> anthill.h:3</div></div>
 <div class="ttc" id="aanthill_8h_html_a82744e02d8c8a9b5c2b8c3532a474b72"><div class="ttname"><a href="anthill_8h.html#a82744e02d8c8a9b5c2b8c3532a474b72">ANTS_ATTACK</a></div><div class="ttdeci">#define ANTS_ATTACK</div><div class="ttdef"><b>Definition</b> anthill.h:5</div></div>
 <div class="ttc" id="aanthill_8h_html_ab4e32436006b404a286424b829678a79"><div class="ttname"><a href="anthill_8h.html#ab4e32436006b404a286424b829678a79">ANTS_ARMOR</a></div><div class="ttdeci">#define ANTS_ARMOR</div><div class="ttdef"><b>Definition</b> anthill.h:6</div></div>
-<div class="ttc" id="aclassCAntHill_html"><div class="ttname"><a href="classCAntHill.html">CAntHill</a></div><div class="ttdef"><b>Definition</b> anthill.h:20</div></div>
-<div class="ttc" id="aclassCAntHill_html_a0940ccd9cdceeef744d4f65021e74130"><div class="ttname"><a href="classCAntHill.html#a0940ccd9cdceeef744d4f65021e74130">CAntHill::m_Id</a></div><div class="ttdeci">int m_Id</div><div class="ttdoc">Id of anthill.</div><div class="ttdef"><b>Definition</b> anthill.h:199</div></div>
-<div class="ttc" id="aclassCAntHill_html_a1172ca9e2efa5179c9a485a6121c1d63"><div class="ttname"><a href="classCAntHill.html#a1172ca9e2efa5179c9a485a6121c1d63">CAntHill::m_Move</a></div><div class="ttdeci">int m_Move</div><div class="ttdoc">Number of ants anthill craetes in 1 move. By default ANTS_MOVE.</div><div class="ttdef"><b>Definition</b> anthill.h:201</div></div>
-<div class="ttc" id="aclassCAntHill_html_a233274ca61b87d358d8662b46610b478"><div class="ttname"><a href="classCAntHill.html#a233274ca61b87d358d8662b46610b478">CAntHill::m_Ants</a></div><div class="ttdeci">int m_Ants</div><div class="ttdoc">Number of ants in anthill.</div><div class="ttdef"><b>Definition</b> anthill.h:197</div></div>
+<div class="ttc" id="aclassCAntHill_html"><div class="ttname"><a href="classCAntHill.html">CAntHill</a></div><div class="ttdef"><b>Definition</b> anthill.h:21</div></div>
 <div class="ttc" id="aclassCAntHill_html_a3e504d4d1bd8cc2435f33ea5eedab894"><div class="ttname"><a href="classCAntHill.html#a3e504d4d1bd8cc2435f33ea5eedab894">CAntHill::print</a></div><div class="ttdeci">void print(CScreen *scr) const override</div><div class="ttdef"><b>Definition</b> anthill.cpp:8</div></div>
-<div class="ttc" id="aclassCAntHill_html_a4f1963eb635de88de959848f4dffac57"><div class="ttname"><a href="classCAntHill.html#a4f1963eb635de88de959848f4dffac57">CAntHill::m_Max</a></div><div class="ttdeci">int m_Max</div><div class="ttdoc">Max ants amount allowed in anthill. By default ANTS_MAX.</div><div class="ttdef"><b>Definition</b> anthill.h:207</div></div>
-<div class="ttc" id="aclassCAntHill_html_a5adb37b901e68a8a407652f0884f62b8"><div class="ttname"><a href="classCAntHill.html#a5adb37b901e68a8a407652f0884f62b8">CAntHill::CAntHill</a></div><div class="ttdeci">CAntHill(CCoords coords, char color, int ants, int id)</div><div class="ttdef"><b>Definition</b> anthill.h:28</div></div>
-<div class="ttc" id="aclassCAntHill_html_a5f5781064224d2d4bf702284f5c7517e"><div class="ttname"><a href="classCAntHill.html#a5f5781064224d2d4bf702284f5c7517e">CAntHill::m_Armor</a></div><div class="ttdeci">int m_Armor</div><div class="ttdoc">Number of armor anthill has. By default ANTS_ARMOR.</div><div class="ttdef"><b>Definition</b> anthill.h:205</div></div>
-<div class="ttc" id="aclassCAntHill_html_a60b92c4fbf71d25fe76c56524bce9f6a"><div class="ttname"><a href="classCAntHill.html#a60b92c4fbf71d25fe76c56524bce9f6a">CAntHill::getColor</a></div><div class="ttdeci">char getColor(void) const</div><div class="ttdef"><b>Definition</b> anthill.h:89</div></div>
-<div class="ttc" id="aclassCAntHill_html_a762b3044d5fe555736489e90d248bb4c"><div class="ttname"><a href="classCAntHill.html#a762b3044d5fe555736489e90d248bb4c">CAntHill::addArmor</a></div><div class="ttdeci">void addArmor(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:137</div></div>
-<div class="ttc" id="aclassCAntHill_html_a846b33c5f40947254ede4df3ef276393"><div class="ttname"><a href="classCAntHill.html#a846b33c5f40947254ede4df3ef276393">CAntHill::clearAntHill</a></div><div class="ttdeci">void clearAntHill(void)</div><div class="ttdef"><b>Definition</b> anthill.h:187</div></div>
-<div class="ttc" id="aclassCAntHill_html_a85f2725556fed34b80aa47d122eb168c"><div class="ttname"><a href="classCAntHill.html#a85f2725556fed34b80aa47d122eb168c">CAntHill::getArmor</a></div><div class="ttdeci">int getArmor(void) const</div><div class="ttdef"><b>Definition</b> anthill.h:105</div></div>
-<div class="ttc" id="aclassCAntHill_html_a9507af8cc4d575d5d1d06dc028d48236"><div class="ttname"><a href="classCAntHill.html#a9507af8cc4d575d5d1d06dc028d48236">CAntHill::setColor</a></div><div class="ttdeci">void setColor(char c)</div><div class="ttdef"><b>Definition</b> anthill.h:113</div></div>
-<div class="ttc" id="aclassCAntHill_html_a9e4296afe574c8d7eec737c7cdcacc10"><div class="ttname"><a href="classCAntHill.html#a9e4296afe574c8d7eec737c7cdcacc10">CAntHill::addMove</a></div><div class="ttdeci">void addMove(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:153</div></div>
-<div class="ttc" id="aclassCAntHill_html_a9ea0b4ee86add7d6ccc94b9f8460cda3"><div class="ttname"><a href="classCAntHill.html#a9ea0b4ee86add7d6ccc94b9f8460cda3">CAntHill::addMax</a></div><div class="ttdeci">void addMax(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:145</div></div>
-<div class="ttc" id="aclassCAntHill_html_aa2c13b33eda6ece4647bcc5d666a197d"><div class="ttname"><a href="classCAntHill.html#aa2c13b33eda6ece4647bcc5d666a197d">CAntHill::m_Attack</a></div><div class="ttdeci">int m_Attack</div><div class="ttdoc">Number of ants anthill sends per 1 attack. By default ANTS_ATTACK.</div><div class="ttdef"><b>Definition</b> anthill.h:203</div></div>
-<div class="ttc" id="aclassCAntHill_html_aa7ab9041bf3b5c86adfb5a714d567f0a"><div class="ttname"><a href="classCAntHill.html#aa7ab9041bf3b5c86adfb5a714d567f0a">CAntHill::getAnts</a></div><div class="ttdeci">int getAnts(void) const</div><div class="ttdef"><b>Definition</b> anthill.h:81</div></div>
-<div class="ttc" id="aclassCAntHill_html_aab4c2d9cfbdfe91fe3191c5bb1f8001f"><div class="ttname"><a href="classCAntHill.html#aab4c2d9cfbdfe91fe3191c5bb1f8001f">CAntHill::addAttack</a></div><div class="ttdeci">void addAttack(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:129</div></div>
-<div class="ttc" id="aclassCAntHill_html_ab985c5524c2f23cff753a93fecb66991"><div class="ttname"><a href="classCAntHill.html#ab985c5524c2f23cff753a93fecb66991">CAntHill::createAnts</a></div><div class="ttdeci">void createAnts(void)</div><div class="ttdef"><b>Definition</b> anthill.h:176</div></div>
-<div class="ttc" id="aclassCAntHill_html_abaeeffb0f3a5874575412ef62a04aed6"><div class="ttname"><a href="classCAntHill.html#abaeeffb0f3a5874575412ef62a04aed6">CAntHill::setAnts</a></div><div class="ttdeci">void setAnts(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:121</div></div>
-<div class="ttc" id="aclassCAntHill_html_acc745ee38288fa4e20b73dffa94e02a0"><div class="ttname"><a href="classCAntHill.html#acc745ee38288fa4e20b73dffa94e02a0">CAntHill::getId</a></div><div class="ttdeci">int getId(void) const</div><div class="ttdef"><b>Definition</b> anthill.h:73</div></div>
+<div class="ttc" id="aclassCAntHill_html_a5adb37b901e68a8a407652f0884f62b8"><div class="ttname"><a href="classCAntHill.html#a5adb37b901e68a8a407652f0884f62b8">CAntHill::CAntHill</a></div><div class="ttdeci">CAntHill(CCoords coords, char color, int ants, int id)</div><div class="ttdef"><b>Definition</b> anthill.h:29</div></div>
+<div class="ttc" id="aclassCAntHill_html_a60b92c4fbf71d25fe76c56524bce9f6a"><div class="ttname"><a href="classCAntHill.html#a60b92c4fbf71d25fe76c56524bce9f6a">CAntHill::getColor</a></div><div class="ttdeci">char getColor(void) const</div><div class="ttdef"><b>Definition</b> anthill.h:90</div></div>
+<div class="ttc" id="aclassCAntHill_html_a762b3044d5fe555736489e90d248bb4c"><div class="ttname"><a href="classCAntHill.html#a762b3044d5fe555736489e90d248bb4c">CAntHill::addArmor</a></div><div class="ttdeci">void addArmor(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:138</div></div>
+<div class="ttc" id="aclassCAntHill_html_a846b33c5f40947254ede4df3ef276393"><div class="ttname"><a href="classCAntHill.html#a846b33c5f40947254ede4df3ef276393">CAntHill::clearAntHill</a></div><div class="ttdeci">void clearAntHill(void)</div><div class="ttdef"><b>Definition</b> anthill.h:188</div></div>
+<div class="ttc" id="aclassCAntHill_html_a85f2725556fed34b80aa47d122eb168c"><div class="ttname"><a href="classCAntHill.html#a85f2725556fed34b80aa47d122eb168c">CAntHill::getArmor</a></div><div class="ttdeci">int getArmor(void) const</div><div class="ttdef"><b>Definition</b> anthill.h:106</div></div>
+<div class="ttc" id="aclassCAntHill_html_a9507af8cc4d575d5d1d06dc028d48236"><div class="ttname"><a href="classCAntHill.html#a9507af8cc4d575d5d1d06dc028d48236">CAntHill::setColor</a></div><div class="ttdeci">void setColor(char c)</div><div class="ttdef"><b>Definition</b> anthill.h:114</div></div>
+<div class="ttc" id="aclassCAntHill_html_a9e4296afe574c8d7eec737c7cdcacc10"><div class="ttname"><a href="classCAntHill.html#a9e4296afe574c8d7eec737c7cdcacc10">CAntHill::addMove</a></div><div class="ttdeci">void addMove(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:154</div></div>
+<div class="ttc" id="aclassCAntHill_html_a9ea0b4ee86add7d6ccc94b9f8460cda3"><div class="ttname"><a href="classCAntHill.html#a9ea0b4ee86add7d6ccc94b9f8460cda3">CAntHill::addMax</a></div><div class="ttdeci">void addMax(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:146</div></div>
+<div class="ttc" id="aclassCAntHill_html_aa7ab9041bf3b5c86adfb5a714d567f0a"><div class="ttname"><a href="classCAntHill.html#aa7ab9041bf3b5c86adfb5a714d567f0a">CAntHill::getAnts</a></div><div class="ttdeci">int getAnts(void) const</div><div class="ttdef"><b>Definition</b> anthill.h:82</div></div>
+<div class="ttc" id="aclassCAntHill_html_aab4c2d9cfbdfe91fe3191c5bb1f8001f"><div class="ttname"><a href="classCAntHill.html#aab4c2d9cfbdfe91fe3191c5bb1f8001f">CAntHill::addAttack</a></div><div class="ttdeci">void addAttack(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:130</div></div>
+<div class="ttc" id="aclassCAntHill_html_ab985c5524c2f23cff753a93fecb66991"><div class="ttname"><a href="classCAntHill.html#ab985c5524c2f23cff753a93fecb66991">CAntHill::createAnts</a></div><div class="ttdeci">void createAnts(void)</div><div class="ttdef"><b>Definition</b> anthill.h:177</div></div>
+<div class="ttc" id="aclassCAntHill_html_abaeeffb0f3a5874575412ef62a04aed6"><div class="ttname"><a href="classCAntHill.html#abaeeffb0f3a5874575412ef62a04aed6">CAntHill::setAnts</a></div><div class="ttdeci">void setAnts(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:122</div></div>
+<div class="ttc" id="aclassCAntHill_html_acc745ee38288fa4e20b73dffa94e02a0"><div class="ttname"><a href="classCAntHill.html#acc745ee38288fa4e20b73dffa94e02a0">CAntHill::getId</a></div><div class="ttdeci">int getId(void) const</div><div class="ttdef"><b>Definition</b> anthill.h:74</div></div>
 <div class="ttc" id="aclassCAntHill_html_acdd75b9a3f50f69edd61850511340621"><div class="ttname"><a href="classCAntHill.html#acdd75b9a3f50f69edd61850511340621">CAntHill::~CAntHill</a></div><div class="ttdeci">~CAntHill(void)=default</div></div>
-<div class="ttc" id="aclassCAntHill_html_acf369fbc2e328ae67f4e04e40af07bab"><div class="ttname"><a href="classCAntHill.html#acf369fbc2e328ae67f4e04e40af07bab">CAntHill::get</a></div><div class="ttdeci">char get(void) const override</div><div class="ttdef"><b>Definition</b> anthill.h:53</div></div>
-<div class="ttc" id="aclassCAntHill_html_ad8af17e4e24038903ea77f48da94bebe"><div class="ttname"><a href="classCAntHill.html#ad8af17e4e24038903ea77f48da94bebe">CAntHill::getAttack</a></div><div class="ttdeci">int getAttack(void) const</div><div class="ttdef"><b>Definition</b> anthill.h:97</div></div>
-<div class="ttc" id="aclassCAntHill_html_af049f8205c9f042432073063a26a6624"><div class="ttname"><a href="classCAntHill.html#af049f8205c9f042432073063a26a6624">CAntHill::add</a></div><div class="ttdeci">void add(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:163</div></div>
-<div class="ttc" id="aclassCAntHill_html_afb3afc1b38747b0085d30db1845965d5"><div class="ttname"><a href="classCAntHill.html#afb3afc1b38747b0085d30db1845965d5">CAntHill::isInside</a></div><div class="ttdeci">bool isInside(CCoords coords) const</div><div class="ttdef"><b>Definition</b> anthill.h:62</div></div>
+<div class="ttc" id="aclassCAntHill_html_acf369fbc2e328ae67f4e04e40af07bab"><div class="ttname"><a href="classCAntHill.html#acf369fbc2e328ae67f4e04e40af07bab">CAntHill::get</a></div><div class="ttdeci">char get(void) const override</div><div class="ttdef"><b>Definition</b> anthill.h:54</div></div>
+<div class="ttc" id="aclassCAntHill_html_ad8af17e4e24038903ea77f48da94bebe"><div class="ttname"><a href="classCAntHill.html#ad8af17e4e24038903ea77f48da94bebe">CAntHill::getAttack</a></div><div class="ttdeci">int getAttack(void) const</div><div class="ttdef"><b>Definition</b> anthill.h:98</div></div>
+<div class="ttc" id="aclassCAntHill_html_af049f8205c9f042432073063a26a6624"><div class="ttname"><a href="classCAntHill.html#af049f8205c9f042432073063a26a6624">CAntHill::add</a></div><div class="ttdeci">void add(int amount)</div><div class="ttdef"><b>Definition</b> anthill.h:164</div></div>
+<div class="ttc" id="aclassCAntHill_html_afb3afc1b38747b0085d30db1845965d5"><div class="ttname"><a href="classCAntHill.html#afb3afc1b38747b0085d30db1845965d5">CAntHill::isInside</a></div><div class="ttdeci">bool isInside(CCoords coords) const</div><div class="ttdef"><b>Definition</b> anthill.h:63</div></div>
 <div class="ttc" id="aclassCCoords_html"><div class="ttname"><a href="classCCoords.html">CCoords</a></div><div class="ttdef"><b>Definition</b> coords.h:7</div></div>
 <div class="ttc" id="aclassCMapElem_html"><div class="ttname"><a href="classCMapElem.html">CMapElem</a></div><div class="ttdef"><b>Definition</b> mapelement.h:10</div></div>
 <div class="ttc" id="aclassCMapElem_html_a41545b0c790ebbc3aab19d9e7fade5a6"><div class="ttname"><a href="classCMapElem.html#a41545b0c790ebbc3aab19d9e7fade5a6">CMapElem::m_Color</a></div><div class="ttdeci">char m_Color</div><div class="ttdef"><b>Definition</b> mapelement.h:46</div></div>

@@ -2,7 +2,7 @@
 #define HUMAN_H
 #include "player.h"
 #include "coords.h"
-#include "ncurses.h"
+#include <ncurses.h>
 #include "screen.h"
 #include "map.h"
 #include "exceptions.h"
@@ -21,10 +21,6 @@ class CHuman : public CPlayer
     : CPlayer( color ),
       m_Screen ( screen )
     {};
-
-    /*! Default destructor
-     */
-    ~CHuman ( void ) = default;
     
     /*! Overrided method that is used to collect moves from human player
      *  @param  - current game's map

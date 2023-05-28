@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AntWars aiuroand: src/human.h Source File</title>
+<title>Ant Wars: src/human.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">AntWars aiuroand
+   <div id="projectname">Ant Wars
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ $(function() {
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define HUMAN_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="player_8h.html">player.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="coords_8h.html">coords.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;ncurses.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;ncurses.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="screen_8h.html">screen.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="map_8h.html">map.h</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="exceptions_8h.html">exceptions.h</a>&quot;</span></div>
@@ -91,30 +91,25 @@ $(function() {
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classCHuman.html#a9aa0f63e6a18c84d3e11d1b3ca58e3bf">   19</a></span>    <a class="code hl_function" href="classCHuman.html#a9aa0f63e6a18c84d3e11d1b3ca58e3bf">CHuman</a> ( <span class="keywordtype">char</span> color,</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>             <a class="code hl_class" href="classCScreen.html">CScreen</a> * screen )</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    : <a class="code hl_class" href="classCPlayer.html">CPlayer</a>( color ),</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      <a class="code hl_variable" href="classCHuman.html#ae8c827525cf28e551715cfe5d7a601be">m_Screen</a> ( screen )</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      m_Screen ( screen )</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {};</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classCHuman.html#a3ba77c68ea9fe12a7b168d3ca5128b19">   27</a></span>    <a class="code hl_function" href="classCHuman.html#a3ba77c68ea9fe12a7b168d3ca5128b19">~CHuman</a> ( <span class="keywordtype">void</span> ) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::pair &lt; int, int &gt; <a class="code hl_function" href="classCHuman.html#a5119c70410357491ae576a8156c07a5a">makeMove</a> ( <a class="code hl_class" href="classCMap.html">CMap</a> &amp; map ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCHuman.html#a1db61a489c331ece3e35af98fa219c6d">selectTalent</a> ( <a class="code hl_class" href="classCMap.html">CMap</a> &amp; map, std::list &lt; CTalent * &gt; &amp; t ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_class" href="classCCoords.html">CCoords</a> <a class="code hl_function" href="classCHuman.html#a87b955e52b2c58602324aabe7038e2bf">readMouse</a> ( <span class="keywordtype">void</span> );</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classCHuman.html#ae8c827525cf28e551715cfe5d7a601be">   51</a></span>    <a class="code hl_class" href="classCScreen.html">CScreen</a> * <a class="code hl_variable" href="classCHuman.html#ae8c827525cf28e551715cfe5d7a601be">m_Screen</a>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif </span><span class="comment">// HUMAN_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::pair &lt; int, int &gt; <a class="code hl_function" href="classCHuman.html#a5119c70410357491ae576a8156c07a5a">makeMove</a> ( <a class="code hl_class" href="classCMap.html">CMap</a> &amp; map ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCHuman.html#a1db61a489c331ece3e35af98fa219c6d">selectTalent</a> ( <a class="code hl_class" href="classCMap.html">CMap</a> &amp; map, std::list &lt; CTalent * &gt; &amp; t ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="classCCoords.html">CCoords</a> readMouse ( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_class" href="classCScreen.html">CScreen</a> * m_Screen;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif </span><span class="comment">// HUMAN_H</span></div>
 <div class="ttc" id="aclassCCoords_html"><div class="ttname"><a href="classCCoords.html">CCoords</a></div><div class="ttdef"><b>Definition</b> coords.h:7</div></div>
 <div class="ttc" id="aclassCHuman_html"><div class="ttname"><a href="classCHuman.html">CHuman</a></div><div class="ttdef"><b>Definition</b> human.h:13</div></div>
 <div class="ttc" id="aclassCHuman_html_a1db61a489c331ece3e35af98fa219c6d"><div class="ttname"><a href="classCHuman.html#a1db61a489c331ece3e35af98fa219c6d">CHuman::selectTalent</a></div><div class="ttdeci">void selectTalent(CMap &amp;map, std::list&lt; CTalent * &gt; &amp;t) override</div><div class="ttdef"><b>Definition</b> human.cpp:28</div></div>
-<div class="ttc" id="aclassCHuman_html_a3ba77c68ea9fe12a7b168d3ca5128b19"><div class="ttname"><a href="classCHuman.html#a3ba77c68ea9fe12a7b168d3ca5128b19">CHuman::~CHuman</a></div><div class="ttdeci">~CHuman(void)=default</div></div>
 <div class="ttc" id="aclassCHuman_html_a5119c70410357491ae576a8156c07a5a"><div class="ttname"><a href="classCHuman.html#a5119c70410357491ae576a8156c07a5a">CHuman::makeMove</a></div><div class="ttdeci">std::pair&lt; int, int &gt; makeMove(CMap &amp;map) override</div><div class="ttdef"><b>Definition</b> human.cpp:3</div></div>
-<div class="ttc" id="aclassCHuman_html_a87b955e52b2c58602324aabe7038e2bf"><div class="ttname"><a href="classCHuman.html#a87b955e52b2c58602324aabe7038e2bf">CHuman::readMouse</a></div><div class="ttdeci">CCoords readMouse(void)</div><div class="ttdef"><b>Definition</b> human.cpp:64</div></div>
 <div class="ttc" id="aclassCHuman_html_a9aa0f63e6a18c84d3e11d1b3ca58e3bf"><div class="ttname"><a href="classCHuman.html#a9aa0f63e6a18c84d3e11d1b3ca58e3bf">CHuman::CHuman</a></div><div class="ttdeci">CHuman(char color, CScreen *screen)</div><div class="ttdef"><b>Definition</b> human.h:19</div></div>
-<div class="ttc" id="aclassCHuman_html_ae8c827525cf28e551715cfe5d7a601be"><div class="ttname"><a href="classCHuman.html#ae8c827525cf28e551715cfe5d7a601be">CHuman::m_Screen</a></div><div class="ttdeci">CScreen * m_Screen</div><div class="ttdef"><b>Definition</b> human.h:51</div></div>
 <div class="ttc" id="aclassCMap_html"><div class="ttname"><a href="classCMap.html">CMap</a></div><div class="ttdef"><b>Definition</b> map.h:25</div></div>
 <div class="ttc" id="aclassCPlayer_html"><div class="ttname"><a href="classCPlayer.html">CPlayer</a></div><div class="ttdef"><b>Definition</b> player.h:10</div></div>
 <div class="ttc" id="aclassCScreen_html"><div class="ttname"><a href="classCScreen.html">CScreen</a></div><div class="ttdef"><b>Definition</b> screen.h:8</div></div>

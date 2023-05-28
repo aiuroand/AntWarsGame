@@ -11,6 +11,7 @@
 #define YELLOW 4
 
 #include "mapelement.h"
+#include <ncurses.h>
 #include "screen.h"
 #include "coords.h"
 
