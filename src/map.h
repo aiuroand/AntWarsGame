@@ -27,9 +27,17 @@ class CMap
             CScreen * scr )
     : m_Height ( 0 ),
       m_Width ( 0 ),
+      m_Round ( 1 ),
       m_Screen ( scr )
     {    
       readMap ( mapDir );
+    }
+    ~CMap ( void )
+    {
+      for ( const auto & it : m_ElementList )
+        delete it;
+      for ( const auto & it : m_AntHill )
+        delete it;
     }
     int getAntHill ( CCoords coords );
     void print ( void );
@@ -62,15 +70,24 @@ class CMap
     {
       return m_Width;
     }
+    int getRound( void ) const
+    {
+      return m_Round;
+    }
+    int setRound( int i )
+    {
+      m_Round = i;
+    }
     void createRoad( int from, int to, std::vector<std::vector< std::pair <char, bool> > > & map );
     CCoords getCoordsOfId ( int id );
 
-    std::set < char > m_Players;
+    std::set < std::pair < char, unsigned int > > m_Players;
 
   private:
     void readMap ( std::string & mapDir );
     int m_Height;
     int m_Width;
+    int m_Round;
     std::list< CMapElem * > m_ElementList;
     std::list< CAntHill * > m_AntHill;
     std::list< CRoad > m_Roads;

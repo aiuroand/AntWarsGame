@@ -11,8 +11,7 @@ class CMapElem
     : m_Color ( c ),          
       m_Coords ( coord )
     {};
-    virtual ~CMapElem( void )
-    {};
+    virtual ~CMapElem( void ) = default;
     virtual void print ( CScreen * scr ) = 0;
 
   protected: 

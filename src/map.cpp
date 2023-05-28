@@ -16,6 +16,11 @@ void CMap::readMap ( std::string & mapDir )
   ifs . get ( c );
   m_Width += ( ( ( int ) c ) - 48 );
   ifs . get ( c );
+  ifs . get ( c );
+  m_Round += ( ( ( int ) c ) - 48 ) * 10;
+  ifs . get ( c );
+  m_Round += ( ( ( int ) c ) - 48 );
+  ifs . get ( c );
 
   std::vector<std::vector< std::pair <char, bool> > > map( m_Height, std::vector< std::pair <char, bool> >( m_Width ) );
 
@@ -52,10 +57,14 @@ void CMap::readMap ( std::string & mapDir )
                                           map[i+1][j+1] . first,
                                           (int)(map[i+1][j+2] . first - 48) * 10 + (int)(map[i+1][j+3] . first - 48),
                                           map[i+1][j] . first - 48 ) );
-            if ( map[i+1][j+1] . first == 'g' )
-              m_Players . insert ( map[i+1][j+1] . first );
+           if ( map[i+1][j+1] . first == 'g' )
+              m_Players . insert ( std::make_pair( map[i+1][j+1] . first, (int)(map[i+2][j+1] . first - 48) * 100
+                                                                        + (int)(map[i+2][j+2] . first - 48) * 10
+                                                                        + (int)(map[i+2][j+3] . first - 48) ) );
             else if ( map[i+1][j+1] . first != 'g' )
-              m_Players . insert ( map[i+1][j+1] . first );
+              m_Players . insert ( std::make_pair( map[i+1][j+1] . first, (int)(map[i+2][j+1] . first - 48) * 100
+                                                                        + (int)(map[i+2][j+2] . first - 48) * 10
+                                                                        + (int)(map[i+2][j+3] . first - 48) ) );
             break;
           default:
             break;

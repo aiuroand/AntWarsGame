@@ -11,6 +11,7 @@ class CTalent
     : m_Name ( name ),
       m_Description ( description )
     {}
+    virtual ~CTalent ( void ) = default;
     std::string getName ( void ) const
     {
       return m_Name;

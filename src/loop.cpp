@@ -24,8 +24,13 @@ void CLoop::loop ( void )
         i++;
       }
       std::string newStr( str );
-      m_Game = new CGame ( 1, m_Maps + "/" + newStr, m_Saves, m_Talents, m_Screen );
+      m_Game = new CGame ( m_Maps + "/" + newStr, m_Saves, m_Talents, m_Screen );
       m_Game -> loop();
+      // mvwprintw ( m_Screen -> m_Window, 1, 1, "asdsad");
+      // wrefresh ( m_Screen -> m_Window );
+      //     std::this_thread::sleep_for( std::chrono::seconds( 1 ) );
+      delete m_Game;
+      m_Game = nullptr;
       m_Status = e_Menu;
     }
     else if ( m_Status == e_Rules )

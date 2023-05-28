@@ -4,6 +4,7 @@
 #include "map.h"
 #include "talent.h"
 
+
 class CPlayer
 {
   public:
@@ -20,10 +21,13 @@ class CPlayer
       for ( const auto & it : m_Talents )
         it -> activate( c, map );
     }
-
+    void addTalent ( CTalent * t )
+    {
+      m_Talents . push_back ( t );
+    }
     virtual std::pair < int, int > makeMove ( CMap & map ) = 0; 
     virtual void selectTalent (  CMap & map, std::list < CTalent * > & t ) = 0;
-  protected:
+  // protected:
     char m_Color;
     std::list < CTalent * > m_Talents;
 };

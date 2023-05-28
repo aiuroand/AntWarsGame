@@ -14,28 +14,38 @@
 #include "morearmor.h"
 #include "moremove.h"
 #include "moremax.h"
+#include "exceptions.h"
 
 class CGame
 {
   public:
-    CGame ( int round,
-            std::string name,
+    CGame ( std::string name,
             std::string saves,
             std::string talents,
             CScreen * scr )
-    : m_Round ( round ),
-      m_Map ( name, scr ),
+    : m_Map ( name, scr ),
       m_Saves ( saves ),
       m_Talents ( talents ),
       m_Screen ( scr )
     {}
+    ~CGame ( void )
+    {
+      for ( const auto & it : m_Players )
+        delete it;
+      for ( const auto & it : m_Tier1 )
+        delete it;
+      for ( const auto & it : m_Tier2 )
+        delete it;
+      for ( const auto & it : m_Tier3 )
+        delete it;
+    }
     
     void loop ( void );
     void readTalents( void );
+    void setPlayers ( void );
     void removeDead( void );
     void printHud( void );
   private:
-    int m_Round;
     CMap m_Map;
     std::string m_Saves;
     std::string m_Talents;

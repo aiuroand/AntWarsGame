@@ -5,6 +5,7 @@
 #include "ncurses.h"
 #include "screen.h"
 #include "map.h"
+#include "exceptions.h"
 
 class CHuman : public CPlayer
 {

@@ -2,43 +2,50 @@
 
 void CGame::loop ( void )
 {
+
   readTalents();
+  setPlayers();
+
   m_Map . print();
   printHud();
-  
-  for ( const auto & it : m_Map . m_Players )
-    if ( it == 'g' ) 
-      m_Players . push_back( new CHuman ( it, m_Screen ) );
-    else if ( it != 'g' && it != 'w' )
-      m_Players . push_back ( new CBot ( it, m_Screen ) );
-      
-
   while ( 1 )
   {
-    
-    if ( m_Round == m_Tier1Time )
-      for ( const auto & it : m_Players )
-        it -> selectTalent ( m_Map, m_Tier1 );
-    
-    if ( m_Round == m_Tier2Time )
-      for ( const auto & it : m_Players )
-        it -> selectTalent ( m_Map, m_Tier2 );
-        
-    // if ( m_Round == m_Tier3Time )
+    try 
+    {
+      if ( m_Map . getRound() == m_Tier1Time )
+        for ( const auto & it : m_Players )
+          it -> selectTalent ( m_Map, m_Tier1 );
+      
+      if ( m_Map . getRound() == m_Tier2Time )
+        for ( const auto & it : m_Players )
+          it -> selectTalent ( m_Map, m_Tier2 );
+    }
+    catch ( CLeave & x )
+    {
+      return;
+    }    
+    // if ( m_Map . getRound() == m_Tier3Time )
     //   for ( const auto & it : m_Players )
     //     it -> selectTalent ( m_Map, m_Tier3 );
     
+
     for ( const auto & it : m_Players )
       it -> activateTalents ( it -> getColor(), m_Map );
 
-    printHud();
     m_Map . print();
+    printHud();
 
     std::list < std::pair < int, int > > orders;
   
-    for ( const auto & it : m_Players )
-      orders . push_back ( it -> makeMove( m_Map ) );
- 
+    try 
+    {
+      for ( const auto & it : m_Players )
+        orders . push_back ( it -> makeMove( m_Map ) );
+    }
+    catch ( CLeave & x )
+    {
+      return;
+    }
     m_Map . clearRoads();  
     
     for ( const auto & it : orders )
@@ -61,7 +68,7 @@ void CGame::loop ( void )
       break;
     }
     m_Map . deactivateAll();
-    ++m_Round;
+    m_Map . setRound ( m_Map . getRound () + 1 ) ;
   }
 }
 
@@ -79,16 +86,19 @@ void CGame::removeDead( void )
 
 void CGame::printHud ( void )
 {
+
+  // mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 1, "|         |" );
+  // mvwprintw ( m_Screen -> m_Window, 2, m_Map . getWidth() + 1, "|   ~|~   |" );
+  // mvwprintw ( m_Screen -> m_Window, 3, m_Map . getWidth() + 1, "|  ~~|~~  |" );
+  // mvwprintw ( m_Screen -> m_Window, 4, m_Map . getWidth() + 1, "| ~~~|~~~ |" );
+  // mvwprintw ( m_Screen -> m_Window, 5, m_Map . getWidth() + 1, "|    |    |" );
+  // mvwprintw ( m_Screen -> m_Window, 6, m_Map . getWidth() + 1, "|   / \\   |" );
+  // mvwprintw ( m_Screen -> m_Window, 7, m_Map . getWidth() + 1, "+---------+" );
   mvwprintw ( m_Screen -> m_Window, 0, m_Map . getWidth() + 1, "+---------+" );
-  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 1, "|         |" );
-  mvwprintw ( m_Screen -> m_Window, 2, m_Map . getWidth() + 1, "|   ~|~   |" );
-  mvwprintw ( m_Screen -> m_Window, 3, m_Map . getWidth() + 1, "|  ~~|~~  |" );
-  mvwprintw ( m_Screen -> m_Window, 4, m_Map . getWidth() + 1, "| ~~~|~~~ |" );
-  mvwprintw ( m_Screen -> m_Window, 5, m_Map . getWidth() + 1, "|    |    |" );
-  mvwprintw ( m_Screen -> m_Window, 6, m_Map . getWidth() + 1, "|   / \\   |" );
-  mvwprintw ( m_Screen -> m_Window, 7, m_Map . getWidth() + 1, "+---------+" );
-  mvwprintw ( m_Screen -> m_Window, 8, m_Map . getWidth() + 1, "+ Round " );
-  mvwprintw ( m_Screen -> m_Window, 8, m_Map . getWidth() + 9, "%d %d", m_Round, m_Tier1Time );
+  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 1, "| Round " );
+  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 9, "%d", m_Map . getRound() );
+  mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 11, "|" );
+  mvwprintw ( m_Screen -> m_Window, 2, m_Map . getWidth() + 1, "+---------+" );
   wrefresh ( m_Screen -> m_Window );
 }
 
@@ -148,4 +158,43 @@ void CGame::readTalents( void )
   //   /* code */
   // }
 
+}
+
+void CGame::setPlayers ( void )
+{
+    for ( const auto & it : m_Map . m_Players )
+    {
+      if ( it . first == 'g' )
+      {
+        m_Players . push_back ( new CHuman ( it . first, m_Screen ) );
+             if ( it . second & 1 )
+          m_Players . back() -> addTalent ( m_Tier1 . front() );
+        else if ( it . second & 2 )
+          m_Players . back() -> addTalent ( m_Tier1 . back() );
+        else if ( it . second & 4 )
+          m_Players . back() -> addTalent ( m_Tier2 . front() );
+        else if ( it . second & 8 )
+          m_Players . back() -> addTalent ( m_Tier2 . back() );
+        else if ( it . second & 16 )
+          m_Players . back() -> addTalent ( m_Tier3 . front() );
+        else if ( it . second & 32 )
+          m_Players . back() -> addTalent ( m_Tier3 . back() );
+      }
+      else if ( it . first != 'g' && it . first != 'w' )
+      {
+        m_Players . push_back ( new CBot ( it . first, m_Screen ) );
+             if ( it . second & 1 )
+          m_Players . back() -> addTalent ( m_Tier1 . front() );
+        else if ( it . second & 2 )
+          m_Players . back() -> addTalent ( m_Tier1 . back() );
+        else if ( it . second & 4 )
+          m_Players . back() -> addTalent ( m_Tier2 . front() );
+        else if ( it . second & 8 )
+          m_Players . back() -> addTalent ( m_Tier2 . back() );
+        else if ( it . second & 16 )
+          m_Players . back() -> addTalent ( m_Tier3 . front() );
+        else if ( it . second & 32 )
+          m_Players . back() -> addTalent ( m_Tier3 . back() );
+      } 
+    }
 }
