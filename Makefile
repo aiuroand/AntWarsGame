@@ -3,6 +3,7 @@ HEADERS = $(wildcard src/*.h)
 SOURCES = $(wildcard src/*.cpp)
 OBJECTS = $(SOURCES:src/%.cpp=build/%.o)
 LIBS=-lncurses
+VALGRIND = --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt
 
 .PHONY: all
 all: compile doc
@@ -27,10 +28,13 @@ build/%.o: src/%.cpp
 
 doc: Doxyfile $(HEADERS)
 	doxygen Doxyfile
+	mv doc/html/* doc
+	rm -r doc/html
 
 .PHONY: clean
 clean:
 	rm -rf username build/ debug/ doc/ 2>/dev/null
+	rm aiuroand
 
 .PHONY: test_all
 test_all: $(TESTS:tests/%.test.cpp=debug/%.test)

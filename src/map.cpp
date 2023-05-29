@@ -78,13 +78,13 @@ char CMap::getColorOfId ( int id ) const
 //--------------------------------------------------------------------- 
 char CMap::checkWinner ( void ) const
 {
-  char c = m_AntHill . front() -> getColor();
-  // for ( const auto & it : m_AntHill )
-  //   if ( it -> getColor() != 'n' )
-  //   {
-  //     c = it -> getColor();
-  //     break;
-  //   }
+  char c;
+  for ( const auto & it : m_AntHill )
+    if ( it -> getColor() != 'n' )
+    {
+      c = it -> getColor();
+      break;
+    }
   for ( const auto & it : m_AntHill )
     if ( it -> getColor() != c )
       return 'n';
@@ -149,10 +149,36 @@ void CMap::clearRoads ( void )
     it . clearRoad();
 } 
 //---------------------------------------------------------------------
+void CMap::getCharColor ( char * str, int id ) const
+{
+  int c = getColorOfId ( id );
+  if ( c == 'g' )
+    memcpy ( str, "green", 6 );
+  else if ( c == 'w' )
+    memcpy ( str, "neutral", 8 );
+  else if ( c == 'r' )
+    memcpy ( str, "red", 4 );
+  else if ( c == 'm')
+    memcpy ( str, "magenta", 8 );
+  else if ( c == 'b')
+    memcpy ( str, "blue", 5 );
+}
+//---------------------------------------------------------------------
 void CMap::attack ( void )
 {
   for ( auto & main_it : m_Roads )
   {  
+    char str1 [30];
+    char str2 [30];
+
+    getCharColor ( str1, main_it . m_First );  
+    getCharColor ( str2, main_it . m_Second );
+
+    for ( int i = 1; i < m_Width - 1; i++ )
+      mvwprintw( m_Screen -> m_Window, getHeight() + 1, i, " " );
+    mvwprintw( m_Screen -> m_Window, getHeight() + 1, 1, "Fight between %s and %s", str1, str2 );
+    wrefresh ( m_Screen -> m_Window );
+
     if ( !main_it . m_FirstUsed && !main_it . m_SecondUsed )
       continue;    
     if ( main_it . m_SecondUsed && main_it . m_VecAnts[ 0 ] . second != getColorOfId ( main_it . m_Second ) )
@@ -283,7 +309,7 @@ void CMap::attack ( void )
       }
       main_it . print( m_Screen );
       wrefresh ( m_Screen -> m_Window );
-      std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );
+      std::this_thread::sleep_for( std::chrono::milliseconds( 80 ) );
     }
     print();
   }
@@ -291,7 +317,7 @@ void CMap::attack ( void )
 //---------------------------------------------------------------------
 void CMap::print ( void ) const
 {
-  m_Screen -> screenClear();
+  // m_Screen -> screenClear();
   m_Screen -> screenRefresh();
   for ( const auto & it : m_ElementList )
     it -> print ( m_Screen );

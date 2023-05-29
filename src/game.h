@@ -76,6 +76,7 @@ class CGame
     void printHud( void );
 
     /*! Function that is used to save current game's map to m_Saves folder 
+     *  @throw CSavingWonGame if player tries to save the game where he or bot already won
      */
     void saveGame ( void );
 

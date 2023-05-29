@@ -29,9 +29,19 @@ void CGame::loop ( void )
       return;
     }
     catch ( CSave & x )
-    {
-      saveGame();
-      return;
+    {  
+      try
+      {
+        saveGame();
+        return;
+      }
+      catch ( CSavingWonGame & s )
+      {
+        for ( int i = 1; i < m_Map . getWidth() - 1; i++ )
+          mvwprintw( m_Screen -> m_Window, m_Map . getHeight() + 1, i, " " );
+        mvwprintw ( m_Screen -> m_Window, m_Map . getHeight() + 1, 1, "Unable to save won game." );
+        wrefresh( m_Screen -> m_Window );
+      }
     }
     
     for ( const auto & it : m_Players )
@@ -53,8 +63,18 @@ void CGame::loop ( void )
     }
     catch ( CSave & x )
     {
-      saveGame();
-      return;
+      try
+      {
+        saveGame();
+        return;
+      }
+      catch ( CSavingWonGame & s )
+      {
+        for ( int i = 1; i < m_Map . getWidth() - 1; i++ )
+          mvwprintw( m_Screen -> m_Window, m_Map . getHeight() + 1, i, " " );
+        mvwprintw ( m_Screen -> m_Window, m_Map . getHeight() + 1, 1, "Unable to save won game." );
+        wrefresh( m_Screen -> m_Window );
+      }
     }
     
     m_Map . clearRoads();  
@@ -72,10 +92,28 @@ void CGame::loop ( void )
     std::this_thread::sleep_for( std::chrono::seconds( 1 ) );
     char c;
     if ( ( c = m_Map . checkWinner() ) != 'n' )
-    {
-      mvwprintw ( m_Screen -> m_Window, 10, 10, "%c won", c );
+    { 
+      for ( int i = 1; i < m_Map . getWidth() - 1; i++ )
+        mvwprintw( m_Screen -> m_Window, m_Map . getHeight() + 1, i, " " );
+      if ( c == 'g' )
+        mvwprintw ( m_Screen -> m_Window, m_Map . getHeight() + 1, 1, "You won! Congratulations!" );
+      else 
+        mvwprintw ( m_Screen -> m_Window, m_Map . getHeight() + 1, 1, "Winner is %c. Better luck next time!", c );
       wrefresh( m_Screen -> m_Window );
-      // std::this_thread::sleep_for( std::chrono::seconds( 5 ) );
+      while ( 1 )
+      {
+        int c = wgetch ( m_Screen -> m_Window );
+        if ( c == 'q' )
+          break;
+        if ( c == 's' )
+        { 
+          for ( int i = 1; i < m_Map . getWidth() - 1; i++ )
+            mvwprintw( m_Screen -> m_Window, m_Map . getHeight() + 1, i, " " );
+          mvwprintw ( m_Screen -> m_Window, m_Map . getHeight() + 1, 1, "Unable to save won game." );
+          wrefresh( m_Screen -> m_Window );
+        }
+
+      }
       break;
     }
     m_Map . deactivateAll();
@@ -111,10 +149,13 @@ void CGame::printHud ( void )
     mvwprintw ( m_Screen -> m_Window, m_Map . getHeight (), i, "-" );
   mvwprintw ( m_Screen -> m_Window, m_Map . getHeight (), i - 1, "+" );
 
+  mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 1, 0, "|" );
+
   mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 2, 0, "+" );
   for ( i = 1; i < m_Map . getWidth(); i++ )
     mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 2, i, "-" );
-  mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () , i - 1, "+" );
+  mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 2, i - 1, "+" );
+  mvwprintw ( m_Screen -> m_Window, m_Map . getHeight () + 1, i - 1, "|" );
 
   mvwprintw ( m_Screen -> m_Window, 0, m_Map . getWidth() + 1,  "+--------------------+" );
   mvwprintw ( m_Screen -> m_Window, 1, m_Map . getWidth() + 1,  "|      Round " );
@@ -235,6 +276,8 @@ void CGame::setPlayers ( void )
 //------------------------------------------------------------------------
 void CGame::saveGame ( void )
 {
+  if ( m_Map . checkWinner() != 'n' )
+    throw CSavingWonGame();
   //https://stackoverflow.com/questions/16357999/current-date-and-time-as-string
   std::ostringstream oss;
   auto t = std::time(nullptr);

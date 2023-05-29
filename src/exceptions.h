@@ -26,4 +26,7 @@ class CDamagedFile
     int m_X;
     int m_Y;
 };
+class CSavingWonGame
+{};
+
 #endif //EXCEPTIONS_H

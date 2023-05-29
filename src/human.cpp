@@ -3,15 +3,25 @@
 std::pair < int, int > CHuman::makeMove ( CMap & map )
 {
   int first, second;
+
+  for ( int i = 1; i < map . getWidth() - 1; i++ )
+    mvwprintw( m_Screen -> m_Window, map . getHeight() + 1, i, " " );
+  mvwprintw( m_Screen -> m_Window, map . getHeight() + 1, 1, "Choose your anthill." );
+  wrefresh ( m_Screen -> m_Window );
+
   while ( 1 )
   {
     CCoords mouseCoords = readMouse();
     if ( ( first = map . getAntHill ( mouseCoords ) ) != -1
        && map . getColorOfId ( first ) == 'g' )
       break;
-  }
-  mvwprintw( m_Screen -> m_Window, 1, 42, "%d", first );
+  }     
+
+  for ( int i = 1; i < map . getWidth() - 1; i++ )
+    mvwprintw( m_Screen -> m_Window, map . getHeight() + 1, i, " " );
+  mvwprintw( m_Screen -> m_Window, map . getHeight() + 1, 1, "Choose enemy or neutral anthill." );
   wrefresh ( m_Screen -> m_Window );
+
   while ( 1 )
   {
     CCoords mouseCoords = readMouse();
@@ -20,8 +30,6 @@ std::pair < int, int > CHuman::makeMove ( CMap & map )
       break;
   }
 
-  mvwprintw( m_Screen -> m_Window, 1, 44, "%d", second );
-  wrefresh ( m_Screen -> m_Window );
   return std::make_pair( first, second );
 }
 //------------------------------------------------------------------------
@@ -59,6 +67,8 @@ void CHuman::selectTalent ( CMap & map, std::list < CTalent * > & t )
       break;
     }
   }
+  wclear ( m_Screen -> m_Window );
+  wrefresh( m_Screen -> m_Window );
 }
 //------------------------------------------------------------------------
 CCoords CHuman::readMouse( void )

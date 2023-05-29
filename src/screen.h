@@ -26,8 +26,9 @@ class CScreen
     start_color(); // Allowing colors using
     init_pair ( 1, COLOR_BLACK, COLOR_GREEN );   // Color of players anthills
     init_pair ( 2, COLOR_BLACK, COLOR_WHITE );   // Color of neutral anthills  
-    init_pair ( 3, COLOR_BLACK, COLOR_RED );     // Color ob bots anthills
-    init_pair ( 4, COLOR_WHITE, COLOR_MAGENTA ); // Color ob bots anthills  
+    init_pair ( 3, COLOR_BLACK, COLOR_RED );     // Color of bots anthills
+    init_pair ( 4, COLOR_WHITE, COLOR_MAGENTA ); // Color of bots anthills  
+    init_pair ( 5, COLOR_WHITE, COLOR_BLUE ); // Color of bots anthills  
   }
   /*! Deleting all alocated lncurses objects
    */

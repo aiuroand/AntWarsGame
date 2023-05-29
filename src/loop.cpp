@@ -15,7 +15,12 @@ void CLoop::loop ( void )
         wclear ( m_Screen -> m_Window );
         mvwprintw ( m_Screen -> m_Window, 0, 0, "Error while reading file: \"%s\"", f . m_FileName . c_str() );
         wrefresh ( m_Screen -> m_Window );
-        std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
+        while ( 1 )
+        {
+          int c = wgetch ( m_Screen -> m_Window );
+          if ( c == 'q' )
+            break;
+        }
         m_Status = e_Exit;
       }
     }
@@ -43,7 +48,12 @@ void CLoop::loop ( void )
         wclear ( m_Screen -> m_Window );
         mvwprintw ( m_Screen -> m_Window, 0, 0, "Error while reading file: \"%s\"", m_Maps . c_str() );
         wrefresh ( m_Screen -> m_Window );
-        std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
+        while ( 1 )
+        {
+          int c = wgetch ( m_Screen -> m_Window );
+          if ( c == 'q' )
+            break;
+        }
         m_Status = e_Menu;
       }
 
@@ -61,21 +71,36 @@ void CLoop::loop ( void )
         mvwprintw ( m_Screen -> m_Window, 0, 0, "Error while reading file: \"%s\"", f . m_FileName . c_str() );
         mvwprintw ( m_Screen -> m_Window, 1, 0, "Expected maps file." );
         wrefresh ( m_Screen -> m_Window );
-        std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
+        while ( 1 )
+        {
+          int c = wgetch ( m_Screen -> m_Window );
+          if ( c == 'q' )
+            break;
+        }
       }
       catch ( CRoadDoesNotExist & r )
       {
         wclear ( m_Screen -> m_Window );
         mvwprintw ( m_Screen -> m_Window, 1, 0, "Some roads does not exist." );
         wrefresh ( m_Screen -> m_Window );
-        std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
+        while ( 1 )
+        {
+          int c = wgetch ( m_Screen -> m_Window );
+          if ( c == 'q' )
+            break;
+        }
       }
       catch ( CDamagedFile & d )
       {
         wclear ( m_Screen -> m_Window );
         mvwprintw ( m_Screen -> m_Window, 1, 0, "File is damaged on position ( %d, %d )", d . m_X, d . m_Y );
         wrefresh ( m_Screen -> m_Window );
-        std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
+        while ( 1 )
+        {
+          int c = wgetch ( m_Screen -> m_Window );
+          if ( c == 'q' )
+            break;
+        }
       }
       //Cleaning after leaving the game
       delete m_Game;
@@ -106,7 +131,12 @@ void CLoop::loop ( void )
         wclear ( m_Screen -> m_Window );
         mvwprintw ( m_Screen -> m_Window, 0, 0, "Error while reading file: \"%s\"", m_Saves . c_str() );
         wrefresh ( m_Screen -> m_Window );
-        std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
+        while ( 1 )
+        {
+          int c = wgetch ( m_Screen -> m_Window );
+          if ( c == 'q' )
+            break;
+        }
         m_Status = e_Menu;
       }
       std::string newStr( str );
@@ -123,21 +153,36 @@ void CLoop::loop ( void )
         mvwprintw ( m_Screen -> m_Window, 0, 0, "Error while reading file: \"%s\"", f . m_FileName . c_str() );
         mvwprintw ( m_Screen -> m_Window, 1, 0, "Expected saves file." );
         wrefresh ( m_Screen -> m_Window );
-        std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
+        while ( 1 )
+        {
+          int c = wgetch ( m_Screen -> m_Window );
+          if ( c == 'q' )
+            break;
+        }
       }
       catch ( CRoadDoesNotExist & r )
       {
         wclear ( m_Screen -> m_Window );
         mvwprintw ( m_Screen -> m_Window, 1, 0, "Some roads does not exist." );
         wrefresh ( m_Screen -> m_Window );
-        std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
+        while ( 1 )
+        {
+          int c = wgetch ( m_Screen -> m_Window );
+          if ( c == 'q' )
+            break;
+        }
       }
       catch ( CDamagedFile & d )
       {
         wclear ( m_Screen -> m_Window );
         mvwprintw ( m_Screen -> m_Window, 1, 0, "File is damaged on position ( %d, %d )", d . m_X, d . m_Y );
         wrefresh ( m_Screen -> m_Window );
-        std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
+        while ( 1 )
+        {
+          int c = wgetch ( m_Screen -> m_Window );
+          if ( c == 'q' )
+            break;
+        }
       }
 
       // Cleaning after leaving the game
@@ -157,7 +202,12 @@ void CLoop::loop ( void )
         mvwprintw ( m_Screen -> m_Window, 0, 0, "Error while reading file: \"%s\"", f . m_FileName . c_str() );
         mvwprintw ( m_Screen -> m_Window, 1, 0, "Expected rules file." );
         wrefresh ( m_Screen -> m_Window );
-        std::this_thread::sleep_for( std::chrono::seconds( 3 ) );
+        while ( 1 )
+        {
+          int c = wgetch ( m_Screen -> m_Window );
+          if ( c == 'q' )
+            break;
+        }
       }
       m_Status = e_Menu;
     }

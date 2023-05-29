@@ -10,6 +10,7 @@
 #include <queue>
 #include <chrono>
 #include <thread>
+#include <cstring>
 
 #include "mapelement.h"
 #include "screen.h"
@@ -43,10 +44,10 @@ class CMap
      */
     ~CMap ( void )
     {
-      // for ( const auto & it : m_ElementList )
-      //   delete it;
-      // for ( const auto & it : m_AntHill )
-      //   delete it;
+      for ( const auto & it : m_ElementList )
+        delete it;
+      for ( const auto & it : m_AntHill )
+        delete it;
     }
 
     /*! Getting id of anthill that is standing on the coords
@@ -141,6 +142,13 @@ class CMap
      */
     void clearRoads ( void );
 
+    /*! Helping function for attack function, that recieves id and returns it's
+     *  color on char * format
+     *  @param str - char[] where color should be printed, max 30, neutral for white anthills
+     *  @param id  - id
+     */
+    void getCharColor ( char * str, int id ) const;
+    
     /*! Implemenst logic of attack, animates and calculates them
      */
     void attack ( void );

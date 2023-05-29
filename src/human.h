@@ -2,6 +2,8 @@
 #define HUMAN_H
 #include "player.h"
 #include "coords.h"
+#include <string>
+#include <cstring>
 #include <ncurses.h>
 #include "screen.h"
 #include "map.h"
