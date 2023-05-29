@@ -1,2 +1,3 @@
-This program was created by Andrei Aiurov as Semester work for FIT CVUT in 2023.
-I do honestly declare that I made it myself.
+Tento program byl udelan jako semestralni prace pro Fakultu Informacnich Technologii CVUT.
+Cestne prohlasuji, ze jsem ho vyrobil sam.
+Aiurov Andrei

@@ -1,7 +1,7 @@
 Ant Wars
-Moje semestrální práce bude implementovat hru Ant-Wars. Po spuštění hry
-se zobrází menu, ve které si užívatel může vybrat jednu z možnosti:
-"Start Game", "Continue Game", "Rules" and "Exit".
+Moje semestrální implementuje hru Ant-Wars. Po spuštění hry
+se zobrázuje menu, ve kterém si užívatel může vybrat jednu z možnosti:
+"Start Game", "Saved Games", "Rules" and "Exit".
 
 1) "Start Game"
 Po stisku tlačétka Start Game se zobrází vyber map, kterou si po vyberu program
