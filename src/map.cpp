@@ -309,7 +309,7 @@ void CMap::attack ( void )
       }
       main_it . print( m_Screen );
       wrefresh ( m_Screen -> m_Window );
-      std::this_thread::sleep_for( std::chrono::milliseconds( 80 ) );
+      std::this_thread::sleep_for( std::chrono::milliseconds( 150 ) );
     }
     print();
   }

@@ -1,9 +1,9 @@
 #ifndef BOT_H
 #define BOT_H
 
+#include <ncurses.h>
 #include "player.h"
 #include "coords.h"
-#include <ncurses.h>
 #include "screen.h"
 #include "map.h"
 

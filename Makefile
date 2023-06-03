@@ -1,9 +1,9 @@
-CXXFLAGS = -std=c++17 -Wall -pedantic 
+CXXFLAGS = -std=c++17 -Wall -pedantic -g
 HEADERS = $(wildcard src/*.h)
 SOURCES = $(wildcard src/*.cpp)
 OBJECTS = $(SOURCES:src/%.cpp=build/%.o)
 LIBS=-lncurses
-VALGRIND = --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt
+VALGRIND = --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=valgrind-out.txt
 
 .PHONY: all
 all: compile doc
@@ -35,8 +35,3 @@ doc: Doxyfile $(HEADERS)
 clean:
 	rm -rf username build/ debug/ doc/ 2>/dev/null
 	rm aiuroand
-
-.PHONY: test_all
-test_all: $(TESTS:tests/%.test.cpp=debug/%.test)
-	for TEST in debug/*.test; do ./$$TEST; done
-
