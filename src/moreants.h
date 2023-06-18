@@ -28,6 +28,7 @@ class CMoreAnts : public CTalent
     {
       map . addAntsAttackToColor( c, m_Amount );
     }
+    /*Puppet master will be realeased on 2044*/
 
   private:
 
