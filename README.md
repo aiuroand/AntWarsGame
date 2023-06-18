@@ -1,0 +1,1 @@
+You can read game rules in examples/DOCUMENTATION.md file.

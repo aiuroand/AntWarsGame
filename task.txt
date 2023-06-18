@@ -1,0 +1,4 @@
+Ant Wars
+The task was to implement AntWars game that represents a war between enemy anthills.
+It was created in order to understand some C++ concepts such as polymorphism, configuration files,
+Makefile, making docuentation using Doxygen and others.
